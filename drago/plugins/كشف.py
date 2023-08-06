@@ -20,15 +20,6 @@ ID_EDIT = gvarstatus("ID_ET") or "ايدي"
 
 plugin_category = "utils"
 
-file_path = "installation_date.txt"
-if os.path.exists(file_path) and os.path.getsize(file_path) > 0:
-    with open(file_path, "r") as file:
-        installation_time = file.read().strip()
-else:
-    installation_time = datetime.now().strftime("%Y-%m-%d")
-    with open(file_path, "w") as file:
-        file.write(installation_time)
-        
 LOGS = logging.getLogger(__name__)
 async def get_user_from_event(event):
     if event.reply_to_msg_id:
@@ -89,7 +80,6 @@ async def fetch_info(replied_user, event):
     username = "@{}".format(username) if username else ("لايـوجـد معـرف")
     user_bio = "لاتـوجـد نبـذة" if not user_bio else user_bio
     rotbat = "مبرمج السورس" if user_id == 5298061670 else ("عضو")
-    rotbat = "مبرمج السورس²" if user_id == 1260465030 else ("عضو")
     rotbat = "مالك الحساب" if user_id == (await event.client.get_me()).id and user_id !=  5298061670 else rotbat
     caption = "✛━━━━━━━━━━━━━✛\n"
     caption += f"<b> {drago_EM}╎الاسـم    ⇠ </b> {full_name}\n"
@@ -100,7 +90,6 @@ async def fetch_info(replied_user, event):
     caption += f"<b> {drago_EM}╎الحساب ⇠ </b> "
     caption += f'<a href="tg://user?id={user_id}">{first_name}</a>'
     caption += f"\n<b> {drago_EM}╎البايـو    ⇠ </b> {user_bio} \n"
-    caption += f"<b> {drago_EM}╎تم ارسال الرسالة ⇠ {drago_time}\n"
     caption += f"✛━━━━━━━━━━━━━✛"
     return photo, caption
 
