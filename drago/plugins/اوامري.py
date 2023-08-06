@@ -29,7 +29,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
                     Button.inline("‹ المجموعات ›", data="gro"),
                 ],
                 [
-                    Button.inline("♰ الصيغ و الجهات ♰", data="sejrz"),
+                    Button.inline("‹ الصيغ و الجهات ›", data="sejrz"),
                     Button.inline("‹ الحماية و تلكراف ›", data="grrz"),
                 ],
                 [
