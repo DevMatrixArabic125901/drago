@@ -70,7 +70,6 @@ async def fetch_info(replied_user, event):
     is_bot = replied_user.bot
     restricted = replied_user.restricted
     verified = replied_user.verified
-    drago_time=installation_time,
     photo = await event.client.download_profile_photo(     user_id,     Config.TMP_DOWNLOAD_DIRECTORY + str(user_id) + ".jpg",    download_big=True  )
     first_name = (      first_name.replace("\u2060", "")
         if first_name
