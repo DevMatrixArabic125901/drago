@@ -3,8 +3,8 @@ import re
 from telethon import Button, events
 from telethon.events import CallbackQuery
 
-from Dragoia.razan.resources.assistant import *
-from Dragoiq.razan.resources.mybot import *
+from dragoiq.razan.resources.assistant import *
+from dragoiq.razan.resources.mybot import *
 from drago import dragoiq
 from ..core import check_owner
 from ..Config import Config
@@ -22,7 +22,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
         await bot.get_me()
         if query.startswith("اوامري") and event.query.user_id == bot.uid:
             buttons = [
-                [Button.inline("‹ اوامر الادمن ›", data="dragoiq0")],
+                            [Button.inline("‹ اوامر الادمن ›", data="dragoiq0")],
                 [
                     Button.inline("‹ اوامر البوت ›", data="rozbot"),
                     Button.inline("‹ الحساب ›", data="Jmrz"),
