@@ -22,7 +22,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
         query = event.text
         await bot.get_me()
         if query.startswith("") and event.query.user_id == bot.uid:
-            buttons = Button.url("•    •", f"https://t.me/{DRAGO}")
+            buttons = Button.url("â€¢    â€¢", f"https://t.me/{DRAGO}")
             if DRAGO_PIC and DRAGO_PIC.endswith((".jpg", ".png", "gif", "mp4")):
                 result = builder.photo(
                     DRAGO_PIC, text=REH, buttons=buttons, link_preview=False
@@ -30,14 +30,14 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
             elif DRAGO_PIC:
                 result = builder.document(
                     DRAGO_PIC,
-                    title="DRAGO",
+                    title="drago",
                     text=REH,
                     buttons=buttons,
                     link_preview=False,
                 )
             else:
                 result = builder.article(
-                    title="DRAGO",
+                    title="drago",
                     text=REH,
                     buttons=buttons,
                     link_preview=False,
