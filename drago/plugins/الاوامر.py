@@ -210,7 +210,6 @@ async def _(event):
 
 )
 
-@dragoiq
 @dragoiq.ar_cmd(
     pattern="م19$",
     command=("م19", plugin_category),
@@ -221,7 +220,7 @@ async def _(event):
 			"** قائمة اوامر بصمات الميمز **:\n ★•┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉•★\n ⌁︙ اختر احدى هذه القوائم\n\n- ( `.بصمات ميمز` )\n- ( `.بصمات ميمز2` )\n- ( `.بصمات ميمز3` )\n- ( `.بصمات ميمز4` )\n- ( `.بصمات ميمز5` )\n★•┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉•★\n⌁︙CH : @Drago_dr"
 
 		)
-		@dragoiq.ar_cmd(
+@dragoiq.ar_cmd(
     pattern="م20",
     command=("م20", plugin_category),
 )
