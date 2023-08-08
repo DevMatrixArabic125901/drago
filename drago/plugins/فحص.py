@@ -51,7 +51,7 @@ async def amireallyalive(event):
     _, check_sgnirts = check_data_base_heal_th()
     EMOJI = gvarstatus("ALIVE_EMOJI") or "⿻┊‌‎"
     ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "**父[ 𝙳𝚁𝙰𝙶𝙾 𝙸𝚂 𝚆𝙾𝚁𝙺𝙸𝙽𝙶 ](t.me/Drago_dr)父**"
-    DRAGO_IMG = gvarstatus("ALIVE_PIC") or Config.A_PIC or "https://telegra.ph/file/99b7fa93494f6a583b83d.mp4"
+    DRAGO_IMG = gvarstatus("ALIVE_PIC") or Config.A_PIC or "https://telegra.ph/file/f4c895df55defd2875794.mp4"
     dragoiq_caption = gvarstatus("ALIVE_TEMPLATE") or temp
     caption = dragoiq_caption.format(
         ALIVE_TEXT=ALIVE_TEXT,
