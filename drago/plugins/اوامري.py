@@ -3,8 +3,8 @@ import re
 from telethon import Button, events
 from telethon.events import CallbackQuery
 
-from dragoiq.razan.resources.assistant import *
-from dragoiq.razan.resources.mybot import *
+from Dragoiq.razan.resources.assistant import *
+from Dragoiq.razan.resources.mybot import *
 from drago import dragoiq
 from ..core import check_owner
 from ..Config import Config
@@ -60,14 +60,14 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
             elif DRA_IC:
                 result = builder.document(
                     DRA_IC,
-                    title="DRAGO",
+                    title="drago",
                     text=ROE,
                     buttons=buttons,
                     link_preview=False,
                 )
             else:
                 result = builder.article(
-                    title="DRAGO",
+                    title="drago",
                     text=ROE,
                     buttons=buttons,
                     link_preview=False,
@@ -144,7 +144,6 @@ async def _(event):
      Button.inline("التالي", data="r7brz"),
      Button.inline("رجوع", data="rozbot")]]
     await event.edit(JROZT, buttons=buttons)
-
 
 @dragoiq.tgbot.on(CallbackQuery(data=re.compile(rb"r7brz")))
 @check_owner
