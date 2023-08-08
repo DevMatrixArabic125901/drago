@@ -39,7 +39,6 @@ except Exception as dragoiq:
     LOGS.error(f"- {dragoiq}")
     sys.exit()    
 
-
 class CatCheck:
     def __init__(self):
         self.sucess = True
