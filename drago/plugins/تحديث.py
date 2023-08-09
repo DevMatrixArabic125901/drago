@@ -297,7 +297,7 @@ async def upstream(event):
     ac_br = repo.active_branch.name
     ups_rem = repo.remote("upstream")
     ups_rem.fetch(ac_br)
-    await event.edit(f"**⌁︙ جارِ اعادة تنصيب سورس دراكو, انتظر قليلاً**"
+    await event.edit(f"**⌁︙ جارِ اعادة تنصيب سورس دراكو, انتظر قليلاً**")
     await deploy(event, repo, ups_rem, ac_br, txt)
 progs = [5298061670]
 
