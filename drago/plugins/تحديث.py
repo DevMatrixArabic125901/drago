@@ -31,7 +31,6 @@ LOGS = logging.getLogger(__name__)
 HEROKU_APP_NAME = Config.HEROKU_APP_NAME or None
 HEROKU_API_KEY = Config.HEROKU_API_KEY or None
 Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
-OLDZED = Config.OLDZED
 heroku_api = "https://api.heroku.com"
 
 UPSTREAM_REPO_BRANCH = "drago"
