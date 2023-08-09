@@ -72,7 +72,7 @@ async def startup_process():
     return
 
 async def externalrepo():
-    if Config.VCMODE:
+        if Config.VCMODE:
         await install_externalrepo("https://github.com/qithoniq/DraVc", "dragovc", "dravc")
 
 dragoiq.loop.run_until_complete(externalrepo())
