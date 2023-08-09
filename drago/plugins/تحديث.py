@@ -153,7 +153,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             HEROKU_APP.restart()
 
 
-@dragoiq.zed_cmd(
+@dragoiq.ar_cmd(
     pattern="تحديث(| الان)?$",
     command=("update", plugin_category),
     info={
@@ -254,7 +254,7 @@ async def upstream(event):
     return
 
 
-@dragoiq.zed_cmd(
+@dragoiq.ar_cmd(
     pattern="تحديث التنصيب$",
 )
 async def upstream(event):
