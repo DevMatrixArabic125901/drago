@@ -119,7 +119,7 @@ async def generate_random_username(event):
 @dragoiq.on(events.NewMessage(pattern=r"^\.يوزر2(\w)$"))
 async def generate_random_username(event):
     if event.sender_id not in DEVDRAGO:
-        return  #كلها مكتوبه بحقوق فريق الساحر
+        return
 
     start_letter = event.pattern_match.group(1).upper()  
     abc = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
