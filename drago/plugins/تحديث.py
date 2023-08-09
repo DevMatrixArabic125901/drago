@@ -345,8 +345,8 @@ async def Ahmed(event):
         repo = Repo.init()
         origin = repo.create_remote("upstream", off_repo)
         origin.fetch()
-        repo.create_head("drago", origin.refs.master)
-        repo.heads.drago.set_tracking_branch(origin.refs.master)
+        repo.create_head("drago", origin.refs.drago)
+        repo.heads.drago.set_tracking_branch(origin.refs.drago)
         repo.heads.drago.checkout(True)
     with contextlib.suppress(BaseException):
         repo.create_remote("upstream", off_repo)
