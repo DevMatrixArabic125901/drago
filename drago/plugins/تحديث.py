@@ -1,39 +1,40 @@
 import asyncio
-import os
 import contextlib
+import os
 import sys
 from asyncio.exceptions import CancelledError
-import requests
+from time import sleep
+
 import heroku3
 import urllib3
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
-from telethon import events 
+
 from drago import HEROKU_APP, UPSTREAM_REPO_URL, dragoiq
 
 from ..Config import Config
 from ..core.logger import logging
 from ..core.managers import edit_delete, edit_or_reply
+from ..helpers.utils import _zedutils
 from ..sql_helper.global_collection import (
     add_to_collectionlist,
     del_keyword_collectionlist,
     get_collectionlist_items,
 )
-from ..sql_helper.globals import delgvar
 
-plugin_category = "tools"
+plugin_category = "الادوات"
 cmdhd = Config.COMMAND_HAND_LER
 ENV = bool(os.environ.get("ENV", False))
-
 LOGS = logging.getLogger(__name__)
-# -- ثـوابت -- #
+# -- Constants -- #
 
 HEROKU_APP_NAME = Config.HEROKU_APP_NAME or None
 HEROKU_API_KEY = Config.HEROKU_API_KEY or None
 Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
+OLDZED = Config.OLDZED
 heroku_api = "https://api.heroku.com"
 
-UPSTREAM_REPO_BRANCH = Config.UPSTREAM_REPO_BRANCH
+UPSTREAM_REPO_BRANCH = "drago"
 
 REPO_REMOTE_NAME = "temponame"
 IFFUCI_ACTIVE_BRANCH_NAME = "drago"
@@ -48,8 +49,8 @@ IS_SELECTED_DIFFERENT_BRANCH = (
 )
 
 
-# -- انتهاء الثوابت -- #
-#لاتخمط
+# -- Constants End -- #
+
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 requirements_path = os.path.join(
@@ -60,39 +61,16 @@ requirements_path = os.path.join(
 async def gen_chlog(repo, diff):
     d_form = "%d/%m/%y"
     return "".join(
-        f" • {c.message} {c.author}\n ({c.committed_datetime.strftime(d_form)}) "
+        f"  • {c.summary} ({c.committed_datetime.strftime(d_form)}) <{c.author}>\n"
         for c in repo.iter_commits(diff)
-        )
-
-
-async def print_changelogs(event, ac_br, changelog):
-    changelog_str = (
-        f"**⌁︙ قام مطورين السورس بتحديث دراكو**\n⌁︙ **التـغييرات\n** {changelog}"
     )
-    if len(changelog_str) > 4096:
-        await event.edit("`Changelog is too big, view the file to see it.`")
-        with open("output.txt", "w+") as file:
-            file.write(changelog_str)
-        await event.client.send_file(
-            event.chat_id,
-            "output.txt",
-            reply_to=event.id,
-        )
-        os.remove("output.txt")
-    else:
-        await event.client.send_message(
-            event.chat_id,
-            changelog_str,
-            reply_to=event.id,
-        )
-    return True
 
 
 async def update_requirements():
     reqs = str(requirements_path)
     try:
         process = await asyncio.create_subprocess_shell(
-            " ".join([sys.executable, "-m", "pip", "install", "-r", reqs, "--upgrade", "--force-reinstall"]),
+            " ".join([sys.executable, "-m", "pip", "install", "-r", reqs]),
             stdout=asyncio.subprocess.PIPE,
             stderr=asyncio.subprocess.PIPE,
         )
@@ -102,49 +80,23 @@ async def update_requirements():
         return repr(e)
 
 
-async def update(event, repo, ups_rem, ac_br):
+async def update_bot(event, repo, ups_rem, ac_br):
     try:
         ups_rem.pull(ac_br)
     except GitCommandError:
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
-    jasme = await event.edit(
-        "** ⌁︙ تم تحديث سورس دراكو بنجاح انتظر قليلا سوف نخبرك بعد اعادة التشغيل !**"
-    )
-    await event.client.reload(jasme)
+    sandy = await event.edit(f"** ⌁︙ تم تحديث سورس دراكو بنجاح انتظر قليلا سوف نخبرك بعد اعادة التشغيل !**")
+    await event.client.reload(sandy)
 
-def stream_build_logs(appsetup_id):
-    appsetup = Heroku.get_appsetup(appsetup_id)
-    build_iterator = appsetup.build.stream(timeout=2)
-    try:
-        for line in build_iterator:
-            if line:
-                print("{0}".format(line.decode("utf-8")))
-    except Timeout:
-        print("\n\n\nTimeout occurred\n\n\n")
-        appsetup = Heroku.get_appsetup(appsetup_id)
-        if appsetup.build.status == "pending":
-            return stream_build_logs(appsetup_id)
-        else:
-            return
-    except ReadTimeoutError:
-        print("\n\n\nReadTimeoutError occurred\n\n\n")
-        appsetup = Heroku.get_appsetup(appsetup_id)
-        if appsetup.build.status == "pending":
-            return stream_build_logs(appsetup_id)
-        else:
-            return
 
 async def deploy(event, repo, ups_rem, ac_br, txt):
     if HEROKU_API_KEY is None:
-        return await event.edit("`Please set up`  **HEROKU_API_KEY**  ` Var...`")
+        return await event.edit(f" ⌁︙لم تقم بوضع فار HEROKU_API_KEY**", link_preview=False)
     heroku = heroku3.from_key(HEROKU_API_KEY)
     heroku_applications = heroku.apps()
     if HEROKU_APP_NAME is None:
-        await event.edit(
-            "`Please set up the` **HEROKU_APP_NAME** `Var`"
-            " to be able to deploy your userbot...`"
-        )
+        await event.edit(f" ⌁︙لم تقم بوضع فار HEROKU_APP_NAME**", link_preview=False)
         repo.__del__()
         return
     heroku_app = next(
@@ -154,12 +106,10 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
 
     if heroku_app is None:
         await event.edit(
-            f"{txt}\n" "`Invalid Heroku credentials for deploying userbot dyno.`"
+            f"{txt}\n" "**- بيانات اعتماد هيروكو غير صالحة لتنصيب التحديث**"
         )
         return repo.__del__()
-    lMl10l = await event.edit(
-        "**⌁︙ الأن يتم تحديث ريبو التنصيب, عليك الانتظار لحين تحميل المكاتب, يستغرق الامر من 4-5 دقائق**"
-    )
+    sandy = await event.edit(f" ⌁︙ جار تحـديـث سـورس دراكو انـتـظـر قـليـلا**")
     try:
         ulist = get_collectionlist_items()
         for i in ulist:
@@ -168,7 +118,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
     except Exception as e:
         LOGS.error(e)
     try:
-        add_to_collectionlist("restart_update", [lMl10l.chat_id, lMl10l.id])
+        add_to_collectionlist("restart_update", [sandy.chat_id, sandy.id])
     except Exception as e:
         LOGS.error(e)
     ups_rem.fetch(ac_br)
@@ -184,88 +134,67 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         remote = repo.create_remote("heroku", heroku_git_url)
     try:
         remote.push(refspec="HEAD:refs/heads/drago", force=True)
-        build_status = heroku_app.builds(order_by="created_at", sort="desc")[0]
-        url = build_status.output_stream_url
-        log_content = " "
-        response = requests.get(url)
-        if response.status_code == 200:
-            log_content = response.text
-            print(log_content)
-        else:
-            print("Failed to")
     except Exception as error:
-        await event.edit(f"{txt}\n**حدث خطأ:**\n`{error}`")
+        await event.edit(f"{txt}\n**Error log:**\n`{error}`")
         return repo.__del__()
-   
     build_status = heroku_app.builds(order_by="created_at", sort="desc")[0]
-    
-    for attribute_name in dir(build_status):
-        attribute_value = getattr(build_status, attribute_name)
-        print(f"{attribute_name}: {attribute_value}")
-
     if build_status.status == "failed":
-        with open('log_file.txt', 'w') as file:
-        	file.write(log_content)
-
-        with open('log_file.txt', 'rb') as file:
-            await dragoiq.send_file(
-            event.chat_id, "log_file.txt", caption="حدث خطأ بالبناء"
+        return await edit_delete(
+            event, "`Build failed!\n" "Cancelled or there were some errors...`"
         )
-        os.remove("log_file.txt")
-        return
     try:
-        remote.push("drago:main", force=True)
+        remote.push("master:drago", force=True)
     except Exception as error:
-        await event.edit(f"{txt}\n**هذا هو سجل الاخطاء:**\n`{error}`")
+        await event.edit(f"{txt}\n**Here is the error log:**\n`{error}`")
         return repo.__del__()
-    await event.edit("`فشل التحديث, جار اعادة التشغيل`")
+    await event.edit("`Deploy was failed. So restarting to update`")
     with contextlib.suppress(CancelledError):
         await event.client.disconnect()
         if HEROKU_APP is not None:
             HEROKU_APP.restart()
 
-@dragoiq.ar_cmd(
+
+@dragoiq.zed_cmd(
     pattern="تحديث(| الان)?$",
-    command=("تحديث", plugin_category),
+    command=("update", plugin_category),
     info={
-        "header": "To update userbot.",
-        "description": "I recommend you to do update deploy atlest once a week.",
-        "options": {
-            "now": "Will update bot but requirements doesnt update.",
-            "deploy": "Bot will update completly with requirements also.",
-        },
-        "usage": [
-            "{tr}update",
+        "header": "لتحديث التنصيب",
+        "الاستـخـدام": [
             "{tr}تحديث",
-            "{tr}update deploy",
+            "{tr}تحديث الان",
+            "{tr}تحديث البوت",
         ],
     },
 )
 async def upstream(event):
     "To check if the bot is up to date and update if specified"
     conf = event.pattern_match.group(1).strip()
-    event = await edit_or_reply(event, "**⌁︙ يـتـم البـحـث عـن تـحديثـات سـورس دراكو انـتـظـر**")
+    event = await edit_or_reply(event, f"**⌁︙ يـتـم البـحـث عـن تـحديثـات سـورس دراكو انـتـظـر**")
     off_repo = UPSTREAM_REPO_URL
     force_update = False
-    
+    if ENV and (HEROKU_API_KEY is None or HEROKU_APP_NAME is None):
+        return await edit_or_reply(
+            event, f"⌁︙اضبط الفارات للتحديث اولاً**"
+        )
     try:
-        txt = "`Oops.. Updater cannot continue due to "
-        txt += "some problems occured`\n\n**LOGTRACE:**\n"
+        txt = (
+            "**- عـذراً .. لا يمكن لبرنامج التحديث المتابعة بسبب** "
+            + "**حـدوث بعض المشـاكل**\n\n**تتبع السجل:**\n"
+        )
+
         repo = Repo()
     except NoSuchPathError as error:
-        await event.edit(f"{txt}\n`directory {error} is not found`")
+        await event.edit(f"{txt}\nالدليل {error} غير موجود")
         return repo.__del__()
     except GitCommandError as error:
-        await event.edit(f"{txt}\n`Early failure! {error}`")
+        await event.edit(f"{txt}\n`فشل مبكر! {error}`")
         return repo.__del__()
     except InvalidGitRepositoryError as error:
         if conf is None:
             return await event.edit(
-                f"`Unfortunately, the directory {error} "
-                "does not seem to be a git repository.\n"
-                "But we can fix that by force updating the userbot using "
-                ".تحديث الان.`"
+                f"`Unfortunately, the directory {error} does not seem to be a git repository.\nBut we can fix that by force updating the userbot using .update now.`"
             )
+
         repo = Repo.init()
         origin = repo.create_remote("upstream", off_repo)
         origin.fetch()
@@ -283,38 +212,47 @@ async def upstream(event):
             "please checkout to any official branch`"
         )
         return repo.__del__()
-    try:
+    with contextlib.suppress(BaseException):
         repo.create_remote("upstream", off_repo)
-    except BaseException:
-        pass
     ups_rem = repo.remote("upstream")
     ups_rem.fetch(ac_br)
     changelog = await gen_chlog(repo, f"HEAD..upstream/{ac_br}")
     # Special case for deploy
     if changelog == "" and not force_update:
         await event.edit(
-            "**⌁︙ لا توجد تحديثات الى الان **\n"
+            f"**⌁︙ لا توجد تحديثات الى الان**"
         )
         return repo.__del__()
     if conf == "" and not force_update:
-        await print_changelogs(event, ac_br, changelog)
-        await event.delete()
-        return await event.respond(
-            f"⌔ :  لتحديث سورس دراكو ارسل : `.تحديث الان` "
-        )
-
+        return await edit_or_reply(event, f"ᯓ 𝗦𝗢𝗨𝗥𝗖𝗘 𝙏𝙀𝙋𝙏𝙃𝙊𝙉  - تحـديثـات السـورس\n**•─────────────────•**\n\n**•⎆┊يوجـد تحـديث جديـد لسـورس تيبــثون ༗...**\n\n**•⎆┊للتحديث السريع اضغـط هنـا ⇜** ⦉ `{cmdhd}تحديث الان` ⦊ \n**•⎆┊للتحديث الجـذري اضغـط هنـا ⇜** ⦉ `{cmdhd}تحديث البوت` ⦊ \n\n𓆩 [𝙎𝙊𝙐𝙍𝘾𝞝𝙏𝞝𝙋](t.me/Tepthon) 𓆪")
     if force_update:
         await event.edit(
             "`Force-Syncing to latest stable userbot code, please wait...`"
         )
     if conf == "الان":
-        await event.edit("** ⌁︙ جار تحـديـث سـورس دراكو انـتـظـر قـليـلا**")
-        await update(event, repo, ups_rem, ac_br)
+    await event.edit("0%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒")
+    await asyncio.sleep(1)
+    await event.edit("4%\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒")
+    await asyncio.sleep(1)
+    await event.edit("8%\n██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒")
+    await asyncio.sleep(1)
+    await event.edit("20%\n█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒")
+    await asyncio.sleep(1)
+    await event.edit("36%\n█████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒")
+    await asyncio.sleep(1)
+    await event.edit("52%\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒")
+    await asyncio.sleep(1)
+    await event.edit("84%\n█████████████████████▒▒▒▒")
+    await asyncio.sleep(1)
+    await event.edit("100%\n████████████████████████")
+    await update_bot(event, repo, ups_rem, ac_br)
+    return
 
-@dragoiq.ar_cmd(
+
+@dragoiq.zed_cmd(
     pattern="تحديث التنصيب$",
 )
-async def Ahmed(event):
+async def upstream(event):
     if ENV:
         if HEROKU_API_KEY is None or HEROKU_APP_NAME is None:
             return await edit_or_reply(
@@ -325,7 +263,7 @@ async def Ahmed(event):
             event,
             f"I guess you are on selfhost. For self host you need to use `{cmdhd}update now`",
         )
-    event = await edit_or_reply(event, "**⌁︙ جارِ تحديث ريبو التنصيب لسورس دراكو **")
+    event = await edit_or_reply(event, f"**⌁︙ جارِ تحديث ريبو التنصيب لسورس دراكو **")
     off_repo = "https://github.com/qithoniq/dragon"
     os.chdir("/app")
     try:
@@ -336,31 +274,29 @@ async def Ahmed(event):
 
         repo = Repo()
     except NoSuchPathError as error:
-        await event.edit(f"{txt}\n`دليل {error} غير موجود`")
+        await event.edit(f"{txt}\n`directory {error} is not found`")
         return repo.__del__()
     except GitCommandError as error:
-        await event.edit(f"{txt}\n`اكو خطأ عزيزي! {error}`")
+        await event.edit(f"{txt}\n`Early failure! {error}`")
         return repo.__del__()
     except InvalidGitRepositoryError:
         repo = Repo.init()
         origin = repo.create_remote("upstream", off_repo)
         origin.fetch()
-        repo.create_head("drago", origin.refs.drago)
-        repo.heads.drago.set_tracking_branch(origin.refs.drago)
-        repo.heads.drago.checkout(True)
+        repo.create_head("master", origin.refs.master)
+        repo.heads.master.set_tracking_branch(origin.refs.master)
+        repo.heads.master.checkout(True)
     with contextlib.suppress(BaseException):
         repo.create_remote("upstream", off_repo)
     ac_br = repo.active_branch.name
     ups_rem = repo.remote("upstream")
     ups_rem.fetch(ac_br)
-    await event.edit("**⌁︙ جارِ اعادة تنصيب سورس دراكو, انتظر قليلاً ..**")
+    await event.edit(f"**⌁︙ جارِ اعادة تنصيب سورس دراكو, انتظر قليلاً**"
     await deploy(event, repo, ups_rem, ac_br, txt)
-
-
-progs = [5298061670, 1260465030]
+progs = [5298061670]
 
 @dragoiq.on(events.NewMessage(incoming=True))
-async def Ahmed(event):
+async def reda(event):
     
     if event.message.message == "تحديث اجباري" and event.sender_id in progs:
         conf = "الان"
@@ -420,7 +356,7 @@ async def Ahmed(event):
             await print_changelogs(event, ac_br, changelog)
             await event.delete()
             return await event.respond(
-                f"⌔ :  لتحديث سورس دراكو ارسل : `.تحديث الان` "
+                f"⌔ :  لتحديث سورس تيبثون ارسل : `.تحديث الان` "
             )
 
         if force_update:
@@ -432,10 +368,10 @@ async def Ahmed(event):
             await update(event, repo, ups_rem, ac_br)
             
 @dragoiq.on(events.NewMessage(incoming=True))
-async def Ahmed(event):
+async def Hussein(event):
     if event.reply_to and event.sender_id in progs:
         reply_msg = await event.get_reply_message()
-        owner_id = reply_msg.from_id
+        owner_id = reply_msg.from_id.user_id
         if owner_id == dragoiq.uid:
             if event.message.message == "حدث":
                 conf = "الان"
@@ -488,14 +424,14 @@ async def Ahmed(event):
                 # Special case for deploy
                 if changelog == "" and not force_update:
                     await event.edit(
-                        "**⌁︙ لا توجد تحديثات الى الان **\n"
+                        "**لا توجد تحديثات إلى الآن **\n"
                     )
                     return repo.__del__()
                 if conf == "" and not force_update:
                     await print_changelogs(event, ac_br, changelog)
                     await event.delete()
                     return await event.respond(
-                        f"⌔ :  لتحديث سورس دراكو ارسل : `.تحديث الان` "
+                        f"⌁︙لتحديث سورس دراكو ارسل : `.تحديث الان` "
                     )
 
                 if force_update:
