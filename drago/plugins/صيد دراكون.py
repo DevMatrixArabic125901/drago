@@ -151,7 +151,7 @@ async def PhishingHundler(event):
         if workers.get(PhishType).get('worker') == False:
             workers[PhishType]['worker'] = True
             try:
-                channel = await event.client(CreateChannelRequest(title=f'صيد : {PhishType}', about=f'dragoiq'))
+                channel = await event.client(CreateChannelRequest(title=f'صيد : {PhishType}', about=f'drago'))
                 await event.edit(' تم تفعيل امر الصيد بنجاح ✅ ملاحظة في حالة الصيد يعطيك فقط يوزرات محظورة هذا بمعنى ان حسابك نحظر من صيد اليوزرات لمدة 24 ساعة  ')
                 
                 while stop_phishing == True:
