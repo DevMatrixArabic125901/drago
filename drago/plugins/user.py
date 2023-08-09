@@ -62,7 +62,7 @@ async def generate_random_usernames(event):
 async def generate_random_usernames(event):
     if event.sender_id not in DEVDRAGO:
         return
-    count = int(event.pattern_match.group(1))  # اذا تخمط انت فرخ😆
+    count = int(event.pattern_match.group(1))  # اذا تخمط انت فرخ
     abc = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
     abc1 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
