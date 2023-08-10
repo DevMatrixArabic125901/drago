@@ -22,7 +22,7 @@ from ..sql_helper.global_collection import (
     get_collectionlist_items,
 )
 
-plugin_category = "الادوات"
+plugin_category = "tools"
 cmdhd = Config.COMMAND_HAND_LER
 ENV = bool(os.environ.get("ENV", False))
 LOGS = logging.getLogger(__name__)
@@ -142,7 +142,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             event, "`Build failed!\n" "Cancelled or there were some errors...`"
         )
     try:
-        remote.push("master:drago", force=True)
+        remote.push("drago:drago", force=True)
     except Exception as error:
         await event.edit(f"{txt}\n**Here is the error log:**\n`{error}`")
         return repo.__del__()
@@ -288,9 +288,9 @@ async def upstream(event):
         repo = Repo.init()
         origin = repo.create_remote("upstream", off_repo)
         origin.fetch()
-        repo.create_head("master", origin.refs.master)
-        repo.heads.master.set_tracking_branch(origin.refs.master)
-        repo.heads.master.checkout(True)
+        repo.create_head("drago", origin.refs.drago)
+        repo.heads.drago.set_tracking_branch(origin.refs.drago)
+        repo.heads.drago.checkout(True)
     with contextlib.suppress(BaseException):
         repo.create_remote("upstream", off_repo)
     ac_br = repo.active_branch.name
