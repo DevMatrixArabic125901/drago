@@ -12,7 +12,7 @@ import math
 import base64
 from drago import dragoiq
 #from ..Config import Config
-@l313l.ar_cmd(pattern="تك")
+@dragoiq.ar_cmd(pattern="تك")
 async def tiktok_dl(event):
     ms = event.message.message
     ms = ms.replace(".تك", "")
