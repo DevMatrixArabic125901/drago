@@ -149,7 +149,7 @@ async def settings(event):  #    قـسـم  الزغرفـة دراكـو
                                       Button.inline(
                                          "اسماء بنات 🔗", data="RR7PP"),
                                       Button.inline(
-                                         "║ رجوع ║⁦⁩", data="rozzag")]
+                                         "‹ رجوع ›⁦⁩", data="rozzag")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @Drago_dr", alert=True)
@@ -167,7 +167,7 @@ async def settings(event):  #    قـسـم  الزغرفـة لأسـماء ا�
                                       Button.inline(
                                          "القائمه الثانيه 🔗", data="raza2")],
                                      [Button.inline(
-                                         "║ رجوع ║", data="rozname")]
+                                         "‹ رجوع ›", data="rozname")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @Drago_dr", alert=True)
@@ -181,7 +181,7 @@ async def settings(event): #    قـسـم  الزغرفـة لأسـماء ال
         await event.delete()
         await tgbot.send_message(event.chat_id,
                                  Boyroz1, 
-                                 buttons=[[Button.inline("║ رجوع ║", data="razan")]
+                                 buttons=[[Button.inline("‹ رجوع ›", data="razan")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام هذا البوت.", alert=True)
@@ -194,7 +194,7 @@ async def settings(event):  #    قـسـم  الزغرفـة لأسـماء ا�
         await event.delete()
         await tgbot.send_message(event.chat_id,
                                  Boyroz2, 
-                                 buttons=[[Button.inline("║ رجوع ║", data="razan")]
+                                 buttons=[[Button.inline("‹ رجوع ›", data="razan")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام هذا البوت.", alert=True)
@@ -212,7 +212,7 @@ async def settings(event): #    قـسـم  الزغرفـة لأسـماء ال
                                       Button.inline(
                                          "القائمه الثانيه 🔗", data="RR7PP2")],
                                      [Button.inline(
-                                         "║ رجوع ║", data="rozname")]
+                                         "‹ رجوع ›", data="rozname")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @Drago_dr", alert=True)
@@ -224,7 +224,7 @@ async def settings(event): #    قـسـم  الزغرفـة لأسـماء ال
         await event.delete()
         await tgbot.send_message(event.chat_id,
                                  Girlan1, 
-                                 buttons=[[Button.inline("║ رجوع ║", data="RR7PP")]
+                                 buttons=[[Button.inline("‹ رجوع ›", data="RR7PP")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام هذا البوت.", alert=True)
@@ -236,7 +236,7 @@ async def settings(event):  #    قـسـم  الزغرفـة لأسـماء ا�
         await event.delete()
         await tgbot.send_message(event.chat_id,
                                  Girlan2, 
-                                 buttons=[[Button.inline("║ رجوع ║", data="RR7PP")]
+                                 buttons=[[Button.inline("‹ رجوع ›", data="RR7PP")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام هذا البوت.", alert=True)
@@ -249,11 +249,11 @@ async def settings(event):  #    قـسـم  البـايو 1
                                  ROZPIO1,
                                  buttons=[
                                      [Button.inline(
-                                         " السابق ⫸", data="rozpio5"),
+                                         "‹ السابق ›", data="rozpio5"),
                                       Button.inline(
-                                         "║ خروج ║ ⁦⁩", data="rozzag"),
+                                         "‹ خروج ›", data="rozzag"),
                                       Button.inline(
-                                         "⫷ التالي ", data="rozpio2")]
+                                         "‹ التالي ›", data="rozpio2")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @Drago_dr", alert=True)
@@ -267,11 +267,11 @@ async def settings(event): #    قـسـم  البـايو 2
                                  ROZPIO2,
                                  buttons=[
                                      [Button.inline(
-                                         "السابق ⫸ ", data="rozpio1"),
+                                         "‹ السابق ›", data="rozpio1"),
                                       Button.inline(
-                                         "║ خروج ║ ⁦⁩", data="rozzag"),
+                                         "‹ خروج ›⁦⁩", data="rozzag"),
                                       Button.inline(
-                                         "⫷ التالي", data="rozpio3")]
+                                         "‹ التالي ›", data="rozpio3")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @Drago_dr", alert=True)
@@ -285,11 +285,11 @@ async def settings(event): #    قـسـم  البـايو 3
                                  ROZPIO3,
                                  buttons=[
                                      [Button.inline(
-                                         "السابق ⫸ ", data="rozpio2"),
+                                         "‹ السابق ›", data="rozpio2"),
                                       Button.inline(
-                                         "║ خروج ║ ⁦⁩", data="rozzag"),
+                                         "‹ خروج ›⁦⁩", data="rozzag"),
                                       Button.inline(
-                                         "⫷ التالي", data="rozpio4")]
+                                         "‹ التالي ›", data="rozpio4")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @Drago_dr", alert=True)
@@ -303,11 +303,11 @@ async def settings(event): #    قـسـم  البـايو 4
                                  ROZPIO4,
                                  buttons=[
                                      [Button.inline(
-                                         "السابق ⫸ ", data="rozpio3"),
+                                         "‹ السابق ›", data="rozpio3"),
                                       Button.inline(
-                                         "║ خروج ║ ⁦⁩", data="rozzag"),
+                                         "‹ خروج ›⁦⁩", data="rozzag"),
                                       Button.inline(
-                                         "⫷ التالي", data="rozpio5")]
+                                         "‹ التالي ›", data="rozpio5")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @Drago_dr", alert=True)
@@ -321,11 +321,11 @@ async def settings(event):#    قـسـم  البـايو 5
                                  ROZPIO5,
                                  buttons=[
                                      [Button.inline(
-                                         "السابق ⫸ ", data="rozpio4"),
+                                         "‹ السابق ›", data="rozpio4"),
                                       Button.inline(
-                                         "║ خروج ║⁦⁩", data="rozzag"),
+                                         "‹ خروج ›", data="rozzag"),
                                       Button.inline(
-                                         "⫷ التالي", data="rozpio1")]
+                                         "‹ التالي ›", data="rozpio1")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @Drago_dr", alert=True)
@@ -338,11 +338,11 @@ async def settings(event): #    قـسم الـمواليـد و الأشـهر
                                  "**⌯︙ اختر احد الخيارات الاتيه. **",
                                  buttons=[
                                      [Button.inline(
-                                         "المواليد َِ🛹 ", data="rozyear"),
+                                         "المواليد 🔗", data="rozyear"),
                                       Button.inline(
-                                         "الاشهر َِ🛹", data="months")],
+                                         "الاشهر 🔗", data="months")],
                                      [Button.inline(
-                                         "║ رجوع ║", data="rozzag")]
+                                         "‹ رجوع ›", data="rozzag")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @Drago_dr", alert=True)
@@ -354,7 +354,7 @@ async def settings(event):#    قـسم  الأشـهر
         await event.delete()
         await tgbot.send_message(event.chat_id, 
                                  JMTHSH, 
-                                 buttons=[[Button.inline("║ رجوع ║", data="rozzag")]
+                                 buttons=[[Button.inline("‹ رجوع ›", data="rozzag")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام هذا البوت.", alert=True)
@@ -365,7 +365,7 @@ async def settings(event):#    قـسم  السنـوات  :)
         await event.delete()
         await tgbot.send_message(event.chat_id, 
                                  JEPYEAR, 
-                                 buttons=[[Button.inline("║ رجوع ║", data="rozmonth")]
+                                 buttons=[[Button.inline("‹ رجوع ›", data="rozmonth")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام هذا البوت.", alert=True)
@@ -377,7 +377,7 @@ async def settings(event):  # انتهـى  :)  اذا تخـمط تـذكر ت�
         await event.delete()
         await tgbot.send_message(event.chat_id, 
                                  CHANLAN, 
-                                 buttons=[[Button.inline("║ رجوع ║", data="rozzag")]
+                                 buttons=[[Button.inline("‹ رجوع ›", data="rozzag")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام هذا البوت.", alert=True)
