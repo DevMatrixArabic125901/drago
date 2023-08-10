@@ -248,3 +248,32 @@ async def _(event):
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 32])
+@dragoiq.ar_cmd(
+    pattern="موجوع$",
+    command=("موجوع", plugin_category),
+async def _(event):
+     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
+        await event.edit("موجوع كلبي والتعب بيه")
+        await asyncio.sleep(0.4)
+        await event.edit(" من اباوع على روحي ينكسر كلبي عليه")
+        await asyncio.sleep(0.6)
+        await event.edit("موجوع كلبي والتعب بيه")
+        await asyncio.sleep(0.4)
+        await event.edit("من اباوع على روحي ينكسر كلبي عليه")
+        await asyncio.sleep(0.4)
+        await event.edit("تعبان وجهي وعيوني قهرتني")
+        await asyncio.sleep(0.6)
+        await event.edit("دنيا شلت حال حالي وبحياتي كرهتني")
+        await asyncio.sleep(0.4)
+        await event.edit("كرهت الحب, , ماريده دمرني")
+        await asyncio.sleep(0.6)
+        await event.edit("طيب اني وادري طيبي, , لهالحال وصلني")
+        await asyncio.sleep(0.4)
+        await event.edit(" موجوع كلبي, , والتعب بيه")
+        await asyncio.sleep(0.6)
+        await event.edit("من اباوع على روحي, , ينكسر كلبي عليه")
+        await asyncio.sleep(0.4)
+        await event.edit("كل يوم صدمه اقوى من اللي قبلها")
+        await asyncio.sleep(0.6)
+        await event.edit("اني واصل بالشدايد شده محد واصل الها")
+        await asyncio.sleep(0.4)
