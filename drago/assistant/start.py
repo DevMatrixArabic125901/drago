@@ -17,7 +17,7 @@ from drago.sql_helper.idadder_sql import (
     already_added,
     get_all_users,
 )
-from dragoiq.razan.resources.assistant import *
+from Dragoiq.razan.resources.assistant import *
 #start 
 @tgbot.on(events.NewMessage(pattern="^/start"))
 async def start(event):
