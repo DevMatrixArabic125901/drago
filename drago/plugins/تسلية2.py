@@ -247,7 +247,7 @@ async def _(event):
     ]
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
-        await event.edit(animation_chars[i % 32])
+        await event.edit(animation_chars[i % 32]
 @dragoiq.ar_cmd(
     pattern="موجوع$",
     command=("موجوع", plugin_category),
