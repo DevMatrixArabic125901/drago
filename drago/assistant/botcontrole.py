@@ -185,7 +185,7 @@ async def ban_botpms(event):
     await event.reply(msg)
 
 
-@dragoia.bot_cmd(pattern="^الغاء حظر(?:\\s|$)([\\s\\S]*)", from_users=Config.OWNER_ID)
+@dragoiq.bot_cmd(pattern="^الغاء حظر(?:\\s|$)([\\s\\S]*)", from_users=Config.OWNER_ID)
 async def ban_botpms(event):
     user_id, reason = await get_user_and_reason(event)
     reply_to = await reply_id(event)
