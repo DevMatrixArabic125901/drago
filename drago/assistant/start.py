@@ -27,16 +27,16 @@ async def start(event):
     replied_user = await event.client(GetFullUserRequest(event.sender_id))
     firstname = replied_user.users[0].first_name
     vent = event.chat_id
-    starttext = f"**مـرحبا {firstname} ! انـا هـو {bot_id}, بـوت مساعـد بسيـط 🧸🤍 \n\n- [مـالك البـوت](tg://user?id={bot.uid}) \nيمكـنك مراسلـة المـالك عبـر هذا البـوت . \n\nاذا كـنت تـريد تنـصيب بـوت خـاص بـك تـاكد من الازرار بالأسفل**"
+    starttext = f"**مـرحبا {firstname} ! انـا هـو {bot_id}, بـوت مساعـد بسيـط \n\n- [مـالك البـوت](tg://user?id={bot.uid}) \nيمكـنك مراسلـة المـالك عبـر هذا البـوت . \n\nاذا كـنت تـريد تنـصيب بـوت خـاص بـك تـاكد من الازرار بالأسفل**"
     if event.sender_id == bot.uid:
         await tgbot.send_message(
             vent,
             message=f"اهـلا يا مالكـي انـه انـا {bot_id}, مسـاعدك ! \nمـاذا تريـد ان تفعـل اليـوم ?",
             buttons=[
-                                     [Button.inline("‹ عرض المستخدمين ›", data="users"), Button.inline(
-                                         "‹ اوامر البـوت ›", data="gibcmd")],
-                                     [Button.url("‹ المطـور ›", "https://t.me/FFlXlX"), Button.inline(
-                                         "‹ اوامر الزغـرفة ›", data="rozzag")],
+                                     [Button.inline("عرض المستخدمين 🔗", data="users"), Button.inline(
+                                         "اوامر البـوت 🔗", data="gibcmd")],
+                                     [Button.url("المطـور 🔗", "https://t.me/FFlXlX"), Button.inline(
+                                         "اوامر الزغـرفة 🔗", data="rozzag")],
 
                                  ])
     else:
@@ -49,8 +49,8 @@ async def start(event):
             message=starttext,
             link_preview=False,
             buttons=[
-                [custom.Button.inline("تنـصيب دراكو", data="deploy")],
-                [Button.url("تحتاج مسـاعدة", "https://t.me/DragoSupport")],
+                [custom.Button.inline("تنـصيب دراكو 🔗", data="deploy")],
+                [Button.url("تحتاج مسـاعدة 🔗", "https://t.me/DragoSupport")],
             ],
         )
 
@@ -64,8 +64,8 @@ async def help(event):
             event.chat_id,
             message="**هاذا رابط التنصيب اذا تحتاج مساعدة اذهب الى كروب مساعدة**.",
             buttons=[
-                [Button.url("رابط التنصيب", "https://dashboard.heroku.com/new?template=https://github.com/qithoniq/dragon/tree/drago")],
-                [Button.url("كروب المساعدة", "https://t.me/Drago_drSupport")],
+                [Button.url("رابط التنصيب 🔗", "https://dashboard.heroku.com/new?template=https://github.com/qithoniq/dragon/tree/drago")],
+                [Button.url("كروب المساعدة 🔗", "https://t.me/DragoSupport")],
             ],
         )
 
@@ -123,13 +123,13 @@ async def settings(event):
                                  "**⌯︙ اختر احد خيارات الزغرفه : **",
                                  buttons=[
                                  [Button.inline(
-                                     "اسماء انكلش َِ🛹", data="rozname"),
+                                     "اسماء انكلش 🔗", data="rozname"),
                                   Button.inline(
-                                     "البايو َِ🛹", data="rozpio1")],
+                                     "البايو 🔗", data="rozpio1")],
                                  [Button.inline(
-                                     "الاشهر َِ🛹 ⁦⁩", data="rozmonth"),
+                                     "الاشهر 🔗⁦⁩", data="rozmonth"),
                                   Button.inline(
-                                     "اسماء القنوات َِ🛹", data="chanlan")]
+                                     "اسماء القنوات 🔗", data="chanlan")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @Drago_dr", alert=True)
@@ -145,11 +145,11 @@ async def settings(event):  #    قـسـم  الزغرفـة دراكـو
                                  "**⌯︙ اختر احد الخيارات الاتيه. **",
                                  buttons=[
                                      [Button.inline(
-                                         "اسماء شباب َِ🛹 ", data="razan"),
+                                         "اسماء شباب 🔗", data="razan"),
                                       Button.inline(
-                                         "اسماء بنات َِ🛹", data="RR7PP"),
+                                         "اسماء بنات 🔗", data="RR7PP"),
                                       Button.inline(
-                                         "║ رجوع ║ ⁦⁩", data="rozzag")]
+                                         "║ رجوع ║⁦⁩", data="rozzag")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @Drago_dr", alert=True)
@@ -163,9 +163,9 @@ async def settings(event):  #    قـسـم  الزغرفـة لأسـماء ا�
                                  "**⌯︙ اختر احد الخيارات الاتيه. **",
                                  buttons=[
                                      [Button.inline(
-                                         "القائمه الاولى َِ🛹 ", data="rzan1"),
+                                         "القائمه الاولى 🔗", data="rzan1"),
                                       Button.inline(
-                                         "القائمه الثانيه َِ🛹", data="raza2")],
+                                         "القائمه الثانيه 🔗", data="raza2")],
                                      [Button.inline(
                                          "║ رجوع ║", data="rozname")]
                                  ])
@@ -208,9 +208,9 @@ async def settings(event): #    قـسـم  الزغرفـة لأسـماء ال
                                  "**⌯︙ اختر احد الخيارات الاتيه. **",
                                  buttons=[
                                      [Button.inline(
-                                         "القائمه الاولى َِ🛹 ", data="RR7PP1"),
+                                         "القائمه الاولى 🔗", data="RR7PP1"),
                                       Button.inline(
-                                         "القائمه الثانيه َِ🛹", data="RR7PP2")],
+                                         "القائمه الثانيه 🔗", data="RR7PP2")],
                                      [Button.inline(
                                          "║ رجوع ║", data="rozname")]
                                  ])
