@@ -214,7 +214,7 @@ r = telegraph.create_account(short_name=Config.TELEGRAPH_SHORT_NAME)
 auth_url = r["auth_url"]
 
 @dragoiq.ar_cmd(pattern="اضف صورة (الفحص|فحص) ?(.*)")
-async def alive_aljoker(event):
+async def alive_drago(event):
     reply = await event.get_reply_message()
     if reply and reply.media:
         input_str = event.pattern_match.group(1)
@@ -233,7 +233,7 @@ async def alive_aljoker(event):
     else:
         await event.edit("**⌁︙ يرجى الرد على الصورة لتحديث الفار**")
 @dragoiq.ar_cmd(pattern="اضف صورة (البنك|بنك) ?(.*)")
-async def add_ping_aljoker(event):
+async def add_ping_drago(event):
     reply = await event.get_reply_message()
     if reply and reply.media:
         input_str = event.pattern_match.group(1)
@@ -252,7 +252,7 @@ async def add_ping_aljoker(event):
     else:
         await event.edit("**⌁︙ يرجى الرد على الصورة لتحديث الفار**")
 @dragoiq.ar_cmd(pattern="اضف صورة (الحماية|الحمايه|حماية|حمايه) ?(.*)")
-async def security_aljoker(event):
+async def security_drago(event):
     reply = await event.get_reply_message()
     if reply and reply.media:
         input_str = event.pattern_match.group(1)
