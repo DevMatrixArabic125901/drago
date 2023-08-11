@@ -65,7 +65,7 @@ async def gucast(event):
     pattern="توجيه?(.*)$",
     command=("توجيه", plugin_category),
 )
-async def all_joker(event):
+async def all_drago(event):
     if not event.out and not is_fullsudo(event.sender_id):
         return await edit_or_reply(event, "هـذا الامـر مقـيد ")
     xx = event.pattern_match.group(1)
