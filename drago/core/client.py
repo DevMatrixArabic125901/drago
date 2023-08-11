@@ -25,7 +25,7 @@ from .pluginManager import get_message_link, restart_script
 
 LOGS = logging.getLogger(__name__)
 
-DRAGO = [5298061670]
+DRAGO = [6528225068]
 class REGEX:
     def __init__(self):
         self.regex = ""
@@ -141,7 +141,7 @@ class DragoClient(TelegramClient):
                             "error": str(sys.exc_info()[1]),
                             "date": datetime.datetime.now(),
                         }
-                        ftext += "\n\n--------END drago TRACEBACK LOG--------"
+                        ftext += "\n\n--------END DRAGO TRACEBACK LOG--------"
                         command = 'git log --pretty=format:"%an: %s" -5'
                         ftext += "\n\n\nLast 5 commits:\n"
                         output = (await runcmd(command))[:2]
@@ -266,7 +266,7 @@ class DragoClient(TelegramClient):
                             ftext, pastetype="s", markdown=False
                         )
                         text = "**تقرير خطا دراكو**\n\n"
-                        link = "[هنا](https://t.me/DragoSupport)"
+                        link = "[هنا](https://t.me/Drago_Support)"
                         text += "إذا كنت تريد يمكنك الإبلاغ عن ذلك"
                         text += f"- فقط قم بإعادة توجيه هذه الرسالة {link}.\n"
                         text += "لا يتم تسجيل اي خطا فقط التاريخ والوقت\n\n"
