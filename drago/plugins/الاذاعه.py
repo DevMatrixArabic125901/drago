@@ -37,7 +37,7 @@ async def gcast(event):
     await event.edit(f"تـم بنـجـاح فـي {done} من الـدردشـات , خطـأ فـي {er} من الـدردشـات")
 
 
-@drgoiq.ar_cmd(
+@dragoiq.ar_cmd(
     pattern="حول ?(.*)$",
     command=("حول", plugin_category),
 )
