@@ -59,7 +59,7 @@ async def startup_process():
     print("⌁︙بـوت دراكـو يعـمل بـنجاح")
     print(
         f"تم تشغيل الانلاين تلقائياً ارسل {cmdhr}الاوامر لـرؤيـة اوامر السورس\
-        \nللمسـاعدة تواصـل  https://t.me/DragoSupport"
+        \nللمسـاعدة تواصـل  https://t.me/Drago_Support"
     )
     print("##########################")
     await verifyLoggerGroup()
