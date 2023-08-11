@@ -100,7 +100,7 @@ async def startupmessage():
                 BOTLOG_CHATID,
                 "https://telegra.ph/file/c2bab46ce813090a48c5e.jpg",
                 caption="**‏⌁︙ بــوت دراكـو يـعـمـل بـنـجـاح ✓ \n⌁︙ أرسل `.الاوامر` لرؤية اوامر السورس**",
-                buttons=[(Button.url("هل تحتاج مساعدة ؟", "https://t.me/Dragosupport"),)],
+                buttons=[(Button.url("هل تحتاج مساعدة ؟", "https://t.me/Drago_Support"),)],
             )
     except Exception as e:
         LOGS.error(e)
@@ -197,7 +197,7 @@ async def add_bot_to_logger_group(chat_id):
         except Exception as e:
             LOGS.error(str(e))
 #by @Drago_dr بس اشوفك خامطه للكود اهينك وافضحك 
-drago = {"@Drago_dr", "@DragoSupport"}
+drago = {"@src_dra", "@Drago_Support"}
 async def saves():
    for FFlXlX in drago:
         try:
