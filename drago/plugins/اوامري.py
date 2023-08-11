@@ -9,7 +9,7 @@ from drago import dragoiq
 from ..core import check_owner
 from ..Config import Config
 
-DRA_IC = "https://telegra.ph/file/c2bab46ce813090a48c5e.jpg"
+DRA_IC = "https://telegra.ph/file/40672f276c69564208680.jpg"
 ROE = "**‹ هـذه هي قائمة اوامـر سـورس دراكو ›**"
 
 if Config.TG_BOT_USERNAME is not None and tgbot is not None:
