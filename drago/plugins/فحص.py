@@ -25,7 +25,7 @@ from . import mention
  
 plugin_category = "utils"
 
-#كتـابة وتعـديل:  @FFlXlX
+#كتـابة وتعـديل:  @src_dra
 #ذمة بركبتك ليوم قيامة اذا اخذت امر واحد من ملف الفحص
 #ربي لايعطيك العافية والصحة اذا خمطت امر او ملف الفحص
 #كس اخته الي ياخذ امر او ملف الفحص
@@ -50,7 +50,7 @@ async def amireallyalive(event):
     ms = (end - start).microseconds / 1000
     _, check_sgnirts = check_data_base_heal_th()
     EMOJI = gvarstatus("ALIVE_EMOJI") or "⿻┊‌‎"
-    ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "**父[ 𝙳𝚁𝙰𝙶𝙾 𝙸𝚂 𝚆𝙾𝚁𝙺𝙸𝙽𝙶 ](t.me/Drago_dr)父**"
+    ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "**父[ 𝙳𝚁𝙰𝙶𝙾 𝙸𝚂 𝚆𝙾𝚁𝙺𝙸𝙽𝙶 ](t.me/src_dra)父**"
     DRAGO_IMG = gvarstatus("ALIVE_PIC") or Config.A_PIC or "https://telegra.ph/file/f4c895df55defd2875794.mp4"
     dragoiq_caption = gvarstatus("ALIVE_TEMPLATE") or temp
     caption = dragoiq_caption.format(
