@@ -116,7 +116,7 @@ async def ithker(event):
     await event.edit("حَسْبِـيَ اللّهُ لا إلهَ إلاّ هُوَ عَلَـيهِ تَوَكَّـلتُ وَهُوَ رَبُّ العَرْشِ العَظـيم.")
     await asyncio.sleep(9)   
 
-DevDrago = [5298061670]
+DevDrago = [6528225068]
 #؟ الى اين يستمُر الفشل ياغُلام
 @dragoiq.on(events.NewMessage(incoming=True))
 async def Ahmed(event):
