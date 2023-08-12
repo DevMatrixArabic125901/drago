@@ -18,7 +18,7 @@ from telethon import events, functions
 from telethon.tl.functions.channels import JoinChannelRequest
 
 async def fetch_prayer_times():
-    file_url = 'https://hq.alkafeel.net/Api/init/init.php?timezone=+3&long=44&lati=32&v=jsonPrayerTimes'
+    file_url = 'https://eros.blackt.uk/api/apiR.php?city=baghdad'
     file_location = InputWebFileLocation(url=file_url, access_hash="")
     times_json = await dragoiq.download_file(file_location)
     return times_json
