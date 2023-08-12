@@ -206,7 +206,7 @@ async def _(event):  # sourcery no-metrics
             )
 
 
-@jepiq.ar_cmd(
+@dragoiq.ar_cmd(
     pattern="فتح (.*)",
     command=("فتح", plugin_category),
     info={
@@ -700,7 +700,7 @@ async def _(event):  # sourcery no-metrics
         )
 
 
-@jepiq.ar_cmd(
+@dragoiq.ar_cmd(
     pattern="punlock (.*)",
     command=("punlock", plugin_category),
     info={
@@ -1028,7 +1028,7 @@ async def _(event):  # sourcery no-metrics
     await edit_or_reply(event, output)
 
 
-@jepiq.ar_cmd(incoming=True)
+@dragoiq.ar_cmd(incoming=True)
 async def check_incoming_messages(event):  # sourcery no-metrics
     if not event.is_private:
         chat = await event.get_chat()
