@@ -143,7 +143,6 @@ async def permalink(mention):
     await edit_or_reply(mention, f"⪼  [{tag}](tg://user?id={user.id})  𓆰. ")
 @dragoiq.ar_cmd(
     pattern="(الايدي|id)(?:\s|$)([\s\S]*)",
-    command=("الايدي", plugin_category),
     info={
         "header": "To get id of the group or user.",
         "description": "if given input then shows id of that given chat/channel/user else if you reply to user then shows id of the replied user \
