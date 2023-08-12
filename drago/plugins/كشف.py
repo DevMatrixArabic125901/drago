@@ -77,8 +77,8 @@ async def fetch_info(replied_user, event):
     full_name = full_name or first_name
     username = "@{}".format(username) if username else ("لايـوجـد معـرف")
     user_bio = "لاتـوجـد نبـذة" if not user_bio else user_bio
-    rotbat = "**مطـور السـورس 🤍**" if user_id == 6528225068 else ("عضو")
-    rotbat = "**المطـور الثانـوي 🤍**" if user_id == 1260465030
+    rotbat = "مطـور السـورس 🤍" if user_id == 6528225068 else ("عضو")
+    rotbat = "المطـور الثانـوي 🤍" if user_id == 1260465030 else
     rotbat = "**مـالك الحساب**" if user_id == (await event.client.get_me()).id and user_id != 6528225068  else rotbat
     caption = "✛━━━━━━━━━━━━━✛\n"
     caption += f"<b> {drago_EM}╎الاسـم    ⇠ </b> {full_name}\n"
