@@ -83,7 +83,7 @@ R = [
     "  ⓱ **⪼**  [جيت واي 🚨](https://t.me/gamee?game=Getaway)   \n"
     "  ⓲ **⪼**  [الالـوان 🔮](https://t.me/gamee?game=ColorHit)   \n"
     "  ⓳ **⪼**  [مدفع الكرات🏮](https://t.me/gamee?game=NeonBlaster)   \n"
-    "**-** قناة السورس **⪼[𝐬𝐨𝐮𝐫𝐜𝐞 𝐝𝐫𝐚𝐠𝐨 ](t.me/Drago_dr)   "
+    "**-** قناة السورس **⪼[𝐬𝐨𝐮𝐫𝐜𝐞 𝐝𝐫𝐚𝐠𝐨 ](t.me/src_dra)   "
 ]
 
 @dragoiq.on(admin_cmd(pattern="بلي$"))
