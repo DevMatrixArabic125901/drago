@@ -17,10 +17,8 @@ from . import BOTLOG, get_user_from_event
 
 plugin_category = "admin" 
 
-# Copyright (C) 2021 JepThon TEAM
-# FILES WRITTEN BY  @lMl10l
 
-@jepiq.ar_cmd(
+@dragoiq.ar_cmd(
     pattern="قفل (.*)",
     command=("قفل", plugin_category),
     info={
@@ -395,8 +393,7 @@ async def _(event):  # sourcery no-metrics
                 time=5,
             )
 
-# BY  @lMl10l
-@jepiq.ar_cmd(
+@dragoiq.ar_cmd(
     pattern="الصلاحيات$",
     command=("الصلاحيات", plugin_category),
     info={
@@ -456,7 +453,7 @@ async def _(event):  # sourcery no-metrics
     await edit_or_reply(event, res)
 
 
-@jepiq.ar_cmd(
+@dragoiq.ar_cmd(
     pattern="plock (.*)",
     command=("plock", plugin_category),
     info={
@@ -954,7 +951,7 @@ async def _(event):  # sourcery no-metrics
         )
 
 
-@jepiq.ar_cmd(
+@dragoiq.ar_cmd(
     pattern="uperm(?: |$)(.*)",
     command=("uperm", plugin_category),
     info={
@@ -1097,7 +1094,7 @@ async def check_incoming_messages(event):  # sourcery no-metrics
                 update_lock(peer_id, "url", False)
 
 
-@jepiq.on(events.ChatAction())
+@dragoiq.on(events.ChatAction())
 async def _(event):
     if not event.is_private:
         chat = await event.get_chat()
@@ -1139,4 +1136,3 @@ async def _(event):
                     users_added_by
                 )
             )
-#THIS FILE WRITTEN BY  @lMl10l
