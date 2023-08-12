@@ -1,5 +1,6 @@
 # اذا تخمط اذكر الحقوق رجـاءا  - 
 # For ~ @src_dra
+from ..sql_helper.group import auto_g, del_auto_g, get_auto_g
 import webcolors
 import asyncio
 import base64
