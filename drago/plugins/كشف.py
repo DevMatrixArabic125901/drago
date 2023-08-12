@@ -77,7 +77,7 @@ async def fetch_info(replied_user, event):
     rotbat = (
      "مطـور السورس"
         if user_id == 6528225068 or user_id == 1260465030
-        else ("مـالك الحساب")
+        else ("عضو")
     )
     rotbat = (
         "مـالك الحساب"
@@ -86,7 +86,7 @@ async def fetch_info(replied_user, event):
         and user_id != 1260465030
         else rotbat
     )
-    caption = "✛━━━━━━━━━━━━━✛\n"
+    caption = " \n"
     caption += f"╎<b>الاسـم ⇜ </b> {full_name}\n"
     caption += f"╎<b>المـعـرف ⇜ </b> {username}\n"
     caption += f"╎<b> الايـدي  ⇜</b> <code>{user_id}</code>\n"
@@ -96,7 +96,7 @@ async def fetch_info(replied_user, event):
     caption += f"╎<b>رابط حسـابه ⇜</b> "
     caption += f'<a href="tg://user?id={user_id}">{first_name}</a>\n'
     caption += f"╎<b>البايـو ⇜</b> \n<code>{user_bio}</code>\n\n"
-    caption = "✛━━━━━━━━━━━━━✛\n"
+    caption = " \n"
     return photo, caption
 
 
