@@ -202,10 +202,21 @@ async def _(event):  # sourcery no-metrics
             )
             return await edit_delete(event, "**  تم ايقاف البايو الوقـتي بنـجاح ✓**")
         return await edit_delete(event, "**لم يتم تفعيل البايو الوقتي**")
+        if input_str == "كروب صورة وقتي":
+        if gvarstatus("digitalgrouppic") is not None:
+            delgvar("digitalgrouppic")
+            return await edit_delete(event, "**  تم ايقاف صورة الكروب الوقتية بنجاح ✓**")
+        return await edit_delete(event, "**لم يتم تفعيل صورة الكروب/ القناة الوقتية بالأصل**")
+    if input_str == "كروب وقتي":
+        if get_auto_g() is not None:
+            del_auto_g()
+            return await edit_delete(event, "** تـم ايقاف الاسم الوقتي للكروب/القناة ✓**")
+        return await edit_delete(event, "** لم يتم تفعيل الاسم الوقتي للكروب/القناة بالأصل **")
     END_CMDS = [
         "الصورة الوقتية",
         "اسم وقتي",
         "بايو وقتي",
+        "كروب صورة وقتي",
     ]
     if input_str not in END_CMDS:
         await edit_delete(
@@ -218,3 +229,5 @@ async def _(event):  # sourcery no-metrics
 dragoiq.loop.create_task(digitalpicloop())
 dragoiq.loop.create_task(autoname_loop())
 dragoiq.loop.create_task(autobio_loop())
+dragoiq.loop.create_task(autobio_loop())
+dragoiq.loop.create_task(group_loop())
