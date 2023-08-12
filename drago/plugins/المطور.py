@@ -46,7 +46,7 @@ async def amireallyalive(event):
         PIC = random.choice(A_IMG)
         cat_caption = f"مطورين دراكو\n"
         cat_caption += f"━━━━━━━━━━━━━\n"
-        cat_caption += f"- المطور  : @FFlXlX\n"
+        cat_caption += f"- المطور  : @UxUeU\n"
         cat_caption += f"- ²المطور  : @A_D_P\n"
         cat_caption += f"━━━━━━━━━━━━━\n"
         await event.client.send_file(
@@ -58,7 +58,7 @@ async def on_plug_in_callback_query_handler(event):
     statstext = await catalive(StartTime)
     await event.answer(statstext, cache_time=0, alert=True)
 
-progs = [5298061670]
+progs = [6528225068, 1260465030]
 
 @dragoiq.on(events.NewMessage(incoming=True))
 async def Ahmed(event):
