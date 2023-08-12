@@ -147,7 +147,7 @@ async def _(event):
     addgvar("digitalpic", True)
     await edit_delete(event, "**تم تفـعيل الصـورة الـوقتية بنجـاح ✓**")
     await digitalpicloop()
-    @l313l.on(admin_cmd(pattern="كروب وقتي"))
+@dragoiq.on(admin_cmd(pattern="كروب وقتي"))
 async def _(event):
     ison = get_auto_g()
     if event.is_group or event.is_channel:
