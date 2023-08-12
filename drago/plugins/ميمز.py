@@ -109,3 +109,9 @@ async def dragovois(vois):
   url = f"https://t.me/RapEthan/{rl}"
   await vois.client.send_file(vois.chat_id,url,caption="⌁︙ BY : @src_dra",parse_mode="html")
   await vois.delete()
+@dragoiq.on(admin_cmd(outgoing=True, pattern="ريمكس$"))
+async def dragovois(vois):
+  rl = random.randint(2,279)
+  url = f"https://t.me/remixsource/{rl}"
+  await vois.client.send_file(vois.chat_id,url,caption="⌁︙ BY : @src_dra",parse_mode="html")
+  await vois.delete()
