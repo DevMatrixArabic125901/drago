@@ -148,6 +148,31 @@ async def _(event):
     addgvar("digitalpic", True)
     await edit_delete(event, "**تم تفـعيل الصـورة الـوقتية بنجـاح ✓**")
     await digitalpicloop()
+    @l313l.on(admin_cmd(pattern="كروب وقتي"))
+async def _(event):
+    ison = get_auto_g()
+    if event.is_group or event.is_channel:
+        if ison is not None and ison == str(event.chat_id):
+            return await edit_delete(event, "**الاسم الوقتي شغال للكروب/القناة**")
+        chid = event.chat_id
+        auto_g(str(chid))
+        await edit_delete(event, "**تم تفـعيل الاسـم الوقتي للقناة/الكروب ✓**")
+        await group_loop()
+    else:
+        return await edit_delete(event, "**يمكنك استعمال الاسم الوقتي في الكروب او في القناة فقط**")
+
+@dragoiq.on(admin_cmd(pattern="كروب صورة وقتي"))
+async def _(event):
+    ison = gvarstatus("digitalgrouppic")
+    if event.is_group or event.is_channel:
+        if ison is not None and ison == str(event.chat_id):
+            return await edit_delete(event, "**الصورة الوقتية شغالة للكروب / القناة**")
+        chid = event.chat_id
+        addgvar("digitalgrouppic", str(chid))
+        await edit_delete(event, "**تم تفعيل الصورة الوقتية للكروب / القناة**")
+        await digitalgrouppicloop()
+    else:
+        return await edit_delete(event, "**يمكنك استعمال الصورة الوقتية في كروب او قناة**")
 
 @dragoiq.on(admin_cmd(pattern=f"{namew8t}(?:\s|$)([\s\S]*)"))
 async def _(event):
@@ -210,8 +235,8 @@ async def _(event):  # sourcery no-metrics
     if input_str == "كروب وقتي":
         if get_auto_g() is not None:
             del_auto_g()
-            return await edit_delete(event, "** تـم ايقاف الاسم الوقتي للكروب/القناة ✓**")
-        return await edit_delete(event, "** لم يتم تفعيل الاسم الوقتي للكروب/القناة بالأصل **")
+            return await edit_delete(event, "** تـم ايقاف الاسم الوقتي للكروب / القناة ✓**")
+        return await edit_delete(event, "** لم يتم تفعيل الاسم الوقتي للكروب / القناة بالأصل **")
     END_CMDS = [
         "الصورة الوقتية",
         "اسم وقتي",
