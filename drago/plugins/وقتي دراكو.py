@@ -55,9 +55,11 @@ async def digitalpicloop():
     colo = webcolors.name_to_rgb(colorco)
     DIGITALPICSTART = gvarstatus("digitalpic") == "true"
     i = 0
+    DIGITALPICSTART = gvarstatus("digitalgrouppic") != None
     while DIGITALPICSTART:
         if not os.path.exists(digitalpic_path):
             digitalpfp = gvarstatus("DIGITAL_PIC") or "https://telegra.ph/file/63a826d5e5f0003e006a0.jpg"
+            digitalgrouppfp = Config.DIGITAL_GROUP_PIC or "https://telegra.ph/file/63a826d5e5f0003e006a0.jpg"
             downloader = SmartDL(digitalpfp, digitalpic_path, progress_bar=False)
             downloader.start(blocking=False)
             while not downloader.isFinished():
@@ -147,6 +149,7 @@ async def _(event):
     addgvar("digitalpic", True)
     await edit_delete(event, "**تم تفـعيل الصـورة الـوقتية بنجـاح ✓**")
     await digitalpicloop()
+
 @dragoiq.on(admin_cmd(pattern="كروب وقتي"))
 async def _(event):
     ison = get_auto_g()
@@ -224,18 +227,18 @@ async def _(event):  # sourcery no-metrics
             await event.client(
                 functions.account.UpdateProfileRequest(about=DEFAULTUSERBIO)
             )
-            return await edit_delete(event, "**  تم ايقاف البايو الوقـتي بنـجاح ✓**")
+            return await edit_delete(event, "**تم ايقاف البايو الوقـتي بنـجاح ✓**")
         return await edit_delete(event, "**لم يتم تفعيل البايو الوقتي**")
         if input_str == "كروب صورة وقتي":
         if gvarstatus("digitalgrouppic") is not None:
             delgvar("digitalgrouppic")
-            return await edit_delete(event, "**  تم ايقاف صورة الكروب الوقتية بنجاح ✓**")
+            return await edit_delete(event, "**تم ايقاف صورة الكروب الوقتية بنجاح ✓**")
         return await edit_delete(event, "**لم يتم تفعيل صورة الكروب/ القناة الوقتية بالأصل**")
     if input_str == "كروب وقتي":
         if get_auto_g() is not None:
             del_auto_g()
-            return await edit_delete(event, "** تـم ايقاف الاسم الوقتي للكروب / القناة ✓**")
-        return await edit_delete(event, "** لم يتم تفعيل الاسم الوقتي للكروب / القناة بالأصل **")
+            return await edit_delete(event, "**تـم ايقاف الاسم الوقتي للكروب / القناة ✓**")
+        return await edit_delete(event, "**لم يتم تفعيل الاسم الوقتي للكروب / القناة بالأصل **")
     END_CMDS = [
         "الصورة الوقتية",
         "اسم وقتي",
