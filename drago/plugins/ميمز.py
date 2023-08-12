@@ -104,3 +104,9 @@ async def dragophoto(photo):
   url = f"https://t.me/AnimeWaTaN/{rl}"
   await photo.client.send_file(photo.chat_id,url,caption="⌁︙ Anime BY : @src_dra",parse_mode="html")
   await photo.delete()
+@dragoiq.on(admin_cmd(outgoing=True, pattern="راب$"))
+async def dragovois(vois):
+  rl = random.randint(2,86)
+  url = f"https://t.me/RapEthan/{rl}"
+  await vois.client.send_file(vois.chat_id,url,caption="⌁︙ BY : @src_dra",parse_mode="html")
+  await vois.delete()
