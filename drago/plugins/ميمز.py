@@ -89,18 +89,18 @@ async def _(event):
 async def dragovois(vois):
   rl = random.randint(2,2301)
   url = f"https://t.me/AudiosWaTaN/{rl}"
-  await vois.client.send_file(vois.chat_id,url,caption="⌁︙ BY : @Drago_dr",parse_mode="html")
+  await vois.client.send_file(vois.chat_id,url,caption="⌁︙ BY : @src_dra",parse_mode="html")
   await vois.delete()
 
 @dragoiq.on(admin_cmd(outgoing=True, pattern="شعر$"))
 async def dragovois(vois):
   rl = random.randint(2,622)
   url = f"https://t.me/L1BBBL/{rl}"
-  await vois.client.send_file(vois.chat_id,url,caption="⌁︙ BY : @Drago_dr",parse_mode="html")
+  await vois.client.send_file(vois.chat_id,url,caption="⌁︙ BY : @src_dra",parse_mode="html")
   await vois.delete()
 @dragoiq.on(admin_cmd(outgoing=True, pattern="انمي$"))
-async def dragoThe(photo):
+async def dragophoto(photo):
   rl = random.randint(2,999)
   url = f"https://t.me/AnimeWaTaN/{rl}"
-  await photo.client.send_file(photo.chat_id,url,caption="⌁︙ Anime BY : @Drago_dr",parse_mode="html")
+  await photo.client.send_file(photo.chat_id,url,caption="⌁︙ Anime BY : @src_dra",parse_mode="html")
   await photo.delete()
