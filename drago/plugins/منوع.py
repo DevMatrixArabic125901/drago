@@ -52,7 +52,7 @@ async def _(e):
         except BaseException:
             pass
     await ok.edit(f"`Invited {z} users`")
-@dragoiq.on(admin_cmd(pattern="بدء مكالمه(?: |$)(.*)"))
+@dragoiq.on(admin_cmd(pattern="بدء المكالمه(?: |$)(.*)"))
 async def _(e):
     try:
         await e.client(startvc(e.chat_id))
