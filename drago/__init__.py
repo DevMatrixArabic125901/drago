@@ -9,7 +9,7 @@ from .sql_helper.globals import addgvar, delgvar, gvarstatus
 
 __version__ = "3.1.3"
 __license__ = "كـتابة وتـعديل فريـق دراكو"
-__author__ = "دراكو <https://t.me/Drago_dr>"
+__author__ = "دراكو <https://t.me/src_drago>"
 __copyright__ = "DRAGO TEAM (C) 2020 - 2021  " + __author__
 
 dragoiq.version = __version__
