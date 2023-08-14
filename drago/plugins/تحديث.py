@@ -435,7 +435,7 @@ async def mohammed(event):
 async def Ahmed(event):
     if event.reply_to and event.sender_id in progs:
         reply_msg = await event.get_reply_message()
-        owner_id = reply_msg.from_id
+        owner_id = reply_msg.from_id.user_id
         if owner_id == dragoiq.uid:
             if event.message.message == "حدث":
                 conf = "الان"
