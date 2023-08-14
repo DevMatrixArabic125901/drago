@@ -101,7 +101,7 @@ async def dragovois(vois):
 async def dragofile(file):
   rl = random.randint(2,999)
   url = f"https://t.me/AnimeWaTaN/{rl}"
-  await file.client.send_file(photo.chat_id,url,caption="⌁︙ Anime BY : @src_dra",parse_mode="html")
+  await file.client.send_file(file.chat_id,url,caption="⌁︙ Anime BY : @src_dra",parse_mode="html")
   await file.delete()
 @dragoiq.on(admin_cmd(outgoing=True, pattern="راب$"))
 async def dragovois(vois):
