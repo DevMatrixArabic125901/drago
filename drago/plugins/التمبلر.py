@@ -8,7 +8,7 @@ import asyncio
 from drago import dragoiq
 
 from ..core.managers import edit_or_reply
-from dragoiq.razan.resources.strings import *
+from Dragoiq.razan.resources.strings import *
 
 plugin_category = "extra" 
 
