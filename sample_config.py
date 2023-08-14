@@ -60,7 +60,7 @@ class Config(object):
     PHOTO_ET = os.environ.get("PHOTO_ET", None)    
     LOAD_MYBOT = os.environ.get("LOAD_MYBOT", "True")   
     DRAGO_START = os.environ.get("DRAGO_START", None)
-    PMPERMIT_TEXT_Drago = os.environ.get("PMPERMIT_TEXT_Drago", None)
+    PMPERMIT_TEXT_DRAGO = os.environ.get("PMPERMIT_TEXT_DRAGO", None)
     UB_BLACK_LIST_CHAT = {
         int(x) for x in os.environ.get("UB_BLACK_LIST_CHAT", "").split()
     }
@@ -198,7 +198,7 @@ class Config(object):
     COUNTRY = str(os.environ.get("COUNTRY", ""))
     TZ_NUMBER = int(os.environ.get("TZ_NUMBER", 1))
     # For updater plugin
-    UPSTREAM_REPO_BRANCH = os.environ.get("UPSTREAM_REPO_BRANCH", "drago")
+    UPSTREAM_REPO_BRANCH = os.environ.get("UPSTREAM_REPO_BRANCH", "master")
     ENV = os.environ.get("ENV", "ANYTHING")
     # dont touch this at all
     SUDO_USERS = set(int(x) for x in os.environ.get("SUDO_USERS", "").split())
