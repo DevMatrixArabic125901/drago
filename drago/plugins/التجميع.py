@@ -18,8 +18,7 @@ bot_username3 = '@qweqwe1919bot'
 bot_username4 = '@xnsex21bot'
 bot_username5 = '@DamKombot'
 drago = ['yes']
-Consoledragon = Config.T7KM
-its_Reham = False
+its_dra = False
 its_ahmed = False
 its_mohammed = False
 its_dragon = False
@@ -432,9 +431,9 @@ client = dragoiq
 @dragoiq.ar_cmd(pattern="استثمار وعد")
 async def w3d_dragon(event):
     await event.delete()
-    global its_Reham
-    its_Reham = True
-    while its_Reham:
+    global its_dra
+    its_dra = True
+    while its_dra:
         if event.is_group:
             await event.client.send_message(event.chat_id, "فلوسي")
             await asyncio.sleep(3)
@@ -455,6 +454,6 @@ async def w3d_dragon(event):
             await event.edit("** ⌁︙ امر الاستثمار يمكنك استعماله في المجموعات فقط 🖤**")
 @dragoiq.ar_cmd(pattern="ايقاف استثمار وعد")
 async def disable_w3d(event):
-    global its_Reham
-    its_Reham = False
+    global its_dra
+    its_dra = False
     await event.edit("**تم تعطيل عملية الاستثمار وعد.**")
