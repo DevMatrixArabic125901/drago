@@ -1,7 +1,7 @@
 import bs4
 import requests
 
-from . import ALIVE_NAME, l313l, edit_or_reply
+from . import ALIVE_NAME, dragoiq, edit_or_reply
 
 plugin_category = "utils"
 
