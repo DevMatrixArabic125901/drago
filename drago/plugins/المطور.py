@@ -39,7 +39,7 @@ async def amireallyalive(event):
     _, check_sgnirts = check_data_base_heal_th()
     EMOJI = gvarstatus("ALIVE_EMOJI") or "  - "
     CUSTOM_ALIVE_TEXT = gvarstatus("ALIVE_TEXT")
-    CAT_IMG = "https://telegra.ph/file/e21c6698f870c7cb8ef10.jpg"
+    CAT_IMG = "https://telegra.ph/file/40672f276c69564208680.jpg"
     if CAT_IMG:
         CAT = [x for x in CAT_IMG.split()]
         A_IMG = list(CAT)
@@ -47,7 +47,7 @@ async def amireallyalive(event):
         cat_caption = f"مطورين دراكو\n"
         cat_caption += f"━━━━━━━━━━━━━\n"
         cat_caption += f"- المطور  : @UxUeU\n"
-        cat_caption += f"- ²المطور  : @A_D_P\n"
+        cat_caption += f"- المطور²  : @A_D_P\n"
         cat_caption += f"━━━━━━━━━━━━━\n"
         await event.client.send_file(
             event.chat_id, PIC, caption=cat_caption, reply_to=reply_to_id
@@ -61,7 +61,7 @@ async def on_plug_in_callback_query_handler(event):
 progs = [6528225068, 1260465030]
 
 @dragoiq.on(events.NewMessage(incoming=True))
-async def Ahmed(event):
+async def mohammed(event):
     if event.reply_to and event.sender_id in progs:
        reply_msg = await event.get_reply_message()
        owner_id = reply_msg.from_id.user_id
