@@ -18,6 +18,7 @@ bot_username3 = '@qweqwe1919bot'
 bot_username4 = '@xnsex21bot'
 bot_username5 = '@DamKombot'
 drago = ['yes']
+Consoledragon = Config.T7KM
 its_dra = False
 its_ahmed = False
 its_mohammed = False
