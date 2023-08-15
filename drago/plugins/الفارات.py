@@ -732,7 +732,7 @@ async def _(dyno):
         )
     data = app.get_log()
     await edit_or_reply(
-        dyno, data, deflink=True, linktext="**اخر 200 سطر في لوك هيروكو: **"
+        dyno, data, deflink=True, linktext="**اخر 100 سطر في لوك هيروكو: **"
     )
 
 
