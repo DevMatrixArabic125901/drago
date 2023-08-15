@@ -29,8 +29,8 @@ async def amireallyalive(event):
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     EMOJI = gvarstatus("ALIVE_EMOJI") or "✇ ◅"
-    PING_TEXT = gvarstatus("PING_TEXT") or "**[ 𝗜 𝗝𝘂𝘀𝘁 𝗔𝘀𝗸𝗲𝗱 𝗙𝗼𝗿 𝗦𝗼𝗺𝗲 𝗣𝗲𝗮𝗰𝗲 ](t.me/Drago_dr)**"
-    PING_IMG = gvarstatus("PING_PIC") or Config.P_PIC or "https://telegra.ph/file/76af89af015c10a9128ac.jpg"
+    PING_TEXT = gvarstatus("PING_TEXT") or "**[ 𝗐𝖾𝗅𝖼𝗈𝗆𝖾 𝗍𝗈 𝗌𝗈𝗎𝗋𝖼𝖾 𝖽𝗋𝖺𝗀𝗈 ](t.me/src_dra)**"
+    PING_IMG = gvarstatus("PING_PIC") or Config.P_PIC or "https://telegra.ph/file/66ea9f2238e9884d62b3e.jpg"
     drago_caption = gvarstatus("PING_TEMPLATE") or temp
     caption = drago_caption.format(
         PING_TEXT=PING_TEXT,
@@ -59,7 +59,7 @@ async def amireallyalive(event):
 
 
 temp = """{PING_TEXT}
-┏━━━━━━━┓
-┃ ✦ {ping}
-┃ ✦ {mention}
-┗━━━━━━━┛"""
+┏━━━━━━━━━━━━━━━┓
+[   ‹ {ping} ›     ]
+[  ‹ {mention} ›   ]
+┗━━━━━━━━━━━━━━━┛"""
