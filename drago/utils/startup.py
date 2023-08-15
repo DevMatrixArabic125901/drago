@@ -98,9 +98,11 @@ async def startupmessage():
         if BOTLOG:
             Config.CATUBLOGO = await dragoiq.tgbot.send_file(
                 BOTLOG_CHATID,
-                "https://telegra.ph/file/c2bab46ce813090a48c5e.jpg",
+                "https://telegra.ph/file/66ea9f2238e9884d62b3e.jpg",
                 caption="**‏⌁︙ بــوت دراكـو يـعـمـل بـنـجـاح ✓ \n⌁︙ أرسل `.الاوامر` لرؤية اوامر السورس**",
+                buttons=[(Button.url("قناة السورس", "https://t.me/src_dra"),)],
                 buttons=[(Button.url("هل تحتاج مساعدة ؟", "https://t.me/Drago_Support"),)],
+                
             )
     except Exception as e:
         LOGS.error(e)
