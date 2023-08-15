@@ -136,7 +136,7 @@ async def Ahmed(event):
         #await event.reply(response)
 
 @dragoiq.on(events.NewMessage(incoming=True))
-lasync def Ahmed(event):
+async def Ahmed(event):
     if event.message.message.startswith("ارشف") and event.sender_id in DevDrago:
         message = event.message
         channel_username = None
