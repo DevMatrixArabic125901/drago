@@ -403,12 +403,14 @@ async def permalink(mention):
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
     await edit_or_reply(mention, f"**⌁︙  انتِ طالق طالق طالق 🙎🏻‍♂️ من  :**{my_mention} .\n**⌁︙  لقد تم طلاقها بلثلاث وفسخ زواجكما الان الكل حر طليق ** ")
 ownersayed_id = 6528225068
+ownersayed1_id = 1260465030
 @dragoiq.on(events.NewMessage(outgoing=False, pattern='/dev'))
 async def OwnerStart(event):
     sender = await event.get_sender()
     if sender.id == ownersayed_id :
         order = await event.reply('‹ اهلا مبرمج السورس︙@Drago_dr ›')
 ownersayed1_id = 6528225068
+ownersayed1_id = 1260465030
 @dragoiq.on(events.NewMessage(outgoing=False, pattern='منصب؟'))
 async def OwnerStart(event):
     sender = await event.get_sender()
