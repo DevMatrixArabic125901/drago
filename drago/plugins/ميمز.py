@@ -112,6 +112,7 @@ async def dragovois(vois):
   await vois.delete()
 @dragoiq.ar_cmd(pattern="انمي$")
 async def Ahmed(event):
+ dragoevent = await edit_or_reply(event, "⇆")
     try:
         arph = [
             ahmed
