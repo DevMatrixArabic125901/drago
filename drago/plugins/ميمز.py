@@ -111,7 +111,7 @@ async def dragovois(vois):
   await vois.client.send_file(vois.chat_id,url,caption="⌁︙ BY : @src_dra",parse_mode="html")
   await vois.delete()
 @dragoiq.ar_cmd(pattern="انمي$")
-async def Ahmed(event):
+async def _(event):
  dragoevent = await edit_or_reply(event, "⇆")
     try:
         arph = [
