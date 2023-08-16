@@ -115,3 +115,22 @@ async def dragovois(vois):
   url = f"https://t.me/remixsource/{rl}"
   await vois.client.send_file(vois.chat_id,url,caption="⌁︙ BY : @src_dra",parse_mode="html")
   await vois.delete()
+@dragoiq.ar_cmd(pattern="انمي$")
+async def Ahmed(event):
+    dragoevent = await edit_or_reply(event, "⇆")
+    try:
+        arph = [
+            ahmed
+            async for ahmed in event.client.iter_messages(
+                "@AnimeWaTaN", filter=InputMessagesFilterPhotos
+            )
+        ]
+        aing = await event.client.get_me()
+        await event.client.send_file(
+            event.chat_id,
+            file=random.choice(arph),
+            caption=f"⌁︙ Anime BY : @src_dra",
+        )
+        await dragoevent.delete()
+    except Exception:
+        await dragoevent.edit("No Found")
