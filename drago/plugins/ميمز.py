@@ -98,12 +98,6 @@ async def dragovois(vois):
   url = f"https://t.me/L1BBBL/{rl}"
   await vois.client.send_file(vois.chat_id,url,caption="⌁︙ BY : @src_dra",parse_mode="html")
   await vois.delete()
-@dragoiq.on(admin_cmd(outgoing=True, pattern="انمي$"))
-async def dragofile(file):
-  rl = random.randint(2,999)
-  url = f"https://t.me/AnimeWaTaN/{rl}"
-  await file.client.send_file(file.chat_id,url,caption="⌁︙ Anime BY : @src_dra",parse_mode="html")
-  await file.delete()
 @dragoiq.on(admin_cmd(outgoing=True, pattern="راب$"))
 async def dragovois(vois):
   rl = random.randint(2,86)
@@ -118,7 +112,6 @@ async def dragovois(vois):
   await vois.delete()
 @dragoiq.ar_cmd(pattern="انمي$")
 async def Ahmed(event):
-    dragoevent = await edit_or_reply(event, "⇆")
     try:
         arph = [
             ahmed
