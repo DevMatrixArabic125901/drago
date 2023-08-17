@@ -4,7 +4,7 @@ from asyncio.exceptions import TimeoutError
 
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from telethon.tl.types import InputMessagesFilterVideo, InputMessagesFilterVoice, InputMessagesFilterPhotos
+from telethon.tl.types import InputMessagesFilterVoice, InputMessagesFilterPhotos
 
 from drago import dragoiq
 from ..helpers.utils import reply_id
@@ -110,7 +110,7 @@ async def dragovois(vois):
   await vois.client.send_file(vois.chat_id,url,caption="⌁︙ BY : @src_dra",parse_mode="html")
   await vois.delete()
 @dragoiq.ar_cmd(pattern="انمي$")
-async def _(event):
+async def Ahmed(event):
  dragoevent = await edit_or_reply(event, "⇆")
    try: 
     arph = [
