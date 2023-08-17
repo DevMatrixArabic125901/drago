@@ -168,7 +168,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
     except Exception as e:
         LOGS.error(e)
     try:
-        add_to_collectionlist("restart_update", [lMl10l.chat_id, lMl10l.id])
+        add_to_collectionlist("restart_update", [UxUeU.chat_id, UxUeU.id])
     except Exception as e:
         LOGS.error(e)
     ups_rem.fetch(ac_br)
