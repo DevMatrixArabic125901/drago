@@ -1,1 +1,1 @@
-from .ra_config import Config
+from .drg_config import Config
