@@ -10,8 +10,8 @@ async def is_admin(dragoiq, chat_id, userid):
     if not str(chat_id).startswith("-100"):
         return False
     try:
-        dra_go = await dragoiq.get_permissions(chat_id, userid)
-        chat_participant = dra_go.participant
+        req_jo = await dragoiq.get_permissions(chat_id, userid)
+        chat_participant = req_jo.participant
         if isinstance(
             chat_participant, (ChannelParticipantCreator, ChannelParticipantAdmin)
         ):
