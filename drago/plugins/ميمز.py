@@ -9,7 +9,6 @@ from telethon.tl.types import InputMessagesFilterVideo, InputMessagesFilterVoice
 from drago import dragoiq
 from ..helpers.utils import reply_id
 
-# الي يخمط ويكول من كتابتي الا امه انيجه وقد اعذر من انذر
 # ذمة بركبتك ليوم قيامة اذا اخذت امر او الملف
 @dragoiq.on(admin_cmd(pattern="حالتي ?(.*)"))
 async def _(event):
