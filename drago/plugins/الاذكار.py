@@ -17,8 +17,8 @@ plugin_category = "extra"
     command=("اذكار الصباح", plugin_category),)
 async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
-           roze = random.choice(razan)
-           return await event.edit(f"{roze}")
+           drg = random.choice(razan)
+           return await event.edit(f"{drg}")
 #by ~ @lsbax_dev
 @dragoiq.ar_cmd(
     pattern="اذكار المساء$",
@@ -58,8 +58,8 @@ async def _(event):
     command=("اذكار الصلاة", plugin_category),)
 async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
-           rm = random.choice(rzane)
-           return await event.edit(f"{rm}")
+           drago = random.choice(rzane)
+           return await event.edit(f"{drago}")
 
 
 @dragoiq.ar_cmd(
