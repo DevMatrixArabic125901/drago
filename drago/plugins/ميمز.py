@@ -112,7 +112,7 @@ async def dragovois(vois):
 @dragoiq.ar_cmd(pattern="انمي$")
 async def Ahmed(event):
  dragoevent = await edit_or_reply(event, "⇆")
-   try: 
+    try:
     arph = [
             ahmed
             async for ahmed in event.client.iter_messages(
