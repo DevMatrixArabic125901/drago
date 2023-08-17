@@ -1,6 +1,6 @@
 #from here loaded islamic 
 
-from drago.Config import roza_config 
+from drago.Config import drago_config 
 
 razan = [
 """
