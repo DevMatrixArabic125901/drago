@@ -67,7 +67,7 @@ async def gen_chlog(repo, diff):
 
 async def print_changelogs(event, ac_br, changelog):
     changelog_str = (
-        f"**⌁︙ قام مطورين السورس بتحديث دراكو**\n⌁︙ **التـغييرات\n** {changelog}"
+        f"**⌁︙ قـام مطـورين الـسورس بتحديث سـورس دراكـو**\n⌁︙ **التـغييرات\n** {changelog}"
     )
     if len(changelog_str) > 4096:
         await event.edit("`Changelog is too big, view the file to see it.`")
@@ -109,7 +109,7 @@ async def update(event, repo, ups_rem, ac_br):
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
     jasme = await event.edit(
-        "** ⌁︙ تم تحديث سورس دراكو بنجاح انتظر قليلا سوف نخبرك بعد اعادة التشغيل !**"
+        "**⌁︙ تم تحديث سورس دراكو بنجاح انتظر قليلا سوف نخبرك بعد اعادة التشغيل !**"
     )
     await event.client.reload(jasme)
 
@@ -157,7 +157,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             f"{txt}\n" "`Invalid Heroku credentials for deploying userbot dyno.`"
         )
         return repo.__del__()
-    lMl10l = await event.edit(
+    UxUeU = await event.edit(
         "**⌁︙ الأن يتم تحديث ريبو التنصيب, عليك الانتظار لحين تحميل المكاتب, يستغرق الامر من 4-5 دقائق**"
     )
     try:
@@ -293,14 +293,14 @@ async def upstream(event):
     # Special case for deploy
     if changelog == "" and not force_update:
         await event.edit(
-            "**⌁︙ 🤍 لا توجد تحديثات الى الان **\n"
+            "**⌁︙ لا توجد تحديثات الى الان**\n"
         )
         return repo.__del__()
     if conf == "" and not force_update:
         await print_changelogs(event, ac_br, changelog)
         await event.delete()
         return await event.respond(
-            f"⌔ :  لتحديث سورس دراكو ارسل : `.تحديث الان` "
+            f"⌁︙ لتحديث سورس دراكو ارسل `.تحديث الان` "
         )
 
     if force_update:
