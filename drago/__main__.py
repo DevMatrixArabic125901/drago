@@ -24,7 +24,7 @@ print("Licensed under the terms of the " + drago.__license__)
 cmdhr = Config.COMMAND_HAND_LER
 
 try:
-    LOGS.info("جارِ بدء بوت دراكـو")
+    LOGS.info("جارِ بدء بوت دراكو")
     dragoiq.loop.run_until_complete(setup_bot())
     LOGS.info("تم اكتمال تنصيب البوت")
 except Exception as e:
@@ -71,11 +71,6 @@ async def startup_process():
     Catcheck.sucess = True
     return
 
-async def externalrepo():
-    if Config.VCMODE:
-        await install_externalrepo("https://github.com/qithoniq/DraVc", "dragovc", "dravc")
-
-dragoiq.loop.run_until_complete(externalrepo())
 dragoiq.loop.run_until_complete(startup_process())
 
 if len(sys.argv) not in (1, 3, 4):
