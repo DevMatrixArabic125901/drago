@@ -35,7 +35,7 @@ async def start(event):
             buttons=[
                                      [Button.inline("عرض المستخدمين 🔗", data="users"), Button.inline(
                                          "اوامر البـوت 🔗", data="gibcmd")],
-                                     [Button.url("المطـور 🔗", "https://t.me/FFlXlX"), Button.inline(
+                                     [Button.url("المطـور 🔗", "https://t.me/UxUeU"), Button.inline(
                                          "اوامر الزغـرفة 🔗", data="rozzag")],
 
                                  ])
@@ -50,7 +50,7 @@ async def start(event):
             link_preview=False,
             buttons=[
                 [custom.Button.inline("تنـصيب دراكو 🔗", data="deploy")],
-                [Button.url("تحتاج مسـاعدة 🔗", "https://t.me/DragoSupport")],
+                [Button.url("تحتاج مسـاعدة 🔗", "https://t.me/Drago_Support")],
             ],
         )
 
@@ -65,7 +65,7 @@ async def help(event):
             message="**هاذا رابط التنصيب اذا تحتاج مساعدة اذهب الى كروب مساعدة**.",
             buttons=[
                 [Button.url("رابط التنصيب 🔗", "https://dashboard.heroku.com/new?template=https://github.com/qithoniq/dragon/tree/drago")],
-                [Button.url("كروب المساعدة 🔗", "https://t.me/DragoSupport")],
+                [Button.url("كروب المساعدة 🔗", "https://t.me/Drago_Support")],
             ],
         )
 
