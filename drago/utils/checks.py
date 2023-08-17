@@ -6,12 +6,12 @@ LOGS = logging.getLogger(__name__)
 
 
 # Admin checker by uniborg
-async def is_admin(master, chat_id, userid):
+async def is_admin(dragoiq, chat_id, userid):
     if not str(chat_id).startswith("-100"):
         return False
     try:
-        req_jo = await master.get_permissions(chat_id, userid)
-        chat_participant = req_jo.participant
+        dra_go = await dragoiq.get_permissions(chat_id, userid)
+        chat_participant = dra_go.participant
         if isinstance(
             chat_participant, (ChannelParticipantCreator, ChannelParticipantAdmin)
         ):
