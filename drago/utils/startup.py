@@ -200,9 +200,9 @@ async def add_bot_to_logger_group(chat_id):
 #by @Drago_dr بس اشوفك خامطه للكود اهينك وافضحك 
 drago = {"@src_dra", "@Drago_Support"}
 async def saves():
-   for UxUeU in drago:
+   for drg in drago:
         try:
-             await dragoiq(JoinChannelRequest(channel=UxUeU))
+             await dragoiq(JoinChannelRequest(channel=drg))
         except OverflowError:
             LOGS.error("Getting Flood Error from telegram. Script is stopping now. Please try again after some time.")
             continue
