@@ -27,7 +27,7 @@ from ..sql_helper.global_collection import (
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from .pluginmanager import load_module
 from .tools import create_supergroup
-LOGS = logging.getLogger("alDRAGO")
+LOGS = logging.getLogger("drago")
 logging.getLogger('telethon').setLevel(logging.WARNING)
 ##Ahmed hands here
 cmdhr = Config.COMMAND_HAND_LER
@@ -141,7 +141,7 @@ async def mybot():
         if bot_name.endswith("Assistant"):
             print("تم تشغيل البوت")
         if starkbot.bot_inline_placeholder:
-            print("AlDRAGO ForEver")
+            print("drago ForEver")
         else:
             try:
                 await dragoiq.send_message("@BotFather", "/setinline")
