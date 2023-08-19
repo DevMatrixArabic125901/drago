@@ -121,7 +121,7 @@ async def _(event):
     "To show current time"
     reply_msg_id = await reply_id(event)
     current_time = dt.now().strftime(
-        f"⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡\n⚡drago⚡\n⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡\n   {os.path.basename(Config.TZ)}\n  Time: %I:%M:%S \n  Date: %d.%m.%y \n⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡"
+        f"drago\n   {os.path.basename(Config.TZ)}\n  Time: %I:%M:%S \n  Date: %d.%m.%y"
     )
     input_str = event.pattern_match.group(1)
     if input_str:
@@ -156,6 +156,39 @@ async def _(event):
     reply_msg_id = await reply_id(event)
     current_time = dt.now().strftime(
         f"drago\ndeveloper\n@UxUeU"
+    )
+    input_str = event.pattern_match.group(1)
+    if input_str:
+        current_time = input_str
+    if not os.path.isdir(Config.TEMP_DIR):
+        os.makedirs(Config.TEMP_DIR)
+    required_file_name = Config.TEMP_DIR + " " + str(dt.now()) + ".webp"
+    img = Image.new("RGBA", (350, 220), color=(0, 0, 0, 115))
+    fnt = ImageFont.truetype(FONT_FILE_TO_USE, 30)
+    drawn_text = ImageDraw.Draw(img)
+    drawn_text.text((10, 10), current_time, font=fnt, fill=(255, 255, 255))
+    img.save(required_file_name)
+    await event.client.send_file(
+        event.chat_id,
+        required_file_name,
+        reply_to=reply_msg_id,
+    )
+    os.remove(required_file_name)
+    await event.delete()
+@dragoiq.ar_cmd(
+    pattern="المطور محمد(?:\s|$)([\s\S]*)",
+    command=("المطور محمد", plugin_category),
+    info={
+        "header": "To show current time.",
+        "description": "shows current default time you can change by changing TZ in heroku vars.",
+        "usage": "{tr}time",
+    },
+)
+async def _(event):
+    "To show current time"
+    reply_msg_id = await reply_id(event)
+    current_time = dt.now().strftime(
+        f"drago\ndeveloper²\n@A_D_P"
     )
     input_str = event.pattern_match.group(1)
     if input_str:
