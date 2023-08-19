@@ -24,7 +24,7 @@ async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
         return
-        if user.id == 6528225068:
+    if user.id == 6528225068:
         return await edit_or_reply(mention, f"**‹: لكك هذا المطور أحمد :›**")
     if user.id == 1260465030:
         return await edit_or_reply(mention, f"**‹: لكك هذا المطور محمد :›**")
@@ -32,7 +32,7 @@ async def permalink(mention):
     me = await mention.client.get_me()
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
-    await edit_or_reply(mention, f"🚻 ** ⌁︙  المستخدم => • ** [{drago}](tg://user?id={user.id}) \n ☑️ **⌁︙  تم رفعها مرتك بواسطه  :**{my_mention} 👰🏼‍♀️.\n**⌁︙  يلا حبيبي امشي نخلف بيبي 👶🏻🤤** ")
+    await edit_or_reply(mention, f"🚻 ** ⌁︙  المستخدم => • ** [{drago}](tg://user?id={user.id}) \n ☑️ **⌁︙  تم رفعها مرتك بواسطه  :**{my_mention} 👰🏼‍♀️.\n**⌁︙  يلا حبيبي امشي نخلف بيبي** ")
 
 @dragoiq.on(admin_cmd(pattern="رفع جلب(?:\s|$)([\s\S]*)"))
 async def permalink(mention):
