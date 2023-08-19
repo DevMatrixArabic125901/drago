@@ -415,5 +415,4 @@ ownersayed1_id = 1260465030
 async def OwnerStart(event):
     sender = await event.get_sender()
     if sender.id == ownersayed_id :
-    if sender.id == ownersayed1_id :
         order = await event.reply('نعم')
