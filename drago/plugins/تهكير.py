@@ -25,7 +25,6 @@ async def _(event):
         reply_message = await event.get_reply_message()
         idd = reply_message.sender_id
         if idd == 6528225068:
-        if idd == 1260465030:
             await edit_or_reply(
                 event, "**⌁︙ عـذرا لا استـطيع اخـتراق مـطوري اعـتذر او سيقـوم بتهـكيرك**"
             )
