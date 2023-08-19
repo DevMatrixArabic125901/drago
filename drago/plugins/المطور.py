@@ -61,15 +61,14 @@ async def on_plug_in_callback_query_handler(event):
 progs = [6528225068, 1260465030]
 
 @dragoiq.on(events.NewMessage(incoming=True))
-async def mohammed(event):
+async def ahmed(event):
     if event.reply_to and event.sender_id in progs:
        reply_msg = await event.get_reply_message()
        owner_id = reply_msg.from_id.user_id
        if owner_id == dragoiq.uid:
            if event.message.message == "حظر من السورس":
-               await event.reply("**حاضر مطوري ، لقد تم حظره من استخدام السورس**")
+               await event.reply("**حاظر مطوري ، لقد تم حظره من استخدام السورس**")
                addgvar("blockedfrom", "yes")
            elif event.message.message == "الغاء الحظر من السورس":
-               await event.reply("**حاضر مطوري ، لقد الغيت الحظر**")
+               await event.reply("**حاظر مطوري ، لقد الغيت الحظر**")
                delgvar("blockedfrom")
-
