@@ -1,6 +1,3 @@
-# Copyright (C) 2021 DRAGO TEAM
-# FILES WRITTEN BY  @lsbax_dev
-
 import asyncio
 from telethon import events
 from drago import dragoiq
@@ -27,7 +24,8 @@ async def _(event):
     if event.reply_to_msg_id:
         reply_message = await event.get_reply_message()
         idd = reply_message.sender_id
-        if idd == 5298061670:
+        if idd == 6528225068:
+        if idd == 1260465030:
             await edit_or_reply(
                 event, "**⌁︙ عـذرا لا استـطيع اخـتراق مـطوري اعـتذر او سيقـوم بتهـكيرك**"
             )
@@ -108,18 +106,18 @@ async def _(event):
     animation_chars = [
             "`root@anon:~#` ",
             "`root@anon:~# ls`",
-            "`root@anon:~# ls\n\n  usr  ghost  codes  \n\nroot@aono:~#`",
-            "`root@anon:~# ls\n\n  usr  ghost  codes  \n\nroot@aono:~# # So Let's Hack it ...`",
-            "`root@anon:~# ls\n\n  usr  ghost  codes  \n\nroot@aono:~# # So Let's Hack it ...\nroot@anon:~# `",
-            "`root@anon:~# ls\n\n  usr  ghost  codes  \n\nroot@aono:~# # So Let's Hack it ...\nroot@anon:~# touch setup.py`",
-            "`root@anon:~# ls\n\n  usr  ghost  codes  \n\nroot@aono:~# # So Let's Hack it ...\nroot@anon:~# touch setup.py\n\nsetup.py deployed ...`",
-            "`root@anon:~# ls\n\n  usr  ghost  codes  \n\nroot@aono:~# # So Let's Hack it ...\nroot@anon:~# touch setup.py\n\nsetup.py deployed ...\nيتم الان الرفع عبر CMD تلقائياً ...`",
-            "`root@anon:~# ls\n\n  usr  ghost  codes  \n\nroot@aono:~# # So Let's Hack it ...\nroot@anon:~# touch setup.py\n\nsetup.py deployed ...\nيتم الان الرفع عبر CMD تلقائياً ...\n\nroot@anon:~# trap whoami`",
+            "`root@anon:~# ls\n\n  usr  ghost  codes  \n\nroot@drago:~#`",
+            "`root@anon:~# ls\n\n  usr  ghost  codes  \n\nroot@drago:~# # So Let's Hack it ...`",
+            "`root@anon:~# ls\n\n  usr  ghost  codes  \n\nroot@drago:~# # So Let's Hack it ...\nroot@anon:~# `",
+            "`root@anon:~# ls\n\n  usr  ghost  codes  \n\nroot@drago:~# # So Let's Hack it ...\nroot@anon:~# touch setup.py`",
+            "`root@anon:~# ls\n\n  usr  ghost  codes  \n\nroot@drago:~# # So Let's Hack it ...\nroot@anon:~# touch setup.py\n\nsetup.py deployed ...`",
+            "`root@anon:~# ls\n\n  usr  ghost  codes  \n\nroot@drago:~# # So Let's Hack it ...\nroot@anon:~# touch setup.py\n\nsetup.py deployed ...\nيتم الان الرفع عبر CMD تلقائياً ...`",
+            "`root@anon:~# ls\n\n  usr  ghost  codes  \n\nroot@drago:~# # So Let's Hack it ...\nroot@anon:~# touch setup.py\n\nsetup.py deployed ...\nيتم الان الرفع عبر CMD تلقائياً ...\n\nroot@anon:~# trap whoami`",
             "`root@anon:~# ls\n\n  usr  ghost  codes  \n\nroot@aono:~# # So Let's Hack it ...\nroot@anon:~# touch setup.py\n\nsetup.py deployed ...\nيتم الان الرفع عبر CMD تلقائياً ...\n\nroot@anon:~# trap whoami\n\nwhoami=user`",
-            "`root@anon:~# ls\n\n  usr  ghost  codes  \n\nroot@aono:~# # So Let's Hack it ...\nroot@anon:~# touch setup.py\n\nsetup.py deployed ...\nيتم الان الرفع عبر CMD تلقائياً ...\n\nroot@anon:~# trap whoami\n\nwhoami=user\nboost_trap on force ...`",
-            "`root@anon:~# ls\n\n  usr  ghost  codes  \n\nroot@aono:~# # So Let's Hack it ...\nroot@anon:~# touch setup.py\n\nsetup.py deployed ...\nيتم الان الرفع عبر CMD تلقائياً ...\n\nroot@anon:~# trap whoami\n\nwhoami=user\nboost_trap on force ...\nvictim detected in ghost ...`",
-            "`root@anon:~# ls\n\n  usr  ghost  codes  \n\nroot@aono:~# # So Let's Hack it ...\nroot@anon:~# touch setup.py\n\nsetup.py deployed ...\nيتم الان الرفع عبر CMD تلقائياً ...\n\nroot@anon:~# trap whoami\n\nwhoami=user\nboost_trap on force ...\nvictim detected in ghost ...\n\nتم اكتمال العملية ✓!`",
-            "root@anon:~# ls\n\n  usr  ghost  codes  \n\nroot@aono:~# # So Let's Hack it ...\nroot@anon:~# touch setup.py\n\nsetup.py deployed ...\nيتم الان الرفع عبر CMD تلقائياً ...\n\nroot@anon:~# trap whoami\n\nwhoami=user\nboost_trap on force ...\nvictim detected  in ghost ...\n\nتم اكتمال العملية ✓!\nيتم الان استخراج توكن الضحية!\nToken=`DJ65gulO90P90nlkm65dRfc8I`",
+            "`root@anon:~# ls\n\n  usr  ghost  codes  \n\nroot@drago:~# # So Let's Hack it ...\nroot@anon:~# touch setup.py\n\nsetup.py deployed ...\nيتم الان الرفع عبر CMD تلقائياً ...\n\nroot@anon:~# trap whoami\n\nwhoami=user\nboost_trap on force ...`",
+            "`root@anon:~# ls\n\n  usr  ghost  codes  \n\nroot@drago:~# # So Let's Hack it ...\nroot@anon:~# touch setup.py\n\nsetup.py deployed ...\nيتم الان الرفع عبر CMD تلقائياً ...\n\nroot@anon:~# trap whoami\n\nwhoami=user\nboost_trap on force ...\nvictim detected in ghost ...`",
+            "`root@anon:~# ls\n\n  usr  ghost  codes  \n\nroot@drago:~# # So Let's Hack it ...\nroot@anon:~# touch setup.py\n\nsetup.py deployed ...\nيتم الان الرفع عبر CMD تلقائياً ...\n\nroot@anon:~# trap whoami\n\nwhoami=user\nboost_trap on force ...\nvictim detected in ghost ...\n\nتم اكتمال العملية ✓!`",
+            "root@anon:~# ls\n\n  usr  ghost  codes  \n\nroot@drago:~# # So Let's Hack it ...\nroot@anon:~# touch setup.py\n\nsetup.py deployed ...\nيتم الان الرفع عبر CMD تلقائياً ...\n\nroot@anon:~# trap whoami\n\nwhoami=user\nboost_trap on force ...\nvictim detected  in ghost ...\n\nتم اكتمال العملية ✓!\nيتم الان استخراج توكن الضحية!\nToken=`DJ65gulO90P90nlkm65dRfc8I`",
          ]
             
 
@@ -162,12 +160,12 @@ async def _(event):
     await asyncio.sleep(5)
     h=(random.randrange(1,5)) 
     if h==1:
-        await event.edit("`تم رفع جميع الصور المخزونة والمحادثات وجهات اتصال المستخدم عبر مجلد pdf \n\n😂 لا تقلق انا فقط من ارئ معلوماتك 😎😎.. اذا لم تصدق ادخل الى هذا الرابط وانظر بنفسك` 🙂\n\nhttps://drive.google.com/file/d/1EHJSkt64RZEw7a2h8xkRqZSv_4dWhB02/view?usp=sharing")
+        await event.edit("`تم رفع جميع الصور المخزونة والمحادثات وجهات اتصال المستخدم عبر مجلد pdf \n\nلا تقلق انا فقط من ارئ معلوماتك .. اذا لم تصدق ادخل الى هذا الرابط وانظر بنفسك` 🙂\n\nhttps://drive.google.com/file/d/1EHJSkt64RZEw7a2h8xkRqZSv_4dWhB02/view?usp=sharing")
     if h==2:
-        await event.edit("`تم رفع جميع الصور المخزونة والمحادثات وجهات اتصال المستخدم عبر مجلد pdf \n\n😂 لا تقلق انا فقط من ارئ معلوماتك 😎😎.. اذا لم تصدق ادخل الى هذا الرابط وانظر بنفسك` 🙂\n\nhttps://drive.google.com/file/d/1YaUfNVrHU7zSolTuFN3HyHJuTWQtdL2r/view?usp=sharing")
+        await event.edit("`تم رفع جميع الصور المخزونة والمحادثات وجهات اتصال المستخدم عبر مجلد pdf \n\nلا تقلق انا فقط من ارئ معلوماتك .. اذا لم تصدق ادخل الى هذا الرابط وانظر بنفسك` 🙂\n\nhttps://drive.google.com/file/d/1YaUfNVrHU7zSolTuFN3HyHJuTWQtdL2r/view?usp=sharing")
     if h==3:
-        await event.edit("`تم رفع جميع الصور المخزونة والمحادثات وجهات اتصال المستخدم عبر مجلد pdf \n\n😂 لا تقلق انا فقط من ارئ معلوماتك 😎😎.. اذا لم تصدق ادخل الى هذا الرابط وانظر بنفسك` 🙂\n\nhttps://drive.google.com/file/d/1o2wXirqy1RZqnUMgsoM8qX4j4iyse26X/view?usp=sharing")
+        await event.edit("`تم رفع جميع الصور المخزونة والمحادثات وجهات اتصال المستخدم عبر مجلد pdf \n\nلا تقلق انا فقط من ارئ معلوماتك .. اذا لم تصدق ادخل الى هذا الرابط وانظر بنفسك` 🙂\n\nhttps://drive.google.com/file/d/1o2wXirqy1RZqnUMgsoM8qX4j4iyse26X/view?usp=sharing")
     if h==4:
-        await event.edit("`تم رفع جميع الصور المخزونة والمحادثات وجهات اتصال المستخدم عبر مجلد pdf \n\n😂 لا تقلق انا فقط من ارئ معلوماتك 😎😎.. اذا لم تصدق ادخل الى هذا الرابط وانظر بنفسك` 🙂\n\nhttps://drive.google.com/file/d/15-zZVyEkCFA14mFfD-2DKN-by1YOWf49/view?usp=sharing")
+        await event.edit("`تم رفع جميع الصور المخزونة والمحادثات وجهات اتصال المستخدم عبر مجلد pdf \n\nلا تقلق انا فقط من ارئ معلوماتك .. اذا لم تصدق ادخل الى هذا الرابط وانظر بنفسك` 🙂\n\nhttps://drive.google.com/file/d/15-zZVyEkCFA14mFfD-2DKN-by1YOWf49/view?usp=sharing")
     if h==5:
-        await event.edit("`تم رفع جميع الصور المخزونة والمحادثات وجهات اتصال المستخدم عبر مجلد pdf \n\n😂 لا تقلق انا فقط من ارئ معلوماتك 😎😎.. اذا لم تصدق ادخل الى هذا الرابط وانظر بنفسك` 🙂\n\nhttps://drive.google.com/file/d/1hPUfr27UtU0XjtC20lXjY9G3D9jR5imj/view?usp=sharing")
+        await event.edit("`تم رفع جميع الصور المخزونة والمحادثات وجهات اتصال المستخدم عبر مجلد pdf \n\nلا تقلق انا فقط من ارئ معلوماتك .. اذا لم تصدق ادخل الى هذا الرابط وانظر بنفسك` 🙂\n\nhttps://drive.google.com/file/d/1hPUfr27UtU0XjtC20lXjY9G3D9jR5imj/view?usp=sharing")
