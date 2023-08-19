@@ -72,3 +72,4 @@ async def mohammed(event):
            elif event.message.message == "الغاء الحظر من السورس":
                await event.reply("**حاضر مطوري ، لقد الغيت الحظر**")
                delgvar("blockedfrom")
+
