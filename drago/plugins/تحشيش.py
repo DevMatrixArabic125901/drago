@@ -19,7 +19,6 @@ from ..helpers.utils import reply_id, _catutils, parse_pre, yaml_format, install
 plugin_category = "utils"
 
 
-
 @dragoiq.on(admin_cmd(pattern="رفع مرتي(?:\s|$)([\s\S]*)"))
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
