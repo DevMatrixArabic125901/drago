@@ -1,4 +1,3 @@
-from ..sql_helper.group import auto_g, del_auto_g, get_auto_g
 import webcolors
 import asyncio
 import base64
@@ -19,7 +18,7 @@ from ..Config import Config
 from ..helpers.utils import _format
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from . import AUTONAME, DEFAULT_GROUP, DEFAULT_BIO, edit_delete, dragoiq, logging
-from drago import dragoiq
+from colour import Color
 
 plugin_category = "tools"
 
