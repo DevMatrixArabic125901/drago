@@ -409,10 +409,11 @@ async def OwnerStart(event):
     sender = await event.get_sender()
     if sender.id == ownersayed_id :
         order = await event.reply('‹: اهلا مبرمج السورس :›')
-ownersayed1_id = 6528225068
+ownersayed_id = 6528225068
 ownersayed1_id = 1260465030
 @dragoiq.on(events.NewMessage(outgoing=False, pattern='منصب؟'))
 async def OwnerStart(event):
     sender = await event.get_sender()
+    if sender.id == ownersayed_id :
     if sender.id == ownersayed1_id :
         order = await event.reply('نعم')
