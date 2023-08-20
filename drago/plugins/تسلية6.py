@@ -1,8 +1,3 @@
-#  =============================
-#  == Drago  -  lsbax =
-#  =============================
-
-
 import asyncio
 import os
 import re
@@ -30,7 +25,7 @@ plugin_category = "fun"
     info={
         "header": "trump tweet sticker with given custom text",
         "usage": "{tr}ترامب <text>",
-        "examples": "{tr}trump Catuserbot is One of the Popular jepthon",
+        "examples": "{tr}trump Catuserbot is One of the Popular drago",
     },
 )
 async def nekobot(cat):
@@ -44,8 +39,8 @@ async def nekobot(cat):
         if cat.is_reply and not reply.media:
             text = reply.message
         else:
-            return await edit_delete(cat, "᯽︙ يجب ان تكتب نص اولا", 5)
-    cate = await edit_or_reply(cat, "᯽︙ جار طلب تغريدة من ترامب...")
+            return await edit_delete(cat, "⌁︙ يجب ان تكتب نص اولا", 5)
+    cate = await edit_or_reply(cat, "⌁︙ جار طلب تغريدة من ترامب...")
     text = deEmojify(text)
     await asyncio.sleep(2)
     catfile = await trumptweet(text)
@@ -75,8 +70,8 @@ async def nekobot(cat):
         if cat.is_reply and not reply.media:
             text = reply.message
         else:
-            return await edit_delete(cat, "**᯽︙ يجـب كـتابة نـص اولا", 5)
-    cate = await edit_or_reply(cat, "᯽︙ جاري طلب تغريدة من مودي...")
+            return await edit_delete(cat, "**⌁︙ يجـب كـتابة نـص اولا", 5)
+    cate = await edit_or_reply(cat, "⌁︙ جاري طلب تغريدة من مودي...")
     text = deEmojify(text)
     await asyncio.sleep(2)
     catfile = await moditweet(text)
@@ -92,7 +87,7 @@ async def nekobot(cat):
     info={
         "header": "Change my mind banner with given custom text",
         "usage": "{tr}غير عقلي <text>",
-        "examples": "{tr}غير عقلي Catuserbot is One of the Popular jepthon",
+        "examples": "{tr}غير عقلي Catuserbot is One of the Popular drago",
     },
 )
 async def nekobot(cat):
@@ -105,8 +100,8 @@ async def nekobot(cat):
         if cat.is_reply and not reply.media:
             text = reply.message
         else:
-            return await edit_delete(cat, "᯽︙ اعـطيني نص اولا", 5)
-    cate = await edit_or_reply(cat, "᯽︙ يتـم عـمل البـنر انتـظر...`")
+            return await edit_delete(cat, "⌁︙ اعـطيني نص اولا", 5)
+    cate = await edit_or_reply(cat, "⌁︙ يتـم عـمل البـنر انتـظر...`")
     text = deEmojify(text)
     await asyncio.sleep(2)
     catfile = await changemymind(text)
@@ -122,7 +117,7 @@ async def nekobot(cat):
     info={
         "header": "kanna chan sticker with given custom text",
         "usage": "{tr}كانا text",
-        "examples": "{tr}kanna jepthon is One of the Popular jepthon",
+        "examples": "{tr}kanna drago is One of the Popular drago",
     },
 )
 async def nekobot(cat):
@@ -136,8 +131,8 @@ async def nekobot(cat):
         if cat.is_reply and not reply.media:
             text = reply.message
         else:
-            return await edit_delete(cat, "᯽︙ اوني شان ما ذا تريد ان اكتب", 5)
-    cate = await edit_or_reply(cat, "᯽︙ كانا تشان تكتب نصك...")
+            return await edit_delete(cat, "⌁︙ اوني شان ما ذا تريد ان اكتب", 5)
+    cate = await edit_or_reply(cat, "⌁︙ كانا تشان تكتب نصك...")
     text = deEmojify(text)
     await asyncio.sleep(2)
     catfile = await kannagen(text)
@@ -153,7 +148,7 @@ async def nekobot(cat):
     info={
         "header": "The desired person tweet sticker with given custom text",
         "usage": "{tr}تويت <username> ; <text>",
-        "examples": "{tr}tweet iamsrk ; jepthon is One of the Popular jepthon",
+        "examples": "{tr}tweet iamsrk ; drago is One of the Popular drago",
     },
 )
 async def nekobot(cat):
@@ -169,7 +164,7 @@ async def nekobot(cat):
         else:
             return await edit_delete(
                 cat,
-                "᯽︙ **يجـب كتـابة الامـر بشكـل صحـيح**\n `.تويت المعرف ; النص` ",
+                "⌁︙ **يجـب كتـابة الامـر بشكـل صحـيح**\n `.تويت المعرف ; النص` ",
                 5,
             )
     if ";" in text:
@@ -177,11 +172,11 @@ async def nekobot(cat):
     else:
         await edit_delete(
             cat,
-            "᯽︙ **يجـب كتـابة الامـر بشكـل صحـيح**\n`.تويت المعرف ; النص`",
+            "⌁︙ **يجـب كتـابة الامـر بشكـل صحـيح**\n`.تويت المعرف ; النص`",
             5,
         )
         return
-    cate = await edit_or_reply(cat, f"᯽︙ جار الطلب من {username} للتغريد...")
+    cate = await edit_or_reply(cat, f"⌁︙ جار الطلب من {username} للتغريد...")
     text = deEmojify(text)
     await asyncio.sleep(2)
     catfile = await tweets(text, username)
