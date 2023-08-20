@@ -142,14 +142,14 @@ async def fetch_info(replied_user, event):
 )
 async def who(event):
     "Gets info of an user"
-    zed = await edit_or_reply(event, "⇆")
+    dr = await edit_or_reply(event, "⇆")
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     replied_user = await get_user_from_event(event)
     try:
         photo, caption = await fetch_info(replied_user, event)
     except (AttributeError, TypeError):
-        return await edit_or_reply(zed, "**- لـم استطـع العثــور ع الشخــص ؟!**")
+        return await edit_or_reply(dr, "**- لـم استطـع العثــور ع الشخــص ؟!**")
     message_id_to_reply = event.message.reply_to_msg_id
     if not message_id_to_reply:
         message_id_to_reply = None
@@ -165,9 +165,9 @@ async def who(event):
         )
         if not photo.startswith("http"):
             os.remove(photo)
-        await zed.delete()
+        await dr.delete()
     except TypeError:
-        await zed.edit(caption, parse_mode="html")
+        await dr.edit(caption, parse_mode="html")
 
 
 @dragoiq.ar_cmd(
@@ -180,14 +180,14 @@ async def who(event):
 )
 async def who(event):
     "Gets info of an user"
-    zed = await edit_or_reply(event, "⇆")
+    dr = await edit_or_reply(event, "⇆")
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     replied_user = await get_user_from_event(event)
     try:
         photo, caption = await fetch_info(replied_user, event)
     except (AttributeError, TypeError):
-        return await edit_or_reply(zed, "**- لـم استطـع العثــور ع الشخــص ؟!**")
+        return await edit_or_reply(dr, "**- لـم استطـع العثــور ع الشخــص ؟!**")
     message_id_to_reply = event.message.reply_to_msg_id
     if not message_id_to_reply:
         message_id_to_reply = None
@@ -203,9 +203,9 @@ async def who(event):
         )
         if not photo.startswith("http"):
             os.remove(photo)
-        await zed.delete()
+        await dr.delete()
     except TypeError:
-        await zed.edit(caption, parse_mode="html")
+        await dr.edit(caption, parse_mode="html")
 
 
 @dragoiq.ar_cmd(
