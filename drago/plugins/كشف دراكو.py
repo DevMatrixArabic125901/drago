@@ -123,7 +123,7 @@ async def fetch_info(replied_user, event):
     caption += f"\n<b>{DRG_DRAGO}الايـدي   ⇠ </b> <code>{user_id}</code>\n"
     caption += f"<b>{DRG_DRAGO}الرتبـــه   ⇠ {rotbat} </b>\n"
     if drag == True or user_id in drago:
-    caption += f"<b>{DRG_DRAGO}الحسـاب ⇠  بـريميـوم</b>\n"
+        caption += f"<b>{DRG_DRAGO}الحسـاب ⇠  بـريميـوم</b>\n"
     caption += f"<b>{DRG_DRAGO}الصـور    ⇠</b>  {replied_user_profile_photos_count}\n"
     caption += f"<b>{DRG_DRAGO}الرسائل   ⇠</b>  {drg} \n"
     caption += f"<b>{DRG_DRAGO}التفاعل   ⇠</b>  {dra}\n"
