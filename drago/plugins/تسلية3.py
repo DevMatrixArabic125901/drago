@@ -62,8 +62,8 @@ async def _(event):
 
 
 @dragoiq.ar_cmd(
-    pattern="deploy$",
-    command=("deploy", plugin_category),
+    pattern="نصبله$",
+    command=("نصبله", plugin_category),
     info={
         "الامر": "**امر تسليه قم بالتجربه بنفسك**",
         "الاستخدام": "{tr}deploy",
@@ -82,10 +82,10 @@ async def _(event):
         "**State changed from up to starting**",
         "**Stopping all processes with SIGTERM**",
         "**Process exited with** `status 143`",
-        "**Starting process with command** `python3 -m jepthon`",
+        "**Starting process with command** `python3 -m drago`",
         "**State changed from starting to up**",
-        "__INFO:jepthon:Logged in as 557667062__",
-        "__INFO:jepthon:Successfully loaded all plugins__",
+        "__INFO:drago:Logged in as 557667062__",
+        "__INFO:drago:Successfully loaded all plugins__",
         "**Build Succeeded**",
     ]
     for i in animation_ttl:
