@@ -72,8 +72,7 @@ async def fetch_info(replied_user, event):
     user_bio = FullUser.about
     is_bot = replied_user.bot
     restricted = replied_user.restricted
-    verified = replied_user.verified
-    drag = (await event.client.get_entity(user_id)).premium
+    verified = replied_user.verifie
     photo = await event.client.download_profile_photo(
         user_id,
         Config.TMP_DOWNLOAD_DIRECTORY + str(user_id) + ".jpg",
@@ -123,8 +122,6 @@ async def fetch_info(replied_user, event):
     caption += f"\n<b>{DRG_DRAGO}المعـرف  ⇠  {username}</b>"
     caption += f"\n<b>{DRG_DRAGO}الايـدي   ⇠ </b> <code>{user_id}</code>\n"
     caption += f"<b>{DRG_DRAGO}الرتبـــه   ⇠ {rotbat} </b>\n"
-    if drag == True or user_id in drago:
-        caption += f"<b>{DRG_DRAGO}الحسـاب ⇠  بـريميـوم</b>\n"
     caption += f"<b>{DRG_DRAGO}الصـور    ⇠</b>  {replied_user_profile_photos_count}\n"
     caption += f"<b>{DRG_DRAGO}الرسائل   ⇠</b>  {drg} \n"
     caption += f"<b>{DRG_DRAGO}التفاعل   ⇠</b>  {dra}\n"
