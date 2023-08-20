@@ -44,9 +44,28 @@ async def permalink(mention):
         return
     if user.id == 6528225068:
         return await edit_or_reply(mention, f"**- لكك دي هذا المطور زلمة وعلى راسك**")
+     if user.id == 1260465030:
+        return await edit_or_reply(mention, f"**- لكك دي هذا المطور زلمة وعلى راسك**")
     muh = user.first_name.replace("\u2060", "") if user.first_name else user.username
     sos = random.choice(rr7)
     await edit_or_reply(mention, f"⌁︙ نسبة الانوثة لـ [{muh}](tg://user?id={user.id}) هـي {sos} 🥵🖤")
+
+@dragoiq.ar_cmd(
+    pattern="نسبة الرجولة(?:\s|$)([\s\S]*)",
+    command=("نسبة الرجولة", plugin_category),
+)
+async def permalink(mention):
+    """Generates a link to the user's PM with a custom text."""
+    user, custom = await get_user_from_event(mention)
+    if not user:
+        return
+    if user.id == 6528225068:
+        return await edit_or_reply(mention, f"**- لكك دي هذا المطور زلمة وعلى راسك**")
+     if user.id == 1260465030:
+        return await edit_or_reply(mention, f"**- لكك دي هذا المطور زلمة وعلى راسك**")
+    muh = user.first_name.replace("\u2060", "") if user.first_name else user.username
+    dra = random.choice(rr7)
+    await edit_or_reply(mention, f"⌁︙ نسبة الرجولة لـ [{muh}](tg://user?id={user.id}) هـي {dra} 🦁")
 
 @dragoiq.ar_cmd(
     pattern="نسبة الغباء(?:\s|$)([\s\S]*)",
