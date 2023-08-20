@@ -39,7 +39,7 @@ PATH = "./drago/cache/ytsearch.json"
 plugin_category = "البوت"
 
 
-@dragoiq.zed_cmd(
+@dragoiq.ar_cmd(
     pattern="يوت(?:\s|$)([\s\S]*)",
     command=("يوت", plugin_category),
     info={
@@ -288,4 +288,4 @@ async def ytdl_callback(c_q: CallbackQuery):
                 total=total,
             ),
             parse_mode="html",
-        )
+    )
