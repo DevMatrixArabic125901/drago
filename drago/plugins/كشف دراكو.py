@@ -113,7 +113,7 @@ async def fetch_info(replied_user, event):
     else:
         rotbat = "العضـو 🀄"
 ################# Dev Ahmed #################
-    DRATEXT = gvarstatus("CUSTOM_ALIVE_TEXT") or "معلومات حسابك من سورس دراكو 🀄"
+    DRA_TEXT = gvarstatus("CUSTOM_ALIVE_TEXT") or "معلومات حسابك من سورس دراكو 🀄"
     DRG_DRAGO = gvarstatus("CUSTOM_ALIVE_EMOJI") or "🀄"
     DRGX = gvarstatus("CUSTOM_ALIVE_FONT") or "✛━━━━━━━━━━━━━✛"
     caption = f"<b> {DRA_TEXT} </b>\n"
