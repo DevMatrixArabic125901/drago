@@ -91,7 +91,7 @@ async def permalink(mention):
         return
     if user.id == 6528225068:
         return await edit_or_reply(mention, f"**100% ميحتاج تسوي نسبة الذكاء للمطور معروف**")
-     if user.id == 1260465030:
+    if user.id == 1260465030:
      return await edit_or_reply(mention, f"**100% ميحتاج تسوي نسبة الذكاء للمطور معروف**")
     muh = user.first_name.replace("\u2060", "") if user.first_name else user.username
     rzona = random.choice(rr7)
