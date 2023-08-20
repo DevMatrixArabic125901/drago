@@ -25,7 +25,7 @@ LOGS = logging.getLogger(__name__)
 drago = (6528225068, 1260465030)
 
 
-aync def get_user_from_event(event):
+async def get_user_from_event(event):
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
         user_object = await event.client.get_entity(previous_message.sender_id)
