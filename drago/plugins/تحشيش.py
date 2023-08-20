@@ -25,9 +25,9 @@ async def permalink(mention):
     if not user:
         return
     if user.id == 6528225068:
-        return await edit_or_reply(mention, f"**‹: لكك هذا المطور أحمد :›**")
+        return await edit_or_reply(mention, f"**‹ : لكك هذا المطور أحمد : ›**")
     if user.id == 1260465030:
-        return await edit_or_reply(mention, f"**‹: لكك هذا المطور محمد :›**")
+        return await edit_or_reply(mention, f"**‹ : لكك هذا المطور محمد : ›**")
     drago = user.last_name.replace("\u2060", "") if user.last_name else user.username
     me = await mention.client.get_me()
     my_first = me.first_name
@@ -41,9 +41,9 @@ async def permalink(mention):
     if not user:
         return
     if user.id == 6528225068:
-        return await edit_or_reply(mention, f"**‹: لكك هذا المطور أحمد :›**")
+        return await edit_or_reply(mention, f"**‹ : لكك هذا المطور أحمد : ›**")
     if user.id == 1260465030:
-        return await edit_or_reply(mention, f"**‹: لكك هذا المطور محمد :›**")
+        return await edit_or_reply(mention, f"**‹ : لكك هذا المطور محمد : ›**")
     drago = user.first_name.replace("\u2060", "") if user.first_name else user.username
     me = await mention.client.get_me()
     my_first = me.first_name
@@ -71,9 +71,9 @@ async def permalink(mention):
     if not user:
         return
     if user.id == 6528225068:
-        return await edit_or_reply(mention, f"**‹: لكك هذا المطور أحمد :›**")
+        return await edit_or_reply(mention, f"**‹ : لكك هذا المطور أحمد : ›**")
     if user.id == 1260465030:
-        return await edit_or_reply(mention, f"**‹: لكك هذا المطور محمد :›**")
+        return await edit_or_reply(mention, f"**‹ : لكك هذا المطور محمد : ›**")
     if custom:
         return await edit_or_reply(mention, f"[{custom}](tg://user?id={user.id})")
     drago = user.first_name.replace("\u2060", "") if user.first_name else user.username
@@ -103,9 +103,9 @@ async def permalink(mention):
     if not user:
         return
     if user.id == 6528225068:
-        return await edit_or_reply(mention, f"**‹: لكك هذا المطور أحمد :›**")
+        return await edit_or_reply(mention, f"**‹ : لكك هذا المطور أحمد : ›**")
     if user.id == 1260465030:
-        return await edit_or_reply(mention, f"**‹: لكك هذا المطور محمد :›**")
+        return await edit_or_reply(mention, f"**‹ : لكك هذا المطور محمد : ›**")
     drago = user.first_name.replace("\u2060", "") if user.first_name else user.username
     me = await mention.client.get_me()
     my_first = me.first_name
@@ -119,9 +119,9 @@ async def permalink(mention):
     if not user:
         return
     if user.id == 6528225068:
-        return await edit_or_reply(mention, f"**‹: لكك هذا المطور أحمد :›**")
+        return await edit_or_reply(mention, f"**‹ : لكك هذا المطور أحمد : ›**")
     if user.id == 1260465030:
-        return await edit_or_reply(mention, f"**‹: لكك هذا المطور محمد :›**")
+        return await edit_or_reply(mention, f"**‹ : لكك هذا المطور محمد : ›**")
     drago = user.first_name.replace("\u2060", "") if user.first_name else user.username
     me = await mention.client.get_me()
     my_first = me.first_name
@@ -136,9 +136,9 @@ async def permalink(mention):
     if not user:
         return
     if user.id == 6528225068:
-        return await edit_or_reply(mention, f"**‹: لكك هذا المطور أحمد :›**")
+        return await edit_or_reply(mention, f"**‹ : لكك هذا المطور أحمد : ›**")
     if user.id == 1260465030:
-        return await edit_or_reply(mention, f"**‹: لكك هذا المطور محمد :›**")
+        return await edit_or_reply(mention, f"**‹ : لكك هذا المطور محمد : ›**")
     drago = user.first_name.replace("\u2060", "") if user.first_name else user.username
     me = await mention.client.get_me()
     my_first = me.first_name
@@ -166,9 +166,9 @@ async def permalink(mention):
     if not user:
         return
     if user.id == 6528225068:
-        return await edit_or_reply(mention, f"**‹: لكك هذا المطور أحمد :›**")
+        return await edit_or_reply(mention, f"**‹ : لكك هذا المطور أحمد : ›**")
     if user.id == 1260465030:
-        return await edit_or_reply(mention, f"**‹: لكك هذا المطور محمد :›**")
+        return await edit_or_reply(mention, f"**‹ : لكك هذا المطور محمد : ›**")
     drago = user.first_name.replace("\u2060", "") if user.first_name else user.username
     me = await mention.client.get_me()
     my_first = me.first_name
@@ -185,9 +185,9 @@ async def permalink(mention):
     if not user:
         return
     if user.id == 6528225068:
-        return await edit_or_reply(mention, f"**‹: لكك هذا المطور أحمد :›**")
+        return await edit_or_reply(mention, f"**‹ : لكك هذا المطور أحمد : ›**")
     if user.id == 1260465030:
-        return await edit_or_reply(mention, f"**‹: لكك هذا المطور محمد :›**")
+        return await edit_or_reply(mention, f"**‹ : لكك هذا المطور محمد : ›**")
     tag = user.first_name.replace("\u2060", "") if user.first_name else user.username
     await edit_or_reply(mention, f"⌁︙ ولك [{tag}](tg://user?id={user.id}) \n⌁︙  ما رزل زبايل 👍")
 
@@ -241,9 +241,9 @@ async def permalink(mention):
     if not user:
         return
     if user.id == 6528225068:
-        return await edit_or_reply(mention, f"**‹: لكك هذا المطور أحمد :›**")
+        return await edit_or_reply(mention, f"**‹ : لكك هذا المطور أحمد : ›**")
     if user.id == 1260465030:
-        return await edit_or_reply(mention, f"**‹: لكك دي هذا المطور محمد :›**")
+        return await edit_or_reply(mention, f"**‹ : لكك دي هذا المطور محمد : ›**")
     tag = user.first_name.replace("\u2060", "") if user.first_name else user.username
     await edit_or_reply(mention, f"** ⣠⡶⠚⠛⠲⢄⡀\n⣼⠁      ⠀⠀⠀⠳⢤⣄\n⢿⠀⢧⡀⠀⠀⠀⠀⠀⢈⡇\n⠈⠳⣼⡙⠒⠶⠶⠖⠚⠉⠳⣄\n⠀⠀⠈⣇⠀⠀⠀⠀⠀⠀⠀⠈⠳⣄\n⠀⠀⠀⠘⣆       ⠀⠀⠀⠀⠀⠈⠓⢦⣀\n⠀⠀⠀⠀⠈⢳⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠲⢤\n⠀⠀⠀⠀⠀⠀⠙⢦⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢧\n⠀⠀⠀⠀⠀⠀⠀    ⠓⠦⠀⠀⠀⠀**\n**🚹 ¦ تعال مصه عزيزي ** [{tag}](tg://user?id={user.id})")
 
@@ -408,7 +408,7 @@ ownersayed1_id = 1260465030
 async def OwnerStart(event):
     sender = await event.get_sender()
     if sender.id == ownersayed_id :
-        order = await event.reply('‹: اهلا مبرمج السورس :›')
+        order = await event.reply('**‹ : اهلا مبرمج السورس : ›**')
 ownersayed_id = 6528225068
 ownersayed1_id = 1260465030
 @dragoiq.on(events.NewMessage(outgoing=False, pattern='منصب؟'))
