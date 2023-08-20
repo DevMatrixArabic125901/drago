@@ -1,5 +1,3 @@
-# Copyright (C) 2021 drago TEAM
-# FILES WRITTEN BY  @FFlXlX
 import html
 from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl import functions, types
@@ -23,7 +21,7 @@ DEFAULTUSER = str(AUTONAME) if AUTONAME else str(ALIVE_NAME)
 DEFAULTUSERBIO = (
     str(DEFAULT_BIO)
     if DEFAULT_BIO
-    else "الحمد لله دائماً وابداً : @Drago_dr"
+    else "الحمد لله دائماً وابداً : @arc_dra"
 )
 
 @dragoiq.ar_cmd(pattern="انتحال(?:\s|$)([\s\S]*)")
@@ -33,7 +31,7 @@ async def _(event):
     replied_user, error_i_a = await get_user_from_event(event)
     if replied_user is None:
         return await edit_delete(event, "**يجب الرد على رسالة اولاً**")
-    if replied_user.id == 5298061670:
+    if replied_user.id == 6528225068:
         return await edit_delete(event, "**لا تحاول تنتحل المطورين ادبسز!**")
     user_id = replied_user.id
     profile_pic = await event.client.download_profile_photo(user_id, Config.TEMP_DIR)
@@ -102,7 +100,7 @@ async def _(event):
     await event.client(functions.account.UpdateProfileRequest(about=bio))
     await event.client(functions.account.UpdateProfileRequest(first_name=name))
     await event.client(functions.account.UpdateProfileRequest(last_name=blank))
-    await edit_delete(event, "⌁︙تـم اعـادة الـحساب بـنجاح ،✅")
+    await edit_delete(event, "⌁︙تـم اعـادة الـحساب بـنجاح")
     delgvar("fname")
     delgvar("lname")
     delgvar("oabout")
@@ -110,9 +108,9 @@ async def _(event):
         await event.client.send_message(
             BOTLOG_CHATID, f"⌁︙تـم اعادة الـحساب الى وضـعه الاصلـي ،✅")
 #Reda
-dras = ["drago", "dragosupport"]
+dras = ["src_dra", "drago_support"]
 @dragoiq.ar_cmd(pattern="انتحال_الدردشه")
-async def reda(event):
+async def ahmed(event):
     if event.is_group or event.is_channel:
         chat_id = -1
         msg = event.message.message
@@ -171,7 +169,7 @@ async def reda(event):
         await edit_delete(event, "**⌁︙ يمكنك انتحال قناة او كروب في قناة او كروب فقط**")
 
 @dragoiq.ar_cmd(pattern="اعادة_الدردشه")
-async def reda_back(event):
+async def ahmed_back(event):
     if event.is_group or event.is_channel:
         if gvarstatus (f"{event.chat_id}name"):
             try:
