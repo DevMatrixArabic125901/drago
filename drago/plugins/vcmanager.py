@@ -52,7 +52,7 @@ async def start_vc(event):
         await dragoiq(
             functions.phone.CreateGroupCallRequest(
                 peer=vc_chat,
-                title="Zed VC",
+                title="DraGo VC",
             )
         )
         await edit_delete(event, "**- جـارِ بـدء محـادثـه صـوتيـه ...**")
