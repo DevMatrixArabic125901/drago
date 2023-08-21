@@ -66,7 +66,7 @@ async def _(event):
 @dragoiq.on(admin_cmd(pattern="ايميل وهمي(?: |$)(.*)"))
 async def _(event):
     chat = "@TempMailBot"
-    geez = await event.edit("**جاري انشاء بريد ...**")
+    geez = await event.edit("`جاري انشاء بريد ...`")
     async with bot.conversation(chat) as conv:
         try:
             response = conv.wait_event(
