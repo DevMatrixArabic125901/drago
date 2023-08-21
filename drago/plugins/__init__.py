@@ -18,6 +18,7 @@ from ..core.session import dragoiq
 from ..helpers import *
 from ..helpers.utils import _cattools, _catutils, _format, install_pip, reply_id
 from Dragoiq.razan.resources.Gif import *
+from ..sql_helper.globals import gvarstatus
 # =================== CONSTANT ===================
 bot = dragoiq
 LOGS = logging.getLogger(__name__)
