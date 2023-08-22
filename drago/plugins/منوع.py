@@ -62,7 +62,7 @@ async def _(e):
 
 # =========================================
 
-R = [
+drago = [
     "**𓆰**العـاب الاحترافيه** 🎮𓆪 \n"
     "  ❶ **⪼**  [حرب الفضاء 🛸](https://t.me/gamee?game=ATARIAsteroids)   \n"
     "  ❷ **⪼**  [لعبة فلابي بيرد 🐥](https://t.me/awesomebot?game=FlappyBird)   \n"
@@ -87,8 +87,8 @@ R = [
 ]
 
 @dragoiq.on(admin_cmd(pattern="بلي$"))
-async def ithker(knopis):
-    await knopis.edit(choice(R))
+async def ithker(dragodrg):
+    await dragodrg.edit(choice(drago))
 
 # ================= Citation_morning =================
 @dragoiq.on(admin_cmd(pattern="اذكار عشر$"))    
