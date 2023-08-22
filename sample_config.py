@@ -206,9 +206,6 @@ class Config(object):
     ENV = os.environ.get("ENV", "ANYTHING")
     # dont touch this at all
     SUDO_USERS = set(int(x) for x in os.environ.get("SUDO_USERS", "").split())
-    OLDDrg_REPOBRANCH = os.environ.get("OLDDrg_REPOBRANCH", "olddrg")
-    VC_REPO = os.environ.get("VC_REPO", "https://github.com/qithoniq/DraVc")
-    VC_REPOBRANCH = os.environ.get("VC_REPOBRANCH", "DraVc")
 
 
 class Production(Config):
