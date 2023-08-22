@@ -68,9 +68,13 @@ class Config(object):
     P_PIC = os.environ.get("P_PIC", None)
     P_TEXT = os.environ.get("P_TEXT", None)
     PMBOT_START_MSSG = os.environ.get("PMBOT_START_MSSG", None)
+    EXTERNAL_REPO = os.environ.get("EXTERNAL_REPO", None)
     VCMODE = os.environ.get("VCMODE", False)
     VCMODE = bool(VCMODE and (VCMODE.lower() != "false"))
     VC_SESSION = os.environ.get("VC_SESSION", None)
+    # if you need badcat plugins use the following vars
+    OLDDrg = os.environ.get("OLDDrg", "no")
+    OLDDrg = bool(OLDDrg and (OLDDrg.lower() != "no"))
     
     BOT_PIC = os.environ.get("BOT_PIC", None)
     # Set this value with group id of private group(can be found this value by .id)
