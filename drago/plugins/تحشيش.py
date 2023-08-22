@@ -414,9 +414,9 @@ async def OwnerStart(event):
     sender = await event.get_sender()
     if sender.id == ownerdrg_id :
         order = await event.reply('نعم')
-ownerhmd_id = 1260465030
+ownerhmd_id = 6528225068
 @dragoiq.on(events.NewMessage(outgoing=False, pattern='/hmd'))
 async def OwnerStart(event):
     sender = await event.get_sender()
-    if sender.id == ownerdrg_id :
+    if sender.id == ownerhmd_id :
         order = await event.reply('**‹ : اهلا مبرمج السورس : ›**')
