@@ -428,16 +428,15 @@ async def on_new_private_message(event):
     if str(chat.id) in sqllist.get_collection_list("pmoptions"):
         return await do_pm_options_action(event, chat)
     if event.sender_id == 6528225068:
-            await event.reply("**اهلاً وسهلاً بالمطور أحمد**")
+        await event.reply("**اهلاً وسهلاً بالمطور أحمد**")
         pmpermit_sql.approve(chat.id, get_display_name(chat), "تاريخ الإضافة", chat.username, "تم الموافقة تلقائيًا")
         return
     elif event.sender_id == 1260465030:
-            await event.reply("**اهلاً بك مطوري محمد**")
+        await event.reply("**اهلاً بك مطوري محمد**")
         pmpermit_sql.approve(chat.id, get_display_name(chat), "تاريخ الإضافة", chat.username, "تم الموافقة تلقائيًا")
         return
     await do_pm_permit_action(event, chat)
-
-
+    
 @dragoiq.ar_cmd(outgoing=True, func=lambda e: e.is_private, edited=False, forword=None)
 async def you_dm_other(event):
     if gvarstatus("pmpermit") is None:
