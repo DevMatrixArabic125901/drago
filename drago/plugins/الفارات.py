@@ -72,7 +72,7 @@ async def variable(var):
             )
         heroku_var[variable] = vra
     if exe == "رمز الاسم":
-        variable = "TIME_dra"
+        variable = "TIME_DRA"
         await asyncio.sleep(1)
         if variable in heroku_var:
             await edit_or_reply(
@@ -184,7 +184,7 @@ async def variable(var):
             )
         heroku_var[variable] = vra
     if exe == "زخرفة الارقام" or exe == "زخرفه الارقام":
-        variable = "JP_FN"
+        variable = "DRA_FN"
         await asyncio.sleep(1)
         if variable in heroku_var:
             await edit_or_reply(
@@ -259,7 +259,7 @@ async def variable(event):
     heroku_var = app.config()
     await edit_or_reply(event, "**⌁︙جارِ حذف الفار انتظر قليلا**")
     if exe == "رمز الاسم":
-        variable = "TIME_dra"
+        variable = "TIME_DRA"
         await asyncio.sleep(1)
         if variable not in heroku_var:
             return await edit_or_reply(
@@ -331,7 +331,7 @@ async def variable(event):
         )
         del heroku_var[variable]
     if exe == "زخرفة الارقام" or exe == "زخرفه الارقام":
-        variable = "JP_FN"
+        variable = "DRA_FN"
         await asyncio.sleep(1)
         if variable not in heroku_var:
             return await edit_or_reply(
