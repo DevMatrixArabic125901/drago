@@ -89,31 +89,31 @@ async def fetch_info(replied_user, event):
     zmsg = await bot.get_messages(event.chat_id, 0, from_user=user_id)
     drg = zmsg.total
     if drg < 100:
-        dra = "غير متفاعل 🀄"
+        dra = "غير متفاعل 🧧"
     elif drg > 200 and drg < 500:
-        dra = "ضعيف 🀄"
+        dra = "ضعيف 🧧"
     elif drg > 500 and drg < 700:
-        dra = "شد حيلك 🀄"
+        dra = "شد حيلك 🧧"
     elif drg > 700 and drg < 1000:
-        dra = "استمر 🀄"
+        dra = "استمر 🧧"
     elif drg > 1000 and drg < 2000:
-        dra = "ملك التفاعل 🀄"
+        dra = "ملك التفاعل 🧧"
     elif drg > 2000 and drg < 3000:
-        dra = "امبراطور التفاعل 🀄"
+        dra = "امبراطور التفاعل 🧧"
     elif drg > 3000 and drg < 4000:
-        dra = "نار وشرار 🀄"
+        dra = "نار وشرار 🧧"
     else:
-        dra = "خاتم التفاعل 🀄"
+        dra = "خاتم التفاعل 🧧"
 ################# Dev Ahmed #################
     if user_id in drago:
-        rotbat = "مطـور السـورس 🀄" 
+        rotbat = "مطـور السـورس 🧧" 
     elif user_id == (await event.client.get_me()).id and user_id not in drago:
-        rotbat = "مـالك الحساب 🀄" 
+        rotbat = "مـالك الحساب 🧧" 
     else:
-        rotbat = "العضـو 🀄"
+        rotbat = "العضـو 🧧"
 ################# Dev Ahmed #################
-    DRA_TEXT = gvarstatus("CUSTOM_ALIVE_TEXT") or "مـعلومـات حـسابـك مـن سـورس دراكـو 🀄"
-    DRG_DRAGO = gvarstatus("CUSTOM_ALIVE_EMOJI") or "🀄"
+    DRA_TEXT = gvarstatus("CUSTOM_ALIVE_TEXT") or "مـعلومـات حـسابـك مـن سـورس دراكـو 🧧"
+    DRG_DRAGO = gvarstatus("CUSTOM_ALIVE_EMOJI") or "🧧"
     DRGX = gvarstatus("CUSTOM_ALIVE_FONT") or "✛━━━━━━━━━━━━━✛"
     caption = f"<b> {DRA_TEXT} </b>\n"
     caption += f"ٴ<b>{DRGX}</b>\n"
