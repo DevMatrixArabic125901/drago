@@ -50,8 +50,7 @@ async def amireallyalive(event):
     ms = (end - start).microseconds / 1000
     _, check_sgnirts = check_data_base_heal_th()
     EMOJI = gvarstatus("ALIVE_EMOJI") or "⿻┊‌‎"
-    ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "**父[ 𝙳𝚁𝙰𝙶𝙾 𝙸𝚂 𝚆𝙾𝚁𝙺𝙸𝙽𝙶 ](t.me/src_dra)父**"
-    DRAGO_IMG = gvarstatus("ALIVE_PIC") or Config.A_PIC or "https://telegra.ph/file/40672f276c69564208680.jpg"
+    ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "**父[ 𝖣𝗋𝖺𝖦𝗈 𝗂𝗌 𝖶𝗈𝗋𝖪𝗂𝗇𝖦 ](t.me/src_dra)父**"
     dragoiq_caption = gvarstatus("ALIVE_TEMPLATE") or temp
     caption = dragoiq_caption.format(
         ALIVE_TEXT=ALIVE_TEXT,
@@ -86,10 +85,10 @@ async def amireallyalive(event):
 
 
 temp = """{ALIVE_TEXT}
-**‎{EMOJI}‌‎𝙽𝙰𝙼𝙴 𖠄 {mention}** ٫
-**‌‎{EMOJI}‌‎𝙿𝚈𝚃𝙷𝙾𝙽 𖠄 `{pyver}`** ٫
-**‌‎{EMOJI}‌‎𝙳𝚁𝙰𝙶𝙾 𖠄 `{telever}`** ٫
-**‌‎{EMOJI}‌‎𝚄𝙿𝚃𝙸𝙼𝙴 𖠄 `{uptime}`** ٫
-‌‎**{EMOJI}‌‎‌‎𝙿𝙸𝙽𝙶 𖠄 `{ping}`** ٫
-‌‎**{EMOJI}‌‎‌‎𝚂𝙴𝚃𝚄𝙿 𝙳𝙰𝚃𝙴 𖠄 `{dragotime}`** ٫
+**‎{EMOJI}‌‎𝖭𝖺𝗆𝖾 𖠄 {mention}** ٫
+**‌‎{EMOJI}‌‎𝖯𝖸𝖳𝗁𝗈𝗇 𖠄 `{pyver}`** ٫
+**‌‎{EMOJI}‌‎𝖣𝗋𝖺𝖦𝗈 𖠄 `{telever}`** ٫
+**‌‎{EMOJI}‌‎𝖴𝗉𝖳𝗂𝗆𝖾 𖠄 `{uptime}`** ٫
+‌‎**{EMOJI}‌‎‌‎𝖯𝗂𝗇𝖦 𖠄 `{ping}`** ٫
+‌‎**{EMOJI}‌‎‌‎𝖲𝖾𝖳𝗎𝖯 𝖣𝖺𝖳𝖾 𖠄 `{dragotime}`** ٫
 **𖠄 𝗱𝗿𝗮𝗴𝗼 𝘂𝘀𝗲𝗿𝗯𝗼𝘁 𖠄**"""
