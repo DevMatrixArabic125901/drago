@@ -297,7 +297,7 @@ async def verifyLoggerGroup():
                 + str(e)
             )
     else:
-        descript = "- عزيزي المستخدم هذه هي مجموعه الاشعارات يرجى عدم حذفها  - @Drago_dr"
+        descript = "- عزيزي المستخدم هذه هي مجموعه الاشعارات يرجى عدم حذفها  - @src_dra"
         photobt = await dragoiq.upload_file(file="Dragoiq/razan/resources/start/DraGo2.jpg")
         _, groupid = await create_supergroup(
             "مجموعة الاشعارات", dragoiq, Config.TG_BOT_USERNAME, descript, photobt
@@ -326,7 +326,7 @@ async def verifyLoggerGroup():
                 "⌯︙حدث استثناء عند محاولة التحقق من PM_LOGGER_GROUP_ID.\n" + str(e)
             )
     else:
-        descript = "⌁︙ وظيفه الكروب يحفظ رسائل الخاص اذا ما تريد الامر احذف الكروب نهائي \n  - @Drago_dr"
+        descript = "⌁︙ وظيفه الكروب يحفظ رسائل الخاص اذا ما تريد الامر احذف الكروب نهائي \n  - @src_dra"
         photobt = await dragoiq.upload_file(file="Dragoiq/razan/resources/start/DraGo.jpg")
         _, groupid = await create_supergroup(
             "مجموعة التخزين", dragoiq, Config.TG_BOT_USERNAME, descript, photobt
