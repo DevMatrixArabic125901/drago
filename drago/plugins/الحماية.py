@@ -894,5 +894,5 @@ async def approve_p_m(event):
         event,
         APPROVED_PMs,
         file_name="قائمة الحماية دراكو.txt",
-        caption="قائمة المسموح لهم الحالية\n سورس دراكو \n @src_drago",
-            )
+        caption="قائمة المسموح لهم الحالية\n سورس دراكو \n @src_dra",
+    )
