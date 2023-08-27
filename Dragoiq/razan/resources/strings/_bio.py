@@ -1,8 +1,3 @@
-# to loaded bio 
-# by ~ @FFlXlX
-# For @Drago_dr
-
-
 DRAGOIQ = [
     """
 `• 𝑻𝒉𝒆 𝑳𝒐𝒗𝒆𝒓 𝒐𝒇 𝑾𝒉𝒐𝒎 𝑯𝒆 𝑳𝒐𝒗𝒆𝒔 𝒊𝒔 𝑶𝒃𝒆𝒅𝒊𝒆𝒏𝒕 ♡`
@@ -16,7 +11,7 @@ DRAGOIQ = [
 `• The sweetest thing said in consolation : if I can't light you, I'll turn it off with you.`
 
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
- ⌔︙CH : @Drago_dr
+ ⌔︙CH : @src_dra
 """,
     """
 `• Never let someone who has done nothing tell you how to do anything .`
@@ -30,7 +25,7 @@ DRAGOIQ = [
 `• Who hates you won't hurt you !Aren't to hurt you only you love.`
 
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
- ⌔︙CH : @Drago_dr
+ ⌔︙CH : @src_dra
 """,
     """
 `• Death ends a life. not a relationship ،`
@@ -44,7 +39,7 @@ DRAGOIQ = [
 `• This suffering will deliver a beast, will never give birth .`
 
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
- ⌔︙CH : @Drago_dr
+ ⌔︙CH : @src_dra
 """,
     """
 `• This suffering will deliver a beast, will never give birth .`
@@ -58,7 +53,7 @@ DRAGOIQ = [
 `• 𝐃𝐎𝐍𝐓 𝐆𝐈𝐕𝐄 𝐀𝐍𝐘𝐎𝐍𝐄 𝐎𝐕𝐄𝐑 𝐇𝐈𝐒 𝐕𝐀𝐋𝐔𝐄 😴♩✿⇣.`
 
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
- ⌔︙CH : @Drago_dr
+ ⌔︙CH : @src_dra
 """,
     """
 `• Interest will not come you except from someone who wants you .`
@@ -72,7 +67,7 @@ DRAGOIQ = [
 `• 𝒅𝒐𝒏 𝒕 𝒄𝒂𝒓𝒆 𝒂𝒃𝒐𝒖𝒕 𝒘𝒉𝒂𝒕 𝒑𝒆𝒐𝒑𝒍𝒆 𝒘𝒂𝒏𝒕 , 𝒄𝒂𝒓𝒆 𝒂𝒃𝒐𝒖𝒕 ، 𝒘𝒉𝒂𝒕 𝒚𝒐𝒖 𝒘𝒂𝒏𝒕 .`
 
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
- ⌔︙CH : @Drago_dr
+ ⌔︙CH : @src_dra
 """,
 ]
 
