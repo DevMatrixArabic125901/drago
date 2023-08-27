@@ -183,7 +183,7 @@ async def _iundlt(event):  # sourcery no-metrics
         if lim <= 0:
             lim = int(1)
     else:
-        lim = int(50)
+        lim = int(125)
     adminlog = await event.client.get_admin_log(
         event.chat_id, limit=lim, edit=False, delete=True
     )
