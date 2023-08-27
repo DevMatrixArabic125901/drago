@@ -178,8 +178,8 @@ async def _iundlt(event):  # sourcery no-metrics
     flag = event.pattern_match.group(1)
     if event.pattern_match.group(2) != "":
         lim = int(event.pattern_match.group(2))
-        if lim > 45:
-            lim = int(45)
+        if lim > 1:
+            lim = int(1)
         if lim <= 0:
             lim = int(1)
     else:
