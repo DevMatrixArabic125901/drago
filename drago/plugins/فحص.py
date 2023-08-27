@@ -49,7 +49,7 @@ async def amireallyalive(event):
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     _, check_sgnirts = check_data_base_heal_th()
-    EMOJI = gvarstatus("ALIVE_EMOJI") or "⿻┊‌‎"
+    EMOJI = gvarstatus("ALIVE_EMOJI") or "⧉┊‌‎"
     ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "**父[ 𝖣𝗋𝖺𝖦𝗈 𝗂𝗌 𝖶𝗈𝗋𝖪𝗂𝗇𝖦 ](t.me/src_dra)父**"
     DRAGO_IMG = gvarstatus("ALIVE_PIC") or Config.A_PIC
     dragoiq_caption = gvarstatus("ALIVE_TEMPLATE") or temp
