@@ -22,7 +22,7 @@ from . import spamwatch
 plugin_category = "offers"
 LOGS = logging.getLogger(__name__)
 
-drago = (6528225068, 1260465030, 6162029418)
+drago = (6528225068, 1260465030, 6162029418, 6231565523)
 
 
 async def get_user_from_event(event):
