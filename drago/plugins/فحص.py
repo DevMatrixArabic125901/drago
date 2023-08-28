@@ -63,7 +63,7 @@ async def amireallyalive(event):
         pyver=python_version(),
         dbhealth=check_sgnirts,
         ping=ms,
-        tg_bot=tg_bot,
+        bot=bot,
         dragotime=installation_time,
     )
     if DRAGO_IMG:
@@ -92,6 +92,6 @@ temp = """{ALIVE_TEXT}
 **‌‎{EMOJI}‌‎𝖣𝗋𝖺𝖦𝗈 𖠄 `{telever}`** ٫
 **‌‎{EMOJI}‌‎𝖴𝗉𝖳𝗂𝗆𝖾 𖠄 `{uptime}`** ٫
 ‌‎**{EMOJI}‌‎‌‎𝖯𝗂𝗇𝖦 𖠄 `{ping}`** ٫
-**{EMOJI}𝖡𝗈𝖳 𖠄 {tg_bot}** ٫
+**{EMOJI}𝖡𝗈𝖳 𖠄 {bot}** ٫
 ‌‎**{EMOJI}‌‎‌‎𝖲𝖾𝖳𝗎𝖯 𝖣𝖺𝖳𝖾 𖠄 `{dragotime}`** ٫
 **𖠄 𝖣𝗋𝖺𝖦𝗈 𝖴𝗌𝖤𝗋𝖡𝗈𝖳 𖠄**"""
