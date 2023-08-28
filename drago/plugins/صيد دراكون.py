@@ -1,237 +1,285 @@
-import random, requests, asyncio , os,  time
+import asyncio
+import random
 
-from fake_useragent import UserAgent
-from telethon import TelegramClient, events
-from telethon.tl.functions.channels import CreateChannelRequest
-from telethon.tl.functions.account import CheckUsernameRequest
-from telethon.tl.functions.account import UpdateUsernameRequest
-from telethon.tl.functions.messages import SendMessageRequest
-from telethon.tl.types import MessageEntityBold
+import requests
+import telethon
+from telethon.sync import functions
+from user_agent import generate_user_agent
+
 from drago import dragoiq
-
-# [{FFlXlX}]
-# [{FFlXlX}]
-ua = UserAgent()
-# [{FFlXlX}]
-USERNAMES = []
 
 a = "qwertyuiopassdfghjklzxcvbnm"
 b = "1234567890"
 e = "qwertyuiopassdfghjklzxcvbnm1234567890"
 
-# حبيبي الخماط اذا بعد تخمط سورس تبقى ذمة بركبتك
+trys, trys2 = [0], [0]
+isclaim = ["off"]
+isauto = ["off"]
 
-stop_phishing = True
-workers = {
-    'ثلاثيات': {
-        'worker': False,
-        'counter': 0
-    },
-    'خماسي': {
-        'worker': False,
-        'counter': 0
-    },
-    'خماسي حرفين': {
-        'worker': False,
-        'counter': 0
-    },
-    'سداسيات': {
-        'worker': False,
-        'counter': 0
-    },
-    'سداسي حرفين': {
-        'worker': False,
-        'counter': 0
-    },
-    'سباعيات': {
-        'worker': False,
-        'counter': 0
-    },
-    'بوتات': {
-        'worker': False,
-        'counter': 0
+
+def check_user(username):
+    url = "https://t.me/" + str(username)
+    headers = {
+        "User-Agent": generate_user_agent(),
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Accept-Language": "ar-EG,ar;q=0.9,en-US;q=0.8,en;q=0.7",
     }
-}
+
+    response = requests.get(url, headers=headers)
+    if (
+        response.text.find(
+            'If you have <strong>Telegram</strong>, you can contact <a class="tgme_username_link"'
+        )
+        >= 0
+    ):
+        return True
+    else:
+        return False
 
 
 def gen_user(choice):
-    if choice == "ثلاثيات":
-        username = f'{random.choice(a)}_{random.choice(b)}_{random.choice(e)}'
-        
-    elif choice == "خماسي":
-        list = random.choices(a)*4 + random.choices(b)
-        random.shuffle(list)
-        username = "".join(list)
+    if choice == "سداسي حرفين":
+        c = d = random.choices(a)
+        d = random.choices(b)
+        f = [c[0], d[0], c[0], c[0], c[0], d[0]]
+        random.shuffle(f)
+        username = "".join(f)
+
+    elif choice == "ثلاثيات":
+        c = random.choices(a)
+        d = random.choices(b)
+        s = random.choices(e)
+        f = [c[0], "_", d[0], "_", s[0]]
+        username = "".join(f)
+    elif choice == "سداسيات":
+        c = d = random.choices(a)
+        d = random.choices(e)
+        f = [c[0], c[0], c[0], c[0], c[0], d[0]]
+        random.shuffle(f)
+        username = "".join(f)
+    elif choice == "بوتات":
+        c = random.choices(a)
+        d = random.choices(e)
+        s = random.choices(e)
+        f = [c[0], s[0], d[0]]
+        # random.shuffle(f)
+        username = "".join(f)
+        username = username + "bot"
 
     elif choice == "خماسي حرفين":
-        list = random.choices(a)*3 + random.choices(e)*2
-        random.shuffle(list)
-        username = "".join(list)
+        c = random.choices(a)
+        d = random.choices(e)
 
-    elif choice == "سداسيات":
-        list = random.choices(a)*5 + random.choices(e)
-        random.shuffle(list)
-        username = "".join(list)
+        f = [c[0], d[0], c[0], c[0], d[0]]
+        random.shuffle(f)
+        username = "".join(f)
 
-    elif choice == "سداسي حرفين":
-        list = random.choices(a)*4 + random.choices(b)*2
-        random.shuffle(list)
-        username = "".join(list)
+    elif choice == "خماسي":
+        c = d = random.choices(a)
+        d = random.choices(b)
+        f = [c[0], c[0], c[0], c[0], d[0]]
+        random.shuffle(f)
+        username = "".join(f)
 
     elif choice == "سباعيات":
-        list = random.choices(a)*6 + random.choices(b)
-        random.shuffle(list)
-        username = "".join(list)
-        
-    elif choice == "بوتات":
-        username = f'{random.choice(a)}{random.choice(e)}{random.choice(e)}bot'
-        
+        c = d = random.choices(a)
+        d = random.choices(b)
+        f = [c[0], c[0], c[0], c[0], d[0], c[0], c[0]]
+        random.shuffle(f)
+        username = "".join(f)
+    elif choice == "تيست":
+        c = d = random.choices(a)
+        d = random.choices(b)
+        f = [c[0], d[0], c[0], d[0], d[0], c[0], c[0], d[0], c[0], d[0]]
+        random.shuffle(f)
+        username = "".join(f)
     else:
-        raise ValueError("اختر يوزر صحيح.")
+        return "error"
     return username
 
 
+@dragoiq.ar_cmd(pattern="الصيد")
+async def _(event):
+    await event.edit(
+        """
+أوامر الصيد الخاصة بسورس تيبثون : 
 
-async def check_user(event, channel_id, username, session, user_agent):
-    check_url = f'https://t.me/{username}'
-    headers = {
-        'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
-        'accept-encoding': 'gzip, deflate, br',
-        'accept-language': 'en-GB,en;q=0.9,ar;q=0.8',
-        'user-agent': user_agent
-    }
-    
+ٴ— — — — — — — — — —
+
+النوع :(  سداسي حرفين/ ثلاثيات/ سداسيات/ بوتات/ خماسي حرفين/خماسي /سباعيات )
+
+الامر:  `.صيد` + النوع
+- يقوم بصيد معرفات عشوائية حسب النوع
+
+الامر:  `تثبيت` + معرف
+* وظيفة الامر : يقوم بالتثبيت على المعرف عندما يصبح متاح يأخذه
+
+ٴ— — — — — — — — — —
+الامر:   `.حالة الصيد`
+• لمعرفة عدد المحاولات للصيد
+
+الامر:  `.حالة التثبيت`
+• لمعرفة عدد المحاولات للصيد
+
+@src_dra  - channle userbot 
+
+"""
+    )
+
+
+@dragoiq.ar_cmd(pattern="صيد (.*)")
+async def hunterusername(event):
+    msg = event.text.split()
+    choice = str(msg[1])
     try:
-        response = session.get(check_url, headers=headers, timeout=3)
-        if 'If you have <strong>Telegram</strong>, you can contact <a class="tgme_username_link"' in response.text:
-            # check ban
-            try:
-                result = await event.client(CheckUsernameRequest(channel=channel_id, username=username))
-                if result == True:
-                    return f'@{username}'
-                else:
-                    return False
-            except Exception as error:
-                return False
-        else:
-            return False
+        ch = str(msg[2])
+        if "@" in ch:
+            ch = ch.replace("@", "")
+        await event.edit(f"حسناً سيتم بدء الصيد في @{ch} .")
     except:
-        return False
-
-@dragoiq.on(events.NewMessage(outgoing=True, pattern=r'.اغلاق الصيد'))
-async def StopPhishingHundler(event):
-    global stop_phishing
-    
-    stop_phishing = False
-    await event.edit('تم اغلاق الصيد')
-    
-    
-@dragoiq.on(events.NewMessage(outgoing=True, pattern=r'.حالة الصيد'))
-async def StopPhishingHundler(event):
-    global workers
-    
-    message = ''
-    for wroker_ in workers:
-         message += f'__حالة صيد "{wroker_}" : {workers.get(wroker_).get("counter")} محاولة صيد__\n'
-    await event.edit(message)
-    
-    
-@dragoiq.on(events.NewMessage(outgoing=True, pattern=r'.صيد ?(.*)'))
-async def PhishingHundler(event):
-    global stop_phishing, workers
-    
-    # [{FFlXlX}]
-    valid_types = ['ثلاثيات', 'خماسي', 'خماسي حرفين', 'سداسيات', 'سداسي حرفين', 'سباعيات', 'بوتات']
-    PhishType = (event.message.message).replace('.صيد', '').strip()
-    
-    if PhishType not in valid_types:
-        await event.reply(f'__اختر صيد صحيح, الصيد المتاح : {", ".join(valid_types)}__')
-    else:
-        # create channel
-        if workers.get(PhishType).get('worker') == False:
-            workers[PhishType]['worker'] = True
-            try:
-                channel = await event.client(CreateChannelRequest(title=f'صيد : {PhishType}', about=f'drago'))
-                await event.edit(' تم تفعيل امر الصيد بنجاح ✅ ملاحظة في حالة الصيد يعطيك فقط يوزرات محظورة هذا بمعنى ان حسابك نحظر من صيد اليوزرات لمدة 24 ساعة  ')
-                
-                while stop_phishing == True:
-                    session = requests.Session()
-                    user_agent = ua.random
-                    username = gen_user(PhishType)
-                                        
-                    valid = check_user(username, session, user_agent)
-                    if valid != False:
-                        await event.client.send_message(channel.chats[0].id, message=valid)
-                    
-                    workers[PhishType]['counter'] = workers[PhishType]['counter'] + 1
-                    await asyncio.sleep(6)
-
-            except Exception as error:
-                await event.reply(f'__حدث خطأ : {error}__')
-        else:
-            await event.edit('سبق لك تفعيل هذا النوع من الصيد')
-    
-@dragoiq.on(events.NewMessage(outgoing=True, pattern=r'.سحب ?(.*)'))
-async def CheckAndApply(event):
-    username = (event.message.message).replace('.سحب', '').strip()
-    username = username.replace('@', '').strip()
-    if username not in USERNAMES:
-        USERNAMES.append(username)
-        
-    reply = await event.reply(f'**تم بدأ السحب لـ @{username}**')
-    
-    # [{FFlXlX}]
-    RUN = await CheckUsername(event, username, event.sender_id)
-    if RUN == True:
-        RUN = await UpdateUsername(event, username)
-
-# [{FFlXlX}]
-@dragoiq.on(events.NewMessage(outgoing=True, pattern=r'.اغلاق سحب ?(.*)'))
-async def UnCheck(event):
-    username = (event.message.message).replace('.اغلاق سحب', '').strip()
-    username = (event.message.message).replace('@', '').strip()
-    
-    if username in USERNAMES:
-        USERNAMES.remove(username)
-        
-    reply = await event.reply(f'**تم اغلاق سحب لـ @{username}**')
-    
-
-async def CheckUsername(event, user, user_id):
-    global USERNAMES
-    
-    while user in USERNAMES:
         try:
-            check_first = await event.client(CheckUsernameRequest(username=user))
-            if check_first == True:
-                if user in USERNAMES:
-                    USERNAMES.remove(user)
-                MESSAGE = f"اليوزر @{user} اصبح مناح. تم بدأ محاولات الاستلاء عليه. ستتلقى اشعار في حالة الاستلاء عليه"
-                NotifyUser = await event.client(SendMessageRequest(peer=user_id, entities=[MessageEntityBold(offset=0, length=len(MESSAGE))], message=MESSAGE))
-                break
-            
+            ch = await dragoiq(
+                functions.channels.CreateChannelRequest(
+                    title="src_dra HUNTER - صيد تيبثون",
+                    about="This channel to hunt username by - @src_dra ",
+                )
+            )
+            ch = ch.updates[1].channel_id
+            await event.edit(f"**- تم تفعيل الصيد بنجاح الان**")
         except Exception as e:
-            print (e)
+            await dragoiq.send_message(
+                event.chat_id, f"خطأ في انشاء القناة , الخطأ**-  : {str(e)}**"
+            )
+    isclaim.clear()
+    isclaim.append("on")
+    for i in range(19000000):
+        username = gen_user(choice)
+        if username == "error":
+            await event.edit("**- يرجى وضع النوع بشكل صحيح**.")
             break
-        
-        await asyncio.sleep(10)
-        
-    return True        
-    
-async def UpdateUsername(event, user):
-    from telethon.tl.functions.channels import CreateChannelRequest
-    from telethon.tl.functions.channels import UpdateUsernameRequest
-    
-    # [{FFlXlX}]
-    changed, created_channel = False, await event.client(CreateChannelRequest(title=user, about=user))
-    while changed == False:
-        try:
-            UpdateUsername = await event.client(UpdateUsernameRequest(channel=created_channel.chats[0].id, username=user)) #await event.client(UpdateUsernameRequest(username=user))
-            if UpdateUsername == True:
-                MESSAGE = f"تم سحب اليوزر @{user}"
-                NotifyUser = await event.client(SendMessageRequest(peer=user, entities=[MessageEntityBold(offset=0, length=len(MESSAGE))], message=MESSAGE))
-                changed = True
+        isav = check_user(username)
+        if isav == True:
+            try:
+                await dragoiq(
+                    functions.channels.UpdateUsernameRequest(
+                        channel=ch, username=username
+                    )
+                )
+                await event.client.send_message(
+                    event.chat_id,
+                    f"- Done : @{username} !\n- By : @UxUeU - @src_dra !\n- Hunting Log {trys2[0]}",
+                )
                 break
+            except telethon.errors.rpcerrorlist.UsernameInvalidError:
+                pass
+            except Exception as baned:
+                if "(caused by UpdateUsernameRequest)" in str(baned):
+                    pass
+            except telethon.errors.FloodError as e:
+                await dragoiq.send_message(
+                    event.chat_id,
+                    f"للاسف تبندت , مدة الباند**-  ({e.seconds}) ثانية .**",
+                    event.chat_id,
+                    f"للاسف تبندت , مدة الباند**-  ({e.seconds}) ثانية .**",
+                )
+                break
+            except Exception as eee:
+                if "the username is already" in str(eee):
+                    pass
+                else:
+                    await dragoiq.send_message(
+                        event.chat_id,
+                        f"""- خطأ مع @{username} , الخطأ :{str(eee)}""",
+                    )
+                    break
+        else:
+            pass
+        trys[0] += 1
+    isclaim.clear()
+    isclaim.append("off")
+    await event.client.send_message(event.chat_id, "**- تم بنجاح الانتهاء من الصيد**")
+
+
+@dragoiq.ar_cmd(pattern="تثبيت (.*)")
+async def _(event):
+    msg = event.text.split()
+    try:
+        ch = str(msg[2])
+        await event.edit(f"حسناً سيتم بدء التثبيت في**-  @{ch} .**")
+    except:
+        try:
+            ch = await dragoiq(
+                functions.channels.CreateChannelRequest(
+                    title="src_dra HUNTER - صيد تيبثون",
+                    about="This channel to hunt username by - @src_dra ",
+                )
+            )
+            ch = ch.updates[1].channel_id
+            await event.edit(f"**- تم بنجاح بدأ التثبيت**")
         except Exception as e:
-            print (e)
-        await asyncio.sleep(10)
+            await dragoiq.send_message(
+                event.chat_id, f"خطأ في انشاء القناة , الخطأ : {str(e)}"
+            )
+    isauto.clear()
+    isauto.append("on")
+    username = str(msg[1])
+
+    for i in range(1000000000000):
+        isav = check_user(username)
+        if isav == True:
+            try:
+                await dragoiq(
+                    functions.channels.UpdateUsernameRequest(
+                        channel=ch, username=username
+                    )
+                )
+                await event.client.send_message(
+                    event.chat_id,
+                    f"- Done : @{username} !\n- By : @UxUeU - @src_dra !\n- Hunting Log {trys2[0]}",
+                )
+                break
+            except telethon.errors.rpcerrorlist.UsernameInvalidError:
+                await event.client.send_message(
+                    event.chat_id, f"المعرف **-  @{username} غير صالح . **"
+                )
+                break
+            except telethon.errors.FloodError as e:
+                await dragoiq.send_message(
+                    event.chat_id, f"للاسف تبندت , مدة الباند ({e.seconds}) ثانية ."
+                )
+                break
+            except Exception as eee:
+                await dragoiq.send_message(
+                    event.chat_id,
+                    f"""خطأ مع {username} , الخطأ :{str(eee)}""",
+                )
+                break
+        else:
+            pass
+        trys2[0] += 1
+
+        await asyncio.sleep(1.3)
+    isclaim.clear()
+    isclaim.append("off")
+    await dragoiq.send_message(event.chat_id, "**- تم الانتهاء من التثبيت بنجاح**")
+
+
+@dragoiq.ar_cmd(pattern="حالة الصيد")
+async def _(event):
+    if "on" in isclaim:
+        await event.edit(f"**- الصيد وصل لـ({trys[0]}) **من المحاولات")
+    elif "off" in isclaim:
+        await event.edit("**- الصيد بالاصل لا يعمل .**")
+    else:
+        await event.edit("- لقد حدث خطأ ما وتوقف الامر لديك")
+
+
+@dragoiq.ar_cmd(pattern="حالة التثبيت")
+async def _(event):
+    if "on" in isauto:
+        await event.edit(f"**- التثبيت وصل لـ({trys2[0]}) من المحاولات**")
+    elif "off" in isauto:
+        await event.edit("**- التثبيت بالاصل لا يعمل .**")
+    else:
+        await event.edit("-لقد حدث خطأ ما وتوقف الامر لديك")
