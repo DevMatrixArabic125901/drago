@@ -80,7 +80,7 @@ async def spammer(event):
     sandy = await event.get_reply_message()
     inform_drago = ("".join(event.text.split(maxsplit=1)[1:])).split(" ", 1)
     try:
-        counter = int(inform_drago[0]); .
+        counter = int(inform_drago[0])
     except Exception:
         return await edit_delete(
             event, "**- ارسـل الامـر بالشكـل التالي**\n\n`.بلاغ` **+ عدد التكرار + الرسالة او بالـرد ع رسالة**\n**- مثـال : .بلاغ 12 بالـرد ع كليشـة البـلاغ**"
