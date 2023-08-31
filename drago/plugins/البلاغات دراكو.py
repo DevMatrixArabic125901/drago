@@ -16,7 +16,7 @@ from telethon.utils import get_display_name
 from . import dragoiq
 
 from ..core.managers import edit_delete, edit_or_reply
-from ..helpers.utils import catutils
+from ..helpers.utils import _catutils
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from . import BOTLOG, BOTLOG_CHATID
 
