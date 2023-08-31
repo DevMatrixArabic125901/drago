@@ -79,7 +79,7 @@ async def _(event):
 async def _(event):
     await event.edit("**يتم تجـهيز نبـذة اجنبـية لأجـلك انتـظر**")
     await asyncio.sleep(3)
-    arj = random.choice(Dragoiq)
+    arj = random.choice(DRAGOENIQ)
     return await event.edit(f"{arj}")
     
     
@@ -89,7 +89,7 @@ async def _(event):
 async def _(event):
     await event.edit("** يتم تجـهيز نبـذة عربيـة لأجـلك انتـظر**")
     await asyncio.sleep(3)
-    arj = random.choice(Dragoiq)
+    arj = random.choice(DRAGOARIQ)
     return await event.edit(f"{arj}")
     
     
