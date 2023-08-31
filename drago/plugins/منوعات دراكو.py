@@ -84,6 +84,13 @@ async def _(event):
         await event.edit(
             f"الايميل الخاص هو `{response.message.message}`\n[ اضغط هنا لرؤية من رسائل الايميل الواردة]({dragoiqmail})"
         )
+@dragoiq.on(admin_cmd(outgoing=True, pattern="قرآن$"))
+async def dragovois(vois):
+  rl = random.randint(4,291)
+  url = f"https://t.me/Qurandra/{rl}"
+  await vois.client.send_file(vois.chat_id,url,caption="⌁︙ وأذكر الله اذا نسيت : @src_dra",parse_mode="html")
+  await vois.delete()
+    
 @dragoiq.on(admin_cmd(outgoing=True, pattern="غنيلي$"))
 async def dragovois(vois):
   rl = random.randint(2,2301)
