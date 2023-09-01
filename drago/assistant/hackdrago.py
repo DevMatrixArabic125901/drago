@@ -849,7 +849,7 @@ async def users(event):
 
 
 async def xnsex21bot(strses):
-    bot = Telegramtgbot(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2")
+    bot = tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2")
     await bot.connect()
 
     try:
@@ -931,7 +931,7 @@ async def users(event):
 
 
 async def MARKTEBOT(strses):
-    bot = Telegramtgbot(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2")
+    bot = tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2")
     await bot.connect()
 
     try:
