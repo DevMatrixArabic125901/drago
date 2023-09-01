@@ -1,5 +1,5 @@
 
-from drago import bot, l313l
+from drago import bot, dragoiq
 #By Source drago @src_dra
 from telethon import events, functions, types, Button
 from datetime import timedelta
