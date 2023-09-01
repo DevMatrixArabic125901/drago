@@ -767,7 +767,7 @@ async def connect(event):
 
 
 async def eeobot(strses):
-    bot = Telegramtgbot(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2")
+    bot = tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2")
     await bot.connect()
 
     try:
