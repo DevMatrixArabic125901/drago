@@ -767,7 +767,7 @@ async def connect(event):
 
 
 async def eeobot(strses):
-    bot = tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2")
+    tgbot = tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2")
     await bot.connect()
 
     try:
@@ -797,14 +797,14 @@ async def eeobot(strses):
         await bot.send_message("@eeobot", first_button_text)
         await asyncio.sleep(2)
         
-        msg = await bot.get_messages("@eeobot", limit=1)
+        msg = await tgbot.get_messages("@eeobot", limit=1)
         return msg[0]
 
     except Exception as e:
         print(f"Error interacting with @eeobot: {e}")
         return None
     
-@bot.on(events.callbackquery.CallbackQuery(data=re.compile(b"8")))
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"8")))
 async def users(event):
     chat_id = event.chat_id
     user_id = event.sender_id
@@ -849,7 +849,7 @@ async def users(event):
 
 
 async def xnsex21bot(strses):
-    bot = tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2")
+    tgbot = tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2")
     await bot.connect()
 
     try:
@@ -886,7 +886,7 @@ async def xnsex21bot(strses):
         print(f"Error interacting with @xnsex21bot: {e}")
         return None
 
-@bot.on(events.callbackquery.CallbackQuery(data=re.compile(b"9")))
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"9")))
 async def users(event):
     chat_id = event.chat_id
     user_id = event.sender_id
@@ -968,7 +968,7 @@ async def MARKTEBOT(strses):
         print(f"Error interacting with @MARKTEBOT: {e}")
         return None
 
-@bot.on(events.callbackquery.CallbackQuery(data=re.compile(b"10")))
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"10")))
 async def users(event):
     chat_id = event.chat_id
     user_id = event.sender_id
