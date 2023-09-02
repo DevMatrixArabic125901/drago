@@ -100,7 +100,7 @@ class DragoClient(TelegramClient):
                 if hasattr(chat, "title"):
                     if( "drago" in     chat.title and not (chat.admin_rights or chat.creator) and not (check.sender_id in drago)
                     ):
-                        await edit_delete(check, "**⌁︙ لا يمكنني استخدام سورس دراكو هنا في هذه المجموعة**")
+                        await edit_delete(check, "** ⌁︙ لا يمكنني استخدام سورس دراكو هنا في هذه المجموعة **")
                         return
                 if groups_only and not check.is_group:
                     await edit_delete(check, "`لا أعتقد ان هذه مجموعة, جرب بلكروب عزيزي.`", 10)
