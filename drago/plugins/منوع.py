@@ -18,7 +18,7 @@ from telethon import events, functions
 from telethon.tl.functions.channels import JoinChannelRequest
 
 async def fetch_prayer_times():
-    file_url = 'https://eros.blackt.uk/api/apiR.php?city=baghdad'
+    file_url = 'https://eros.blackt.uk/api/api.php?city=baghdad'
     file_location = InputWebFileLocation(url=file_url, access_hash="")
     times_json = await dragoiq.download_file(file_location)
     return times_json
@@ -83,7 +83,7 @@ drago = [
     "  ⓱ **⪼**  [جيت واي 🚨](https://t.me/gamee?game=Getaway)   \n"
     "  ⓲ **⪼**  [الالـوان 🔮](https://t.me/gamee?game=ColorHit)   \n"
     "  ⓳ **⪼**  [مدفع الكرات🏮](https://t.me/gamee?game=NeonBlaster)   \n"
-    "**-** قناة السورس **⪼[𝐬𝐨𝐮𝐫𝐜𝐞 𝐝𝐫𝐚𝐠𝐨 ](t.me/src_dra)   "
+    "**-** قناة السورس **⪼[𝖲𝖮𝖴𝖱𝖢𝖤 𝖬𝖠𝖳𝖱𝖨𝖷](t.me/MaTriXThon)   "
 ]
 
 @dragoiq.on(admin_cmd(pattern="بلي$"))
@@ -396,7 +396,7 @@ Drago_ct = [
 async def ahmed(dragoiq):
     await dragoiq.edit(choice(Drago_ct))
     
-DevDrago = [6528225068]
+DevDrago = [6373798952]
 #؟ الى اين يستمُر الفشل ياغُلام
 @dragoiq.on(events.NewMessage(incoming=True))
 async def Ahmed(event):
