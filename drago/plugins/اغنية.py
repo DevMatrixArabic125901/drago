@@ -1,8 +1,7 @@
-import asyncio
 import base64
+import contextlib
 import io
 import os
-from pathlib import Path
 
 from ShazamAPI import Shazam
 from telethon import types
@@ -13,8 +12,9 @@ from validators.url import url
 
 from ..core.logger import logging
 from ..core.managers import edit_delete, edit_or_reply
-from ..helpers.functions import delete_conv, name_dl, song_dl, video_dl, yt_search
+from ..helpers.functions import delete_conv, yt_search
 from ..helpers.tools import media_type
+from ..helpers.utils import reply_id
 from ..helpers.utils import _catutils, reply_id
 from drago import dragoiq
 
@@ -24,7 +24,7 @@ LOGS = logging.getLogger(__name__)
 # =========================================================== #
 #                           STRINGS                           #
 # =========================================================== #
-SONG_SEARCH_STRING = "<code>يجؤة الانتظار قليلا يتم البحث على المطلوب</code>"
+SONG_SEARCH_STRING = "<code>يجب الانتظار قليلا يتم البحث على المطلوب</code>"
 SONG_NOT_FOUND = "<code>عذرا لا يمكنني ايجاد اي اغنيه مثل هذه</code>"
 SONG_SENDING_STRING = "<code>جارِ الارسال انتظر قليلا...</code>"
 # =========================================================== #
@@ -55,7 +55,7 @@ async def _(event):
         query = reply.message
     else:
         return await edit_or_reply(event, "⌔∮ يرجى الرد على ما تريد البحث عنه")
-    cat = base64.b64decode("YnkybDJvRG04WEpsT1RBeQ==")
+    cat = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
     catevent = await edit_or_reply(event, "⌔∮ جاري البحث عن المطلوب انتظر")
     video_link = await yt_search(str(query))
     if not url(video_link):
