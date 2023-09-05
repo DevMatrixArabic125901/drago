@@ -55,12 +55,12 @@ async def _(event):  # sourcery no-metrics
     input_str = event.pattern_match.group(1)
     peer_id = event.chat_id
     if not event.is_group:
-        return await edit_delete(event, "⌁︙ هذه ليست مجموعة لقفل بعض الصلاحيات")
+        return await edit_delete(event, "᥀︙ هذه ليست مجموعة لقفل بعض الصلاحيات")
     chat_per = (await event.get_chat()).default_banned_rights
     cat = base64.b64decode("YnkybDJvRG04WEpsT1RBeQ==")
     if input_str in (("bots", "commands", "email", "forward", "url")):
         update_lock(peer_id, input_str, True)
-        await edit_or_reply(event, "⌁︙ تـم قفل {} بنجـاح ✅".format(input_str))
+        await edit_or_reply(event, "᥀︙ تـم قفل {} بنجـاح".format(input_str))
     else:
         msg = chat_per.send_messages
         media = chat_per.send_media
@@ -76,63 +76,63 @@ async def _(event):  # sourcery no-metrics
         if input_str == "الدردشه":
             if msg:
                 return await edit_delete(
-                    event, "⌁︙ المجموعه بالتأكيد مقفولة من الرسائل "
+                    event, "᥀︙ المجموعه بالتأكيد مقفولة من الرسائل "
                 )
             msg = True
             locktype = "الدردشه"
         elif input_str == "الوسائط":
             if media:
                 return await edit_delete(
-                    event, "⌁︙ المجمـوعة بالتأكـيد مقفولة من الوسائط ⌁"
+                    event, "᥀︙ المجمـوعة بالتأكـيد مقفولة من الوسائط ᥀"
                 )
             media = True
             locktype = "الوسائط"
         elif input_str == "الملصقات":
             if sticker:
                 return await edit_delete(
-                    event, "⌁︙ المجمـوعة بالتأكـيد مقفولة من الملصقات ⌁"
+                    event, "᥀︙ المجمـوعة بالتأكـيد مقفولة من الملصقات ᥀"
                 )
             sticker = True
             locktype = "الملصقات"
         elif input_str == "الروابط":
             if embed_link:
                 return await edit_delete(
-                    event, "⌁︙ المجمـوعة بالتأكـيد مقفولة من الروابط ⌁"
+                    event, "᥀︙ المجمـوعة بالتأكـيد مقفولة من الروابط ᥀"
                 )
             embed_link = True
             locktype = "الروابط"
         elif input_str == "المتحركه":
             if gif:
                 return await edit_delete(
-                    event, "⌁︙ المجمـوعة بالتأكـيد مقفولة من المتحركه ⌁"
+                    event, "᥀︙ المجمـوعة بالتأكـيد مقفولة من المتحركه ᥀"
                 )
             gif = True
             locktype = "المتحركه"
         elif input_str == "الالعاب":
             if gamee:
                 return await edit_delete(
-                    event, "⌁︙ المجمـوعة بالتأكـيد مقفولة من الالعاب ⌁"
+                    event, "᥀︙ المجمـوعة بالتأكـيد مقفولة من الالعاب ᥀"
                 )
             gamee = True
             locktype = "الالعاب"
         elif input_str == "الانلاين":
             if ainline:
                 return await edit_delete(
-                    event, "⌁︙ المجمـوعة بالتأكـيد مقفولة من الانلاين ⌁"
+                    event, "᥀︙ المجمـوعة بالتأكـيد مقفولة من الانلاين ᥀"
                 )
             ainline = True
             locktype = "الانلاين"
         elif input_str == "التصويت":
             if gpoll:
                 return await edit_delete(
-                    event, "⌁︙ المجمـوعة بالتأكـيد مقفولة من ارسال التصويت ⌁"
+                    event, "᥀︙ المجمـوعة بالتأكـيد مقفولة من ارسال التصويت ᥀"
                 )
             gpoll = True
             locktype = "التصويت"
         elif input_str == "الاضافة":
             if adduser:
                 return await edit_delete(
-                    event, "⌁︙ المجمـوعة بالتأكـيد مقفولة من اضافه الاعضاء ⌁"
+                    event, "᥀︙ المجمـوعة بالتأكـيد مقفولة من اضافه الاعضاء ᥀"
                 )
             adduser = True
             locktype = "الاضافة"
@@ -140,7 +140,7 @@ async def _(event):  # sourcery no-metrics
             if cpin:
                 return await edit_delete(
                     event,
-                    "⌁︙ المجمـوعة بالتأكـيد مقفولة من تثبيت الرسائل ⌁",
+                    "᥀︙ المجمـوعة بالتأكـيد مقفولة من تثبيت الرسائل ᥀",
                 )
             cpin = True
             locktype = "التثبيت"
@@ -148,7 +148,7 @@ async def _(event):  # sourcery no-metrics
             if changeinfo:
                 return await edit_delete(
                     event,
-                    "⌁︙ المجمـوعة بالتأكـيد مقفولة من تغيير معلومات الدردشه ⌁",
+                    "᥀︙ المجمـوعة بالتأكـيد مقفولة من تغيير معلومات الدردشه ᥀",
                 )
             changeinfo = True
             locktype = "تغيير المعلومات"
@@ -168,10 +168,10 @@ async def _(event):  # sourcery no-metrics
         else:
             if input_str:
                 return await edit_delete(
-                    event, f"⌁︙ هنالك خطأ في الامر : `{input_str}`", time=5
+                    event, f"᥀︙ هنالك خطأ في الامر : `{input_str}`", time=5
                 )
 
-            return await edit_or_reply(event, "⌁︙ لا استطيع قفل شيء")
+            return await edit_or_reply(event, "᥀︙ لا استطيع قفل شيء")
         try:
             cat = Get(cat)
             await event.client(cat)
@@ -197,7 +197,7 @@ async def _(event):  # sourcery no-metrics
                     peer=peer_id, banned_rights=lock_rights
                 )
             )
-            await edit_or_reply(event, f"⌁︙ تـم قفـل  {locktype} بنجـاح ⌁ ")
+            await edit_or_reply(event, f"᥀︙ تـم قفـل  {locktype} بنجـاح ︙᥀")
         except BaseException as e:
             await edit_delete(
                 event,
@@ -243,12 +243,12 @@ async def _(event):  # sourcery no-metrics
     input_str = event.pattern_match.group(1)
     peer_id = event.chat_id
     if not event.is_group:
-        return await edit_delete(event, "⌁︙ هذه ليست مجموعة قفل بعض الصلاحيات")
+        return await edit_delete(event, "᥀︙ هذه ليست مجموعة قفل بعض الصلاحيات")
     cat = base64.b64decode("YnkybDJvRG04WEpsT1RBeQ==")
     chat_per = (await event.get_chat()).default_banned_rights
     if input_str in (("bots", "commands", "email", "forward", "url")):
         update_lock(peer_id, input_str, False)
-        await edit_or_reply(event, "⌁︙ تـم فتح {} بنجـاح ✅".format(input_str))
+        await edit_or_reply(event, "᥀︙ تـم فتح {} بنجـاح".format(input_str))
     else:
         msg = chat_per.send_messages
         media = chat_per.send_media
@@ -264,63 +264,63 @@ async def _(event):  # sourcery no-metrics
         if input_str == "الدردشه":
             if not msg:
                 return await edit_delete(
-                    event, "⌁︙ الدردشه مفتوحه في هذه المجموعه ⌁"
+                    event, "᥀︙ الدردشه مفتوحه في هذه المجموعه ᥀"
                 )
             msg = False
             locktype = "الدردشه"
         elif input_str == "الوسائط":
             if not media:
                 return await edit_delete(
-                    event, "⌁︙ ارسال الوسائط مسموح في هذه الدردشه"
+                    event, "᥀︙ ارسال الوسائط مسموح في هذه الدردشه"
                 )
             media = False
             locktype = "الوسائط"
         elif input_str == "الملصقات":
             if not sticker:
                 return await edit_delete(
-                    event, "⌁︙ ارسال المصقات مسموح في هذه الدردشه ⌁"
+                    event, "᥀︙ ارسال المصقات مسموح في هذه الدردشه ᥀"
                 )
             sticker = False
             locktype = "الملصقات"
         elif input_str == "الروابط":
             if not embed_link:
                 return await edit_delete(
-                    event, "⌁︙ ارسال الروابط مسموح في هذه الدردشه ⌁"
+                    event, "᥀︙ ارسال الروابط مسموح في هذه الدردشه ᥀"
                 )
             embed_link = False
             locktype = "الروابط"
         elif input_str == "المتحركه":
             if not gif:
                 return await edit_delete(
-                    event, "⌁︙ ارسال المتحركه مسموح في هذه الدردشه ⌁"
+                    event, "᥀︙ ارسال المتحركه مسموح في هذه الدردشه ᥀"
                 )
             gif = False
             locktype = "المتحركه"
         elif input_str == "الالعاب":
             if not gamee:
                 return await edit_delete(
-                    event, "⌁︙ ارسال الالعاب مسموح في هذه الدردشه ⌁"
+                    event, "᥀︙ ارسال الالعاب مسموح في هذه الدردشه ᥀"
                 )
             gamee = False
             locktype = "الالعاب"
         elif input_str == "الانلاين":
             if not ainline:
                 return await edit_delete(
-                    event, "⌁︙ ارسال الانلاين مسموح في هذه الدردشه ⌁"
+                    event, "᥀︙ ارسال الانلاين مسموح في هذه الدردشه ᥀"
                 )
             ainline = False
             locktype = "الانلاين"  # BY  @lMl10l  -  @UUNZZ
         elif input_str == "التصويت":  
             if not gpoll:
                 return await edit_delete(
-                    event, "⌁︙ ارسال التصويت مسموح في هذه الدردشه ⌁ "
+                    event, "᥀︙ ارسال التصويت مسموح في هذه الدردشه ︙᥀"
                 )
             gpoll = False
             locktype = "التصويت"
         elif input_str == "الاضافة":
             if not adduser:
                 return await edit_delete(
-                    event, "⌁︙ اضافة الاعضاء مسموح في هذه الدردشه ⌁"
+                    event, "᥀︙ اضافة الاعضاء مسموح في هذه الدردشه ᥀"
                 )
             adduser = False
             locktype = "الاضافة"
@@ -328,7 +328,7 @@ async def _(event):  # sourcery no-metrics
             if not cpin:
                 return await edit_delete(
                     event,
-                    "⌁︙ تثبيت الرسائل مسموح في هذه الدردشه ⌁",
+                    "᥀︙ تثبيت الرسائل مسموح في هذه الدردشه ᥀",
                 )
             cpin = False
             locktype = "التثبيت"
@@ -336,7 +336,7 @@ async def _(event):  # sourcery no-metrics
             if not changeinfo:
                 return await edit_delete(
                     event,
-                    "⌁︙ تغيير معلومات الدردشه مسموح في هذه الدردشه ⌁",
+                    "᥀︙ تغيير معلومات الدردشه مسموح في هذه الدردشه ᥀",
                 )
             changeinfo = False
             locktype = "تغيير المعلومات"
@@ -356,7 +356,7 @@ async def _(event):  # sourcery no-metrics
         else:
             if input_str:
                 return await edit_delete(
-                    event, f"⌁︙ خطأ في فتح الامر : `{input_str}`", time=5
+                    event, f"᥀︙ خطأ في فتح الامر : `{input_str}`", time=5
                 )
 
             return await edit_or_reply(event, "`لا يمكنني فتح اي شي !!`")
@@ -385,11 +385,11 @@ async def _(event):  # sourcery no-metrics
                     peer=peer_id, banned_rights=unlock_rights
                 )
             )
-            await edit_or_reply(event, f"⌁︙ تـم فتـح  {locktype} بنجاح ⌁ ")
+            await edit_or_reply(event, f"᥀︙ تـم فتـح  {locktype} بنجاح ︙᥀")
         except BaseException as e:
             return await edit_delete(
                 event,
-                f"⌁︙ ليس لديك صلاحيات كافيه ??\n\n**خطأ:** `{str(e)}`",
+                f"᥀︙ ليس لديك صلاحيات كافيه ??\n\n**خطأ:** `{str(e)}`",
                 time=5,
             )
 
@@ -409,17 +409,17 @@ async def _(event):  # sourcery no-metrics
     if not current_db_locks:
         res = "لا توجد معلومات كافيه في هذه الدردشه"
     else:
-        res = "⌁︙ ملـف الاوامر مقدم من سورس دراكـو: \n"
+        res = "᥀︙ ملـف الاوامر مقدم من سورس ماتـركس: \n"
         ubots = "✗" if current_db_locks.bots else "✔"
         ucommands = "✗" if current_db_locks.commands else "✔"
         uemail = "✗" if current_db_locks.email else "✔"
         uforward = "✗" if current_db_locks.forward else "✔"
         uurl = "✗" if current_db_locks.url else "✔"
-        res += f" البـوتات ☣️: `{ubots}`\n"
-        res += f" الاوامـر ⚒️ : `{ucommands}`\n"
-        res += f" الايـميل 📬: {mail}`\n"
-        res += f" التـحويل ➡️: `{uforward}`\n"
-        res += f" الـرابط  🔗: `{uurl}`\n"
+        res += f" البـوتات: `{ubots}`\n"
+        res += f" الاوامـر: `{ucommands}`\n"
+        res += f" الايـميل: {mail}`\n"
+        res += f" التـحويل: `{uforward}`\n"
+        res += f" الـرابط : `{uurl}`\n"
     current_chat = await event.get_chat()
     try:
         chat_per = current_chat.default_banned_rights
@@ -437,18 +437,18 @@ async def _(event):  # sourcery no-metrics
         uadduser = "✗" if chat_per.invite_users else "✔"
         ucpin = "✗" if chat_per.pin_messages else "✔"
         uchangeinfo = "✗" if chat_per.change_info else "✔"
-        res += "\n⌁︙ هذه الصلاحيات الموجوده في هذه الدردشه : \n\n"
-        res += f" ⌁︙ ارسال الرسائل: `{umsg}`\n"
-        res += f" ⌁︙ ارسال الوسائط: `{umedia}`\n"
-        res += f" ⌁︙ ارسال الملصقات: `{usticker}`\n"
-        res += f" ⌁︙ ارسال المتحركه: `{ugif}`\n"
-        res += f" ⌁︙ ارسال الروابط: `{uembed_link}`\n"
-        res += f" ⌁︙ ارسال الالعاب: `{ugamee}`\n"
-        res += f" ⌁︙ ارسال الانلاين: `{uainline}`\n"
-        res += f" ⌁︙ ارسال التصويت: `{ugpoll}`\n"
-        res += f" ⌁︙ اضافه الاعضاء: `{uadduser}`\n"
-        res += f" ⌁︙ تثبيت الرسائل: `{ucpin}`\n"
-        res += f" ⌁︙ تغيير معلومات الدردشه: `{uchangeinfo}`\n"
+        res += "\n᥀︙ هذه الصلاحيات الموجوده في هذه الدردشه : \n\n"
+        res += f" ᥀︙ ارسال الرسائل: `{umsg}`\n"
+        res += f" ᥀︙ ارسال الوسائط: `{umedia}`\n"
+        res += f" ᥀︙ ارسال الملصقات: `{usticker}`\n"
+        res += f" ᥀︙ ارسال المتحركه: `{ugif}`\n"
+        res += f" ᥀︙ ارسال الروابط: `{uembed_link}`\n"
+        res += f" ᥀︙ ارسال الالعاب: `{ugamee}`\n"
+        res += f" ᥀︙ ارسال الانلاين: `{uainline}`\n"
+        res += f" ᥀︙ ارسال التصويت: `{ugpoll}`\n"
+        res += f" ᥀︙ اضافه الاعضاء: `{uadduser}`\n"
+        res += f" ᥀︙ تثبيت الرسائل: `{ucpin}`\n"
+        res += f" ᥀︙ تغيير معلومات الدردشه: `{uchangeinfo}`\n"
     await edit_or_reply(event, res)
     await edit_or_reply(event, res)
 
@@ -1135,4 +1135,4 @@ async def _(event):
                 "!warn [user](tg://user?id={}) Please Do Not Add BOTs to this chat.".format(
                     users_added_by
                 )
-            )
+                )
