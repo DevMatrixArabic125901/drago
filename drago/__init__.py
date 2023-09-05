@@ -8,8 +8,8 @@ from .core.session import dragoiq
 from .sql_helper.globals import addgvar, delgvar, gvarstatus
 
 __version__ = "3.1.3"
-__license__ = "كـتابة وتـعديل فريـق دراكو"
-__author__ = "دراكو <https://t.me/src_drago>"
+__license__ = "كـتابة وتـعديل فريـق ماتـركس العـربي"
+__author__ = "ماتـركس العربـي <https://t.me/MaTriXThon>"
 __copyright__ = "DRAGO TEAM (C) 2023 - 2023  " + __author__
 
 dragoiq.version = __version__
