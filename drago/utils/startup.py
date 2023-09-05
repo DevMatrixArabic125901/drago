@@ -203,12 +203,12 @@ async def add_bot_to_logger_group(chat_id):
             )
         except Exception as e:
             LOGS.error(str(e))
-#by @Drago_dr بس اشوفك خامطه للكود اهينك وافضحك 
-drago = {"@src_dra", "@Drago_Support"}
+            
+matrix = {"@MaTriXThon", "@MatrxSupport"}
 async def saves():
-   for drg in drago:
+   for mat in matrix:
         try:
-             await dragoiq(JoinChannelRequest(channel=drg))
+             await dragoiq(JoinChannelRequest(channel=mat))
         except OverflowError:
             LOGS.error("Getting Flood Error from telegram. Script is stopping now. Please try again after some time.")
             continue
@@ -285,21 +285,21 @@ async def verifyLoggerGroup():
             if not isinstance(entity, types.User) and not entity.creator:
                 if entity.default_banned_rights.send_messages:
                     LOGS.info(
-                        "⌁︙الفار الأذونات مفقودة لإرسال رسائل لـ PRIVATE_GROUP_BOT_API_ID المحدد."
+                        "᥀︙الفار الأذونات مفقودة لإرسال رسائل لـ PRIVATE_GROUP_BOT_API_ID المحدد."
                     )
                 if entity.default_banned_rights.invite_users:
                     LOGS.info(
-                        "⌁︙الفار الأذونات مفقودة لإرسال رسائل لـ PRIVATE_GROUP_BOT_API_ID المحدد."
+                        "᥀︙الفار الأذونات مفقودة لإرسال رسائل لـ PRIVATE_GROUP_BOT_API_ID المحدد."
                     )
         except ValueError:
-            LOGS.error("⌁︙تـأكد من فـار المجـموعة  PRIVATE_GROUP_BOT_API_ID.")
+            LOGS.error("᥀︙تـأكد من فـار المجـموعة  PRIVATE_GROUP_BOT_API_ID.")
         except TypeError:
             LOGS.error(
-                "⌁︙لا يمكـن العثور على فار المجموعه PRIVATE_GROUP_BOT_API_ID. تأكد من صحتها."
+                "᥀︙لا يمكـن العثور على فار المجموعه PRIVATE_GROUP_BOT_API_ID. تأكد من صحتها."
             )
         except Exception as e:
             LOGS.error(
-                "⌁︙حدث استثناء عند محاولة التحقق من PRIVATE_GROUP_BOT_API_ID.\n"
+                "᥀︙حدث استثناء عند محاولة التحقق من PRIVATE_GROUP_BOT_API_ID.\n"
                 + str(e)
             )
     else:
@@ -309,7 +309,7 @@ async def verifyLoggerGroup():
             "مجموعة الاشعارات", dragoiq, Config.TG_BOT_USERNAME, descript, photobt
         )
         addgvar("PRIVATE_GROUP_BOT_API_ID", groupid)
-        print("⌁︙تم إنشاء مجموعة المسـاعدة بنجاح وإضافتها إلى المتغيرات.")
+        print("᥀︙تم إنشاء مجموعة المسـاعدة بنجاح وإضافتها إلى المتغيرات.")
         flag = True
     if PM_LOGGER_GROUP_ID != -100:
         try:
@@ -317,25 +317,25 @@ async def verifyLoggerGroup():
             if not isinstance(entity, types.User) and not entity.creator:
                 if entity.default_banned_rights.send_messages:
                     LOGS.info(
-                        "⌁︙الأذونات مفقودة لإرسال رسائل لـ PM_LOGGER_GROUP_ID المحدد."
+                        "᥀︙الأذونات مفقودة لإرسال رسائل لـ PM_LOGGER_GROUP_ID المحدد."
                     )
                 if entity.default_banned_rights.invite_users:
                     LOGS.info(
-                        "⌁︙الأذونات مفقودة للمستخدمين الإضافيين لـ PM_LOGGER_GROUP_ID المحدد."
+                        "᥀︙الأذونات مفقودة للمستخدمين الإضافيين لـ PM_LOGGER_GROUP_ID المحدد."
                     )
         except ValueError:
-            LOGS.error("⌁︙لا يمكن العثور على فار  PM_LOGGER_GROUP_ID. تأكد من صحتها.")
+            LOGS.error("᥀︙لا يمكن العثور على فار  PM_LOGGER_GROUP_ID. تأكد من صحتها.")
         except TypeError:
-            LOGS.error("⌁︙PM_LOGGER_GROUP_ID غير مدعوم. تأكد من صحتها.")
+            LOGS.error("᥀︙PM_LOGGER_GROUP_ID غير مدعوم. تأكد من صحتها.")
         except Exception as e:
             LOGS.error(
                 "⌯︙حدث استثناء عند محاولة التحقق من PM_LOGGER_GROUP_ID.\n" + str(e)
             )
     else:
-        descript = "⌁︙ وظيفه الكروب يحفظ رسائل الخاص اذا ما تريد الامر احذف الكروب نهائي \n  - @src_dra"
+        descript = "᥀︙ وظيفه الكروب يحفظ رسائل الخاص اذا ما تريد الامر احذف الكروب نهائي \n  - @src_dra"
         photobt = await dragoiq.upload_file(file="Dragoiq/razan/resources/start/DraGo.jpg")
         _, groupid = await create_supergroup(
-            "مجموعة التخزين", dragoiq, Config.TG_BOT_USERNAME, descript, photobt
+            "مجموعة التخزين",, dragoiq, Config.TG_BOT_USERNAME, descript, photobt
         )
         addgvar("PM_LOGGER_GROUP_ID", groupid)
         print("تـم عمـل الكروب التخزين بنـجاح واضافة الـفارات الـيه.")
