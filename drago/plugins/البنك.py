@@ -27,8 +27,8 @@ async def amireallyalive(event):
     await edit_or_reply(event, "** ᥀︙ جـاري حسـب سـرعة بـنـك**")
     end = datetime.now()
     ms = (end - start).microseconds / 1000
-    EMOJI = gvarstatus("ALIVE_EMOJI") or "✇ ◅"
-    PING_TEXT = gvarstatus("PING_TEXT") or "**[ 𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 𝚂𝙾𝚄𝚁𝙲𝙴 𝙼𝙰𝚃𝚁𝙸𝚇 𝙰𝚁𝙰𝙱𝙸𝙲 ](t.me/MaTriXThon)**"
+    EMOJI = gvarstatus("ALIVE_EMOJI") or "🚸"
+    PING_TEXT = gvarstatus("PING_TEXT") or "**[ ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ᴍᴀᴛʀɪx ᴀʀᴀʙɪᴄ ](t.me/MaTriXThon)**"
     PING_IMG = gvarstatus("PING_PIC") or Config.P_PIC or "https://telegra.ph/file/7393bd7f67494976a5b10.jpg"
     drago_caption = gvarstatus("PING_TEMPLATE") or temp
     caption = drago_caption.format(
