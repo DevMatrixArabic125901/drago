@@ -434,7 +434,7 @@ async def download_video(event):
 
 @dragoiq.ar_cmd(
     pattern="تيك(?:\s|$)([\s\S]*)",
-    command=("تيك", plugin_category),
+    command=("تيك توك", plugin_category),
     info={
         "header": "تحميـل مقـاطـع الفيـديــو مـن تيـك تـوك عـبر الرابـط",
         "مثــال": [
@@ -506,7 +506,7 @@ async def download_video(event):
 
 @dragoiq.ar_cmd(
     pattern="ساوند(?:\s|$)([\s\S]*)",
-    command=("ساوند", plugin_category),
+    command=("ساوند كلاود", plugin_category),
     info={
         "header": "تحميـل الاغـاني مـن سـاونـد كـلاود الـخ عـبر الرابـط",
         "مثــال": ["{tr}ساوند بالــرد ع رابــط", "{tr}ساوند + رابــط"],
