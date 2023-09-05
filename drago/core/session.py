@@ -4,6 +4,7 @@ from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.sessions import StringSession
 from ..Config import Config
 from .client import DragoClient
+
 LOGS = logging.getLogger("drago")
 
 __version__ = "2.10.6"
@@ -11,8 +12,8 @@ __version__ = "2.10.6"
 loop = None
 
 if Config.STRING_SESSION:
-    session = StringSession(str(Config.STRING_SESSION))
-else:
+    session = bothseesion(Config.STRING_SESSION, LOGS)
+    
     session = "drago"
 
 try:
@@ -27,10 +28,11 @@ try:
         connection_retries=None,
     )
 except Exception as e:
-    print(f"[STRING SESSION] - {str(e)}")
+    print(
+        f"STRING_SESSION CODE WRONG MAKE A NEW SESSION - {e}\n كود سيشن تيليثـون غير صالح .. قم باستخـراج كود جديد ؟!"
+    )
     sys.exit()
 
-try:
     dragoiq.tgbot = tgbot = DragoClient(
         session="Sessionszbot",
         api_id=Config.APP_ID,
