@@ -18,19 +18,18 @@ from . import mention
 
 plugin_category = "utils"
 
-#كتـابة وتعـديل:  @lsbax_dev
 @dragoiq.on(admin_cmd(pattern=f"بنك(?:\s|$)([\s\S]*)"))
     
 async def amireallyalive(event):
     "للتـأكد من ان البـوت يعـمـل"
     reply_to_id = await reply_id(event)
     start = datetime.now()
-    await edit_or_reply(event, "** ⌁︙ يتـم التـأكـد من البنك انتـظر قليلا رجاءا**")
+    await edit_or_reply(event, "** ᥀︙ جـاري حسـب سـرعة بـنـك**")
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     EMOJI = gvarstatus("ALIVE_EMOJI") or "✇ ◅"
-    PING_TEXT = gvarstatus("PING_TEXT") or "**[ 𝗐𝖾𝗅𝖼𝗈𝗆𝖾 𝗍𝗈 𝗌𝗈𝗎𝗋𝖼𝖾 𝖽𝗋𝖺𝗀𝗈 ](t.me/src_dra)**"
-    PING_IMG = gvarstatus("PING_PIC") or Config.P_PIC or "https://telegra.ph/file/66ea9f2238e9884d62b3e.jpg"
+    PING_TEXT = gvarstatus("PING_TEXT") or "**[ 𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 𝚂𝙾𝚄𝚁𝙲𝙴 𝙼𝙰𝚃𝚁𝙸𝚇 𝙰𝚁𝙰𝙱𝙸𝙲 ](t.me/MaTriXThon)**"
+    PING_IMG = gvarstatus("PING_PIC") or Config.P_PIC or "https://telegra.ph/file/7393bd7f67494976a5b10.jpg"
     drago_caption = gvarstatus("PING_TEMPLATE") or temp
     caption = drago_caption.format(
         PING_TEXT=PING_TEXT,
@@ -60,6 +59,6 @@ async def amireallyalive(event):
 
 temp = """{PING_TEXT}
 ┏━━━━━━━━━━━━━━━┓
-[ㅤㅤ‹ {ping} ›ㅤㅤㅤ]
-[ㅤ‹ {mention} ›ㅤㅤ]
+ㅤㅤ {ping} ㅤ
+   {mention} ㅤㅤ
 ┗━━━━━━━━━━━━━━━┛"""
