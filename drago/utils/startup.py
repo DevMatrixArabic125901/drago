@@ -135,13 +135,13 @@ async def startupmessage():
 async def mybot():
     try:
         starkbot = await dragoiq.tgbot.get_me()
-        DRAGO = "‹ دراكو ›"
+        DRAGO = "᥀︰ماتـركس الـعربي︰᥀"
         bot_name = starkbot.first_name
         botname = f"@{starkbot.username}"
         if bot_name.endswith("Assistant"):
-            print("تم تشغيل البوت")
+            print("تم تشغيل بوت المساعد على سورس ماتركس العربي")
         if starkbot.bot_inline_placeholder:
-            print("drago ForEver")
+            print("MATRIX")
         else:
             try:
                 await dragoiq.send_message("@BotFather", "/setinline")
@@ -150,7 +150,13 @@ async def mybot():
                 await asyncio.sleep(1)
                 await dragoiq.send_message("@BotFather", DRAGO)
                 await asyncio.sleep(2)
-            except Exception as e:
+                await bot.send_message("@BotFather", "/setuserpic")
+               await asyncio.sleep(1)
+               await bot.send_message("@BotFather", botname)
+               await asyncio.sleep(1)
+               await bot.send_file("@BotFather", "drago/MATRIX_BOT/Picsart_23-09-05_19-17-13-173.jpg")
+               await asyncio.sleep(3)
+               except Exception as e:
                 print(e)
     except Exception as e:
         print(e)
