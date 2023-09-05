@@ -13,7 +13,7 @@ from . import BOTLOG, BOTLOG_CHATID
 
 LOGS = logging.getLogger(__name__)
 
-plugin_category = "البوت"
+plugin_category = "BOT"
 
 
 class LOG_CHATS:
@@ -90,15 +90,15 @@ async def set_pmlog(event):
         PMLOG = True
     if PMLOG:
         if h_type:
-            await event.edit("**⌯︙ تـخزين رسـائل الخـاص بالفـعل مُمكـنة ✅**")
+            await event.edit("**᥀︙ تـخزين رسـائل الخـاص بالفـعل مُمكـنة**")
         else:
             addgvar("PMLOG", h_type)
-            await event.edit("**⌯︙ تـم تعـطيل تخـزين رسائل الـخاص بنـجاح ✅**")
+            await event.edit("**᥀︙ تـم تعـطيل تخـزين رسائل الـخاص بنـجاح**")
     elif h_type:
         addgvar("PMLOG", h_type)
-        await event.edit("**⌯︙ تـم تفعيل تخـزين رسائل الـخاص بنـجاح ✅**")
+        await event.edit("**᥀︙ تـم تفعيل تخـزين رسائل الـخاص بنـجاح**")
     else:
-        await event.edit("**⌯︙ تـخزين رسـائل الخـاص بالفـعل معـطلة ✅**")
+        await event.edit("**᥀︙ تـخزين رسـائل الخـاص بالفـعل معـطلة**")
 
 
 @dragoiq.ar_cmd(
@@ -126,12 +126,12 @@ async def set_grplog(event):
         GRPLOG = True
     if GRPLOG:
         if h_type:
-            await event.edit("**⌯︙ تـخزين رسـائل الكروبات بالفـعل مُمكـنة ✅**")
+            await event.edit("**᥀︙ تـخزين رسـائل الكروبات بالفـعل مُمكـنة**")
         else:
             addgvar("GRPLOG", h_type)
-            await event.edit("**⌯︙ تـم تعـطيل تخـزين رسائل الكروبات بنـجاح ✅**")
+            await event.edit("**᥀︙ تـم تعـطيل تخـزين رسائل الكروبات بنـجاح**")
     elif h_type:
         addgvar("GRPLOG", h_type)
-        await event.edit("**⌯︙ تـم تفعيل تخـزين رسائل الكروبات بنـجاح ✅**")
+        await event.edit("**᥀︙ تـم تفعيل تخـزين رسائل الكروبات بنـجاح**")
     else:
-        await event.edit("**⌯︙ تـخزين رسـائل الكروبات بالفـعل معـطلة ✅**")
+        await event.edit("**᥀︙ تـخزين رسـائل الكروبات بالفـعل معـطلة**")
