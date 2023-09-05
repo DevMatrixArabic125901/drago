@@ -29,7 +29,7 @@ from .pluginmanager import load_module
 from .tools import create_supergroup
 LOGS = logging.getLogger("drago")
 logging.getLogger('telethon').setLevel(logging.WARNING)
-##Ahmed hands here
+#1#MaTriX#1#
 cmdhr = Config.COMMAND_HAND_LER
 bot = dragoiq
 ENV = bool(os.environ.get("ENV", False))
@@ -66,8 +66,8 @@ async def setup_bot():
             if option.ip_address == dragoiq.session.server_address:
                 if dragoiq.session.dc_id != option.id:
                     LOGS.warning(
-                        f"⌯︙معرف ثابت في الجلسة من {dragoiq.session.dc_id}"
-                        f"⌯︙لـ  {option.id}"
+                        f"᥀︙معرف ثابت في الجلسة من {dragoiq.session.dc_id}"
+                        f"᥀︙لـ  {option.id}"
                     )
                 dragoiq.session.set_dc(option.id, option.ip_address, option.port)
                 dragoiq.session.save()
@@ -85,7 +85,7 @@ async def setup_bot():
         if Config.OWNER_ID == 0:
             Config.OWNER_ID = utils.get_peer_id(dragoiq.me)
         if not check_dyno_type:
-            LOGS.error("قد تحدث مشكلة ولن يعمل السورس لان نوع الداينو ليس بيسك قم بتحويله الى basic")
+            LOGS.error("قد تحدث مشكلة ولن يعمل السورس لان نوع الدينو ليس بيسك قم بتحويله الى basic")
     except Exception as e:
         LOGS.error(f"كـود تيرمكس - {str(e)}")
         sys.exit()
@@ -135,11 +135,11 @@ async def startupmessage():
 async def mybot():
     try:
         starkbot = await dragoiq.tgbot.get_me()
-        DRAGO = "᥀︰ماتـركس الـعربي︰᥀"
+        MATRIX = "᥀︰ماتـركس الـعربي︰᥀"
         bot_name = starkbot.first_name
         botname = f"@{starkbot.username}"
         if bot_name.endswith("Assistant"):
-            print("تم تشغيل بوت المساعد على سورس ماتركس العربي")
+            print("᥀︰تم تشغيل بوت المساعد على سورس ماتركس العربي︰᥀")
         if starkbot.bot_inline_placeholder:
             print("MATRIX")
         else:
@@ -148,13 +148,13 @@ async def mybot():
                 await asyncio.sleep(1)
                 await dragoiq.send_message("@BotFather", botname)
                 await asyncio.sleep(1)
-                await dragoiq.send_message("@BotFather", DRAGO)
+                await dragoiq.send_message("@BotFather", MATRIX)
                 await asyncio.sleep(2)
                 await bot.send_message("@BotFather", "/setuserpic")
                await asyncio.sleep(1)
                await bot.send_message("@BotFather", botname)
                await asyncio.sleep(1)
-               await bot.send_file("@BotFather", "drago/MATRIX_BOT/Picsart_23-09-05_19-17-13-173.jpg")
+               await bot.send_file("@BotFather", "drago/MATRIX_BOT/MATRIXBOT.JPG")
                await asyncio.sleep(3)
                except Exception as e:
                 print(e)
@@ -332,7 +332,7 @@ async def verifyLoggerGroup():
                 "⌯︙حدث استثناء عند محاولة التحقق من PM_LOGGER_GROUP_ID.\n" + str(e)
             )
     else:
-        descript = "᥀︙ وظيفه الكروب يحفظ رسائل الخاص اذا ما تريد الامر احذف الكروب نهائي \n  - @src_dra"
+        descript = "᥀︙ وظيفه الكروب يحفظ رسائل الخاص اذا ما تريد الامر احذف الكروب نهائي \n  - @MaTriXThon"
         photobt = await dragoiq.upload_file(file="Dragoiq/razan/resources/start/DraGo.jpg")
         _, groupid = await create_supergroup(
             "مجموعة التخزين",, dragoiq, Config.TG_BOT_USERNAME, descript, photobt
