@@ -1,4 +1,4 @@
-DRAGOENIQ = [
+MATRIXENIQ = [
     """
 `• 𝑻𝒉𝒆 𝑳𝒐𝒗𝒆𝒓 𝒐𝒇 𝑾𝒉𝒐𝒎 𝑯𝒆 𝑳𝒐𝒗𝒆𝒔 𝒊𝒔 𝑶𝒃𝒆𝒅𝒊𝒆𝒏𝒕 ♡`
 
@@ -25,7 +25,7 @@ DRAGOENIQ = [
 `• Who hates you won't hurt you !Aren't to hurt you only you love.`
 
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
- ⌔︙CH : @src_dra
+ ⌔︙CH : @MaTriX
 """,
     """
 `• Death ends a life. not a relationship ،`
@@ -72,7 +72,7 @@ DRAGOENIQ = [
 """,
 ]
 
-DRAGOARIQ = [
+MATRIXARIQ = [
     """
 - ‏ستنتهي الخيوط التي كُنت أجمع بها نفسي سأصبح مُمَزّقً للأبد .
 """,
