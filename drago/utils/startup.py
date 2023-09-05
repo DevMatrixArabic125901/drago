@@ -98,8 +98,8 @@ async def startupmessage():
         if BOTLOG:
             Config.CATUBLOGO = await dragoiq.tgbot.send_file(
                 BOTLOG_CHATID,
-                "https://telegra.ph/file/66ea9f2238e9884d62b3e.jpg",
-                caption="**‏⌁︙ بــوت دراكـو يـعـمـل بـنـجـاح ✓ \n⌁︙ أرسل `.الاوامر` لرؤية اوامر السورس**",
+                "https://telegra.ph/file/7393bd7f67494976a5b10.jpg",
+                caption="**‏᥀︙تم تنصـيب سـورس ماتـركس الـعربي بنـجاح ✓**",
                 buttons=[(Button.url("قناة السورس", "https://t.me/src_dra"),)],
                 
             )
