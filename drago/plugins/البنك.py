@@ -38,8 +38,8 @@ async def amireallyalive(event):
         ping=ms,
     )
     if PING_IMG:
-        JEP = [x for x in PING_IMG.split()]
-        PIC = random.choice(JEP)
+        MAT = [x for x in PING_IMG.split()]
+        PIC = random.choice(MAT)
         try:
             await event.client.send_file(
                 event.chat_id, PIC, caption=caption, reply_to=reply_to_id
