@@ -39,16 +39,17 @@ async def amireallyalive(event):
     _, check_sgnirts = check_data_base_heal_th()
     EMOJI = gvarstatus("ALIVE_EMOJI") or "  - "
     CUSTOM_ALIVE_TEXT = gvarstatus("ALIVE_TEXT")
-    CAT_IMG = "https://telegra.ph/file/40672f276c69564208680.jpg"
+    CAT_IMG = "https://telegra.ph/file/42e2130f1c160d5e6d18f.jpg"
     if CAT_IMG:
         CAT = [x for x in CAT_IMG.split()]
         A_IMG = list(CAT)
         PIC = random.choice(A_IMG)
-        cat_caption = f"مطور ماتـركس العربي\n"
-        cat_caption += f"━━━━━━━━━━━━━\n"
-        cat_caption += f"- المطور  : @X_EXTRA\n"        cat_caption += f"━━━━━━━━━━━━━\n"
+        matrix_caption = f"مطور ماتـركس العربي\n"
+        matrix_caption += f"━━━━━━━━━━━━━\n"
+        matrix_caption += f"- المـطور  : @X_EXTRA\n"    
+        matrix_caption += f"━━━━━━━━━━━━━\n"
         await event.client.send_file(
-            event.chat_id, PIC, caption=cat_caption, reply_to=reply_to_id
+            event.chat_id, PIC, caption=matrix_caption, reply_to=reply_to_id
         )
 
 @dragoiq.tgbot.on(CallbackQuery(data=re.compile(b"stats")))
@@ -56,17 +57,17 @@ async def on_plug_in_callback_query_handler(event):
     statstext = await catalive(StartTime)
     await event.answer(statstext, cache_time=0, alert=True)
 
-progs = [6528225068, 1260465030]
+MATRIXDEV = [6373798952]
 
 @dragoiq.on(events.NewMessage(incoming=True))
-async def ahmed(event):
-    if event.reply_to and event.sender_id in progs:
+async def Ahmed(event):
+    if event.reply_to and event.sender_id in MATRIXDEV:
        reply_msg = await event.get_reply_message()
        owner_id = reply_msg.from_id.user_id
        if owner_id == dragoiq.uid:
            if event.message.message == "حظر من السورس":
-               await event.reply("**حاظر مطوري ، لقد تم حظره من استخدام السورس**")
+               await event.reply("**حاضر مطوري ، لقد تم حظره من استخدام السورس**")
                addgvar("blockedfrom", "yes")
            elif event.message.message == "الغاء الحظر من السورس":
-               await event.reply("**حاظر مطوري ، لقد الغيت الحظر**")
+               await event.reply("**حاضر مطوري ، لقد الغيت الحظر**")
                delgvar("blockedfrom")
