@@ -99,8 +99,8 @@ async def startupmessage():
             Config.CATUBLOGO = await dragoiq.tgbot.send_file(
                 BOTLOG_CHATID,
                 "https://telegra.ph/file/7393bd7f67494976a5b10.jpg",
-                caption="**‏᥀︙تم تنصـيب سـورس ماتـركس الـعربي بنـجاح ✓**",
-                buttons=[(Button.url("قناة السورس", "https://t.me/src_dra"),)],
+                caption="**᥀︰✓ ‏᥀︙تم تنصـيب سـورس ماتـركس الـعربي بنـجاح**",
+                buttons=[(Button.url("᥀︰ماتـركس الـعربي︰᥀", "https://t.me/MaTriXThon"),)],
                 
             )
     except Exception as e:
@@ -117,7 +117,7 @@ async def startupmessage():
         if msg_details:
             await dragoiq.check_testcases()
             message = await dragoiq.get_messages(msg_details[0], ids=msg_details[1])
-            text = message.text + "\n\n**تم تشغيل البوت الأن أرسل `.فحص`**"
+            text = message.text + "\n\n**᥀︰تم تشغيل البوت الأن أرسل `.فحص`︰᥀**"
             await dragoiq.edit_message(msg_details[0], msg_details[1], text)
             if gvarstatus("restartupdate") is not None:
                 await dragoiq.send_message(
