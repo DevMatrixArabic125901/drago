@@ -1,5 +1,5 @@
 # اذا تخمط اذكر الحقوق رجـاءا  - 
-# For ~ @src_dra
+# For ~ @MaTriXThon
 import webcolors
 import asyncio
 import base64
