@@ -19,10 +19,10 @@ plugin_category = "extra"
     },
 )
 async def gps(event):
-    "⌁︙ لإرسـال خارطـة الموقـع المعطـىٰ 🗺"
+    "᥀︙ لإرسـال خارطـة الموقـع المعطـىٰ"
     reply_to_id = await reply_id(event)
     input_str = event.pattern_match.group(1)
-    catevent = await edit_or_reply(event, "** ⌁︙ جاري العثـور على الموقع  … **")
+    catevent = await edit_or_reply(event, "**᥀︙ جاري العثـور على الموقع …**")
     geolocator = Nominatim(user_agent="catuserbot")
     geoloc = geolocator.geocode(input_str)
     if geoloc:
@@ -31,9 +31,9 @@ async def gps(event):
         await event.client.send_file(
             event.chat_id,
             file=types.InputMediaGeoPoint(types.InputGeoPoint(lat, lon)),
-            caption=f"**⌁︙ الموقـع   : **`{input_str}`",
+            caption=f"**᥀︙ الـموقع   : **`{input_str}`",
             reply_to=reply_to_id,
         )
         await catevent.delete()
     else:
-        await catevent.edit("⌁︙ عـذراً , لـم أستطـع إيجـاده  ⚠️")
+        await catevent.edit("᥀︙ عـذراً , لـم أستطـع إيجـاده ")
