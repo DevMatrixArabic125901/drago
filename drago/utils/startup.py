@@ -156,7 +156,7 @@ async def mybot():
                 await asyncio.sleep(1)
                 await dragoiq.send_file("@BotFather", "drago/MATRIX_BOT/MATRIXBOT.JPG")
                 await asyncio.sleep(3)
-                except Exception as e:
+                 except Exception as e:
                  print(e)
 
     
