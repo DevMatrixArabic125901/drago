@@ -59,7 +59,7 @@ class Config(object):
     BIO_ET = os.environ.get("BIO_ET", None)
     PHOTO_ET = os.environ.get("PHOTO_ET", None)    
     LOAD_MYBOT = os.environ.get("LOAD_MYBOT", "True")   
-    DRAGO_START = os.environ.get("DRAGO_START", None)
+    MATRIX_START = os.environ.get("MATRIX_START", None)
     PMPERMIT_TEXT_DRAGO = os.environ.get("PMPERMIT_TEXT_DRAGO", None)
     UB_BLACK_LIST_CHAT = {
         int(x) for x in os.environ.get("UB_BLACK_LIST_CHAT", "").split()
@@ -68,13 +68,9 @@ class Config(object):
     P_PIC = os.environ.get("P_PIC", None)
     P_TEXT = os.environ.get("P_TEXT", None)
     PMBOT_START_MSSG = os.environ.get("PMBOT_START_MSSG", None)
-    EXTERNAL_REPO = os.environ.get("EXTERNAL_REPO", None)
     VCMODE = os.environ.get("VCMODE", False)
     VCMODE = bool(VCMODE and (VCMODE.lower() != "false"))
     VC_SESSION = os.environ.get("VC_SESSION", None)
-    # if you need badcat plugins use the following vars
-    OLDDrg = os.environ.get("OLDDrg", "no")
-    OLDDrg = bool(OLDDrg and (OLDDrg.lower() != "no"))
     
     BOT_PIC = os.environ.get("BOT_PIC", None)
     # Set this value with group id of private group(can be found this value by .id)
