@@ -201,7 +201,7 @@ async def custom_drago(event):
             )
         delgvar("PING_PIC")
     await edit_or_reply(
-        event, f"₰ هذا الفار تم حذفه بنجاح وارجاع قيمته الى القيمه الاصلية ✅"
+        event, f"᥀︙هذا الفار تم حذفه بنجاح وارجاع قيمته الى القيمه الاصلية︙᥀"
     )
     if BOTLOG_CHATID:
         await event.client.send_message(
@@ -222,7 +222,7 @@ async def alive_drago(event):
         response = telegraph.upload_file(media)
         url = 'https://telegra.ph' + response[0]['src']
         addgvar("ALIVE_PIC", url)
-        await event.edit(f"**⌁︙ تم بنجاح اضافة صورة  {input_str} ✓ **")
+        await event.edit(f"**᥀︙تم بنجاح اضافة صورة  {input_str} ✓ **")
         if BOTLOG_CHATID:
             await event.client.send_message(
                 BOTLOG_CHATID,
@@ -231,7 +231,7 @@ async def alive_drago(event):
         else:
             await event.edit("**حدث خطأ أثناء تحميل الصورة على Telegraph**")
     else:
-        await event.edit("**⌁︙ يرجى الرد على الصورة لتحديث الفار**")
+        await event.edit("**᥀︙يرجى الرد على الصورة لتحديث الفار**")
 @dragoiq.ar_cmd(pattern="اضف صورة (البنك|بنك) ?(.*)")
 async def add_ping_drago(event):
     reply = await event.get_reply_message()
@@ -241,7 +241,7 @@ async def add_ping_drago(event):
         response = telegraph.upload_file(media)
         url = 'https://telegra.ph' + response[0]['src']
         addgvar("PING_PIC", url)
-        await event.edit(f"**⌁︙ تم بنجاح اضافة صورة  {input_str} ✓ **")
+        await event.edit(f"**᥀︙تم بنجاح اضافة صورة  {input_str} ✓ **")
         if BOTLOG_CHATID:
             await event.client.send_message(
                 BOTLOG_CHATID,
@@ -250,7 +250,7 @@ async def add_ping_drago(event):
         else:
             await event.edit("**حدث خطأ أثناء تحميل الصورة على Telegraph**")
     else:
-        await event.edit("**⌁︙ يرجى الرد على الصورة لتحديث الفار**")
+        await event.edit("**᥀︙يرجى الرد على الصورة لتحديث الفار**")
 @dragoiq.ar_cmd(pattern="اضف صورة (الحماية|الحمايه|حماية|حمايه) ?(.*)")
 async def security_drago(event):
     reply = await event.get_reply_message()
@@ -260,7 +260,7 @@ async def security_drago(event):
         response = telegraph.upload_file(media)
         url = 'https://telegra.ph' + response[0]['src']
         addgvar("pmpermit_pic", url)
-        await event.edit(f"**⌁︙ تم بنجاح اضافة صورة  {input_str} ✓ **")
+        await event.edit(f"**᥀︙تم بنجاح اضافة صورة  {input_str} ✓ **")
         if BOTLOG_CHATID:
             await event.client.send_message(
                 BOTLOG_CHATID,
@@ -269,4 +269,4 @@ async def security_drago(event):
         else:
             await event.edit("**حدث خطأ أثناء تحميل الصورة على Telegraph**")
     else:
-        await event.edit("** ⌁︙ يرجى الرد على الصورة او فيديو لتحديث الفار **")
+        await event.edit("**᥀︙يرجى الرد على الصورة او فيديو لتحديث الفار **")
