@@ -25,7 +25,7 @@ from . import mention
  
 plugin_category = "utils"
 
-#كتـابة وتعـديل:  @src_dra
+#كتـابة وتعـديل:  @MaTriXThon
 #ذمة بركبتك ليوم قيامة اذا اخذت امر واحد من ملف الفحص
 #ربي لايعطيك العافية والصحة اذا خمطت امر او ملف الفحص
 #كس اخته الي ياخذ امر او ملف الفحص
@@ -50,7 +50,7 @@ async def amireallyalive(event):
     ms = (end - start).microseconds / 1000
     _, check_sgnirts = check_data_base_heal_th()
     EMOJI = gvarstatus("ALIVE_EMOJI") or "-‎"
-    ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "**父[ 𝖣𝗋𝖺𝖦𝗈 𝗂𝗌 𝖶𝗈𝗋𝖪𝗂𝗇𝖦 ](t.me/src_dra)父**"
+    ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "**父[ MATRIX ](t.me/MaTriXThon)父**"
     DRAGO_IMG = gvarstatus("ALIVE_PIC") or Config.A_PIC
     dragoiq_caption = gvarstatus("ALIVE_TEMPLATE") or temp
     caption = dragoiq_caption.format(
@@ -85,8 +85,7 @@ async def amireallyalive(event):
         )
 
 
-temp = """{ALIVE_TEXT}
-⊱━━━━━⊰✾⊱━━━━━⊰
+temp = """⊱━━━━━⊰✾⊱━━━━━⊰
 **- سورس ماتركس يعمل بنجاح .**
 **{EMOJI} قاعدة البيانات :** `{dbhealth}`
 **{EMOJI} نسخــﮫ التيليثون ↬** `{telever}`
