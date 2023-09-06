@@ -1,4 +1,3 @@
-#    اذا تخمط الملف اذك الحقوق وكاتبيه ومطوريه لا تحذف الحقوق وتصير فاشل 👍
 import asyncio
 import io
 import re
@@ -27,16 +26,16 @@ async def start(event):
     replied_user = await event.client(GetFullUserRequest(event.sender_id))
     firstname = replied_user.users[0].first_name
     vent = event.chat_id
-    starttext = f"**مـرحبا {firstname} ! انـا هـو {bot_id}, بـوت مساعـد بسيـط \n\n- [مـالك البـوت](tg://user?id={bot.uid}) \nيمكـنك مراسلـة المـالك عبـر هذا البـوت . \n\nاذا كـنت تـريد تنـصيب بـوت خـاص بـك تـاكد من الازرار بالأسفل**"
+    starttext = f"**مـرحبا {firstname} ! انـا هـو {bot_id}, بـوت مساعـد بسيـط \n\n- [مـالك البـوت](tg://user?id={bot.uid}) \nيمكـنك مراسلـة المـالك عبـر هذا البـوت . \n\nاذا كـنت تـريد تنـصيب بـوت خـاص بـك تـأكد من الازرار بالأسفل**"
     if event.sender_id == bot.uid:
         await tgbot.send_message(
             vent,
             message=f"اهـلا يا مالكـي انـه انـا {bot_id}, مسـاعدك ! \nمـاذا تريـد ان تفعـل اليـوم ?",
             buttons=[
-                                     [Button.inline("عرض المستخدمين 🔗", data="users"), Button.inline(
-                                         "اوامر البـوت 🔗", data="gibcmd")],
-                                     [Button.url("المطـور 🔗", "https://t.me/UxUeU"), Button.inline(
-                                         "اوامر الزغـرفة 🔗", data="rozzag")],
+                                     [Button.inline("عرض ᥀︙المستخدمين ︙᥀", data="users"), Button.inline(
+                                         "᥀︙اوامر البـوت ︙᥀", data="gibcmd")],
+                                     [Button.url("᥀︙المطـور︙᥀", "https://t.me/X_EXTRA"), Button.inline(
+                                         "᥀︙اوامر الزغـرفة ︙᥀", data="rozzag")],
 
                                  ])
     else:
@@ -49,8 +48,8 @@ async def start(event):
             message=starttext,
             link_preview=False,
             buttons=[
-                [custom.Button.inline("تنـصيب دراكو 🔗", data="deploy")],
-                [Button.url("تحتاج مسـاعدة 🔗", "https://t.me/Drago_Support")],
+                [custom.Button.inline("᥀︙تنـصيب ماتركس ︙᥀", data="deploy")],
+                [Button.url("᥀︙تحتاج مسـاعدة ︙᥀", "https://t.me/Matrxsupport")],
             ],
         )
 
@@ -64,8 +63,8 @@ async def help(event):
             event.chat_id,
             message="**هاذا رابط التنصيب اذا تحتاج مساعدة اذهب الى كروب مساعدة**.",
             buttons=[
-                [Button.url("رابط التنصيب 🔗", "https://dashboard.heroku.com/new?template=https://github.com/qithoniq/dragon/tree/drago")],
-                [Button.url("كروب المساعدة 🔗", "https://t.me/Drago_Support")],
+                [Button.url("᥀︙رابط التنصيب ︙᥀", "https://dashboard.heroku.com/new?template=https://github.com/qithoniq/dragon/tree/drago")],
+                [Button.url("᥀︙كروب المساعدة ︙᥀", "https://t.me/Matrxsupport")],
             ],
         )
 
@@ -79,12 +78,12 @@ async def users(event):
         for starked in total_users:
             users_list += ("==> {} \n").format(int(starked.chat_id))
         with io.BytesIO(str.encode(users_list)) as tedt_file:
-            tedt_file.name = "drago.txt"
+            tedt_file.name = "MaTriX.txt"
             await tgbot.send_file(
                 event.chat_id,
                 tedt_file,
                 force_document=True,
-                caption="مجموع مستخدمـين بوتـك",
+                caption="᥀︙مجموع مستخدمـين بوتـك︙᥀",
                 allow_cache=False,
             )
     else:
@@ -105,7 +104,7 @@ async def starkislub(event):
 
 @tgbot.on(events.NewMessage(pattern="^/alive", func=lambda e: e.sender_id == bot.uid))
 async def starkislub(event):
-    razan = "**𝘋𝘳𝘢𝘎𝘰 𝘜𝘚𝘌𝘙𝘉𝘖𝘛**\n•━═━═━═━═━━═━═━═━═━•‌‌\n**- حالة البوت **  يعمـل بنجـاح\n**- اصدار التليثون  **: 1.23.0\n**- اصدار البايثون **: 3.9.6\n**- يوزرك ** {mention}\n**- CH : @Drago_dr\n•━═━═━═━═━━═━═━═━═━•‌‌\n"
+    razan = "**𝘔𝘈𝘛𝘙𝘐𝘟 𝘜𝘚𝘌𝘙𝘉𝘖𝘛**\n•━═━═━═━═━━═━═━═━═━•‌‌\n**- حالة البوت **  يعمـل بنجـاح\n**- اصدار التليثون  **: 1.23.0\n**- اصدار البايثون **: 3.9.6\n**- يوزرك ** {mention}\n**- CH : @MaTriXThon\n•━═━═━═━═━━═━═━═━═━•‌‌\n"
     await event.reply(razan)
     
     
@@ -123,22 +122,22 @@ async def settings(event):
                                  "**⌯︙ اختر احد خيارات الزغرفه : **",
                                  buttons=[
                                  [Button.inline(
-                                     "اسماء انكلش 🔗", data="rozname"),
+                                     "᥀︙اسماء انكلش ︙᥀", data="rozname"),
                                   Button.inline(
-                                     "البايو 🔗", data="rozpio1")],
+                                     "᥀︙البايو ︙᥀", data="rozpio1")],
                                  [Button.inline(
-                                     "الاشهر 🔗⁦⁩", data="rozmonth"),
+                                     "᥀︙الاشهر ︙᥀", data="rozmonth"),
                                   Button.inline(
-                                     "اسماء القنوات 🔗", data="chanlan")]
+                                     "᥀︙اسماء القنوات ︙᥀", data="chanlan")]
                                  ])
     else:
-        await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @Drago_dr", alert=True)
+        await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @MaTriXThon", alert=True)
 
 
 
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"rozname"))) 
-async def settings(event):  #    قـسـم  الزغرفـة دراكـو
+async def settings(event):  #    قـسـم  الزغرفـة ماتـركس الـعربي
     if event.sender_id == bot.uid:
         await event.delete()
         await tgbot.send_message(event.chat_id,
@@ -149,10 +148,10 @@ async def settings(event):  #    قـسـم  الزغرفـة دراكـو
                                       Button.inline(
                                          "اسماء بنات 🔗", data="RR7PP"),
                                       Button.inline(
-                                         "‹ رجوع ›⁦⁩", data="rozzag")]
+                                         "᥀︙ رجوع ︙᥀⁦⁩", data="rozzag")]
                                  ])
     else:
-        await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @Drago_dr", alert=True)
+        await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @MaTriXThon", alert=True)
 
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"razan")))  
@@ -163,14 +162,14 @@ async def settings(event):  #    قـسـم  الزغرفـة لأسـماء ا�
                                  "**⌯︙ اختر احد الخيارات الاتيه. **",
                                  buttons=[
                                      [Button.inline(
-                                         "القائمه الاولى 🔗", data="rzan1"),
+                                         "᥀︙القائمه الاولى ︙᥀", data="rzan1"),
                                       Button.inline(
-                                         "القائمه الثانيه 🔗", data="raza2")],
+                                         "᥀︙القائمه الثانيه ︙᥀", data="raza2")],
                                      [Button.inline(
-                                         "‹ رجوع ›", data="rozname")]
+                                         "᥀︙ رجوع ︙᥀", data="rozname")]
                                  ])
     else:
-        await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @Drago_dr", alert=True)
+        await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @MaTriXThon", alert=True)
 
 
 
@@ -181,7 +180,7 @@ async def settings(event): #    قـسـم  الزغرفـة لأسـماء ال
         await event.delete()
         await tgbot.send_message(event.chat_id,
                                  Boyroz1, 
-                                 buttons=[[Button.inline("‹ رجوع ›", data="razan")]
+                                 buttons=[[Button.inline("᥀︙ رجوع ︙᥀", data="razan")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام هذا البوت.", alert=True)
@@ -194,7 +193,7 @@ async def settings(event):  #    قـسـم  الزغرفـة لأسـماء ا�
         await event.delete()
         await tgbot.send_message(event.chat_id,
                                  Boyroz2, 
-                                 buttons=[[Button.inline("‹ رجوع ›", data="razan")]
+                                 buttons=[[Button.inline("᥀︙ رجوع ︙᥀", data="razan")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام هذا البوت.", alert=True)
@@ -208,14 +207,14 @@ async def settings(event): #    قـسـم  الزغرفـة لأسـماء ال
                                  "**⌯︙ اختر احد الخيارات الاتيه. **",
                                  buttons=[
                                      [Button.inline(
-                                         "القائمه الاولى 🔗", data="RR7PP1"),
+                                         "᥀︙القائمه الاولى ︙᥀", data="RR7PP1"),
                                       Button.inline(
-                                         "القائمه الثانيه 🔗", data="RR7PP2")],
+                                         "᥀︙القائمه الثانيه ︙᥀", data="RR7PP2")],
                                      [Button.inline(
-                                         "‹ رجوع ›", data="rozname")]
+                                         "᥀︙ رجوع ︙᥀", data="rozname")]
                                  ])
     else:
-        await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @Drago_dr", alert=True)
+        await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @MaTriXThon", alert=True)
 
 # شنو تـدور  :)
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"RR7PP1")))
@@ -224,7 +223,7 @@ async def settings(event): #    قـسـم  الزغرفـة لأسـماء ال
         await event.delete()
         await tgbot.send_message(event.chat_id,
                                  Girlan1, 
-                                 buttons=[[Button.inline("‹ رجوع ›", data="RR7PP")]
+                                 buttons=[[Button.inline("᥀︙ رجوع ︙᥀", data="RR7PP")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام هذا البوت.", alert=True)
@@ -236,7 +235,7 @@ async def settings(event):  #    قـسـم  الزغرفـة لأسـماء ا�
         await event.delete()
         await tgbot.send_message(event.chat_id,
                                  Girlan2, 
-                                 buttons=[[Button.inline("‹ رجوع ›", data="RR7PP")]
+                                 buttons=[[Button.inline("᥀︙ رجوع ︙᥀", data="RR7PP")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام هذا البوت.", alert=True)
@@ -249,14 +248,14 @@ async def settings(event):  #    قـسـم  البـايو 1
                                  ROZPIO1,
                                  buttons=[
                                      [Button.inline(
-                                         "‹ السابق ›", data="rozpio5"),
+                                         "᥀︙ السابق ︙᥀", data="rozpio5"),
                                       Button.inline(
-                                         "‹ خروج ›", data="rozzag"),
+                                         "᥀︙ خروج ︙᥀", data="rozzag"),
                                       Button.inline(
-                                         "‹ التالي ›", data="rozpio2")]
+                                         "᥀︙ التالي ︙᥀", data="rozpio2")]
                                  ])
     else:
-        await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @Drago_dr", alert=True)
+        await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @MaTriXThon", alert=True)
 
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"rozpio2"))) 
@@ -267,14 +266,14 @@ async def settings(event): #    قـسـم  البـايو 2
                                  ROZPIO2,
                                  buttons=[
                                      [Button.inline(
-                                         "‹ السابق ›", data="rozpio1"),
+                                         "᥀︙ السابق ︙᥀", data="rozpio1"),
                                       Button.inline(
-                                         "‹ خروج ›⁦⁩", data="rozzag"),
+                                         "᥀︙ خروج ︙᥀⁦⁩", data="rozzag"),
                                       Button.inline(
-                                         "‹ التالي ›", data="rozpio3")]
+                                         "᥀︙ التالي ︙᥀", data="rozpio3")]
                                  ])
     else:
-        await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @Drago_dr", alert=True)
+        await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @MaTriXThon", alert=True)
 
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"rozpio3"))) 
@@ -285,14 +284,14 @@ async def settings(event): #    قـسـم  البـايو 3
                                  ROZPIO3,
                                  buttons=[
                                      [Button.inline(
-                                         "‹ السابق ›", data="rozpio2"),
+                                         "᥀︙ السابق ︙᥀", data="rozpio2"),
                                       Button.inline(
-                                         "‹ خروج ›⁦⁩", data="rozzag"),
+                                         "᥀︙ خروج ︙᥀⁦⁩", data="rozzag"),
                                       Button.inline(
-                                         "‹ التالي ›", data="rozpio4")]
+                                         "᥀︙ التالي ︙᥀", data="rozpio4")]
                                  ])
     else:
-        await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @Drago_dr", alert=True)
+        await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @MaTriXThon", alert=True)
 
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"rozpio4"))) 
@@ -303,32 +302,32 @@ async def settings(event): #    قـسـم  البـايو 4
                                  ROZPIO4,
                                  buttons=[
                                      [Button.inline(
-                                         "‹ السابق ›", data="rozpio3"),
+                                         "᥀︙ السابق ︙᥀", data="rozpio3"),
                                       Button.inline(
-                                         "‹ خروج ›⁦⁩", data="rozzag"),
+                                         "᥀︙ خروج ︙᥀⁦⁩", data="rozzag"),
                                       Button.inline(
-                                         "‹ التالي ›", data="rozpio5")]
+                                         "᥀︙ التالي ︙᥀", data="rozpio5")]
                                  ])
     else:
-        await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @Drago_dr", alert=True)
+        await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @MaTriXThon", alert=True)
 
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"rozpio5"))) 
-async def settings(event):#    قـسـم  البـايو 5
+async def settings(event): #    قـسـم  البـايو 5
     if event.sender_id == bot.uid:
         await event.delete()
         await tgbot.send_message(event.chat_id,
                                  ROZPIO5,
                                  buttons=[
                                      [Button.inline(
-                                         "‹ السابق ›", data="rozpio4"),
+                                         "᥀︙ السابق ︙᥀", data="rozpio4"),
                                       Button.inline(
-                                         "‹ خروج ›", data="rozzag"),
+                                         "᥀︙ خروج ︙᥀", data="rozzag"),
                                       Button.inline(
-                                         "‹ التالي ›", data="rozpio1")]
+                                         "᥀︙ التالي ︙᥀", data="rozpio1")]
                                  ])
     else:
-        await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @Drago_dr", alert=True)
+        await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @MaTriXThon", alert=True)
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"rozmonth")))  
 async def settings(event): #    قـسم الـمواليـد و الأشـهر
@@ -338,46 +337,46 @@ async def settings(event): #    قـسم الـمواليـد و الأشـهر
                                  "**⌯︙ اختر احد الخيارات الاتيه. **",
                                  buttons=[
                                      [Button.inline(
-                                         "المواليد 🔗", data="rozyear"),
+                                         "᥀︙المواليد ︙᥀", data="rozyear"),
                                       Button.inline(
-                                         "الاشهر 🔗", data="months")],
+                                         "᥀︙الاشهر ︙᥀", data="months")],
                                      [Button.inline(
-                                         "‹ رجوع ›", data="rozzag")]
+                                         "᥀︙ رجوع ︙᥀", data="rozzag")]
                                  ])
     else:
-        await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @Drago_dr", alert=True)
+        await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @MaTriXThon", alert=True)
 
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"months")))  
-async def settings(event):#    قـسم  الأشـهر
+async def settings(event): #    قـسم  الأشـهر
     if event.sender_id == bot.uid:
         await event.delete()
         await tgbot.send_message(event.chat_id, 
                                  JMTHSH, 
-                                 buttons=[[Button.inline("‹ رجوع ›", data="rozzag")]
+                                 buttons=[[Button.inline("᥀︙ رجوع ︙᥀", data="rozzag")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام هذا البوت.", alert=True)
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"rozyear")))  
-async def settings(event):#    قـسم  السنـوات  :)
+async def settings(event): #    قـسم  السنـوات
     if event.sender_id == bot.uid:
         await event.delete()
         await tgbot.send_message(event.chat_id, 
                                  JEPYEAR, 
-                                 buttons=[[Button.inline("‹ رجوع ›", data="rozmonth")]
+                                 buttons=[[Button.inline("᥀︙ رجوع ︙᥀", data="rozmonth")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام هذا البوت.", alert=True)
 
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"chanlan")))  
-async def settings(event):  # انتهـى  :)  اذا تخـمط تـذكر تعـب غـيرك  :)
+async def settings(event):  # انتهـى  :)  اذا تخـمط تـذكر تعـب غـيرك
     if event.sender_id == bot.uid:
         await event.delete()
         await tgbot.send_message(event.chat_id, 
                                  CHANLAN, 
-                                 buttons=[[Button.inline("‹ رجوع ›", data="rozzag")]
+                                 buttons=[[Button.inline("᥀︙ رجوع ︙᥀", data="rozzag")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام هذا البوت.", alert=True)
