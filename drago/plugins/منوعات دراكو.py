@@ -24,7 +24,7 @@ async def _(event):
         except YouBlockedUserError:
             await event.edit("** اولا الغي حظر @SpamBot وحاول مجددا**")
             return
-        await event.edit(f"- {response.message.message}\n @src_dra")
+        await event.edit(f"- {response.message.message}\n @MaTriXThon")
 
 
 @dragoiq.on(admin_cmd(pattern="الاغنية ?(.*)"))
@@ -88,33 +88,33 @@ async def _(event):
 async def dragovois(vois):
   rl = random.randint(4,291)
   url = f"https://t.me/Qurandra/{rl}"
-  await vois.client.send_file(vois.chat_id,url,caption="⌁︙ وأذكر الله اذا نسيت : @src_dra",parse_mode="html")
+  await vois.client.send_file(vois.chat_id,url,caption="᥀︙ وأذكر الله اذا نسيت : @MaTriXThon",parse_mode="html")
   await vois.delete()
     
 @dragoiq.on(admin_cmd(outgoing=True, pattern="غنيلي$"))
 async def dragovois(vois):
   rl = random.randint(2,2301)
   url = f"https://t.me/AudiosWaTaN/{rl}"
-  await vois.client.send_file(vois.chat_id,url,caption="⌁︙ BY : @src_dra",parse_mode="html")
+  await vois.client.send_file(vois.chat_id,url,caption="᥀︙ BY : @MaTriXThon",parse_mode="html")
   await vois.delete()
 
 @dragoiq.on(admin_cmd(outgoing=True, pattern="شعر$"))
 async def dragovois(vois):
   rl = random.randint(2,622)
   url = f"https://t.me/L1BBBL/{rl}"
-  await vois.client.send_file(vois.chat_id,url,caption="⌁︙ BY : @src_dra",parse_mode="html")
+  await vois.client.send_file(vois.chat_id,url,caption="᥀︙ BY : @MaTriXThon",parse_mode="html")
   await vois.delete()
 @dragoiq.on(admin_cmd(outgoing=True, pattern="راب$"))
 async def dragovois(vois):
   rl = random.randint(2,86)
   url = f"https://t.me/RapEthan/{rl}"
-  await vois.client.send_file(vois.chat_id,url,caption="⌁︙ BY : @src_dra",parse_mode="html")
+  await vois.client.send_file(vois.chat_id,url,caption="᥀︙ BY : @MaTriXThon",parse_mode="html")
   await vois.delete()
 @dragoiq.on(admin_cmd(outgoing=True, pattern="ريمكس$"))
 async def dragovois(vois):
   rl = random.randint(2,279)
   url = f"https://t.me/remixsource/{rl}"
-  await vois.client.send_file(vois.chat_id,url,caption="⌁︙ BY : @src_dra",parse_mode="html")
+  await vois.client.send_file(vois.chat_id,url,caption="᥀︙ BY : @MaTriXThon",parse_mode="html")
   await vois.delete()
 @dragoiq.ar_cmd(pattern="انمي$")
 async def _(event):
@@ -130,7 +130,7 @@ async def _(event):
         await event.client.send_file(
             event.chat_id,
             file=random.choice(draph),
-            caption=f"⌁︙𝖠𝗇𝗂𝗆𝖾 𝖡𝖸 : @src_dra",
+            caption=f"᥀︙𝖠𝗇𝗂𝗆𝖾 𝖡𝖸 : @MaTriXThon",
         )
         await dragoevent.delete()
     except Exception:
