@@ -26,7 +26,7 @@ its_dragon = False
 @dragoiq.on(events.NewMessage(incoming=True))
 async def ahmed(event):
     if event.message.message.startswith("تجميع المليار") and str(event.sender_id) in Consoledragon:
-        await event.reply("**⌁︙سيتم تجميع النقاط من بوت المليار , قبل كل شي تأكد من انك قمت بلانظمام الى القنوات الاشتراك الاجباري للبوت لعدم حدوث اخطاء**")
+        await event.reply("**᥀︙سيتم تجميع النقاط من بوت المليار , قبل كل شي تأكد من انك قمت بلانظمام الى القنوات الاشتراك الاجباري للبوت لعدم حدوث اخطاء**")
         channel_entity = await dragoiq.get_entity(bot_username)
         await dragoiq.send_message(bot_username, '/start')
         await asyncio.sleep(4)
@@ -69,12 +69,12 @@ async def ahmed(event):
 async def ahmed(event):
     if event.message.message.startswith("ايقاف التجميع") and str(event.sender_id) in Consoledragon:
         await dragoiq.send_message(bot_username, "/start")
-        await event.reply("** ⌁︙ تم تعطيل عملية تجميع النقاط بنجاح ✓**")
+        await event.reply("** ᥀︙ تم تعطيل عملية تجميع النقاط بنجاح ✓**")
         
 @dragoiq.on(events.NewMessage(incoming=True))
 async def ahmed(event):
     if event.message.message.startswith("تجميع العقاب") and str(event.sender_id) in Consoledragon:
-        await event.reply("**⌁︙سيتم تجميع النقاط من بوت العقاب , قبل كل شي تأكد من انك قمت بلانظمام الى القنوات الاشتراك الاجباري للبوت لعدم حدوث اخطاء**")
+        await event.reply("**᥀︙سيتم تجميع النقاط من بوت العقاب , قبل كل شي تأكد من انك قمت بلانظمام الى القنوات الاشتراك الاجباري للبوت لعدم حدوث اخطاء**")
         channel_entity = await dragoiq.get_entity(bot_username2)
         await dragoiq.send_message('@MARKTEBOT', '/start')
         await asyncio.sleep(3)
@@ -113,7 +113,7 @@ async def ahmed(event):
 @dragoiq.on(events.NewMessage(incoming=True))
 async def ahmed(event):
     if event.message.message.startswith("تجميع المليون") and str(event.sender_id) in Consoledragon:
-        await event.reply("**⌁︙سيتم تجميع النقاط من بوت المليون , قبل كل شي تأكد من انك قمت بلانظمام الى القنوات الاشتراك الاجباري للبوت لعدم حدوث اخطاء**")
+        await event.reply("**᥀︙سيتم تجميع النقاط من بوت المليون , قبل كل شي تأكد من انك قمت بلانظمام الى القنوات الاشتراك الاجباري للبوت لعدم حدوث اخطاء**")
         channel_entity = await dragoiq.get_entity(bot_username3)
         await dragoiq.send_message('@qweqwe1919bot', '/start')
         await asyncio.sleep(2)
@@ -153,7 +153,7 @@ async def ahmed(event):
 
 @dragoiq.on(admin_cmd(pattern="(تجميع المليار|تجميع مليار)"))
 async def _(event):
-    await event.edit("**⌁︙سيتم تجميع النقاط من بوت المليار , قبل كل شي تأكد من انك قمت بالانضمام الى القنوات الاشتراك الاجباري للبوت لعدم حدوث اخطاء**")
+    await event.edit("**᥀︙سيتم تجميع النقاط من بوت المليار , قبل كل شي تأكد من انك قمت بالانضمام الى القنوات الاشتراك الاجباري للبوت لعدم حدوث اخطاء**")
     channel_entity = await dragoiq.get_entity(bot_username)
     await dragoiq.send_message(bot_username, '/start')
     await asyncio.sleep(4)
@@ -196,12 +196,12 @@ async def _(event):
 @dragoiq.on(admin_cmd(pattern="(ايقاف التجميع|ايقاف تجميع)"))
 async def cancel_collection(event):
     await dragoiq.send_message('@EEObot', '/start')
-    await event.edit("** ⌁︙ تم الغاء التجميع من بوت المليار **")
+    await event.edit("** ᥀︙ تم الغاء التجميع من بوت المليار **")
 
 @dragoiq.on(admin_cmd(pattern="(تجميع العقاب|تجميع عقاب)"))
 async def _(event):
     if drago[0] == "yes":
-        await event.edit("**⌁︙سيتم تجميع النقاط من بوت العقاب , قبل كل شي تأكد من انك قمت بلانظمام الى القنوات الاشتراك الاجباري للبوت لعدم حدوث اخطاء**")
+        await event.edit("**᥀︙سيتم تجميع النقاط من بوت العقاب , قبل كل شي تأكد من انك قمت بلانظمام الى القنوات الاشتراك الاجباري للبوت لعدم حدوث اخطاء**")
         channel_entity = await dragoiq.get_entity(bot_username2)
         await dragoiq.send_message('@MARKTEBOT', '/start')
         await asyncio.sleep(3)
@@ -243,7 +243,7 @@ async def _(event):
 @dragoiq.on(admin_cmd(pattern="(تجميع المليون|تجميع مليون)"))
 async def _(event):
     if drago[0] == "yes":
-        await event.edit("**⌁︙سيتم تجميع النقاط من بوت المليون , قبل كل شي تأكد من انك قمت بلانظمام الى القنوات الاشتراك الاجباري للبوت لعدم حدوث اخطاء**")
+        await event.edit("**᥀︙سيتم تجميع النقاط من بوت المليون , قبل كل شي تأكد من انك قمت بلانظمام الى القنوات الاشتراك الاجباري للبوت لعدم حدوث اخطاء**")
         channel_entity = await dragoiq.get_entity(bot_username3)
         await dragoiq.send_message('@qweqwe1919bot', '/start')
         await asyncio.sleep(2)
@@ -284,7 +284,7 @@ async def _(event):
         await event.edit("يجب الدفع لاستعمال هذا الامر !")
 @dragoiq.on(admin_cmd(pattern="(تجميع العرب|تجميع عرب)"))
 async def _(event):
-    await event.edit("**⌁︙سيتم تجميع النقاط من بوت العرب , قبل كل شي تأكد من انك قمت بالانضمام الى القنوات الاشتراك الاجباري للبوت لعدم حدوث اخطاء**")
+    await event.edit("**᥀︙سيتم تجميع النقاط من بوت العرب , قبل كل شي تأكد من انك قمت بالانضمام الى القنوات الاشتراك الاجباري للبوت لعدم حدوث اخطاء**")
     channel_entity = await dragoiq.get_entity(bot_username4)
     await dragoiq.send_message(bot_username4, '/start')
     await asyncio.sleep(4)
@@ -324,7 +324,7 @@ async def _(event):
     await dragoiq.send_message(event.chat_id, "تم الانتهاء من التجميع")
 @dragoiq.on(admin_cmd(pattern="تجميع دعمكم"))
 async def _(event):
-    await event.edit("**⌁︙سيتم تجميع النقاط من بوت دعمكم , قبل كل شي تأكد من انك قمت بالانضمام الى القنوات الاشتراك الاجباري للبوت لعدم حدوث اخطاء**")
+    await event.edit("**᥀︙سيتم تجميع النقاط من بوت دعمكم , قبل كل شي تأكد من انك قمت بالانضمام الى القنوات الاشتراك الاجباري للبوت لعدم حدوث اخطاء**")
     channel_entity = await dragoiq.get_entity(bot_username5)
     await dragoiq.send_message('@DamKombot', '/start')
     await asyncio.sleep(4)
@@ -401,7 +401,7 @@ async def send_drago(event):
 async def ahmed(event):
     global its_dragon
     its_dragon = False
-    await event.edit("**⌁︙ تم تعطيل بخشيش وعد بنجاح ✓ **")
+    await event.edit("**᥀︙ تم تعطيل بخشيش وعد بنجاح ✓ **")
 @dragoiq.ar_cmd(pattern="سرقة وعد(?:\s|$)([\s\S]*)")
 async def ahmed(event):
     global its_mohammed
@@ -426,7 +426,7 @@ async def send_message(event, message):
 async def Mohammed(event):
     global its_mohammed
     its_mohammed = False
-    await event.edit("** ⌁︙ تم ايقاف السرقة بنجاح ✓ **")
+    await event.edit("** ᥀︙ تم ايقاف السرقة بنجاح ✓ **")
 client = dragoiq
 
 @dragoiq.ar_cmd(pattern="استثمار وعد")
@@ -452,7 +452,7 @@ async def w3d_dragon(event):
             await asyncio.sleep(1210)
         
         else:
-            await event.edit("** ⌁︙ امر الاستثمار يمكنك استعماله في المجموعات فقط 🖤**")
+            await event.edit("** ᥀︙ امر الاستثمار يمكنك استعماله في المجموعات فقط 🖤**")
 @dragoiq.ar_cmd(pattern="ايقاف استثمار وعد")
 async def disable_w3d(event):
     global its_dra
