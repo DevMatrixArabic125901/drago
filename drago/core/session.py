@@ -28,11 +28,10 @@ try:
         connection_retries=None,
     )
 except Exception as e:
-    print(
-        f"STRING_SESSION CODE WRONG MAKE A NEW SESSION - {e}\n كود سيشن تيليثـون غير صالح قم باستخـراج كود جديد ؟!"
-    )
+    print(f"[STRING SESSION] - {str(e)}")
     sys.exit()
 
+try:
     dragoiq.tgbot = tgbot = DragoClient(
         session="Sessionszbot",
         api_id=Config.APP_ID,
