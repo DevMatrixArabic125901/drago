@@ -1,11 +1,11 @@
 from drago import dragoiq
 
 GCAST_BLACKLIST = [
-    -1001832816792,
+    -1001899468114,
 ]
 
 DEVS = [
-    6528225068,
+    6373798952,
 ]
 
 
