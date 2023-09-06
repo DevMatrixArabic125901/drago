@@ -87,10 +87,11 @@ async def amireallyalive(event):
 
 temp = """⊱━━━━━⊰✾⊱━━━━━⊰
 **- سورس ماتركس يعمل بنجاح .**
-**{EMOJI} قاعدة البيانات :** `{matrixtime}`
-**{EMOJI} نسخــﮫ التيليثون :** `{telever}`
-**{EMOJI} نسخــﮫ ماتركـس :** `{matrixver}`
-**{EMOJI} اصدار البايثون :** `{pyver}`
-**{EMOJI} التاريخ :** `{matrixtime}`
-**{EMOJI} المالك :** {mention}
+**{EMOJI} **قاعدة البيانات** ↬ **تعمل بـنجاح**
+**{EMOJI} نسخــﮫ التيليثون ↬** `{telever}`
+**{EMOJI} نسخــﮫ ماتركـس ↬** `{matrixver}`
+**{EMOJI} اصدار البايثون ↬** `{pyver}`
+**{EMOJI} مدﮪ التشغيل ↬ `{uptime}`
+**{EMOJI} التاريخ ↬** `{matrixtime}`
+**{EMOJI} المالك ↬** {mention}
 ⊱━━━━━⊰✾⊱━━━━━⊰"""
