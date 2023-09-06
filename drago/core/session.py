@@ -1,6 +1,7 @@
 import sys
 from drago.core.logger import logging
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
+from telethon.errors import AccessTokenExpiredError, AccessTokenInvalidError
 from telethon.sessions import StringSession
 from ..Config import Config
 from .client import DragoClient
