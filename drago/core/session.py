@@ -42,3 +42,7 @@ try:
         auto_reconnect=True,
         connection_retries=None,
     ).start(bot_token=Config.TG_BOT_TOKEN)
+except AccessTokenExpiredError:
+    LOGS.error("᥀︙توكن البوت منتهي الصلاحية قم باستبداله ليعمل السورس︙᥀")
+except AccessTokenInvalidError:
+    LOGS.error("᥀︙توكن البوت غير صحيح قم باستبداله ليعمل السورس︙᥀")
