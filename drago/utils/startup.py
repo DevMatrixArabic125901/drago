@@ -99,7 +99,7 @@ async def startupmessage():
             Config.CATUBLOGO = await dragoiq.tgbot.send_file(
                 BOTLOG_CHATID,
                 "https://telegra.ph/file/7393bd7f67494976a5b10.jpg",
-                caption="**᥀︰✓ ‏᥀︙تم تنصـيب سـورس ماتـركس الـعربي بنـجاح**",
+                caption="**‏᥀︙تم تنصـيب سـورس ماتـركس الـعربي بنـجاح᥀︰**",
                 buttons=[(Button.url("᥀︰ماتـركس الـعربي︰᥀", "https://t.me/MaTriXThon"),)],
                 
             )
