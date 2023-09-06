@@ -24,17 +24,17 @@ print("Licensed under the terms of the " + drago.__license__)
 cmdhr = Config.COMMAND_HAND_LER
 
 try:
-    LOGS.info("جارِ بدء بوت دراكو")
+    LOGS.info("᥀︙جـار بـدء سـورس ماتـركس︙᥀")
     dragoiq.loop.run_until_complete(setup_bot())
-    LOGS.info("تم اكتمال تنصيب البوت")
+    LOGS.info("᥀︙تم اكتمال تنـصيب بـوتك على سـورس ماتـركس︙᥀")
 except Exception as e:
     LOGS.error(f"{str(e)}")
     sys.exit()
 
 try:
-    LOGS.info("يتم تفعيل وضع الانلاين")
+    LOGS.info("᥀︙يتم تفعيل وضع الانلاين تلقائياً︙᥀")
     dragoiq.loop.run_until_complete(mybot())
-    LOGS.info("تم تفعيل وضع الانلاين بنجاح")
+    LOGS.info("᥀︙تم تفعيل وضع الانلاين تلقائياً بنجاح︙᥀")
 except Exception as dragoiq:
     LOGS.error(f"- {dragoiq}")
     sys.exit()    
