@@ -49,7 +49,7 @@ async def amireallyalive(event):
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     _, check_sgnirts = check_data_base_heal_th()
-    EMOJI = gvarstatus("ALIVE_EMOJI") or "⧉┊‌‎"
+    EMOJI = gvarstatus("ALIVE_EMOJI") or "-‎"
     ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "**父[ 𝖣𝗋𝖺𝖦𝗈 𝗂𝗌 𝖶𝗈𝗋𝖪𝗂𝗇𝖦 ](t.me/src_dra)父**"
     DRAGO_IMG = gvarstatus("ALIVE_PIC") or Config.A_PIC
     dragoiq_caption = gvarstatus("ALIVE_TEMPLATE") or temp
@@ -59,7 +59,7 @@ async def amireallyalive(event):
         mention=mention,
         uptime=uptime,
         telever=version.__version__,
-        dragover=DRAGOVERSION,
+        matrixver=DRAGOVERSION,
         pyver=python_version(),
         dbhealth=check_sgnirts,
         ping=ms,
@@ -86,10 +86,12 @@ async def amireallyalive(event):
 
 
 temp = """{ALIVE_TEXT}
-**‎{EMOJI}‌‎𝖭𝖺𝗆𝖾 𖠄 {mention}** ٫
-**‌‎{EMOJI}‌‎𝖯𝖸𝖳𝗁𝗈𝗇 𖠄 `{pyver}`** ٫
-**‌‎{EMOJI}‌‎𝖣𝗋𝖺𝖦𝗈 𖠄 `{telever}`** ٫
-**‌‎{EMOJI}‌‎𝖴𝗉𝖳𝗂𝗆𝖾 𖠄 `{uptime}`** ٫
-‌‎**{EMOJI}‌‎‌‎𝖯𝗂𝗇𝖦 𖠄 `{ping}`** ٫
-‌‎**{EMOJI}‌‎‌‎𝖲𝖾𝖳𝗎𝖯 𝖣𝖺𝖳𝖾 𖠄 `{dragotime}`** ٫
-**𖠄 𝖣𝗋𝖺𝖦𝗈 𝖴𝗌𝖤𝗋𝖡𝗈𝖳 𖠄**"""
+⊱━━━━━⊰✾⊱━━━━━⊰
+**- سورس ماتركس يعمل بنجاح .**
+**{EMOJI} قاعدة البيانات :** `{dbhealth}`
+**{EMOJI} نسخــﮫ التيليثون ↬** `{telever}`
+**{EMOJI} نسخــﮫ ماتركـس ↬** `{matrixver}`
+**{EMOJI} اصدار البايثون ↬** `{pyver}`
+**{EMOJI} مدﮪ التشغيل ↬** `{uptime}`
+**{EMOJI} المالك ↬** {mention}
+⊱━━━━━⊰✾⊱━━━━━⊰"""
