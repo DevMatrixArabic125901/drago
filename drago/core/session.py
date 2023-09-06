@@ -6,9 +6,9 @@ from telethon.sessions import StringSession
 from ..Config import Config
 from .client import DragoClient
 
-LOGS = logging.getLogger("drago")
+LOGS = logging.getLogger(" ")
 
-__version__ = "2.10.6"
+__version__ = "2.10.6
 
 loop = None
 
