@@ -154,6 +154,12 @@ async def mybot():
                 await asyncio.sleep(3)
                 await dragoiq.send_message("@BotFather", botname)
                 await asyncio.sleep(1)
+                await dragoiq.send_message("@BotFather", "/setname")
+                await asyncio.sleep(1)
+                await dragoiq.send_message("@BotFather", botname)
+                await asyncio.sleep(1)
+                await dragoiq.send_message("@BotFather", f"بـوت ماتـركس الـعربي - {bot.me.first_name} ")
+                await asyncio.sleep(3)
                 await dragoiq.send_file("@BotFather", "drago/MATRIX_BOT/MATRIXBOT.JPG")
                 await asyncio.sleep(3)
             except Exception as e:
