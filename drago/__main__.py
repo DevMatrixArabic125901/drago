@@ -71,7 +71,7 @@ async def startup_process():
     Catcheck.sucess = True
     return
 
-    async def externalrepo():
+async def externalrepo():
     if Config.VCMODE:
         await install_externalrepo("https://github.com/qithoniq/DraVc", "dragovc", "dravc")
 
