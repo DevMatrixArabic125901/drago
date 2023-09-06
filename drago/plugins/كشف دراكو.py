@@ -20,6 +20,7 @@ from ..sql_helper.globals import gvarstatus
 from . import spamwatch
 
 plugin_category = "offers"
+
 LOGS = logging.getLogger(__name__)
 
 drago = (6373798952)
