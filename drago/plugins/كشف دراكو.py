@@ -143,14 +143,14 @@ async def fetch_info(replied_user, event):
 )
 async def who(event):
     "Gets info of an user"
-    drago = await edit_or_reply(event, "⇆")
+    matrix = await edit_or_reply(event, "⇆")
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     replied_user = await get_user_from_event(event)
     try:
         photo, caption = await fetch_info(replied_user, event)
     except (AttributeError, TypeError):
-        return await edit_or_reply(dr, "**- لـم استطـع العثــور ع الشخــص ؟!**")
+        return await edit_or_reply(matrix, "**- لـم استطـع العثــور ع الشخــص ؟!**")
     message_id_to_reply = event.message.reply_to_msg_id
     if not message_id_to_reply:
         message_id_to_reply = None
