@@ -9,8 +9,8 @@ from drago import dragoiq
 from ..core import check_owner
 from ..Config import Config
 
-DRA_IC = "https://telegra.ph/file/40672f276c69564208680.jpg"
-ROE = "**‹ هـذه هي قائمة اوامـر سـورس دراكو ›**"
+MATRIX_IC = "https://telegra.ph/file/7393bd7f67494976a5b10.jpg"
+ROE = "**᥀︙ هـذه هي قائمة سـورس ماتـركس الـعربي︙᥀**" 
 
 if Config.TG_BOT_USERNAME is not None and tgbot is not None:
 
@@ -22,44 +22,44 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
         await bot.get_me()
         if query.startswith("اوامري") and event.query.user_id == bot.uid:
             buttons = [
-                            [Button.inline("‹ اوامر الادمن ›", data="dragoiq0")],
+                            [Button.inline("᥀︙ اوامر الادمن ︙᥀", data="dragoiq0")],
                 [
-                    Button.inline("‹ اوامر البوت ›", data="rozbot"),
-                    Button.inline("‹ الحساب ›", data="Jmrz"),
-                    Button.inline("‹ المجموعات ›", data="gro"),
+                    Button.inline("᥀︙ اوامر البوت ︙᥀", data="rozbot"),
+                    Button.inline("᥀︙ الحساب ︙᥀", data="Jmrz"),
+                    Button.inline("᥀︙ المجموعات ︙᥀", data="gro"),
                 ],
                 [
-                    Button.inline("‹ الصيغ و الجهات ›", data="sejrz"),
-                    Button.inline("‹ الحماية و تلكراف ›", data="grrz"),
+                    Button.inline("᥀︙ الصيغ و الجهات ︙᥀", data="sejrz"),
+                    Button.inline("᥀︙ الحماية و  تلكراف ︙᥀", data="grrz"),
                 ],
                 [
-                    Button.inline("‹ اوامر التسلية ›", data="tslrzj"),
-                    Button.inline("‹ الترحيبات والردود ›", data="r7brz"),
+                    Button.inline("᥀︙ اوامر التسلية ︙᥀", data="tslrzj"),
+                    Button.inline("᥀︙ الترحيبات و الردود ︙᥀", data="r7brz"),
                 ],
                 [
-                    Button.inline("‹ اومر المساعدة ›", data="krrznd"),
-                    Button.inline("‹ الملصقات وصور ›", data="jrzst"),
+                    Button.inline("᥀︙ اومر المساعدة ︙᥀", data="krrznd"),
+                    Button.inline("᥀︙ الملصقات و صور ︙᥀", data="jrzst"),
                 ],
                 [
-                    Button.inline("‹ التكرار والتنظيف ›", data="krrznd"),
-                    Button.inline("‹ الترفيه ›", data="rfhrz"),
+                    Button.inline("᥀︙ التكرار و التنظيف ︙᥀", data="krrznd"),
+                    Button.inline("᥀︙ الترفيه ︙᥀", data="rfhrz"),
                 ],
                 [
-                    Button.inline("‹ التكرار والتنظيف ›", data="iiers"),
-                    Button.inline("‹ الملصقات وصور ›", data="jrzst"),
+                    Button.inline("᥀︙ التكرار و التنظيف ︙᥀", data="iiers"),
+                    Button.inline("᥀︙ الملصقات و صور ︙᥀", data="jrzst"),
                 ],
                 [
-                    Button.inline("‹ الأكستـرا ›", data="iiers"),
-                    Button.inline("‹ الانتحال والتقليد ›", data="uscuxrz"),
+                    Button.inline("᥀︙ الأكستـرا ︙᥀", data="iiers"),
+                    Button.inline("᥀︙ الانتحال و التقليد ︙᥀", data="uscuxrz"),
                 ],
             ]
-            if DRA_IC and DRA_IC.endswith((".jpg", ".png", "gif", "mp4")):
+            if MATRIX_IC and MATRIX_IC.endswith((".jpg", ".png", "gif", "mp4")):
                 result = builder.photo(
-                    DRA_IC, text=ROE, buttons=buttons, link_preview=False
+                    MATRIX_IC, text=ROE, buttons=buttons, link_preview=False
                 )
-            elif DRA_IC:
+            elif MATRIX_IC:
                 result = builder.document(
-                    DRA_IC,
+                    MATRIX_IC,
                     title="drago",
                     text=ROE,
                     buttons=buttons,
