@@ -72,11 +72,11 @@ plugin_category = "admin"
     pattern="تثبيت( بالاشعار|$)",
     command=("تثبيت", plugin_category),
     info={
-        "⌁︙ الأسـتخدام": "For pining messages in chat",
-        "⌁︙ الشـرح": "reply to a message to pin it in that in chat\
-        \n⌁︙ تـحتاج الصلاحـيات لـهذا الأمـر if you want to use in group.",
+        "᥀︙الأسـتخدام": "For pining messages in chat",
+        "᥀︙الشـرح": "reply to a message to pin it in that in chat\
+        \n᥀︙تـحتاج الصلاحـيات لـهذا الأمـر if you want to use in group.",
         "options": {"loud": "To notify everyone without this.it will pin silently"},
-        "⌁︙ الأمـر": [
+        "᥀︙الأمـر": [
             "{tr}pin <reply>",
             "{tr}pin loud <reply>",
         ],
@@ -95,12 +95,12 @@ async def pin(event):
         return await edit_delete(event, NO_PERM, 5)
     except Exception as e:
         return await edit_delete(event, f"`{str(e)}`", 5)
-    await edit_delete(event, "⌁︙ تـم تـثبيـت الـرسالة بـنجـاح", 3)
+    await edit_delete(event, "᥀︙ تـم تـثبيـت الـرسالة بـنجـاح""3)
     if BOTLOG and not event.is_private:
         await event.client.send_message(
             BOTLOG_CHATID,
             f"⌁︙ الـتثبيت\
-                \n **⌁︙ تـم بـنجـاح الـتثبيت فـي الدردشـة**\
+                \n **᥀︙تـم بـنجـاح الـتثبيت فـي الدردشـة**\
                 \nالـدردشـة: {event.chat.title}(`{event.chat_id}`)\
                 \nالـتثبيت: {is_silent}",
         )
@@ -120,13 +120,13 @@ async def pin(event):
     },
 )
 async def Ahmed(event):
-    "⌁︙ لإلغاء تثبيت رسائل من المجموعة "
+    "᥀︙ لإلغاء تثبيت رسائل من المجموعة "
     to_unpin = event.reply_to_msg_id
     options = (event.pattern_match.group(1)).strip()
     if not to_unpin and options != "all":
         return await edit_delete(
             event,
-            "⌁︙ يرجى الرد على الرسالة التي تريد تثبيتها استخدم `.الغاء التثبيت للكل`  لالغاء تثبيت جميع الرسائل ",
+            "᥀︙ يرجى الرد على الرسالة التي تريد تثبيتها استخدم `.الغاء التثبيت للكل`  لالغاء تثبيت جميع الرسائل ",
             5,
         )
     try:
@@ -136,31 +136,31 @@ async def Ahmed(event):
             await event.client.unpin_message(event.chat_id)
         else:
             return await edit_delete(
-                event, "⌁︙ يرجى الرد على الرسالة التي تريد تثبيتها استخدم `.الغاء التثبيت للكل`  لالغاء تثبيت جميع الرسائل", 5
+                event, "᥀︙ يرجى الرد على الرسالة التي تريد تثبيتها استخدم `.الغاء التثبيت للكل`  لالغاء تثبيت جميع الرسائل", 5
             )
     except BadRequestError:
         return await edit_delete(event, NO_PERM, 5)
     except Exception as e:
         return await edit_delete(event, f"`{str(e)}`", 5)
-    await edit_delete(event, "**⌔ ︙تم الغاء التثبيت بنجاح **", 3)
+    await edit_delete(event, "**᥀︙تم الغاء التثبيت بنجاح **", 3)
     if BOTLOG and not event.is_private:
         await event.client.send_message(
             BOTLOG_CHATID,
-            f"**⌁︙ الـغاء التثبيت \
-                \n** ⌁︙ تم بنجاح الغاء التثبيـت في الدردشة  \
-                \n⌔︙الدردشـه : {event.chat.title}(`{event.chat_id}`)",
+            f"**᥀︙ الـغاء التثبيت \
+                \n** ᥀︙ تم بنجاح الغاء التثبيـت في الدردشة  \
+                \n᥀︙الدردشـه : {event.chat.title}(`{event.chat_id}`)",
         )
 #admin plugin for  dragoiq
 @dragoiq.ar_cmd(
     pattern="الاحداث( -ر)?(?: |$)(\d*)?",
     command=("الأحداث", plugin_category),
     info={
-        "⌁︙ الأسـتخدام": "To get recent deleted messages in group",
-        "⌁︙ الشـرح": "To check recent deleted messages in group, by default will show 5. you can get 1 to 15 messages.",
+        "᥀︙الأسـتخدام": "To get recent deleted messages in group",
+        "᥀︙الشـرح": "To check recent deleted messages in group, by default will show 5. you can get 1 to 15 messages.",
         "flags": {
             "u": "use this flag to upload media to chat else will just show as media."
         },
-        "⌁︙ الأمـر": [
+        "᥀︙الأمـر": [
             "{tr}undlt <count>",
             "{tr}undlt -u <count>",
         ],
