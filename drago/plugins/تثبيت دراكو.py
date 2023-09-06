@@ -86,7 +86,7 @@ async def pin(event):
     "To pin a message in chat"
     to_pin = event.reply_to_msg_id
     if not to_pin:
-        return await edit_delete(event, "⌁︙ يـجب الـرد على الـرسالة التي تـريد تـثبيـتها ", 5)
+        return await edit_delete(event, "᥀︙ يـجب الـرد على الـرسالة التي تـريد تـثبيـتها ", 5)
     options = event.pattern_match.group(1)
     is_silent = bool(options)
     try:
@@ -99,12 +99,11 @@ async def pin(event):
     if BOTLOG and not event.is_private:
         await event.client.send_message(
             BOTLOG_CHATID,
-            f"⌁︙ الـتثبيت\
+            f"᥀︙ الـتثبيت\
                 \n **᥀︙تـم بـنجـاح الـتثبيت فـي الدردشـة**\
                 \nالـدردشـة: {event.chat.title}(`{event.chat_id}`)\
                 \nالـتثبيت: {is_silent}",
         )
-#admin plugin for dragoiq
 @dragoiq.ar_cmd(
     pattern="الغاء التثبيت( للكل|$)",
     command=("الغاء التثبيت", plugin_category),
@@ -174,7 +173,7 @@ async def Ahmed(event):
 )
 async def _iundlt(event):  # sourcery no-metrics
     "To check recent deleted messages in group"
-    catevent = await edit_or_reply(event, "⌁︙ يـتم الـبحث عن اخـر الاحداث")
+    catevent = await edit_or_reply(event, "᥀︙ يـتم الـبحث عن اخـر الاحداث")
     flag = event.pattern_match.group(1)
     if event.pattern_match.group(2) != "":
         lim = int(event.pattern_match.group(2))
@@ -187,7 +186,7 @@ async def _iundlt(event):  # sourcery no-metrics
     adminlog = await event.client.get_admin_log(
         event.chat_id, limit=lim, edit=False, delete=True
     )
-    deleted_msg = f"⌁︙ اخـر {lim} رسـائل مـحذوفة فـي الـدردشة :"
+    deleted_msg = f"᥀︙ اخـر {lim} رسـائل مـحذوفة فـي الـدردشة :"
     if not flag:
         for msg in adminlog:
             ruser = (
@@ -195,9 +194,9 @@ async def _iundlt(event):  # sourcery no-metrics
             ).users[0]
             _media_type = media_type(msg.old)
             if _media_type is None:
-                deleted_msg += f"\n {msg.old.message} \n ⌁︙ تم ارسالها بـواسطة {_format.mentionuser(ruser.first_name ,ruser.id)}"
+                deleted_msg += f"\n {msg.old.message} \n ᥀︙ تم ارسالها بـواسطة {_format.mentionuser(ruser.first_name ,ruser.id)}"
             else:
-                deleted_msg += f"\n {_media_type} \n ⌁︙ ارسلت بـواسطـة {_format.mentionuser(ruser.first_name ,ruser.id)}"
+                deleted_msg += f"\n {_media_type} \n ᥀︙ ارسلت بـواسطـة {_format.mentionuser(ruser.first_name ,ruser.id)}"
         await edit_or_reply(catevent, deleted_msg)
     else:
         main_msg = await edit_or_reply(catevent, deleted_msg)
@@ -208,10 +207,10 @@ async def _iundlt(event):  # sourcery no-metrics
             _media_type = media_type(msg.old)
             if _media_type is None:
                 await main_msg.reply(
-                    f"{msg.old.message}\n⌁︙ ارسلت بواسطه {_format.mentionuser(ruser.first_name ,ruser.id)}"
+                    f"{msg.old.message}\n᥀︙ ارسلت بواسطه {_format.mentionuser(ruser.first_name ,ruser.id)}"
                 )
             else:
                 await main_msg.reply(
-                    f"{msg.old.message}\n⌁︙ ارسلت بواسطه {_format.mentionuser(ruser.first_name ,ruser.id)}",
+                    f"{msg.old.message}\n᥀︙ ارسلت بواسطه {_format.mentionuser(ruser.first_name ,ruser.id)}",
                     file=msg.old.media,
-        )
+    )
