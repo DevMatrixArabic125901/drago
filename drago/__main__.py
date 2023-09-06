@@ -55,13 +55,13 @@ async def startup_process():
     await verifyLoggerGroup()
     await load_plugins("plugins")
     await load_plugins("assistant")
-    print("##########################")
-    print("⌁︙بـوت دراكـو يعـمل بـنجاح")
+    print("✦┅━╍━╍╍━━╍━━╍╍━━╍╍━━╍╍━━╍━┅✦")
+    print("᥀︙تـم تنـصيب سـورس ماتـركس الـعربي بنجـاح︙᥀")
     print(
-        f"تم تشغيل الانلاين تلقائياً ارسل {cmdhr}الاوامر لـرؤيـة اوامر السورس\
-        \nللمسـاعدة تواصـل  https://t.me/Drago_Support"
+        f"᥀︙تم تشغيل الانلاين تلقائياً ارسل {cmdhr} الاوامر لـرؤيـة اوامر السورس︙᥀\
+        \n᥀︙للمسـاعدة تواصـل  https://t.me/MaTrxSupport︙᥀"
     )
-    print("##########################")
+    print("✦┅━╍━╍╍━━╍━━╍╍━━╍╍━━╍╍━━╍━┅✦")
     await verifyLoggerGroup()
     await saves()
     await add_bot_to_logger_group(BOTLOG_CHATID)
