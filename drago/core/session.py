@@ -12,7 +12,7 @@ __version__ = "2.10.6"
 loop = None
 
 if Config.STRING_SESSION:
-session = StringSession(str(Config.STRING_SESSION))
+    session = StringSession(str(Config.STRING_SESSION))
     
     session = "drago"
 
@@ -29,7 +29,7 @@ try:
     )
 except Exception as e:
     print(
-        f"STRING_SESSION CODE WRONG MAKE A NEW SESSION - {e}\n كود سيشن تيليثـون غير صالح .. قم باستخـراج كود جديد ؟!"
+        f"STRING_SESSION CODE WRONG MAKE A NEW SESSION - {e}\n كود سيشن تيليثـون غير صالح قم باستخـراج كود جديد ؟!"
     )
     sys.exit()
 
