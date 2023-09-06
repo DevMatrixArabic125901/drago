@@ -335,7 +335,7 @@ async def verifyLoggerGroup():
         descript = "᥀︙ وظيفه الكروب يحفظ رسائل الخاص اذا ما تريد الامر احذف الكروب نهائي \n  - @MaTriXThon"
         photobt = await dragoiq.upload_file(file="Dragoiq/razan/resources/start/MATRIX.JPG")
         _, groupid = await create_supergroup(
-            "مجموعة التخزين",, dragoiq, Config.TG_BOT_USERNAME, descript, photobt
+            "مجموعة التخزين", dragoiq, Config.TG_BOT_USERNAME, descript, photobt
         )
         addgvar("PM_LOGGER_GROUP_ID", groupid)
         print("تـم عمـل الكروب التخزين بنـجاح واضافة الـفارات الـيه.")
