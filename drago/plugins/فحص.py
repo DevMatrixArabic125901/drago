@@ -63,7 +63,7 @@ async def amireallyalive(event):
         pyver=python_version(),
         dbhealth=check_sgnirts,
         ping=ms,
-        dragotime=installation_time,
+        matrixtime=installation_time,
     )
     if DRAGO_IMG:
         drago = [x for x in DRAGO_IMG.split()]
@@ -87,9 +87,10 @@ async def amireallyalive(event):
 
 temp = """⊱━━━━━⊰✾⊱━━━━━⊰
 **- سورس ماتركس يعمل بنجاح .**
-**{EMOJI} قاعدة البيانات :** `{dbhealth}`
+**{EMOJI} قاعدة البيانات :** `{matrixtime}`
 **{EMOJI} نسخــﮫ التيليثون :** `{telever}`
 **{EMOJI} نسخــﮫ ماتركـس :** `{matrixver}`
 **{EMOJI} اصدار البايثون :** `{pyver}`
+**{EMOJI} التاريخ :** `{matrixtime}`
 **{EMOJI} المالك :** {mention}
 ⊱━━━━━⊰✾⊱━━━━━⊰"""
