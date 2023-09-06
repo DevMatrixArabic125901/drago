@@ -8,7 +8,7 @@ from .client import DragoClient
 
 LOGS = logging.getLogger(" ")
 
-__version__ = "2.10.6
+__version__ = "2.10.6"
 
 loop = None
 
