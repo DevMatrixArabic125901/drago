@@ -143,7 +143,7 @@ async def fetch_info(replied_user, event):
 )
 async def who(event):
     "Gets info of an user"
-    dr = await edit_or_reply(event, "⇆")
+    drago = await edit_or_reply(event, "⇆")
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     replied_user = await get_user_from_event(event)
