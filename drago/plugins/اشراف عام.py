@@ -1,3 +1,5 @@
+# ماتركس-دراكو
+#    اخمط مع ذكر الحقوق غيرها انت مطور فاشل
 marculs=9
 from telethon.errors.rpcerrorlist import (UserIdInvalidError,
                                             MessageTooLongError)
@@ -29,7 +31,7 @@ async def get_full_user(event):
         if user.isnumeric():
             user = int(user)
         if not user:
-            await event.edit("▾∮ لا يمكنك بدون ايدي المستخدم")
+            await event.edit("᥀︙لا يمكنك بدون ايدي المستخدم")
             return
         if event.message.entities is not None:
             probable_user_mention_entity = event.message.entities[0]
@@ -41,7 +43,7 @@ async def get_full_user(event):
         try:
             user_obj = await event.client.get_entity(user)
         except Exception as err:
-            return await event.edit("▾∮ هنالك خطأ يرجى تبليغنا @Drago_Support", str(err))           
+            return await event.edit("᥀︙هنالك خطأ يرجى تبليغنا @MaTriXThon", str(err))           
     return user_obj, extra
 
 global hawk,moth
@@ -62,14 +64,13 @@ async def gben(drago):
     i = 0
     sender = await dc.get_sender()
     me = await drago.client.get_me()
-    await razan.edit("▾∮ يتم رفع المستخدم في جميع المجموعات")
+    await razan.edit("᥀︙يتم رفع المستخدم في جميع المجموعات")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
     await drago.get_chat()
     if drago.is_private:
         user = drago.chat
-      if drago.is_private:
-        rank = (1)
+        rank = drago.pattern_match.group(1)
     else:
         drago.chat.title
     try:
@@ -77,13 +78,13 @@ async def gben(drago):
     except:
         pass
     if me == user:
-       dragoiq = await razan.edit("▾∮ لا استطيع رفع نفسي")
+       dragoiq = await razan.edit("᥀︙لا استطيع رفع نفسي 🧸🤍،")
        return
     try:
         if not rank:
             rank = "ㅤㅤ"
     except:
-        return await razan.edit(f"**▾∮ هنالك شي خطأ**")
+        return await razan.edit(f"**᥀︙هنالك شي خطأ**")
     if user:
         telchanel = [d.entity.id
                      for d in await drago.client.get_dialogs()
@@ -99,11 +100,11 @@ async def gben(drago):
           try:
              await drago.client(EditAdminRequest(x, user, rgt, rank))
              i += 1
-             await razan.edit(f"**▾∮ يتم الرفع في **: `{i}` من المجموعات")
+             await razan.edit(f"**᥀︙يتم الرفع في **: `{i}` من المجموعات")
           except:
              pass
     else:
-        await razan.edit(f"**▾∮ يجب عليك الرد على المستخدم اولا **")
+        await razan.edit(f"**᥀︙يجب عليك الرد على المستخدم اولا **")
     return await razan.edit(
         f"**▾∮المستخدم [{user.first_name}](tg://user?id={user.id})\n▾∮ تم رفعه في : {i} من المجموعات**"
     )
@@ -114,7 +115,7 @@ async def gben(drago):
     i = 0
     sender = await dc.get_sender()
     me = await drago.client.get_me()
-    await razan.edit("**▾∮ يتم تنزيل الشخص من رتبة الاشراف في جميع الكروبات**")
+    await razan.edit("**᥀︙يتم تنزيل الشخص من رتبة الاشراف في جميع الكروبات**")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
     await drago.get_chat()
@@ -128,13 +129,13 @@ async def gben(drago):
     except:
         pass
     if me == user:
-       dragoiq = await razan.edit("▾∮ لا استطيع تنزيل نفسي")
+       dragoiq = await razan.edit("᥀︙لا استطيع تنزيل نفسي")
        return
     try:
         if not rank:
             rank = "ㅤㅤ"
     except:
-        return await razan.edit(f"**▾∮ هنالك شي خطأ**")
+        return await razan.edit(f"**᥀︙هنالك شي خطأ**")
     if user:
         telchanel = [d.entity.id
                      for d in await drago.client.get_dialogs()
@@ -150,11 +151,11 @@ async def gben(drago):
           try:
              await drago.client(EditAdminRequest(x, user, rgt, rank))
              i += 1
-             await razan.edit(f"**▾∮ يتم تنزيله في **: `{i}` من المجموعات")
+             await razan.edit(f"**᥀︙يتم تنزيله في **: `{i}` من المجموعات")
           except:
              pass
     else:
-        await razan.edit(f"**▾∮ يجب عليك الرد على المستخدم اولا **")
+        await razan.edit(f"**᥀︙يجب عليك الرد على المستخدم اولا **")
     return await razan.edit(
         f"**▾∮المستخدم [{user.first_name}](tg://user?id={user.id})\n▾∮ تم تنزيله في : {i} من المجموعات**"
     )
