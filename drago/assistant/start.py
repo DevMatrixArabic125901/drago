@@ -32,7 +32,7 @@ async def start(event):
             vent,
             message=f"اهـلا يا مالكـي انـه انـا مسـاعدك ! \nمـاذا تريـد ان تفعـل اليـوم ?",
             buttons=[
-                                     [Button.inline("᥀︙عرض المستخدمين ︙᥀", data="users"), Button.inline(
+                                     [Button.inline("᥀︙ المستخدمين ︙᥀", data="users"), Button.inline(
                                          "᥀︙اوامر البـوت ︙᥀", data="gibcmd")],
                                      [Button.url("᥀︙المطـور︙᥀", "https://t.me/X_EXTRA"), Button.inline(
                                          "᥀︙اوامر الزغـرفة ︙᥀", data="rozzag")],
