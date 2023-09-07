@@ -628,7 +628,7 @@ async def _(event):
 )
 @dragoiq.ar_cmd(
     pattern="اوامر التجميع$",
-    command=("اوامر التجميع", plugin_category),
+    command=("م21$", plugin_category),
 )
 async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
@@ -657,7 +657,7 @@ async def _(event):
 )
 @dragoiq.ar_cmd(
     pattern="اوامر الذكاء الاصطناعي$",
-    command=(".م20", plugin_category),
+    command=("م20$", plugin_category),
            )
 async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
