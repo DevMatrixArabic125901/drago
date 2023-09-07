@@ -19,19 +19,6 @@ from ..helpers.utils import reply_id, _catutils, parse_pre, yaml_format, install
 plugin_category = "utils"
 
 
-@dragoiq.on(admin_cmd(pattern="رفع مرتي(?:\s|$)([\s\S]*)"))
-async def permalink(mention):
-    user, custom = await get_user_from_event(mention)
-    if not user:
-        return
-    if user.id == 6373798952:
-        return await edit_or_reply(mention, f"**᥀︙ لكك هذا المطور أحمد ︙᥀**")
-    drago = user.last_name.replace("\u2060", "") if user.last_name else user.username
-    me = await mention.client.get_me()
-    my_first = me.first_name
-    my_mention = f"[{me.first_name}](tg://user?id={me.id})"
-    await edit_or_reply(mention, f"🚻 ** ᥀︙  المستخدم => • ** [{drago}](tg://user?id={user.id}) \n ☑️ **᥀︙  تم رفعها مرتك بواسطه  :**{my_mention} 👰🏼‍♀️.\n**᥀︙  يلا حبيبي امشي نخلف بيبي** ")
-
 @dragoiq.on(admin_cmd(pattern="رفع جلب(?:\s|$)([\s\S]*)"))
 async def permalink(mention):
     """Generates a link to the user's PM with a custom text."""
@@ -44,7 +31,7 @@ async def permalink(mention):
     me = await mention.client.get_me()
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
-    await edit_or_reply(mention, f"**᥀︙ المستخدم** [{drago}](tg://user?id={user.id}) \n**᥀︙  تـم رفعـه جلب 🐶 بواسطة :** {my_mention} \n**᥀︙  خليه خله ينبح 😂**")
+    await edit_or_reply(mention, f"**᥀︙ المستخدم** [{drago}](tg://user?id={user.id}) \n**᥀︙  تـم رفعـه جلب 🐶 بواسطة :** {my_mention}**")
 
 @dragoiq.on(admin_cmd(pattern="رفع تاج(?:\s|$)([\s\S]*)"))
 async def permalink(mention):
@@ -86,7 +73,7 @@ async def permalink(mention):
     me = await mention.client.get_me()
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
-    await edit_or_reply(mention, f"**᥀︙ المستخدم** [{drago}](tg://user?id={user.id}) \n**᥀︙  تـم رفعـه بكلـبك 🤍 بواسطة :** {my_mention} \n**᥀︙  انت حبي الابدي 😍**")
+    await edit_or_reply(mention, f"**᥀︙ المستخدم** [{drago}](tg://user?id={user.id}) \n**᥀︙  تـم رفعـه بكلـبك 🤍 بواسطة :** {my_mention}**")
     
     
 
@@ -116,51 +103,8 @@ async def permalink(mention):
     me = await mention.client.get_me()
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
-    await edit_or_reply(mention, f"**᥀︙ المستخدم** [{drago}](tg://user?id={user.id}) \n**᥀︙  تـم رفعـه زوجج بواسطة :** {my_mention} \n**᥀︙  يلا حبيبي امشي نخلف 🤤🔞**")
+    await edit_or_reply(mention, f"**᥀︙ المستخدم** [{drago}](tg://user?id={user.id}) \n**᥀︙  تـم رفعـه زوجك بواسطة :** {my_mention}**")
     
-
-@dragoiq.on(admin_cmd(pattern="رفع زاحف(?:\s|$)([\s\S]*)"))
-async def permalink(mention):
-    """Generates a link to the user's PM with a custom text."""
-    user, custom = await get_user_from_event(mention)
-    if not user:
-        return
-    if user.id == 6373798952:
-        return await edit_or_reply(mention, f"**‹ : لكك هذا المطور أحمد : **")
-    drago = user.first_name.replace("\u2060", "") if user.first_name else user.username
-    me = await mention.client.get_me()
-    my_first = me.first_name
-    my_mention = f"[{me.first_name}](tg://user?id={me.id})"
-    await edit_or_reply(mention, f"**᥀︙ المستخدم** [{drago}](tg://user?id={user.id}) \n**᥀︙  تـم رفع المتهم زاحف اصلي بواسطة :** {my_mention} \n**᥀︙  ها يلزاحف شوكت تبطل سوالفك حيوان 😂🐍**")
-
-@dragoiq.on(admin_cmd(pattern="رفع كحبة(?:\s|$)([\s\S]*)"))
-async def permalink(mention):
-    """Generates a link to the user's PM with a custom text."""
-    user, custom = await get_user_from_event(mention)
-    if not user:
-        return
-    if user.id == 6373798952:
-        return await edit_or_reply(mention, f"**- لكك دي هذا المطور**")
-    drago = user.first_name.replace("\u2060", "") if user.first_name else user.username
-    me = await mention.client.get_me()
-    my_first = me.first_name
-    my_mention = f"[{me.first_name}](tg://user?id={me.id})"
-    await edit_or_reply(mention, f"**᥀︙ المستخدم** [{drago}](tg://user?id={user.id}) \n**᥀︙  تـم رفع المتهم كحبة 👙 بواسطة :** {my_mention} \n**᥀︙  ها يلكحبة طوبز خلي انيجك/ج**")
-
-@dragoiq.on(admin_cmd(pattern="رفع فرخ(?:\s|$)([\s\S]*)"))
-async def permalink(mention):
-    """Generates a link to the user's PM with a custom text."""
-    user, custom = await get_user_from_event(mention)
-    if not user:
-        return
-    if user.id == 6373798952:
-        return await edit_or_reply(mention, f"**᥀︙ لكك هذا المطور أحمد ︙᥀**")
-    drago = user.first_name.replace("\u2060", "") if user.first_name else user.username
-    me = await mention.client.get_me()
-    my_first = me.first_name
-    my_mention = f"[{me.first_name}](tg://user?id={me.id})"
-    await edit_or_reply(mention, f"**᥀︙ المستخدم** [{drago}](tg://user?id={user.id}) \n**᥀︙  تـم رفعـه فرخ الكروب بواسطة :** {my_mention} \n**᥀︙  لك الفرخ استر على خمستك ياهو اليجي يزورهاً 👉🏻👌🏻**")
-
 @dragoiq.ar_cmd(
     pattern="رزله(?:\s|$)([\s\S]*)",
     command=("رزله", plugin_category),
@@ -173,7 +117,7 @@ async def permalink(mention):
     if user.id == 6373798952:
         return await edit_or_reply(mention, f"**᥀︙ لكك هذا المطور أحمد ︙᥀**")
     tag = user.first_name.replace("\u2060", "") if user.first_name else user.username
-    await edit_or_reply(mention, f"᥀︙ ولك [{tag}](tg://user?id={user.id}) \n᥀︙  ما رزل زبايل 👍")
+    await edit_or_reply(mention, f"᥀︙ ولك [{tag}](tg://user?id={user.id}) \n᥀︙ ما رزل زبايل 👍")
 
 @dragoiq.on(admin_cmd(pattern="رفع حاته(?:\s|$)([\s\S]*)"))
 async def permalink(mention):
@@ -187,7 +131,7 @@ async def permalink(mention):
     me = await mention.client.get_me()
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
-    await edit_or_reply(mention, f"**᥀︙ المستخدم** [{drago}](tg://user?id={user.id}) \n**᥀︙  تـم رفعـها حاته الكروب 🤤😻 بواسطة :** {my_mention} \n**᥀︙  تعاي يعافيتي اريد حضن دافي 😽**")
+    await edit_or_reply(mention, f"**᥀︙ المستخدم** [{drago}](tg://user?id={user.id}) \n**᥀︙ تـم رفعـها حاته الكروب بواسطة :** {my_mention}**")
 
 @dragoiq.on(admin_cmd(pattern="رفع هايشة(?:\s|$)([\s\S]*)"))
 async def permalink(mention):
@@ -213,37 +157,8 @@ async def permalink(mention):
     me = await mention.client.get_me()
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
-    await edit_or_reply(mention, f"**᥀︙ المستخدم** [{drago}](tg://user?id={user.id}) \n**᥀︙  تـم رفعـه صاك 🤤 بواسطة :** {my_mention} \n**᥀︙  تعال يلحلو انطيني بوسة من رگبتك 😻🤤**")
+    await edit_or_reply(mention, f"**᥀︙ المستخدم** [{drago}](tg://user?id={user.id}) \n**᥀︙  تـم رفعـه صاك بواسطة :** {my_mention}**")
 
-@dragoiq.ar_cmd(
-    pattern="مصه(?:\s|$)([\s\S]*)",
-    command=("مصه", plugin_category),
-)
-async def permalink(mention):
-    """Generates a link to the user's PM with a custom text."""
-    user, custom = await get_user_from_event(mention)
-    if not user:
-        return
-    if user.id == 6373798952:
-        return await edit_or_reply(mention, f"**᥀︙ لكك هذا المطور أحمد ︙᥀**")
-    if user.id == 1260465030:
-        return await edit_or_reply(mention, f"**‹ : لكك دي هذا المطور محمد : ›**")
-    tag = user.first_name.replace("\u2060", "") if user.first_name else user.username
-    await edit_or_reply(mention, f"** ⣠⡶⠚⠛⠲⢄⡀\n⣼⠁      ⠀⠀⠀⠳⢤⣄\n⢿⠀⢧⡀⠀⠀⠀⠀⠀⢈⡇\n⠈⠳⣼⡙⠒⠶⠶⠖⠚⠉⠳⣄\n⠀⠀⠈⣇⠀⠀⠀⠀⠀⠀⠀⠈⠳⣄\n⠀⠀⠀⠘⣆       ⠀⠀⠀⠀⠀⠈⠓⢦⣀\n⠀⠀⠀⠀⠈⢳⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠲⢤\n⠀⠀⠀⠀⠀⠀⠙⢦⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢧\n⠀⠀⠀⠀⠀⠀⠀    ⠓⠦⠀⠀⠀⠀**\n**🚹 ¦ تعال مصه عزيزي ** [{tag}](tg://user?id={user.id})")
-
-@dragoiq.on(admin_cmd(pattern="رفع ايجة(?:\s|$)([\s\S]*)"))
-async def permalink(mention):
-    """Generates a link to the user's PM with a custom text."""
-    user, custom = await get_user_from_event(mention)
-    if not user:
-        return
-    if user.id == 6373798952:
-        return await edit_or_reply(mention, f"**- لكك دي هذا المطور**")
-    drago = user.first_name.replace("\u2060", "") if user.first_name else user.username
-    me = await mention.client.get_me()
-    my_first = me.first_name
-    my_mention = f"[{me.first_name}](tg://user?id={me.id})"
-    await edit_or_reply(mention, f"**᥀︙ المستخدم** [{drago}](tg://user?id={user.id}) \n**᥀︙  تـم رفعـه ايچة 🤤 بواسطة :** {my_mention} \n**᥀︙  ها يلأيچة تطلعين درب بـ$25 👙**")
 
 @dragoiq.on(admin_cmd(pattern="رفع زبال(?:\s|$)([\s\S]*)"))
 async def permalink(mention):
@@ -258,34 +173,6 @@ async def permalink(mention):
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
     await edit_or_reply(mention, f"**᥀︙ المستخدم** [{drago}](tg://user?id={user.id}) \n**᥀︙  تـم رفعـه زبال الكروب 🧹 بواسطة :** {my_mention} \n**᥀︙  تعال يلزبال اكنس الكروب لا أهينك 🗑😹**")
-
-@dragoiq.on(admin_cmd(pattern="رفع كواد(?:\s|$)([\s\S]*)"))
-async def permalink(mention):
-    """Generates a link to the user's PM with a custom text."""
-    user, custom = await get_user_from_event(mention)
-    if not user:
-        return
-    if user.id == 6373798952:
-        return await edit_or_reply(mention, f"**- لكك دي هذا المطور**")
-    drago = user.first_name.replace("\u2060", "") if user.first_name else user.username
-    me = await mention.client.get_me()
-    my_first = me.first_name
-    my_mention = f"[{me.first_name}](tg://user?id={me.id})"
-    await edit_or_reply(mention, f"**᥀︙ المستخدم** [{drago}](tg://user?id={user.id}) \n**᥀︙  تـم رفعه كواد بواسطة :** {my_mention} \n**᥀︙  تعال يكواد عرضك مطشر اصير حامي عرضك ؟😎**")
-
-@dragoiq.on(admin_cmd(pattern="رفع ديوث(?:\s|$)([\s\S]*)"))
-async def permalink(mention):
-    """Generates a link to the user's PM with a custom text."""
-    user, custom = await get_user_from_event(mention)
-    if not user:
-        return
-    if user.id == 6373798952:
-        return await edit_or_reply(mention, f"**- لكك دي هذا المطور**")
-    drago = user.first_name.replace("\u2060", "") if user.first_name else user.username
-    me = await mention.client.get_me()
-    my_first = me.first_name
-    my_mention = f"[{me.first_name}](tg://user?id={me.id})"
-    await edit_or_reply(mention, f"**᥀︙ المستخدم** [{drago}](tg://user?id={user.id}) \n**᥀︙  تـم رفعه ديوث الكروب بواسطة :** {my_mention} \n**᥀︙  تعال يلديوث جيب اختك خلي اتمتع وياها 🔞**")
 
 @dragoiq.on(admin_cmd(pattern="رفع مميز(?:\s|$)([\s\S]*)"))
 async def permalink(mention):
@@ -343,17 +230,6 @@ async def permalink(mention):
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
     await edit_or_reply(mention, f"**᥀︙ الحلو** 「[{drago}](tg://user?id={user.id})」 \n**᥀︙  تـم رفعه مالك الكروب بواسطة :** {my_mention}")
 
-@dragoiq.on(admin_cmd(pattern="رفع مجنب(?:\s|$)([\s\S]*)"))
-async def permalink(mention):
-    user, custom = await get_user_from_event(mention)
-    if not user:
-        return
-    drago = user.last_name.replace("\u2060", "") if user.last_name else user.username
-    me = await mention.client.get_me()
-    my_first = me.first_name
-    my_mention = f"[{me.first_name}](tg://user?id={me.id})"
-    await edit_or_reply(mention, f" ** ᥀︙  المستخدم => • ** [{drago}](tg://user?id={user.id}) \n ☑️ **᥀︙  تم رفعه مجنب بواسطه  :**{my_mention} .\n**᥀︙  كوم يلمجنب اسبح مو عيب تضرب جلغ 😹** ")
-
 @dragoiq.on(admin_cmd(pattern="رفع وصخ(?:\s|$)([\s\S]*)"))
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
@@ -363,7 +239,7 @@ async def permalink(mention):
     me = await mention.client.get_me()
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
-    await edit_or_reply(mention, f"** ᥀︙  المستخدم => • ** [{drago}](tg://user?id={user.id}) \n ☑️ **᥀︙  تم رفعه وصخ الكروب 🤢 بواسطه  :**{my_mention} .\n**᥀︙  لك دكوم يلوصخ اسبح مو ريحتك كتلتنا 🤮 ** ")
+    await edit_or_reply(mention, f"** ᥀︙  المستخدم => • ** [{drago}](tg://user?id={user.id}) \n ☑️ **᥀︙ تم رفعه وصخ الكروب 🤢 بواسطه  :**{my_mention} .\n**᥀︙  لك دكوم يلوصخ اسبح مو ريحتك كتلتنا 🤮 ** ")
 
 @dragoiq.on(admin_cmd(pattern="زواج(?:\s|$)([\s\S]*)"))
 async def permalink(mention):
@@ -374,7 +250,7 @@ async def permalink(mention):
     me = await mention.client.get_me()
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
-    await edit_or_reply(mention, f"᥀︙ ** لقد تم زواجك/ج من : **[{drago}](tg://user?id={user.id}) 💍\n**᥀︙  الف الف مبروك الان يمكنك اخذ راحتك ** ")
+    await edit_or_reply(mention, f"᥀︙ ** لقد تم زواجك/ج من : **[{drago}](tg://user?id={user.id}) 💍\n**᥀︙ الف الف مبروك الان يمكنك اخذ راحتكم ** ")
 
 @dragoiq.on(admin_cmd(pattern="طلاك(?:\s|$)([\s\S]*)"))
 async def permalink(mention):
