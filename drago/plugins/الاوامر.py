@@ -196,8 +196,8 @@ async def _(event):
 
 )
 @dragoiq.ar_cmd(
-    pattern="م20",
-    command=("م20", plugin_category),
+    pattern="م22",
+    command=("م22", plugin_category),
 )
 async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
