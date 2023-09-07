@@ -131,6 +131,7 @@ async def _(event):
             event.chat_id,
             file=random.choice(draph),
             caption=f"᥀︙𝖠𝗇𝗂𝗆𝖾 𝖡𝖸 : @MaTriXThon",
+            buttons=[(Button.url("᥀︰ماتـركس الـعربي︰᥀", "https://t.me/MaTriXThon"),)],
         )
         await dragoevent.delete()
     except Exception:
