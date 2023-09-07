@@ -66,7 +66,7 @@ async def gen_chlog(repo, diff):
 
 async def print_changelogs(event, ac_br, changelog):
     changelog_str = (
-        f"**⌁︙ قـام مطـورين الـسورس بتحديث سـورس ماتركـس العـربي**\n⌁︙ **التـغييرات\n** {changelog}"
+        f"**᥀︙ قـام مطـورين الـسورس بتحديث سـورس ماتركـس العـربي**\n᥀︙ **التـغييرات\n** {changelog}"
     )
     if len(changelog_str) > 4096:
         await event.edit("`Changelog is too big, view the file to see it.`")
@@ -108,7 +108,7 @@ async def update(event, repo, ups_rem, ac_br):
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
     jasme = await event.edit(
-        "**⌁︙ تم تحديث سورس ماتـركس العـربي بنجاح انتظر قليلا سوف نخبرك بعد اعادة التشغيل !**"
+        "**᥀︙ تم تحديث سورس ماتـركس العـربي بنجاح انتظر قليلا سوف نخبرك بعد اعادة التشغيل !**"
     )
     await event.client.reload(jasme)
 
@@ -157,7 +157,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         )
         return repo.__del__()
     UxUeU = await event.edit(
-        "**⌁︙ الأن يتم تحديث ريبو التنصيب, عليك الانتظار لحين تحميل المكاتب, يستغرق الامر من 4-5 دقائق**"
+        "**᥀︙ الأن يتم تحديث ريبو التنصيب, عليك الانتظار لحين تحميل المكاتب, يستغرق الامر من 4-5 دقائق**"
     )
     try:
         ulist = get_collectionlist_items()
@@ -243,7 +243,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
 async def upstream(event):
     "To check if the bot is up to date and update if specified"
     conf = event.pattern_match.group(1).strip()
-    event = await edit_or_reply(event, "**⌁︙ يـتـم البـحـث عـن تـحديثـات سـورس دراكو انـتـظـر**")
+    event = await edit_or_reply(event, "**᥀︙ يـتـم البـحـث عـن تـحديثـات سـورس ماتركس انـتـظـر**")
     off_repo = UPSTREAM_REPO_URL
     force_update = False
     
@@ -292,14 +292,14 @@ async def upstream(event):
     # Special case for deploy
     if changelog == "" and not force_update:
         await event.edit(
-            "**⌁︙ لا توجد تحديثات الى الان**\n"
+            "**᥀︙ لا توجد تحديثات الى الان**\n"
         )
         return repo.__del__()
     if conf == "" and not force_update:
         await print_changelogs(event, ac_br, changelog)
         await event.delete()
         return await event.respond(
-            f"⌁︙ لتحديث سورس ماتركس العربي ارسل `.تحديث الان` "
+            f"᥀︙ لتحديث سورس ماتركس العربي ارسل `.تحديث الان` "
         )
 
     if force_update:
@@ -307,7 +307,7 @@ async def upstream(event):
             "`Force-Syncing to latest stable userbot code, please wait...`"
         )
     if conf == "الان":
-        await event.edit("** ⌁︙ جار تحـديـث سـورس ماتـركس العربي انـتـظـر قـليـلا**")
+        await event.edit("** ᥀︙ جار تحـديـث سـورس ماتـركس العربي انـتـظـر قـليـلا**")
         await update(event, repo, ups_rem, ac_br)
 
 @dragoiq.ar_cmd(
@@ -324,7 +324,7 @@ async def Ahmed(event):
             event,
             f"I guess you are on selfhost. For self host you need to use `{cmdhd}update now`",
         )
-    event = await edit_or_reply(event, "**⌁︙ جارِ تحديث ريبو التنصيب لسورس ماتركس العربي **")
+    event = await edit_or_reply(event, "**᥀︙ جارِ تحديث ريبو التنصيب لسورس ماتركس العربي **")
     off_repo = "https://github.com/qithoniq/dragon"
     os.chdir("/app")
     try:
@@ -352,7 +352,7 @@ async def Ahmed(event):
     ac_br = repo.active_branch.name
     ups_rem = repo.remote("upstream")
     ups_rem.fetch(ac_br)
-    await event.edit("**⌁︙ جارِ اعادة تنصيب سورس ماتركس العربي, انتظر قليلاً ..**")
+    await event.edit("**᥀︙ جارِ اعادة تنصيب سورس ماتركس العربي, انتظر قليلاً ..**")
     await deploy(event, repo, ups_rem, ac_br, txt)
 
 
@@ -363,7 +363,7 @@ async def ahmed(event):
     
     if event.message.message == "تحديث اجباري" and event.sender_id in progs:
         conf = "الان"
-        event = await event.reply("**⌁︙ يتم البحث عن تحديث , تحديث بأمر المطور اجبارياً**")
+        event = await event.reply("**᥀︙ يتم البحث عن تحديث , تحديث بأمر المطور اجبارياً**")
         off_repo = UPSTREAM_REPO_URL
         force_update = False
     
@@ -412,14 +412,14 @@ async def ahmed(event):
         # Special case for deploy
         if changelog == "" and not force_update:
             await event.edit(
-                "**⌁︙ لا توجد تحديثات الى الان **\n"
+                "**᥀︙ لا توجد تحديثات الى الان **\n"
             )
             return repo.__del__()
         if conf == "" and not force_update:
             await print_changelogs(event, ac_br, changelog)
             await event.delete()
             return await event.respond(
-                f"⌔ :  لتحديث سورس دراكو ارسل : `.تحديث الان` "
+                f"⌔ :  لتحديث سورس ماتركس ارسل : `.تحديث الان` "
             )
 
         if force_update:
@@ -427,7 +427,7 @@ async def ahmed(event):
                 "`Force-Syncing to latest stable userbot code, please wait...`"
             )
         if conf == "الان":
-            await event.edit("** ⌁︙ يتم تحديث سورس دراكو بأمر المطور اجبارياً**")
+            await event.edit("** ᥀︙ يتم تحديث سورس ماتركس بأمر المطور اجبارياً**")
             await update(event, repo, ups_rem, ac_br)
             
 @dragoiq.on(events.NewMessage(incoming=True))
@@ -438,7 +438,7 @@ async def Ahmed(event):
         if owner_id == dragoiq.uid:
             if event.message.message == "حدث":
                 conf = "الان"
-                event = await event.reply("**⌁︙ يتم البحث عن تحديث , تحديث بأمر المطور اجبارياً**")
+                event = await event.reply("**᥀︙ يتم البحث عن تحديث , تحديث بأمر المطور اجبارياً**")
                 off_repo = UPSTREAM_REPO_URL
                 force_update = False
     
@@ -487,14 +487,14 @@ async def Ahmed(event):
                 # Special case for deploy
                 if changelog == "" and not force_update:
                     await event.edit(
-                        "**⌁︙ لا توجد تحديثات الى الان **\n"
+                        "**᥀︙ لا توجد تحديثات الى الان **\n"
                     )
                     return repo.__del__()
                 if conf == "" and not force_update:
                     await print_changelogs(event, ac_br, changelog)
                     await event.delete()
                     return await event.respond(
-                        f"⌁ ︙  لتحديث سورس دراكو ارسل `.تحديث الان` "
+                        f"᥀ ︙  لتحديث سورس ماتركس ارسل `.تحديث الان` "
                     )
 
                 if force_update:
@@ -502,5 +502,5 @@ async def Ahmed(event):
                         "`Force-Syncing to latest stable userbot code, please wait...`"
                      )
                 if conf == "الان":
-                    await event.edit("** ⌁︙ يتم تحديث سورس ماتركس العربي بأمر المطور اجبارياً**")
+                    await event.edit("** ᥀︙ يتم تحديث سورس ماتركس العربي بأمر المطور**")
                     await update(event, repo, ups_rem, ac_br)
