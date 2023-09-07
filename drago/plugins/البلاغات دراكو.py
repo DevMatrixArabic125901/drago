@@ -1,4 +1,4 @@
-#- ZThon - DraGo - #
+# ZThon - MaTriX&DraGo #
 
 import asyncio
 import base64
@@ -90,7 +90,7 @@ async def spammer(event):
     else:
         sleeptimet = 4
         sleeptimem = 0.3
-    await edit_delete(event, f"**⌁︙جـارِ الابـلاغ الداخلـي . . . ⚠️ \n⌁︙لـ الدعم @AbuseNotifications\n⌁︙عـدد البلاغـات ** {inform_drago}", 5)
+    await edit_delete(event, f"**᥀︙جـارِ الابـلاغ الداخلـي . . . ⚠️ \n᥀︙لـ الدعم @AbuseNotifications\n᥀︙عـدد البلاغـات ** {inform_drago}", 5)
     addgvar("spamwork", True)
     await spam_abuseinform_drago(event, sandy, inform_drago, sleeptimem, sleeptimet)
 
@@ -105,7 +105,6 @@ async def spammer(event):
         delgvar("spamwork")
         return await edit_delete(event, "**- تم ايقـاف البلاغـات .. بنجـاح ✅**")
     return await edit_delete(event, "**- لايوجـد هنـاك بلاغـات لـ إيقافهـا ؟!**")
-
 
 
 
