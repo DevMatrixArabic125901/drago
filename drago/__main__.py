@@ -71,11 +71,6 @@ async def startup_process():
     Catcheck.sucess = True
     return
 
-async def externalrepo():
-    if Config.VCMODE:
-        await install_externalrepo("https://github.com/qithoniq/DraVc", "dragovc", "dravc")
-
-dragoiq.loop.run_until_complete(externalrepo())
 dragoiq.loop.run_until_complete(startup_process())
 
 if len(sys.argv) not in (1, 3, 4):
