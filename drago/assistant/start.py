@@ -26,13 +26,13 @@ async def start(event):
     replied_user = await event.client(GetFullUserRequest(event.sender_id))
     firstname = replied_user.users[0].first_name
     vent = event.chat_id
-    starttext = f"**مـرحبا {firstname} ! انـا هـو {bot_id}, بـوت مساعـد بسيـط \n\n- [مـالك البـوت](tg://user?id={bot.uid}) \nيمكـنك مراسلـة المـالك عبـر هذا البـوت . \n\nاذا كـنت تـريد تنـصيب بـوت خـاص بـك تـأكد من الازرار بالأسفل**"
+    starttext = f"**مـرحبا {firstname} ! بـوت مساعـد بسيـط \n\n- [مـالك البـوت](tg://user?id={bot.uid}) \nيمكـنك مراسلـة المـالك عبـر هذا البـوت . \n\nاذا كـنت تـريد تنـصيب بـوت خـاص بـك تـأكد من الازرار بالأسفل**"
     if event.sender_id == bot.uid:
         await tgbot.send_message(
             vent,
-            message=f"اهـلا يا مالكـي انـه انـا {bot_id}, مسـاعدك ! \nمـاذا تريـد ان تفعـل اليـوم ?",
+            message=f"اهـلا يا مالكـي انـه انـا مسـاعدك ! \nمـاذا تريـد ان تفعـل اليـوم ?",
             buttons=[
-                                     [Button.inline("عرض ᥀︙المستخدمين ︙᥀", data="users"), Button.inline(
+                                     [Button.inline("᥀︙عرض المستخدمين ︙᥀", data="users"), Button.inline(
                                          "᥀︙اوامر البـوت ︙᥀", data="gibcmd")],
                                      [Button.url("᥀︙المطـور︙᥀", "https://t.me/X_EXTRA"), Button.inline(
                                          "᥀︙اوامر الزغـرفة ︙᥀", data="rozzag")],
