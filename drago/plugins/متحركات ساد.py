@@ -1,5 +1,3 @@
-#edit  ~ @FFlXlX for dragoiq 
-
 from telethon import events
 from drago.utils import admin_cmd
 from drago import dragoiq
@@ -16,12 +14,11 @@ async def tmgif(event):
         return
     FFlXlX = await reply_id(event)
     if sad:
-        dragoiq = f"**˛ 𝖣𝗋𝖺𝖦𝗈 ، ٰ𝖦𝗂𝖿 𝖲ِ𝖺ٰ𝖣 . .**\n"
+        dragoiq = f"**˛ 𝖬𝖠𝖳𝖱𝖨𝖷 𝖦𝗂𝖿 𝖲ِ𝖺ٰ𝖣 . .**\n"
         dragoiq += f"✛━━━━━━━━━━━━━✛\n"
         dragoiq += f"**الـمتحـرڪـة الأولـى **"
         await event.client.send_file(event.chat_id, sad, caption=dragoiq, reply_to=FFlXlX)
-
-#edit  ~ @FFlXlX for dragoiq 
+ 
 
 @dragoiq.ar_cmd(
     pattern="س2$",
@@ -32,12 +29,11 @@ async def tmgif(event):
         return
     leo = await reply_id(event)
     if sad2:
-        RAZAN = f"**˛ 𝖣𝗋𝖺𝖦𝗈 ، ٰ𝖦𝗂𝖿 𝖲ِ𝖺ٰ𝖣 . .**\n"
+        RAZAN = f"**˛ 𝖬𝖠𝖳𝖱𝖨𝖷 𝖦𝗂𝖿 𝖲ِ𝖺ٰ𝖣 . .**\n"
         RAZAN += f"✛━━━━━━━━━━━━━✛\n"
         RAZAN += f"**الـمتحـرڪـة الـثـانيـة **"
         await event.client.send_file(event.chat_id, sad2, caption=RAZAN, reply_to=leo)
-
-#edit  ~ @FFlXlX for dragoiq 
+ 
 
 @dragoiq.ar_cmd(
     pattern="س3$",
@@ -48,12 +44,11 @@ async def tmgif(event):
         return
     sic_id = await reply_id(event)
     if sad3:
-        RAZAN = f"**˛ 𝖣𝗋𝖺𝖦𝗈 ، ٰ𝖦𝗂𝖿 𝖲ِ𝖺ٰ𝖣 . .**\n"
+        RAZAN = f"**˛ 𝖬𝖠𝖳𝖱𝖨𝖷 𝖦𝗂𝖿 𝖲ِ𝖺ٰ𝖣 . .**\n"
         RAZAN += f"✛━━━━━━━━━━━━━✛\n"
         RAZAN += f"**الـمتحـرڪـة الـثـالثـة**\n"
         await event.client.send_file(event.chat_id, sad3, caption=RAZAN, reply_to=sic_id)
 
-#edit  ~ @FFlXlX for dragoiq 
 
 @dragoiq.ar_cmd(
     pattern="س4$",
@@ -64,14 +59,13 @@ async def tmgif(event):
         return
     reply_to_id = await reply_id(event)
     if sad4:
-        RAZAN = f"** ˛ 𝖣𝗋𝖺𝖦𝗈 ، ٰ𝖦𝗂𝖿 𝖲ِ𝖺ٰ𝖣 . .**\n"
+        RAZAN = f"** ˛ 𝖬𝖠𝖳𝖱𝖨𝖷  ٰ𝖦𝗂𝖿 𝖲ِ𝖺ٰ𝖣 . .**\n"
         RAZAN += f"✛━━━━━━━━━━━━━✛\n"
         RAZAN += f"**الـمتحـرڪـة الـرابـعـة**\n"
         await event.client.send_file(
             event.chat_id, sad4, caption=RAZAN, reply_to=reply_to_id
         )
 
-#edit  ~ @FFlXlX for dragoiq
 
 @dragoiq.ar_cmd(
     pattern="س5$",
@@ -83,14 +77,13 @@ async def tmgif(event):
         return
     reply_to_id = await reply_id(event)
     if sad5:
-        RAZAN = f"** ˛ 𝖣𝗋𝖺𝖦𝗈 ، ٰ𝖦𝗂𝖿 𝖲ِ𝖺ٰ𝖣 . .**\n"
+        RAZAN = f"** ˛ 𝖬𝖠𝖳𝖱𝖨𝖷 𝖦𝗂𝖿 𝖲ِ𝖺ٰ𝖣 . .**\n"
         RAZAN += f"✛━━━━━━━━━━━━━✛\n"
         RAZAN += f"**الـمتحـرڪـة الـخامسـة**\n"
         await event.client.send_file(
             event.chat_id, sad5, caption=RAZAN, reply_to=reply_to_id
         )
-
-#edit  ~ @FFlXlX for dragoiq 
+ 
 
 @dragoiq.ar_cmd(
     pattern="س6$",
@@ -102,14 +95,13 @@ async def tmgif(event):
         return
     reply_to_id = await reply_id(event)
     if sad6:
-        RAZAN = f"** ˛ 𝖣𝗋𝖺𝖦𝗈 ، ٰ𝖦𝗂𝖿 𝖲ِ𝖺ٰ𝖣 . .**\n"
+        RAZAN = f"** ˛ 𝖬𝖠𝖳𝖱𝖨𝖷 𝖦𝗂𝖿 𝖲ِ𝖺ٰ𝖣 . .**\n"
         RAZAN += f"✛━━━━━━━━━━━━━✛\n"
         RAZAN += f"**الـمتحـرڪـة الـسادسـة**\n"
         await event.client.send_file(
             event.chat_id, sad6, caption=RAZAN, reply_to=reply_to_id
         )
-
-#edit  ~ @FFlXlX for dragoiq 
+ 
 
 @dragoiq.ar_cmd(
     pattern="س7$",
@@ -120,7 +112,7 @@ async def tmgif(event):
         return
     reply_to_id = await reply_id(event)
     if sad7:
-        RAZAN = f"** ˛ 𝖣𝗋𝖺𝖦𝗈 ، ٰ𝖦𝗂𝖿 𝖲ِ𝖺ٰ𝖣 . .**\n"
+        RAZAN = f"** ˛ 𝖬𝖠𝖳𝖱𝖨𝖷 𝖦𝗂𝖿 𝖲ِ𝖺ٰ𝖣 . .**\n"
         RAZAN += f"✛━━━━━━━━━━━━━✛\n"
         RAZAN += f"**الـمتحـرڪـة الـسـابعـة**\n"
         await event.client.send_file(
@@ -137,7 +129,7 @@ async def tmgif(event):
         return
     reply_to_id = await reply_id(event)
     if sad8:
-        RAZAN = f"** ˛ 𝖣𝗋𝖺𝖦𝗈 ، ٰ𝖦𝗂𝖿 𝖲ِ𝖺ٰ𝖣 . .**\n"
+        RAZAN = f"** ˛ 𝖬𝖠𝖳𝖱𝖨𝖷 𝖦𝗂𝖿 𝖲ِ𝖺ٰ𝖣 . .**\n"
         RAZAN += f"✛━━━━━━━━━━━━━✛\n"
         RAZAN += f"**الـمتحـرڪـة الثـامنـة**\n"
         await event.client.send_file(
@@ -153,10 +145,9 @@ async def tmgif(event):
         return
     reply_to_id = await reply_id(event)
     if sad9:
-        RAZAN = f"** ˛ 𝖣𝗋𝖺𝖦𝗈 ، ٰ𝖦𝗂𝖿 𝖲ِ𝖺ٰ𝖣 . .**\n"
+        RAZAN = f"** ˛ 𝖬𝖠𝖳𝖱𝖨𝖷 𝖦𝗂𝖿 𝖲ِ𝖺ٰ𝖣 . .**\n"
         RAZAN += f"✛━━━━━━━━━━━━━✛\n"
         RAZAN += f"**الـمتحـرڪـة التـاسعـة**\n"
         await event.client.send_file(
             event.chat_id, sad9, caption=RAZAN, reply_to=reply_to_id
         )
-#edit  ~ @FFlXlX for dragoiq 
