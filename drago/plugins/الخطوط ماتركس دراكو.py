@@ -72,7 +72,7 @@ async def reda(event):
     matrixuserbot = gvarstatus("matrxhide")
     if matrixuserbot:
         try:
-            await event.edit(f"||{event.message.message}||")
+            await event.edit(f"|| {event.message.message} ||")
         except MessageIdInvalidError:
             pass
     matrixgiagonal = gvarstatus("matrixgiagonalar")
