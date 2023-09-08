@@ -1,11 +1,10 @@
 import sys
 from drago.core.logger import logging
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
-from telethon.errors import AccessTokenExpiredError, AccessTokenInvalidError
 from telethon.sessions import StringSession
+from telethon.errors import AccessTokenExpiredError, AccessTokenInvalidError
 from ..Config import Config
 from .client import DragoClient
-
 LOGS = logging.getLogger(" ")
 
 __version__ = "2.10.6"
@@ -44,6 +43,6 @@ try:
         connection_retries=None,
     ).start(bot_token=Config.TG_BOT_TOKEN)
 except AccessTokenExpiredError:
-    LOGS.error("᥀︙توكن البوت منتهي الصلاحية قم باستبداله ليعمل السورس︙᥀")
+    LOGS.error("توكن البوت منتهي الصلاحية قم باستبداله ليعمل السورس")
 except AccessTokenInvalidError:
-    LOGS.error("᥀︙توكن البوت غير صحيح قم باستبداله ليعمل السورس︙᥀")
+    LOGS.error("توكن البوت غير صحيح قم باستبداله ليعمل السورس")
