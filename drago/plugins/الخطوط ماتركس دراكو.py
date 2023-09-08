@@ -31,7 +31,7 @@ async def btext(event):
         await edit_delete(event, "**᥀︙تم اطفاء خط الرمز بنجاح**")
         return
 
-@dragoiq.on(admin_cmd(pattern="(خط التشويش| خط تشويش)"))
+@dragoiq.on(admin_cmd(pattern="(خط التشويش|خط تشويش)"))
 async def btext(event):
     isramz = gvarstatus("matrxhide")
     if not isramz:
