@@ -20,7 +20,6 @@ from ..sql_helper.globals import gvarstatus
 from . import spamwatch
 
 plugin_category = "offers"
-
 LOGS = logging.getLogger(__name__)
 
 drago = (6373798952)
@@ -115,7 +114,7 @@ async def fetch_info(replied_user, event):
 ################# Dev Ahmed #################
     DRA_TEXT = gvarstatus("CUSTOM_ALIVE_TEXT") or "مـعلومـات حـسابـك مـن سـورس ماتـركس العـربي"
     DRG_DRAGO = gvarstatus("CUSTOM_ALIVE_EMOJI") or "-"
-    DRGX = gvarstatus("CUSTOM_ALIVE_FONT") or "✛━━━━━━━━━━━━━✛"
+    DRGX = gvarstatus("CUSTOM_ALIVE_FONT") or "✦┅━╍━╍╍━━╍━━╍━┅✦"
     caption = f"<b> {DRA_TEXT} </b>\n"
     caption += f"ٴ<b>{DRGX}</b>\n"
     caption += f"<b>{DRG_DRAGO}الاسـم    ⇠ </b> "
@@ -181,14 +180,14 @@ async def who(event):
 )
 async def who(event):
     "Gets info of an user"
-    dr = await edit_or_reply(event, "⇆")
+    dra = await edit_or_reply(event, "⇆")
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     replied_user = await get_user_from_event(event)
     try:
         photo, caption = await fetch_info(replied_user, event)
     except (AttributeError, TypeError):
-        return await edit_or_reply(dr, "**- لـم استطـع العثــور ع الشخــص ؟!**")
+        return await edit_or_reply(dra, "**- لـم استطـع العثــور ع الشخــص ؟!**")
     message_id_to_reply = event.message.reply_to_msg_id
     if not message_id_to_reply:
         message_id_to_reply = None
@@ -204,9 +203,9 @@ async def who(event):
         )
         if not photo.startswith("http"):
             os.remove(photo)
-        await dr.delete()
+        await dra.delete()
     except TypeError:
-        await dr.edit(caption, parse_mode="html")
+        await dra.edit(caption, parse_mode="html")
 
 
 @dragoiq.ar_cmd(
@@ -293,17 +292,17 @@ async def _(event):
         try:
             if p.first_name:
                 return await edit_or_reply(
-                    event, f"⌁︙ ايدي المستخدم : `{input_str}` هو `{p.id}`"
+                    event, f"᥀︙ايدي المستخدم : `{input_str}` هو `{p.id}`"
                 )
         except Exception:
             try:
                 if p.title:
                     return await edit_or_reply(
-                        event, f"⌁︙ ايدي الدردشة/القناة `{p.title}` هو `{p.id}`"
+                        event, f"᥀︙ايدي الدردشة/القناة `{p.title}` هو `{p.id}`"
                     )
             except Exception as e:
                 LOGS.info(str(e))
-        await edit_or_reply(event, "⌁︙ يـجب كـتابة مـعرف الشـخص او الـرد عـليه")
+        await edit_or_reply(event, "᥀︙يـجب كـتابة مـعرف الشـخص او الـرد عـليه")
     elif event.reply_to_msg_id:
         await event.get_input_chat()
         r_msg = await event.get_reply_message()
@@ -311,12 +310,12 @@ async def _(event):
             bot_api_file_id = pack_bot_file_id(r_msg.media)
             await edit_or_reply(
                 event,
-                f"⌁︙ ايدي الدردشه: `{str(event.chat_id)}` \n⌁︙ ايدي المستخدم: `{str(r_msg.sender_id)}` \n⌁︙ ايدي الميديا: `{bot_api_file_id}`",
+                f"᥀︙ايدي الدردشه: `{str(event.chat_id)}` \n⌁︙ ايدي المستخدم: `{str(r_msg.sender_id)}` \n⌁︙ ايدي الميديا: `{bot_api_file_id}`",
             )
         else:
             await edit_or_reply(
                 event,
-               f"⌁︙ ايدي الدردشه : `{str(event.chat_id)}` \n⌁︙ ايدي المستخدم: `{str(r_msg.sender_id)}` ",
+               f"᥀︙ايدي الدردشه : `{str(event.chat_id)}` \n⌁︙ ايدي المستخدم: `{str(r_msg.sender_id)}` ",
             )
     else:
-        await edit_or_reply(event, f"⌁︙ الـدردشـة الـحالية : `{str(event.chat_id)}`")
+        await edit_or_reply(event, f"᥀︙الـدردشـة الـحالية : `{str(event.chat_id)}`")
