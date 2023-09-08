@@ -3,8 +3,6 @@ import random, re
 from drago.utils import admin_cmd
 import asyncio 
 
-# Wespr File by  @UxUeU
-# Copyright (C) 2021 drago TEAM
 @borg.on(
     admin_cmd(pattern="همسة ?(.*)")
 )
@@ -22,26 +20,25 @@ async def wspr(event):
 @borg.on(admin_cmd("م27"))
 async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
-        await event.edit("⌁︙ اوامر الهمسه واكس او \n\n⌔︙الامر  • `.همسة`\n⌔︙الاستخدام  • لكتابة همسه سرية لشخص في المجموعه \n\n⌁︙ الامر • `.الهمسة`\n⌁︙ استخدامه • لعرض كيفية كتابة همسة سرية\n\n⌁︙ الامر • `.اكس او `\n ⌁︙ استخدامه • ففط ارسل الامر لبدء لعبة اكس او\n\n⌁︙ CH  - @src_dra")
-        
+        await event.edit("الامر  • `.همسة`\n᥀︙الاستخدام  • لكتابة همسه سرية لشخص في المجموعه \n\n᥀︙الامر • `.الهمسة`\n᥀︙استخدامه • لعرض كيفية كتابة همسة سرية\n\n᥀︙الامر • `.اكس او `\n ᥀︙استخدامه • ففط ارسل الامر لبدء لعبة اكس او\n\n⌁︙ ماتـركس الـعربي  - @MaTriXThon")
+         
 @borg.on(admin_cmd("الهمسة"))
 async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
-        await event.edit("**⌁︙ شـرح كيـفية كـتابة همـسة سـرية**\n⌁︙ اولا اكتب الامر  .همسة  بعدها الرسالة بعدها اكتب معرف الشخص\n⌁︙ مـثال  :   `.همسة ههلا @UxUeU`")
+        await event.edit("**᥀︙شـرح كيـفية كـتابة همـسة سـرية**\n᥀︙اولا اكتب الامر  .همسة  بعدها الرسالة بعدها اكتب معرف الشخص\n⌁︙ مـثال  :   `.همسة ههلا @X_EXTRA`")
         
 @borg.on(
     admin_cmd(
        pattern="اكس او$"
     )
 )
-# كتابة وتعديل فريق دراكو  #@UxUeU
 async def gamez(event):
     if event.fwd_from:
         return
-    jmusername = "@xoBot"
+    matrixusername = "@xoBot"
     uunzz = "play"
     if event.reply_to_msg_id:
         await event.get_reply_message()
-    dra = await bot.inline_query(jmusername, uunzz)
+    dra = await bot.inline_query(matrixusername, uunzz)
     await dra[0].click(event.chat_id)
     await event.delete()
