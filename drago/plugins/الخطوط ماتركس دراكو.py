@@ -31,14 +31,6 @@ async def btext(event):
         await edit_delete(event, "**᥀︙تم اطفاء خط الرمز بنجاح**")
         return
 
-@dragoiq.on(admin_cmd(pattern="(خط التشويش|خط تشويش)"))
-async def btext(event):
-    matrixuserbot = gvarstatus("matrxhide")
-    if not matrixuserbot:
-        addgvar ("matrxhide", "on")
-        await edit_delete(event, "**᥀︙تم تفعيل خط التشويش بنجاح**")
-        return
-
     if matrixuserbot:
         delgvar("matrxhide")
         await edit_delete(event, "**᥀︙تم اطفاء خط التشويش بنجاح**")
@@ -67,17 +59,5 @@ async def reda(event):
     if isramz:
         try:
             await event.edit(f"`{event.message.message}`")
-        except MessageIdInvalidError:
-            pass
-    matrixuserbot = gvarstatus("matrxhide")
-    if matrixuserbot:
-        try:
-            await event.edit(f"|| {event.message.message} ||")
-        except MessageIdInvalidError:
-            pass
-    matrixgiagonal = gvarstatus("matrixgiagonalar")
-    if matrixgiagonal:
-        try:
-            await event.edit(f"__{event.message.message}__")
         except MessageIdInvalidError:
             pass
