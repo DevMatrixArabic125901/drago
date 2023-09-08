@@ -10,7 +10,7 @@ from .sql_helper.globals import addgvar, delgvar, gvarstatus
 __version__ = "3.1.3"
 __license__ = "كـتابة وتـعديل فريـق ماتـركس العـربي"
 __author__ = "ماتـركس العربـي <https://t.me/MaTriXThon>"
-__copyright__ = "MATRIX TEAM (C) 2023 - 2023  " + __author__
+__copyright__ = "MATRIX TEAM (C) 2020 - 2023  " + __author__
 
 dragoiq.version = __version__
 dragoiq.tgbot.version = __version__
