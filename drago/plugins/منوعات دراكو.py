@@ -118,7 +118,7 @@ async def dragovois(vois):
   await vois.delete()
 @dragoiq.ar_cmd(pattern="انمي$")
 async def _(event):
-    dragoevent = await edit_or_reply(event, "⇆")
+    dragoevent = await edit_or_reply(event, "انـتظر قلـيلاً︙᥀")
     try:
         draph = [
             drago
@@ -131,6 +131,26 @@ async def _(event):
             event.chat_id,
             file=random.choice(draph),
             caption=f"᥀︙𝖠𝗇𝗂𝗆𝖾 𝖡𝖸 : @MaTriXThon",
+        )
+        await dragoevent.delete()
+    except Exception:
+        await dragoevent.edit("No Found")
+
+@dragoiq.ar_cmd(pattern="معلومه$")
+async def _(event):
+    dragoevent = await edit_or_reply(event, "انـتظر قلـيلاً︙᥀")
+    try:
+        matrixph = [
+            drago
+            async for drago in event.client.iter_messages(
+                "@A_l3l", filter=InputMessagesFilterPhotos
+            )
+        ]
+        aing = await event.client.get_me()
+        await event.client.send_file(
+            event.chat_id,
+            file=random.choice(matrixph),
+            caption=f"᥀︙𝖨𝗇𝖿𝗈𝗋𝗆𝖺𝗍𝗂𝗈𝗇 𝖡𝖸 : @MaTriXThon",
         )
         await dragoevent.delete()
     except Exception:
