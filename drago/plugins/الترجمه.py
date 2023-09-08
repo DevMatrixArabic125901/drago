@@ -91,10 +91,10 @@ async def _(event):
 async def Ahmed(event):
     if gvarstatus("transnow"):
         delgvar("transnow")
-        await edit_delete(event, "**⌁︙ تم تعطيل الترجمه الفورية **")
+        await edit_delete(event, "**᥀︙ تم تعطيل الترجمه الفورية **")
     else:
         addgvar("transnow", "Ahmed") 
-        await edit_delete(event, "**⌁︙ تم تفعيل الترجمه الفورية**")
+        await edit_delete(event, "**᥀︙ تم تفعيل الترجمه الفورية**")
 
 @dragoiq.ar_cmd(pattern="لغة الترجمة")
 async def Ahmed_is_Here(event):
@@ -103,9 +103,9 @@ async def Ahmed_is_Here(event):
     try:  
         lang = langs[t]
     except BaseException as er:
-        return await edit_delete(event, "**⌁︙ !تأكد من قائمة اللغات. لا يوجد هكذا لغة**")
+        return await edit_delete(event, "**᥀︙ !تأكد من قائمة اللغات. لا يوجد هكذا لغة**")
     addgvar("translang", lang)
-    await edit_delete(event, f"**⌁︙ تم تغير لغة الترجمة الى {lang} بنجاح ✓ **")
+    await edit_delete(event, f"**᥀︙ تم تغير لغة الترجمة الى {lang} بنجاح ✓ **")
 
 # Ahmed
 @dragoiq.on(events.NewMessage(outgoing=True))
