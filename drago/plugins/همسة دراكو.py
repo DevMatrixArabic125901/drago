@@ -10,7 +10,7 @@ async def wspr(event):
     if event.fwd_from:
         return
     dragoiqb = event.pattern_match.group(1)
-    rrrd7 = "@nnbbot"
+    rrrd7 = "@OcBot"
     if event.reply_to_msg_id:
         reply_to_id = await event.get_reply_message()
     dra = await bot.inline_query(rrrd7, dragoiqb) 
@@ -25,7 +25,7 @@ async def _(event):
 @borg.on(admin_cmd("الهمسة"))
 async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
-        await event.edit("**᥀︙شـرح كيـفية كـتابة همـسة سـرية**\n᥀︙اولا اكتب الامر  .همسة  بعدها الرسالة بعدها اكتب معرف الشخص\n⌁︙ مـثال  :   `.همسة ههلا @X_EXTRA`")
+        await event.edit("**᥀︙شـرح كيـفية كـتابة همـسة سـرية**\n᥀︙اولا اكتب الامر  .همسة  بعدها الرسالة بعدها اكتب معرف الشخص\n᥀︙مـثال  :   `.همسة ماتركس العربي @X_EXTRA`")
         
 @borg.on(
     admin_cmd(
