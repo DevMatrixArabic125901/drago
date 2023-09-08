@@ -142,14 +142,14 @@ async def fetch_info(replied_user, event):
 )
 async def who(event):
     "Gets info of an user"
-    dra = await edit_or_reply(event, "⇆")
+    drago = await edit_or_reply(event, "⇆")
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     replied_user = await get_user_from_event(event)
     try:
         photo, caption = await fetch_info(replied_user, event)
     except (AttributeError, TypeError):
-        return await edit_or_reply(dra, "**- لـم استطـع العثــور ع الشخــص ؟!**")
+        return await edit_or_reply(drago, "**- لـم استطـع العثــور ع الشخــص ؟!**")
     message_id_to_reply = event.message.reply_to_msg_id
     if not message_id_to_reply:
         message_id_to_reply = None
@@ -165,9 +165,9 @@ async def who(event):
         )
         if not photo.startswith("http"):
             os.remove(photo)
-        await dra.delete()
+        await drago.delete()
     except TypeError:
-        await dra.edit(caption, parse_mode="html")
+        await drago.edit(caption, parse_mode="html")
 
 
 @dragoiq.ar_cmd(
