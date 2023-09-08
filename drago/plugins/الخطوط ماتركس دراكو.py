@@ -33,17 +33,28 @@ async def btext(event):
 
 @dragoiq.on(admin_cmd(pattern="(خط التشويش|خط تشويش)"))
 async def btext(event):
-    isramz = gvarstatus("matrxhide")
-    if not isramz:
+    matrixuserbot = gvarstatus("matrxhide")
+    if not matrixuserbot:
         addgvar ("matrxhide", "on")
         await edit_delete(event, "**᥀︙تم تفعيل خط التشويش بنجاح**")
         return
 
-    if isramz:
-        delgvar("ramz")
+    if matrixuserbot:
+        delgvar("matrxhide")
         await edit_delete(event, "**᥀︙تم اطفاء خط التشويش بنجاح**")
         
+@dragoiq.on(admin_cmd(pattern="(خط المائل|خط مائل)"))
+async def btext(event):
+    matrixgiagonal = gvarstatus("matrixgiagonalar")
+    if not matrixgiagonal:
+        addgvar ("matrixgiagonalar", "on")
+        await edit_delete(event, "**᥀︙تم تفعيل خط المائل بنجاح**")
+        return
 
+    if matrixgiagonal:
+        delgvar("matrixgiagonalar")
+        await edit_delete(event, "**᥀︙تم اطفاء خط المائل بنجاح**")
+        
 @dragoiq.on(events.NewMessage(outgoing=True))
 async def reda(event):
     isbold = gvarstatus("bold")
@@ -62,5 +73,11 @@ async def reda(event):
     if matrixuserbot:
         try:
             await event.edit(f"||{event.message.message}||")
+        except MessageIdInvalidError:
+            pass
+    matrixgiagonal = gvarstatus("matrixgiagonalar")
+    if matrixgiagonal:
+        try:
+            await event.edit(f"__{event.message.message}__")
         except MessageIdInvalidError:
             pass
