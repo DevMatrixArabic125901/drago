@@ -72,10 +72,10 @@ async def time_func(tdata):
     else:
         return await edit_or_reply(
             tdata,
-            f"- الـساعة الآن {dt.now().strftime(t_form)}\n⌁︙ تـاريـخ اليوم{dt.now().strftime(d_form)}",
+            f"- الـساعة الآن {dt.now().strftime(t_form)}\n᥀︙تـاريـخ اليوم{dt.now().strftime(d_form)}",
         )
     if not timezones:
-        return await edit_or_reply(tdata,  "⌁︙ الـبلد غير صالح")
+        return await edit_or_reply(tdata,  "᥀︙الـبلد غير صالح")
     if len(timezones) == 1:
         time_zone = timezones[0]
     elif len(timezones) > 1:
@@ -143,8 +143,8 @@ async def _(event):
     await event.delete()
  
 @dragoiq.ar_cmd(
-    pattern="المطور أحمد(?:\s|$)([\s\S]*)",
-    command=("المطور أحمد", plugin_category),
+    pattern="مطور ماتركس(?:\s|$)([\s\S]*)",
+    command=("المطور ماتركس", plugin_category),
     info={
         "header": "To show current time.",
         "description": "shows current default time you can change by changing TZ in heroku vars.",
@@ -155,7 +155,7 @@ async def _(event):
     "To show current time"
     reply_msg_id = await reply_id(event)
     current_time = dt.now().strftime(
-        f"drago\ndeveloper\n@UxUeU"
+        f"MaTriX\nDeveloper\n@MaTriXThon"
     )
     input_str = event.pattern_match.group(1)
     if input_str:
@@ -175,21 +175,6 @@ async def _(event):
     )
     os.remove(required_file_name)
     await event.delete()
-@dragoiq.ar_cmd(
-    pattern="المطور محمد(?:\s|$)([\s\S]*)",
-    command=("المطور محمد", plugin_category),
-    info={
-        "header": "To show current time.",
-        "description": "shows current default time you can change by changing TZ in heroku vars.",
-        "usage": "{tr}time",
-    },
-)
-async def _(event):
-    "To show current time"
-    reply_msg_id = await reply_id(event)
-    current_time = dt.now().strftime(
-        f"drago\ndeveloper²\n@A_D_P"
-    )
     input_str = event.pattern_match.group(1)
     if input_str:
         current_time = input_str
