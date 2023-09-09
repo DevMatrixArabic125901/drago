@@ -95,7 +95,7 @@ async def autoname_loop():
         HM = time.strftime("%I:%M")
         for normal in HM:
             if normal in normzltext:
-                namerzfont = gvarstatus("DRA_FN") or "𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗𝟎"
+                namerzfont = gvarstatus("DRA_FN") or "𝟣𝟤𝟥𝟦𝟧𝟨𝟩𝟪𝟫𝟢"
                 namefont = namerzfont[normzltext.index(normal)]
                 HM = HM.replace(normal, namefont)
                 UxUeU= gvarstatus("TIME_DRA") or ""
@@ -117,7 +117,7 @@ async def autobio_loop():
         HI = time.strftime("%I:%M")
         for normal in HI:
             if normal in normzltext:
-                namerzfont = gvarstatus("DRA_FN") or "𝟏𝟐𝟑𝟒𝟓𝟔𝟕𝟖𝟗𝟎"
+                namerzfont = gvarstatus("DRA_FN") or "𝟣𝟤𝟥𝟦𝟧𝟨𝟩𝟪𝟫𝟢"
                 namefont = namerzfont[normzltext.index(normal)]
                 HI = HI.replace(normal, namefont)
         DEFAULTUSERBIO = gvarstatus("DEFAULT_BIO") or " ﴿ لا تَحزَن إِنَّ اللَّهَ مَعَنا ﴾  "
