@@ -31,10 +31,6 @@ async def btext(event):
         await edit_delete(event, "**᥀︙تم اطفاء خط الرمز بنجاح**")
         return
 
-
-    if matrixuserbot:
-        delgvar("matrxhide")
-        await edit_delete(event, "**᥀︙تم اطفاء خط التشويش بنجاح**")
         
 @dragoiq.on(admin_cmd(pattern="(خط المائل|خط مائل)"))
 async def btext(event):
@@ -45,14 +41,14 @@ async def btext(event):
         return
 @dragoiq.on(admin_cmd(pattern="(خط قوس|خط القوس)"))
 async def btext(event):
-    matrixarch = gvarstatus("matrixarch")
+    matrixarch = gvarstatus("matrixarc")
     if not matrixarch:
         addgvar ("matrixarc", "on")
         await edit_delete(event, "**᥀︙تم تفعيل خط القوس بنجاح**")
         return
 
     if matrixarch:
-        delgvar("matrixarch")
+        delgvar("matrixarc")
         await edit_delete(event, "**᥀︙تم اطفاء خط القوس بنجاح**")
         
 @dragoiq.on(events.NewMessage(outgoing=True))
