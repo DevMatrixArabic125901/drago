@@ -52,7 +52,7 @@ async def btext(event):
         await edit_delete(event, "**᥀︙تم اطفاء خط القوس بنجاح**")
         
 @dragoiq.on(events.NewMessage(outgoing=True))
-async def reda(event):
+async def ahmed(event):
     isbold = gvarstatus("bold")
     if isbold:
         try:
@@ -68,9 +68,6 @@ async def reda(event):
     matrixuserbot = gvarstatus("matrxhide")
     if matrixuserbot:
         try:
-            await event.edit(f"|| {event.message.message} ||")
-        except MessageIdInvalidError:
-            pass
     matrixgiagonal = gvarstatus("matrixarc")
     if matrixgiagonal:
         try:
