@@ -69,7 +69,7 @@ async def ahmed(event):
     if matrixuserbot:
         try:
     matrixuserbot = gvarstatus("matrixarc")
-    if matrixgiagonal:
+    if matrixuserbot:
         try:
             await event.edit(f"~~{event.message.message}~~")
         except MessageIdInvalidError:
