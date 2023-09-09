@@ -1,12 +1,11 @@
 import html
 import os
-import random
+
 from requests import get
 from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.utils import get_input_location
 
-from random import choice
 from drago import dragoiq
 from Dragoiq.razan.resources.strings import *
 from telethon import events
