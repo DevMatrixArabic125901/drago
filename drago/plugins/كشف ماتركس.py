@@ -209,25 +209,6 @@ async def fetch_info(replied_user, event):
 
     user_bio = "لا يـوجـد" if not user_bio else user_bio
 
-    zmsg = await bot.get_messages(event.chat_id, 0, from_user=user_id)
-    iimatrixii = zmsg.total
-    if iimatrixii < 100:
-        imatrixi = "غير متفاعل"
-    elif iimatrixii > 200 and iimatrixii < 500:
-        imatrixi = "ضعيف"
-    elif iimatrixii > 500 and iimatrixii < 700:
-        imatrixi = "شد حيلك"
-    elif iimatrixii > 700 and iimatrixii < 1000:
-        imatrixi = "استمر"
-    elif iimatrixii > 1000 and iimatrixii < 2000:
-        imatrixi = "ملك التفاعل"
-    elif iimatrixii > 2000 and iimatrixii < 3000:
-        imatrixi = "امبراطور التفاعل"
-    elif iimatrixii > 3000 and iimatrixii < 4000:
-        imatrixi = "نار وشرار"
-    else:
-        imatrixi = "خاتم التفاعل"
-################# Dev #################
     if user_id in matrix: 
         rotbat = "مطـور السـورس" 
 
@@ -243,7 +224,6 @@ async def fetch_info(replied_user, event):
 
         rotbat = "العضـو"
 
-################# Dev #################
     caption = f"<b> {MATRIX_TEXT} </b>\n"
 
     caption += f"ٴ<b>{VMATRIXV}</b>\n"
