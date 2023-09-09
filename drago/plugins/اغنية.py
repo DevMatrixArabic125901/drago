@@ -55,7 +55,7 @@ async def _(event):
         query = reply.message
     else:
         return await edit_or_reply(event, "⌔∮ يرجى الرد على ما تريد البحث عنه")
-    cat = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+    cat = base64.b64decode("YnkybDJvRG04WEpsT1RBeQ==")
     catevent = await edit_or_reply(event, "⌔∮ جاري البحث عن المطلوب انتظر")
     video_link = await yt_search(str(query))
     if not url(video_link):
@@ -80,32 +80,37 @@ async def _(event):
             return await catevent.edit(f"**خطأ :** `{stderr}`")
         catname = os.path.splitext(catname)[0]
         song_file = Path(f"{catname}.mp3")
+        catname = urllib.parse.unquote(catname)
     except:
         pass
     if not os.path.exists(song_file):
         return await catevent.edit(
             f"⌔∮ عذرا لم استطع ايجاد مقاطع ذات صله بـ `{query}`"
         )
-    await catevent.edit("**⌔∮ جاري الارسال انتظر قليلا**")
+    await catevent.edit("**⌔∮ جارِ الارسال انتظر قليلاً**")
     catthumb = Path(f"{catname}.jpg")
     if not os.path.exists(catthumb):
         catthumb = Path(f"{catname}.webp")
     elif not os.path.exists(catthumb):
         catthumb = None
     title = catname.replace("./temp/", "").replace("_", "|")
-    await event.client.send_file(
-        event.chat_id,
-        song_file,
-        force_document=False,
-        caption=f"**العنوان:** `{title}`",
-        thumb=catthumb,
-        supports_streaming=True,
-        reply_to=reply_to_id,
-    )
-    await catevent.delete()
-    for files in (catthumb, song_file):
-        if files and os.path.exists(files):
-            os.remove(files)
+    try:
+        await event.client.send_file(
+            event.chat_id,
+            song_file,
+            force_document=False,
+            caption=f"**العنوان:** `{title}`",
+            thumb=catthumb,
+            supports_streaming=True,
+            reply_to=reply_to_id,
+        )
+        await catevent.delete()
+        for files in (catthumb, song_file):
+            if files and os.path.exists(files):
+                os.remove(files)
+    except ChatSendMediaForbiddenError as err:
+        await catevent.edit("لا يمكن ارسال المقطع الصوتي هنا")
+        LOGS.error(str(err))
 
 
 @dragoiq.ar_cmd(
