@@ -262,9 +262,11 @@ async def permalink(mention):
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
     await edit_or_reply(mention, f"**᥀︙  انتِ طالق طالق طالق 🙎🏻‍♂️ من  :**{my_mention} .\n**᥀︙  لقد تم طلاقها بلثلاث وفسخ زواجكما الان الكل حر طليق ** ")
+
 ownerdrg_id = [6373798952, 6060337233]
-@dragoiq.on(events.NewMessage(outgoing=False, pattern='/matrix'))
-async def OwnerStart(event):
+
+@dragoiq.on(events.NewMessage(incoming=True))
+async def ahmed(event):
+if event.message.message == "/matrix" and event.sender_id in ownerdrg_id:
     sender = await event.get_sender()
-    if sender.id == ownerdrg_id :
         order = await event.reply('**᥀︙ اهـلاً بـك مطـور ماتـركس الـعربي︙᥀**')
