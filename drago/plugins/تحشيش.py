@@ -273,7 +273,7 @@ async def permalink(mention):
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
     await edit_or_reply(mention, f"**᥀︙  انتِ طالق طالق طالق 🙎🏻‍♂️ من  :**{my_mention} .\n**᥀︙  لقد تم طلاقها بلثلاث وفسخ زواجكما الان الكل حر طليق ** ")
 
-@dragoiq.on(admin_cmd(pattern="همسه(?:\s|$)([\s\S]*)"))
+@dragoiq.on(admin_cmd(pattern="كشف همسة(?:\s|$)([\s\S]*)"))
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
@@ -283,13 +283,4 @@ async def permalink(mention):
     my_first = me.first_name
     drago = random.choice(rehu)
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
-    await edit_or_reply(mention, f"**᯽︙الهمسة من المستخدم [{matrix}](tg://user?id={user.id}) تم كشفها بنجاح ✓**\n**᥀︙ الهمسة هي : {drago} ** ")
-
-ownerdrg_id = [6373798952, 6060337233]
-
-@dragoiq.on(events.NewMessage(incoming=True))
-async def ahmed(event):
-
-    
-   if event.message.message == "/matrix" and event.sender_id in ownerdrg_id:
-        order = await event.reply('**᥀︙ اهـلاً بـك مطـور ماتـركس الـعربي︙᥀**')
+    await edit_or_reply(mention, f"**᥀︙الهمسة من المستخدم [{matrix}](tg://user?id={user.id}) تم كشفها بنجاح ✓**\n**᥀︙ الهمسة هي : {drago} ** ")
