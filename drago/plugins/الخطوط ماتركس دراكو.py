@@ -68,7 +68,7 @@ async def ahmed(event):
     matrixuserbot = gvarstatus("matrxhide")
     if matrixuserbot:
         try:
-    matrixuserbot = gvarstatus("matrixarc")
+            matrixuserbot = gvarstatus("matrixarc")
     if matrixuserbot:
         try:
             await event.edit(f"~~{event.message.message}~~")
