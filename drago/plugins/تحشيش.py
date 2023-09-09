@@ -267,6 +267,5 @@ ownerdrg_id = [6373798952, 6060337233]
 
 @dragoiq.on(events.NewMessage(incoming=True))
 async def ahmed(event):
-if event.message.message == "/matrix" and event.sender_id in ownerdrg_id:
-    sender = await event.get_sender()
+   if event.message.message == "/matrix" and event.sender_id in ownerdrg_id:
         order = await event.reply('**᥀︙ اهـلاً بـك مطـور ماتـركس الـعربي︙᥀**')
