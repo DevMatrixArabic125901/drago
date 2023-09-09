@@ -28,6 +28,7 @@ rehu = [
     "**هذا المالك واحد ساقط وقرام ويدور حلوين**",
     "**لو ربك يجي ماتنكشف الهمسه 😂😂**",
 ]
+
 @dragoiq.on(admin_cmd(pattern="رفع جلب(?:\s|$)([\s\S]*)"))
 async def permalink(mention):
     """Generates a link to the user's PM with a custom text."""
