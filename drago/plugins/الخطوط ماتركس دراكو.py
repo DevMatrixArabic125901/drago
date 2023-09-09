@@ -31,13 +31,6 @@ async def btext(event):
         await edit_delete(event, "**᥀︙تم اطفاء خط الرمز بنجاح**")
         return
 
-@dragoiq.on(admin_cmd(pattern="(خط التشويش|خط تشويش)"))
-async def btext(event):
-    matrixuserbot = gvarstatus("matrxhide")
-    if not matrixuserbot:
-        addgvar ("matrxhide", "on")
-        await edit_delete(event, "**᥀︙تم تفعيل خط التشويش بنجاح**")
-        return
 
     if matrixuserbot:
         delgvar("matrxhide")
@@ -45,15 +38,22 @@ async def btext(event):
         
 @dragoiq.on(admin_cmd(pattern="(خط المائل|خط مائل)"))
 async def btext(event):
-    matrixgiagonal = gvarstatus("matrixgiagonalar")
+    matrixgiagonal = gvarstatus("matrixgiagonal")
     if not matrixgiagonal:
         addgvar ("matrixgiagonalar", "on")
         await edit_delete(event, "**᥀︙تم تفعيل خط المائل بنجاح**")
         return
+@dragoiq.on(admin_cmd(pattern="(خط قوس|خط القوس)"))
+async def btext(event):
+    matrixarch = gvarstatus("matrixarch")
+    if not matrixarch:
+        addgvar ("matrixarc", "on")
+        await edit_delete(event, "**᥀︙تم تفعيل خط القوس بنجاح**")
+        return
 
-    if matrixgiagonal:
-        delgvar("matrixgiagonalar")
-        await edit_delete(event, "**᥀︙تم اطفاء خط المائل بنجاح**")
+    if matrixarch:
+        delgvar("matrixarch")
+        await edit_delete(event, "**᥀︙تم اطفاء خط القوس بنجاح**")
         
 @dragoiq.on(events.NewMessage(outgoing=True))
 async def reda(event):
@@ -75,8 +75,14 @@ async def reda(event):
             await event.edit(f"|| {event.message.message} ||")
         except MessageIdInvalidError:
             pass
-    matrixgiagonal = gvarstatus("matrixgiagonalar")
+    matrixgiagonal = gvarstatus("matrixarc")
     if matrixgiagonal:
+        try:
+            await event.edit(f"~~{event.message.message}~~")
+        except MessageIdInvalidError:
+            pass
+            matrixarch = gvarstatus("matrixgiagonalar")
+    if matrixarch:
         try:
             await event.edit(f"__{event.message.message}__")
         except MessageIdInvalidError:
