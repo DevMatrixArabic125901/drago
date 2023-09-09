@@ -65,17 +65,16 @@ async def ahmed(event):
             await event.edit(f"`{event.message.message}`")
         except MessageIdInvalidError:
             pass
-    matrixuserbot = gvarstatus("matrxhide")
-    if matrixuserbot:
-        try:
-            matrixuserbot = gvarstatus("matrixarc")
-    if matrixuserbot:
+    matrixarch = gvarstatus("matrixarc")
+    if matrixarch:
         try:
             await event.edit(f"~~{event.message.message}~~")
         except MessageIdInvalidError:
             pass
-            matrixarch = gvarstatus("matrixgiagonalar")
-    if matrixarch:
+        except MessageIdInvalidError:
+            pass
+            matrixgiagonalar = gvarstatus("matrixgiagonalar")
+    if matrixgiagonalar:
         try:
             await event.edit(f"__{event.message.message}__")
         except MessageIdInvalidError:
