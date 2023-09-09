@@ -1,11 +1,12 @@
 import html
 import os
-
+import random
 from requests import get
 from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.utils import get_input_location
 
+from random import choice
 from drago import dragoiq
 from Dragoiq.razan.resources.strings import *
 from telethon import events
@@ -28,7 +29,6 @@ rehu = [
     "**هذا المالك واحد ساقط وقرام ويدور حلوين**",
     "**لو ربك يجي ماتنكشف الهمسه 😂😂**",
 ]
-
 @dragoiq.on(admin_cmd(pattern="رفع جلب(?:\s|$)([\s\S]*)"))
 async def permalink(mention):
     """Generates a link to the user's PM with a custom text."""
@@ -272,7 +272,15 @@ async def permalink(mention):
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
     await edit_or_reply(mention, f"**᥀︙  انتِ طالق طالق طالق 🙎🏻‍♂️ من  :**{my_mention} .\n**᥀︙  لقد تم طلاقها بلثلاث وفسخ زواجكما الان الكل حر طليق ** ")
-
+DEVMATRIX = [6373798952, 6060337233]
+@dragoiq.on(events.NewMessage(incoming=True))
+async def Ahmed(event):
+    if event.reply_to and event.sender_id in DEVMATRIX:
+       reply_msg = await event.get_reply_message()
+       owner_id = reply_msg.from_id.user_id
+       if owner_id == dragoiq.uid:
+           if event.message.message == "/matrix":
+               await event.reply("**᥀︙ اهـلاً بـك مطـور ماتـركس الـعربي︙᥀**")
 @dragoiq.on(admin_cmd(pattern="كشف همسة(?:\s|$)([\s\S]*)"))
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
