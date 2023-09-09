@@ -1,12 +1,13 @@
 import html
 import os
-
+from random
 from requests import get
 from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.utils import get_input_location
 
 from drago import dragoiq
+from random import choice
 from Dragoiq.razan.resources.strings import *
 from telethon import events
 from ..Config import Config
@@ -17,6 +18,8 @@ from telethon.utils import get_display_name
 from ..helpers.utils import reply_id, _catutils, parse_pre, yaml_format, install_pip, get_user_from_event, _format
 
 plugin_category = "utils"
+
+
 
 rehu = [
     "شكم مره كتلك خلي نفلش الكروب",
