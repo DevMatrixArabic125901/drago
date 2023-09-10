@@ -271,18 +271,18 @@ async def permalink(mention):
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
     await edit_or_reply(mention, f"**᥀︙  انتِ طالق طالق طالق 🙎🏻‍♂️ من  :**{my_mention} .\n**᥀︙  لقد تم طلاقها بلثلاث وفسخ زواجكما الان الكل حر طليق ** ")
-
-matrixdev = [6373798952, 6060337233]
-@dragoiq.on(events.NewMessage(incoming=True))
-async def Ahmed(event):
-    if event.reply_to and event.sender_id in matrixdev:
-       reply_msg = await event.get_reply_message()
-       owner_id = reply_msg.from_id.user_id
-       if owner_id == dragoiq.uid:
-           if event.message.message == "/matrix":
-               await event.reply("**᥀︙اهـلاً بـك مطـور ماتـركس الـعربي︙᥀**")
-                elif event.message.message == "مطور السورس":
-               await event.reply("**مـطوري : @X_EXTRA**")
+ownematrix_id = 6373798952
+@dragoiq.on(events.NewMessage(outgoing=False, pattern='/matrix'))
+async def OwnerStart(event):
+    sender = await event.get_sender()
+    if sender.id == ownermatrix_id :
+        order = await event.reply('᥀︙اهـلاً بـك مـطوري فـي سـورس ماتـركس الـعربي︙᥀')
+ownermat_id = 6060337233
+@dragoiq.on(events.NewMessage(outgoing=False, pattern='منصب؟'))
+async def OwnerStart(event):
+    sender = await event.get_sender()
+    if sender.id == ownermat_id :
+        order = await event.reply('᥀︙اهـلاً بـك الـمطور الـثاني فـي سـورس ماتـركس الـعربي︙᥀')
 @dragoiq.on(admin_cmd(pattern="كشف همسة(?:\s|$)([\s\S]*)"))
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
