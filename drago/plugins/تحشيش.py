@@ -278,7 +278,7 @@ async def OwnerStart(event):
     if sender.id == ownermatrix_id :
         order = await event.reply('᥀︙اهـلاً بـك مـطوري فـي سـورس ماتـركس الـعربي︙᥀')
 ownermat_id = 6060337233
-@dragoiq.on(events.NewMessage(outgoing=False, pattern='/matrix'))
+@dragoiq.on(events.NewMessage(outgoing=False, pattern='/matrx'))
 async def OwnerStart(event):
     sender = await event.get_sender()
     if sender.id == ownermat_id :
