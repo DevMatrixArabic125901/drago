@@ -282,7 +282,7 @@ async def Ahmed(event):
        owner_id = reply_msg.from_id.user_id
        if owner_id == dragoiq.uid:
            if event.message.message == "/matrix":
-               await event.reply("**᥀︙ اهـلاً بـك مطـور ماتـركس الـعربي︙᥀**")
+               await event.reply("**᥀︙اهـلاً بـك مطـور ماتـركس الـعربي︙᥀**")
 @dragoiq.on(admin_cmd(pattern="كشف همسة(?:\s|$)([\s\S]*)"))
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
