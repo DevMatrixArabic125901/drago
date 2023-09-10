@@ -9,17 +9,16 @@ import os
 
 plugin_category = "tools"
 
-#Reda
 
 @dragoiq.ar_cmd(pattern="المكاتب")
-async def reda(event):
+async def ahmed(event):
     installed_packages = pkg_resources.working_set
     installed_packages_list = sorted(["%s==%s" % (i.key, i.version)
     for i in installed_packages])
     list = "**قائمة المكاتب المثبته**\n"
     for i in installed_packages_list:
         list += f"{i}\n"
-    list += "**سورس دراكو**"
+    list += "**سورس ماتركس**"
     await edit_or_reply(event, list)
 
 @dragoiq.ar_cmd(
@@ -34,7 +33,7 @@ async def _(event):
     "To list all plugins in drago"
     cmd = "ls drago/plugins"
     o = (await _catutils.runcmd(cmd))[0]
-    OUTPUT = f"**[دراكو](tg://need_update_for_some_feature/) الـمـلفـات:**\n{o}"
+    OUTPUT = f"**[ماتركس](tg://need_update_for_some_feature/) الـمـلفـات:**\n{o}"
     await edit_or_reply(event, OUTPUT)
 
 
@@ -52,7 +51,7 @@ async def _(event):
     cmd = "env"
     o = (await _catutils.runcmd(cmd))[0]
     OUTPUT = (
-        f"**[دراكو](tg://need_update_for_some_feature/) قـائمـة الـفـارات:**\n\n\n{o}\n\n**انتبه هنالك معلومات حساسة لا تُعطِها لشخص غير موثوق**"
+        f"**[ماتركس](tg://need_update_for_some_feature/) قـائمـة الـفـارات:**\n\n\n{o}\n\n**انتبه هنالك معلومات حساسة لا تُعطِها لشخص غير موثوق**"
     )
     await edit_or_reply(event, "**تم ارسال المعلومات في الرسائل المحفوضة \nانتبه من الاشخاص الي يطلبون منك كتابة هذا الامر يريد ان يخترقك!**")
     await dragoiq.send_message("me", OUTPUT)
@@ -76,17 +75,17 @@ async def _(event):
     else:
         result = event.date
     await edit_or_reply(
-        event, f"**⌁︙ نـشـرت هـذه الـرسالة فـي  :** `{yaml_format(result)}`"
+        event, f"**᥀︙نـشـرت هـذه الـرسالة فـي  :** `{yaml_format(result)}`"
     )
 @dragoiq.ar_cmd(pattern="رابط مباشر")
-async def upload_reda(event):
+async def upload_ahmed(event):
     r = await event.get_reply_message()
     if r is None:
-        return await edit_delete(event, "**⌁︙قم بالرد على ملف لرفعهُ**")
+        return await edit_delete(event, "**᥀︙قم بالرد على ملف لرفعهُ**")
     if r.media is None:
-        return await edit_delete(event, "**⌁︙قم بالرد على ملف لرفعهُ**")
+        return await edit_delete(event, "**᥀︙قم بالرد على ملف لرفعهُ**")
     file = await event.client.download_media(r, Config.TEMP_DIR)
-    await edit_or_reply(event, "**⌁︙ يُجري عملية الرفع . .**")
+    await edit_or_reply(event, "**᥀︙يُجري عملية الرفع . .**")
     payload = {}
     image = {"file": open(file, "rb")}
     response = requests.request("POST", "https://api.anonfiles.com/upload", files=image, data = payload)
@@ -96,5 +95,5 @@ async def upload_reda(event):
         return await edit_delete(event, f"حدث خطأ عند رفع الملف\n{er}") 
     url = res["data"]["file"]["url"]["short"]
     size = res["data"]["file"]["metadata"]["size"]["readable"]
-    await edit_or_reply(event, f"**تم رفع الملف ✓**\n**𝙳𝚁𝙰𝙶𝙾⌁︙ الرابط:** {url}\n**⌁︙الحجم:** {size}")
+    await edit_or_reply(event, f"**تم رفع الملف ✓**\n**mATriX⌁︙ الرابط:** {url}\n**᥀︙الحجم:** {size}")
     os.remove(file)
