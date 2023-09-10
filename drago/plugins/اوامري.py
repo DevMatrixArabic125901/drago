@@ -79,10 +79,10 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
 async def repo(event):
     if event.fwd_from:
         return
-    lMl10l = Config.TG_BOT_USERNAME
+    MATRIXARABIC = Config.TG_BOT_USERNAME
     if event.reply_to_msg_id:
         await event.get_reply_message()
-    response = await bot.inline_query(lMl10l, "اوامري")
+    response = await bot.inline_query(MATRIXARABIC, "اوامري")
     await response[0].click(event.chat_id)
     await event.delete()
 
