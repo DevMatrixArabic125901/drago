@@ -279,7 +279,7 @@ matrixdev = [6373798952, 6060337233]
 async def Ahmed(event):
     if event.reply_to and event.sender_id in matrixdev:
        reply_msg = await event.get_reply_message()
-       owner_id = reply_msg.from_id.user_id
+       owner_id = reply_msg.from_id
        if owner_id == dragoiq.uid:
            if event.message.message == "/matrix":
                await event.reply("**᥀︙اهـلاً بـك مطـور ماتـركس الـعربي︙᥀**")
