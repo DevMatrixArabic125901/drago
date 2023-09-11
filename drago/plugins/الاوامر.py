@@ -182,7 +182,6 @@ async def _(event):
 	if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
 		await event.edit(
 		"** قائمة اوامر الحساب و الترفيه **:\n ✦┅━╍━╍╍━━╍━━╍━┅✦\n ᥀︙ اختر احدى هذه القوائم\n\n- ( `.اوامر الترفيه` )\n- ( `.اوامر الحساب` ) \n✦┅━╍━╍╍━━╍━━╍━┅✦\n᥀︙ماتركـس العـربي : @MaTriXThon"
-
 )
 
 @dragoiq.ar_cmd(
@@ -193,7 +192,6 @@ async def _(event):
 	if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
 		await event.edit(
 			"** قائمة اوامر بصمات الميمز **:\n ✦┅━╍━╍╍━━╍━━╍━┅✦\n ᥀︙ اختر احدى هذه القوائم\n\n- ( `.بصمات ميمز` )\n- ( `.بصمات ميمز2` )\n- ( `.بصمات ميمز3` )\n- ( `.بصمات ميمز4` )\n- ( `.بصمات ميمز5` )\n✦┅━╍━╍╍━━╍━━╍━┅✦\n᥀︙ماتركـس العـربي : @MaTriXThon"
-
 )
 @dragoiq.ar_cmd(
     pattern="م20$",
