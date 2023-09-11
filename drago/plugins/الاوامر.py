@@ -230,7 +230,7 @@ async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         await event.edit(
         "قائمة اوامر التحميل\n✦┅━╍━╍╍━━╍━━╍━┅✦\n᥀︙ اختر احدى هذه الاوامر\n\n- ( `.فيس` )\n- ( `.انستا` )\n- ( `.تيك` )\n- ( `.لايكي` )\n- ( `.بنترست` )\n- ( `.سناب` )\n- ( `.ساوند` )\n\n✦┅━╍━╍╍━━╍━━╍━┅✦\n᥀︙ماتركـس العـربي : @MaTriXThon"
-	)
+)
 @dragoiq.ar_cmd(
     pattern="م24$",
     command=("م24", plugin_category),
