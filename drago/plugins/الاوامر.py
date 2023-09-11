@@ -239,6 +239,7 @@ async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         await event.edit(
         "᥀︙شـرح كيـفية كـتابة همـسة سـرية**\n᥀︙اولا اكتب الامر  .همسة  بعدها الرسالة بعدها اكتب معرف الشخص\n᥀︙مـثال  :   `.همسة ماتركس العربي @X_EXTRA`\n\n✦┅━╍━╍╍━━╍━━╍━┅✦\n᥀︙ماتركـس العـربي : @MaTriXThon"
+)
 @dragoiq.ar_cmd(
     pattern="م25$",
     command=("م25", plugin_category),
