@@ -63,6 +63,15 @@ async def _(event):
             await event.edit(
                 "قائمة اوامـر البـايو او الـنبذة :\n✦┅━╍━╍╍━━╍━━╍━┅✦\n ᥀︙ اخـتر احـد هـذه القـوائـم:\n\n \n- (`.بايو عربي`) \n- (`.بايو اجنبي`) \n ✦┅━╍━╍╍━━╍━━╍━┅✦\n⌔︙CH : @MaTriXThon"
             )
+
+@dragoiq.ar_cmd(
+    pattern="اوامر اقتباس$",
+    command=("اوامر اقتباس", plugin_category),)
+async def _(event):
+     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
+            await event.edit(
+                "قائمة اوامـر اقـتباس :\n✦┅━╍━╍╍━━╍━━╍━┅✦\n ᥀︙ اخـتر احـد هـذه القـوائـم:\n\n \n- (`.اقتباس`) \n ✦┅━╍━╍╍━━╍━━╍━┅✦\n⌔︙CH : @MaTriXThon"
+            )
             
 @dragoiq.ar_cmd(
     pattern="الاختصارات$",
@@ -92,6 +101,14 @@ async def _(event):
     arj = random.choice(MATRIXARIQ)
     return await event.edit(f"{arj}")
     
+@dragoiq.ar_cmd(
+    pattern="اقتباس$",
+    command=("اقتباس", plugin_category),)
+async def _(event):
+    await event.edit("** يتم تجـهيز اقـتباس لأجـلك انتـظر**")
+    await asyncio.sleep(3)
+    arj = random.choice(MATRIXQUOTELQ)
+    return await event.edit(f"{arj}")
     
 @dragoiq.ar_cmd(
     pattern="المتحركات$",
@@ -348,7 +365,7 @@ async def _(event):
                 "𓂐 𝙀𝙑𝘼 𖠛 .\n"
                 "𓂐 𝘼𝙈𝙔  𖠛 ."
             )
-# ˛ 𝖩𝗆𝗍𝖧ٰ𝗈𝗇 ، ٰUٍsٓEِrBُoََt  # 
+# ˛ ، ٰUٍsٓEِrBُoََt  # 
 
 @dragoiq.ar_cmd(
     pattern="بنات2$",
