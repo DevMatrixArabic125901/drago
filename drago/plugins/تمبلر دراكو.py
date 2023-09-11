@@ -107,8 +107,8 @@ async def _(event):
 async def _(event):
     await event.edit("** يتم تجـهيز اقـتباس لأجـلك انتـظر**")
     await asyncio.sleep(3)
-    arj = random.choice(MATRIXQUOTELQ)
-    return await event.edit(f"{arj}")
+    quote = random.choice(MATRIXQUOTELQ)
+    return await event.edit(f"{quote}")
     
 @dragoiq.ar_cmd(
     pattern="المتحركات$",
