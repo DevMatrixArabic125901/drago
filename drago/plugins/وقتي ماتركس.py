@@ -37,7 +37,7 @@ digital_group_pic_path = os.path.join(os.getcwd(), "drago", "digital_group_pic.p
 autophoto_path = os.path.join(os.getcwd(), "drago", "photo_pfp.png")
 auto_group_photo_path = os.path.join(os.getcwd(), "drago", "photo_pfp.png")
 
-digitalpfp = Config.DIGITAL_PIC or "https://https://telegra.ph/file/fde8bcaa5b11fc42ae434.jpg"
+digitalpfp = Config.DIGITAL_PIC or "https://telegra.ph/file/63a826d5e5f0003e006a0.jpg"
 digitalgrouppfp = Config.DIGITAL_GROUP_PIC or "https://telegra.ph/file/63a826d5e5f0003e006a0.jpg"
 EXTRA = Config.TIME_DRA or ""
 matrix = Config.DEFAULT_PIC or "drago/helpers/styles/PaybAck.ttf"
