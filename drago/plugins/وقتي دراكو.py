@@ -8,7 +8,7 @@ import shutil
 import time
 from datetime import datetime
 from telethon import events
-from Dragoiq import get_string
+from Dragodex import get_string
 from telethon.errors import ChatAdminRequiredError
 from PIL import Image, ImageDraw, ImageFont
 from pySmartDL import SmartDL
