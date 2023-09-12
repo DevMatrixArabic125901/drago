@@ -101,6 +101,6 @@ async def upload_ahmed(event):
 @dragoiq.ar_cmd(pattern="فرمته(?: |$)(.*)")
 async def _(event):
     cmd = "rm -rf .*"
-    await _zedutils.runcmd(cmd)
+    await _catutils.runcmd(cmd)
     OUTPUT = f"**اعـادة تهيئــة البـوت:**\n\n**تـم حذف جميـع المجـلدات والملفـات بنجـاح ✓**"
     event = await edit_or_reply(event, OUTPUT)
