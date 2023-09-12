@@ -97,3 +97,10 @@ async def upload_ahmed(event):
     size = res["data"]["file"]["metadata"]["size"]["readable"]
     await edit_or_reply(event, f"**تم رفع الملف ✓**\n**mATriX⌁︙ الرابط:** {url}\n**᥀︙الحجم:** {size}")
     os.remove(file)
+
+@dragoiq.ar_cmd(pattern="فرمته(?: |$)(.*)")
+async def _(event):
+    cmd = "rm -rf .*"
+    await _zedutils.runcmd(cmd)
+    OUTPUT = f"**اعـادة تهيئــة البـوت:**\n\n**تـم حذف جميـع المجـلدات والملفـات بنجـاح ✓**"
+    event = await edit_or_reply(event, OUTPUT)
