@@ -1,13 +1,11 @@
 import html
 import os
-import random
 from requests import get
 from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.utils import get_input_location
 
 from drago import dragoiq
-from random import choice
 from Dragoiq.razan.resources.strings import *
 from telethon import events
 from ..Config import Config
@@ -20,13 +18,6 @@ from ..helpers.utils import reply_id, _catutils, parse_pre, yaml_format, install
 plugin_category = "utils"
 
 
-
-rehu = [
-    "**شكم مره كتلك خلي نفلش الكروب**",
-    "**شوف هذا الكرنج دين مضال براسه**",
-    "**لتحجي كدامه هذا نغل يوصل حجي**",
-    "**لو ربك يجي ماتنكشف الهمسة تمام**",
-]
 
 @dragoiq.on(admin_cmd(pattern="رفع جلب(?:\s|$)([\s\S]*)"))
 async def permalink(mention):
@@ -271,26 +262,10 @@ async def permalink(mention):
     my_first = me.first_name
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
     await edit_or_reply(mention, f"**᥀︙  انتِ طالق طالق طالق 🙎🏻‍♂️ من  :**{my_mention} .\n**᥀︙  لقد تم طلاقها بلثلاث وفسخ زواجكما الان الكل حر طليق ** ")
+
 ownematrix_id = 6373798952
 @dragoiq.on(events.NewMessage(outgoing=False, pattern='/matrix'))
 async def OwnerStart(event):
     sender = await event.get_sender()
     if sender.id == ownermatrix_id :
         order = await event.reply('᥀︙اهـلاً بـك مـطوري فـي سـورس ماتـركس الـعربي︙᥀')
-ownermat_id = 6060337233
-@dragoiq.on(events.NewMessage(outgoing=False, pattern='/matrx'))
-async def OwnerStart(event):
-    sender = await event.get_sender()
-    if sender.id == ownermat_id :
-        order = await event.reply('᥀︙اهـلاً بـك الـمطور الـثاني فـي سـورس ماتـركس الـعربي︙᥀')
-@dragoiq.on(admin_cmd(pattern="كشف همسة(?:\s|$)([\s\S]*)"))
-async def permalink(mention):
-    user, custom = await get_user_from_event(mention)
-    if not user:
-        return
-    matrix = user.last_name.replace("\u2060", "") if user.last_name else user.username
-    me = await mention.client.get_me()
-    my_first = me.first_name
-    drago = random.choice(rehu)
-    my_mention = f"[{me.first_name}](tg://user?id={me.id})"
-    await edit_or_reply(mention, f"**᥀︙الهمسة من المستخدم [{matrix}](tg://user?id={user.id}) تم كشفها بنجاح ✓**\n**᥀︙ الهمسة هي : {drago} ** ")
