@@ -107,6 +107,38 @@ async def kickme(leave):
     await leave.edit("᥀︙  حسنا سأغادر المجموعه وداعا ")
     await leave.client.kick_participant(leave.chat_id, "me")
 
+@dragoiq.ar_cmd(pattern="حظر_الكل(?:\s|$)([\s\S]*)")
+async def banall(event):
+     chat_id = event.chat_id
+     if event.is_private:
+         return await edit_or_reply(event, "** 😸︙ هذا الامر يستعمل للقنوات والمجموعات فقط !**")
+     msg = "حظر"
+     is_admin = False
+     try:
+         partici_ = await l313l(GetParticipantRequest(
+           event.chat_id,
+           event.sender_id
+         ))
+     except UserNotParticipantError:
+         is_admin = False
+     spam_chats.append(chat_id)
+     usrnum = 0
+     async for usr in dragoiq.iter_participants(chat_id):
+         if not chat_id in spam_chats:
+             break
+         userb = usr.username
+         usrtxt = f"{msg} @{userb}"
+         if str(userb) == "None":
+             userb = usr.id
+             usrtxt = f"{msg} {userb}"
+         await dragoiq.send_message(chat_id, usrtxt)
+         await asyncio.sleep(1)
+         await event.delete()
+     try:
+         spam_chats.remove(chat_id)
+     except:
+         pass
+
 @dragoiq.ar_cmd(
     pattern="حذف المحظورين$",
     command=("حذف المحظورين", plugin_category),
