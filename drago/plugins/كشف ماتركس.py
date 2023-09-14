@@ -58,7 +58,6 @@ async def fetch_info(replied_user, event):
     common_chat = FullUser.common_chats_count
     username = replied_user.username
     user_bio = FullUser.about
-    matrix = (await event.client.get_entity(user_id)).premium
     replied_user.bot
     replied_user.restricted
     replied_user.verified
@@ -116,8 +115,6 @@ async def fetch_info(replied_user, event):
     caption += f"<b>- عـدد الصـورة ⇜</b> {replied_user_profile_photos_count}\n"
     caption += f"<b>- الرتبـة ⇜</b>{rozrtba}\n"
     caption += f"<b>- الرسائل ⇜ </b> {devmatrix}\n"
-    if matrix == True or user_id in rozrtba:
-        caption += f"<b>- الحساب ⇠  بروميوم</b>\n"
     caption += f"<b>-️ الـنبـذه ⇜</b> \n<code>{user_bio}</code>\n\n"
     return photo, caption
 
