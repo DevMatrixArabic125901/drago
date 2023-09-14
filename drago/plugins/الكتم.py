@@ -29,9 +29,9 @@ async def mute(event):
             )
         if event.chat_id == dragoiq .uid:
             return await edit_delete(event, "**𖡛... . لمـاذا تࢪيـد كتم نفسـك؟  ...𖡛**")
-        if event.chat_id == 6373798952 :
+        if event.chat_id == 6373798952:
             return await edit_delete(event, "**لا يمڪنني كتـم مطـور السـورس**")
-         if event.chat_id == 6060337233 :
+        if event.chat_id == 6060337233:
             return await edit_delete(event, "**لا يمڪنني كتـم مطـوري الثـاني الغـبي**")
         try:
             mute(event.chat_id, event.chat_id)
@@ -58,7 +58,7 @@ async def mute(event):
             return
         if user.id == dragoiq .uid:
             return await edit_or_reply(event, "**𖡛... . لمـاذا تࢪيـد كتم نفسـك؟  ...𖡛**")
-        if user.id == 6373798952 :
+        if user.id == 6373798952:
             return await edit_or_reply(event, "** دي . . لا يمڪنني كتـم مطـور السـورس  ╰**")
         if is_muted(user.id, event.chat_id):
             return await edit_or_reply(
