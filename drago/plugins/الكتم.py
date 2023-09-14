@@ -20,7 +20,7 @@ plugin_category = "admin"
 #=================== الكـــــــــــــــتم  ===================  #
 
 @dragoiq.on(admin_cmd(pattern=f"كتم(?:\s|$)([\s\S]*)"))
-async def mutejep(event):
+async def mute(event):
     if event.is_private:
         replied_user = await event.client.get_entity(event.chat_id)
         if is_muted(event.chat_id, event.chat_id):
@@ -29,9 +29,9 @@ async def mutejep(event):
             )
         if event.chat_id == dragoiq .uid:
             return await edit_delete(event, "**𖡛... . لمـاذا تࢪيـد كتم نفسـك؟  ...𖡛**")
-        if event.chat_id == 6373798952:
+        if event.chat_id == 6373798952 :
             return await edit_delete(event, "**لا يمڪنني كتـم مطـور السـورس**")
-         if event.chat_id == 6060337233:
+         if event.chat_id == 6060337233 :
             return await edit_delete(event, "**لا يمڪنني كتـم مطـوري الثـاني الغـبي**")
         try:
             mute(event.chat_id, event.chat_id)
@@ -58,7 +58,7 @@ async def mutejep(event):
             return
         if user.id == dragoiq .uid:
             return await edit_or_reply(event, "**𖡛... . لمـاذا تࢪيـد كتم نفسـك؟  ...𖡛**")
-        if user.id == 6373798952:
+        if user.id == 6373798952 :
             return await edit_or_reply(event, "** دي . . لا يمڪنني كتـم مطـور السـورس  ╰**")
         if is_muted(user.id, event.chat_id):
             return await edit_or_reply(
@@ -111,7 +111,7 @@ async def mutejep(event):
 #=================== الغـــــــــــــاء الكـــــــــــــــتم  ===================  #
 
 @dragoiq.on(admin_cmd(pattern=f"الغاء كتم(?:\s|$)([\s\S]*)"))
-async def unmutejep(event):
+async def unmute(event):
     if event.is_private:
         replied_user = await event.client.get_entity(event.chat_id)
         if not is_muted(event.chat_id, event.chat_id):
