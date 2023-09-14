@@ -114,7 +114,7 @@ async def fetch_info(replied_user, event):
     caption += f"<b>- الـمجموعات المشتـركة ⇜</b> {common_chat}\n"
     caption += f"<b>- عـدد الصـورة ⇜</b> {replied_user_profile_photos_count}\n"
     caption += f"<b>- الرتبـة ⇜</b>{rozrtba}\n"
-    caption += f"<b>- الرسائل ⇜ </b> {devmatrix}\n"
+    caption += f"<b>- الرسائل ⇜ </b> {matrix}\n"
     caption += f"<b>-️ الـنبـذه ⇜</b> \n<code>{user_bio}</code>\n\n"
     return photo, caption
 
@@ -150,6 +150,37 @@ async def who(event):
     except TypeError:
         await roz.edit(caption, parse_mode="html")
 
+@dragoiq.ar_cmd(pattern="ا(?: |$)(.*)")
+async def who(event):
+    roz = await edit_or_reply(event, "**⌔∮ جار التعرف على المستخدم انتظر قليلا**")
+    if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
+        os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
+    replied_user = await get_user_from_event(event)
+    try:
+        photo, caption = await fetch_info(replied_user, event)
+    except AttributeError:
+        return await edit_or_reply(
+            roz, "**⌔∮ لم يتم العثور على معلومات لهذا المستخدم **"
+        )
+    message_id_to_reply = event.message.reply_to_msg_id
+    if not message_id_to_reply:
+        message_id_to_reply = None
+    try:
+        await event.client.send_file(
+            event.chat_id,
+            photo,
+            caption=caption,
+            link_preview=False,
+            force_document=False,
+            reply_to=message_id_to_reply,
+            parse_mode="html",
+        )
+        if not photo.startswith("http"):
+            os.remove(photo)
+        await roz.delete()
+    except TypeError:
+        await roz.edit(caption, parse_mode="html")
+        
 
 @dragoiq.ar_cmd(pattern="رابط الحساب(?:\s|$)([\s\S]*)")
 async def permalink(mention):
