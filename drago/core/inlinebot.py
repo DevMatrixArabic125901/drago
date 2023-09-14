@@ -422,8 +422,8 @@ async def inline_handler(event):  # sourcery no-metrics
         elif string == "help":
             _result = main_menu()
             result = builder.article(
-                title="© drago Help",
-                description="Help menu for drago",
+                title="© Matrix Help",
+                description="Help menu for matrix",
                 text=_result[0],
                 buttons=_result[1],
                 link_preview=False,
@@ -571,12 +571,12 @@ async def inline_handler(event):  # sourcery no-metrics
             url=ROZLOGO, size=0, mime_type="image/jpeg", attributes=[]
         )
         text, msg_entities = await event.client._parse_message_text(
-            "**[Matrix arabic <\>],(https://t.me/MATRIXTHON)**\
+            "**[Matrix arabic <\>](https://t.me/MATRIXTHON)**\
             \n\
             \nماتركـس هـو بـوت بسـيط يدخـل الـى حسـابك لجعـلك تتحـكم به معـك اوامـر معينـة.\
             \n\
-            \n**اذا كـنت تـرغب بتـنصيـب السـورس عـلى حسـابك ,\
-            \ادخـل الـى [كروب المسـاعدة](https://t.me/MaTrixSupport)!**",
+            \n**اذا كـنت تـرغب بتـنصيـب السـورس عـلى حسـابك. \
+            \ادخـل الـى [كروب المسـاعدة](https://t.me/MaTrxSupport)!**",
             "md",
         )
         result = types.InputBotInlineResult(
