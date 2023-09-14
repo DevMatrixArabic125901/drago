@@ -74,25 +74,6 @@ async def fetch_info(replied_user, event):
     full_name = full_name or first_name
     username = "@{}".format(username) if username else ("⌔∮ هذا المستخدم ليس لديه معرف")
     user_bio = "⌔∮ هذا المستخدم ليس لديه اي نبذة" if not user_bio else user_bio
-    zmsg = await bot.get_messages(event.chat_id, 0, from_user=user_id)
-    matrix = zmsg.total
-    if matrix < 100:
-        devmatrix = "غير متفاعل "
-    elif matrix > 200 and matrix < 500:
-        devmatrix = "ضعيف "
-    elif matrix > 500 and matrix < 700:
-        devmatrix = "شد حيلك "
-    elif matrix > 700 and matrix < 1000:
-        devmatrix = "ماشي الحال "
-    elif matrix > 1000 and matrix < 2000:
-        devmatrix = "ملك التفاعل "
-    elif matrix > 2000 and matrix < 3000:
-        devmatrix = "امبراطور التفاعل"
-    elif matrix > 3000 and matrix < 4000:
-        devmatrix = "خاتم التفاعل"
-    else:
-        devmatrix = "نار وشرار"
-
     rozrtba = (
         "مطـور السـورس"
         if user_id == 6373798952 or user_id == 6162029418 or user_id == 6060337233 or user_id == 1260465030
@@ -114,7 +95,6 @@ async def fetch_info(replied_user, event):
     caption += f"<b>- الـمجموعات المشتـركة ⇜</b> {common_chat}\n"
     caption += f"<b>- عـدد الصـورة ⇜</b> {replied_user_profile_photos_count}\n"
     caption += f"<b>- الرتبـة ⇜</b>{rozrtba}\n"
-    caption += f"<b>- الرسائل ⇜ </b>{devmatrix}\n"
     caption += f"<b>-️ الـنبـذه ⇜</b> \n<code>{user_bio}</code>\n\n"
     return photo, caption
 
