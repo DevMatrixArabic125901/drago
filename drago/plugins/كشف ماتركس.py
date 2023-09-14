@@ -114,7 +114,7 @@ async def fetch_info(replied_user, event):
     caption += f"<b>- الـمجموعات المشتـركة ⇜</b> {common_chat}\n"
     caption += f"<b>- عـدد الصـورة ⇜</b> {replied_user_profile_photos_count}\n"
     caption += f"<b>- الرتبـة ⇜</b>{rozrtba}\n"
-    caption += f"<b>- الرسائل ⇜ </b> {matrix}\n"
+    caption += f"<b>- الرسائل ⇜ </b>{devmatrix}\n"
     caption += f"<b>-️ الـنبـذه ⇜</b> \n<code>{user_bio}</code>\n\n"
     return photo, caption
 
