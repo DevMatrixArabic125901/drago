@@ -33,7 +33,7 @@ async def _(event):
     "Restarts the bot !!"
     if BOTLOG:
         await event.client.send_message(BOTLOG_CHATID, "**᥀︙دراكو ↻** \n" "**᥀︙ تم اعادة تشغيل السورس بنجاح ✅ ↻**")
-    FFlXlX = await edit_or_reply(event, "᥀︙ سيتم اعادة التشغيل انتظر ")
+    EXTRA = await edit_or_reply(event, "᥀︙ سيتم اعادة التشغيل انتظر ")
     await event.edit("0%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒")
     await asyncio.sleep(2)
     await event.edit("4%\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒")
