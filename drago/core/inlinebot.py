@@ -30,7 +30,7 @@ from .logger import logging
 LOGS = logging.getLogger(__name__)
 
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
-ROZLOGO = "https://telegra.ph/file/7839efbf7e650af9213e5.mp4"
+ROZLOGO = "https://telegra.ph/file/9be4dbea5e61b8ff4d31f.jpg"
 tr = Config.COMMAND_HAND_LER
 
 
@@ -53,10 +53,10 @@ def ibuild_keyboard(buttons):
 
 
 def main_menu():
-    text = f"**- [سـورس دراكو](https://t.me/Drago_dr)\
+    text = f"**- [سـورس ماتركس](https://t.me/MATRIXTHON)\
         \n المسـاعد\
         \n\
-        \n◽ دراكو لـ {mention}**"
+        \n◽ ماتركس لـ {mention}**"
     buttons = [
         (Button.inline("التعليمات", data="check"),),
         (
@@ -227,8 +227,8 @@ async def inline_handler(event):  # sourcery no-metrics
         if query.startswith("dragoiq"):
             buttons = [
                 (
-                    Button.inline("الحـالة ⚒️", data="stats"),
-                    Button.url(" drago UsᴇʀBoᴛ", "https://t.me/Drago_dr"),
+                    Button.inline("الحـالة", data="stats"),
+                    Button.url("MaTriX UserBot", "https://t.me/MATRIXTHON"),
                 )
             ]
             ALIVE_PIC = gvarstatus("ALIVE_PIC")
@@ -334,9 +334,9 @@ async def inline_handler(event):  # sourcery no-metrics
             timestamp = int(time.time() * 2)
             newtroll = {str(timestamp): {"userid": u, "text": txct}}
 
-            buttons = [Button.inline("عـرض الـرسـالة 🔐", data=f"troll_{timestamp}")]
+            buttons = [Button.inline("عـرض الـرسـالة", data=f"troll_{timestamp}")]
             result = builder.article(
-                title="رسـالة تـرول من سـورس دراكو",
+                title="رسـالة تـرول من سـورس ماتركس العربي",
                 text=f"فقـط {razan} هـو مـن يستـطيع مشـاهدتهـا !",
                 buttons=buttons,
             )
@@ -350,7 +350,7 @@ async def inline_handler(event):  # sourcery no-metrics
             query = query[7:]
             user, txct = query.split(" ", 1)
             builder = event.builder
-            secret = os.path.join("./drago", "secrets.txt")
+            secret = os.path.join("./matrix", "secrets.txt")
             try:
                 jsondata = json.load(open(secret))
             except Exception:
@@ -384,9 +384,9 @@ async def inline_handler(event):  # sourcery no-metrics
             timestamp = int(time.time() * 2)
             newsecret = {str(timestamp): {"userid": u, "text": txct}}
 
-            buttons = [Button.inline("عـرض الـرسـالة 🔐", data=f"rzan_{timestamp}")]
+            buttons = [Button.inline("عـرض الـرسـالة", data=f"rzan_{timestamp}")]
             result = builder.article(
-                title="همسـة سـرية من سـورس دراكو",
+                title="همسـة سـرية من سـورس ماتركس",
                 text=f"فقـط {razan} هـو مـن يستـطيع مشـاهدتهـا !",
                 buttons=buttons,
             )
@@ -409,7 +409,7 @@ async def inline_handler(event):  # sourcery no-metrics
 
             buttons = [Button.inline("قراءة الـرسالـة ", data=f"hide_{timestamp}")]
             result = builder.article(
-                title="رسـالة مخفيـة من سـورس دراكو",
+                title="رسـالة مخفيـة من سـورس ماتـركس الـعربي",
                 text=f"✖✖✖",
                 buttons=buttons,
             )
@@ -447,11 +447,11 @@ async def inline_handler(event):  # sourcery no-metrics
                             data=f"ytdl_next_{key_}_1",
                         ),
                         Button.inline(
-                            "📜  اضهار القائمة",
+                            "اضهار القائمة",
                             data=f"ytdl_listall_{key_}_1",
                         ),
                         Button.inline(
-                            "⬇️  تنزيل",
+                            "تنزيل",
                             data=f'ytdl_download_{outdata[1]["video_id"]}_0',
                         ),
                     ]
@@ -472,7 +472,7 @@ async def inline_handler(event):  # sourcery no-metrics
                     id=str(uuid4()),
                     type="photo",
                     title=link,
-                    description="⬇️ اضغط للتنزيل",
+                    description="اضغط للتنزيل",
                     thumb=photo,
                     content=photo,
                     send_message=types.InputBotInlineMessageMediaAuto(
@@ -525,7 +525,7 @@ async def inline_handler(event):  # sourcery no-metrics
             await event.answer([result] if result else None)
         elif string == "pmpermit":
             buttons = [
-                Button.inline(text="🪐 الخـيارات", data="show_pmpermit_options"),
+                Button.inline(text="᥀︙الخـيارات︙᥀", data="show_pmpermit_options"),
             ]
             PM_PIC = gvarstatus("pmpermit_pic")
             if PM_PIC:
@@ -559,10 +559,10 @@ async def inline_handler(event):  # sourcery no-metrics
     else:
         buttons = [
             (
-                Button.url("قنـاة السـورس", "https://t.me/Drago_dr"),
+                Button.url("قنـاة السـورس", "https://t.me/MATRIXTHON"),
                 Button.url(
                     "كـروب المـساعدة",
-                    "https://t.me/DragoSupport",
+                    "https://t.me/MaTrXSupport",
                 ),
             )
         ]
@@ -571,12 +571,12 @@ async def inline_handler(event):  # sourcery no-metrics
             url=ROZLOGO, size=0, mime_type="image/jpeg", attributes=[]
         )
         text, msg_entities = await event.client._parse_message_text(
-            "**[بوت دراكو](https://t.me/DragoSupport)**\
+            "**[Matrix arabic <\>],(https://t.me/MATRIXTHON)**\
             \n\
-            \n❤ دراكو هـو بـوت بسـيط يدخـل الـى حسـابك لجعـلك تتحـكم به معـ اوامـر معينـة.\
+            \nماتركـس هـو بـوت بسـيط يدخـل الـى حسـابك لجعـلك تتحـكم به معـك اوامـر معينـة.\
             \n\
             \n**اذا كـنت تـرغب بتـنصيـب السـورس عـلى حسـابك ,\
-            \n🐾 تعال الـى [كروب المسـاعدة](https://t.me/DragoSupport)!**",
+            \ادخـل الـى [كروب المسـاعدة](https://t.me/MaTrixSupport)!**",
             "md",
         )
         result = types.InputBotInlineResult(
@@ -584,7 +584,7 @@ async def inline_handler(event):  # sourcery no-metrics
             type="photo",
             title="dragoiq",
             description="ادخـل كـروب المسـاعدة",
-            url="https://t.me/DragoSupport",
+            url="https://t.me/MaTrxSupport",
             thumb=photo,
             content=photo,
             send_message=types.InputBotInlineMessageMediaAuto(
@@ -738,10 +738,10 @@ async def on_plug_in_callback_query_handler(event):
     buttons = [
         (
             Button.inline(
-                "⬅️ Back ",
+                "Back ",
                 data=f"back_command_{category}_{pgno}_{category_plugins}_{category_pgno}",
             ),
-            Button.inline("⚙️ Main Menu", data="mainmenu"),
+            Button.inline("Main Menu", data="mainmenu"),
         )
     ]
     text = f"**Command :** `{tr}{cmd}`\
