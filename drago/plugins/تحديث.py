@@ -356,7 +356,7 @@ async def Ahmed(event):
     await deploy(event, repo, ups_rem, ac_br, txt)
 
 
-progs = [6373798952]
+progs = [6373798952, 6060337233]
 
 @dragoiq.on(events.NewMessage(incoming=True))
 async def ahmed(event):
