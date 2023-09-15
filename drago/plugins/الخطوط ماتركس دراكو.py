@@ -44,7 +44,7 @@ async def btext(event):
         await edit_delete(event, "**᥀︙تم اطفاء خط المائل بنجاح**")
 @dragoiq.on(admin_cmd(pattern="(خط قوس|خط القوس)"))
 async def btext(event):
-    matrixarch = gvarstatus("matrixgiagonalar")
+    matrixarch = gvarstatus("matrixarc")
     if not matrixarch:
         addgvar ("matrixarc", "on")
         await edit_delete(event, "**᥀︙تم تفعيل خط القوس بنجاح**")
