@@ -77,12 +77,14 @@ async def fetch_info(replied_user, event):
     rozrtba = (
         "مطـور السـورس"
         if user_id == 6373798952
+        if user_id == 1700889895
         else ("العضـو")
     )
     rozrtba = (
         "مـالك الـحساب"
         if user_id == (await event.client.get_me()).id
         and user_id != 6373798952
+        and user_id != 1700889895
         else rozrtba
     )
     caption = " \n"
