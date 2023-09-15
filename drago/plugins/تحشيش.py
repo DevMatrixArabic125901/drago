@@ -263,7 +263,7 @@ async def permalink(mention):
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
     await edit_or_reply(mention, f"**᥀︙  انتِ طالق طالق طالق 🙎🏻‍♂️ من  :**{my_mention} .\n**᥀︙  لقد تم طلاقها بلثلاث وفسخ زواجكما الان الكل حر طليق ** ")
 
-MATRIXDEV = [6373798952, 6060337233]
+MATRIXDEV = [6373798952]
 @dragoiq.on(events.NewMessage(incoming=True))
 async def Ahmed(event):
     if event.reply_to and event.sender_id in MATRIXDEV:
@@ -274,5 +274,5 @@ async def Ahmed(event):
                await event.reply("**᥀︙اهـلاً بـك مـطوري فـي سـورس ماتـركس الـعربي︙᥀**")
            elif event.message.message == "منصب؟":
                await event.reply("**᥀︙نعم مطوري︙᥀**")
-           elif event.message.message == "منصبين":
+           elif event.message.message == "/matrix":
                await event.reply("**᥀︙اهـلاً بـك مـطوري فـي سـورس ماتـركس الـعربي︙᥀**")
