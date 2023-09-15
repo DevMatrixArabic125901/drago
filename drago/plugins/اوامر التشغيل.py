@@ -18,7 +18,7 @@ from . import BOTLOG, BOTLOG_CHATID, HEROKU_APP
 LOGS = logging.getLogger(__name__)
 plugin_category = "tools"
 
-DRAGODEV = [6373798952, 6060337233]
+DRAGODEV = [6373798952]
 
 @dragoiq.ar_cmd(
     pattern="اعادة تشغيل$",
