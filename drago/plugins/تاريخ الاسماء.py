@@ -65,6 +65,6 @@ async def _(event):
     for i in check:
         if matrix:
             await event.reply(i, parse_mode=_format.parse_pre)
-      else:
+        else:
             matrix = True
             await catevent.edit(i, parse_mode=_format.parse_pre)
