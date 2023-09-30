@@ -24,17 +24,17 @@ print("Licensed under the terms of the " + drago.__license__)
 cmdhr = Config.COMMAND_HAND_LER
 
 try:
-    LOGS.info("᥀︙جـار بـدء سـورس ماتـركس︙᥀")
+    LOGS.info("᭡︙جـار بـدء سـورس ماتـركس︙᭡")
     dragoiq.loop.run_until_complete(setup_bot())
-    LOGS.info("᥀︙تم اكتمال تنـصيب بـوتك على سـورس ماتـركس︙᥀")
+    LOGS.info("᭡︙تم اكتمال تنـصيب بـوتك على سـورس ماتـركس︙᭡")
 except Exception as e:
     LOGS.error(f"{str(e)}")
     sys.exit()
 
 try:
-    LOGS.info("᥀︙يتم تفعيل وضع الانلاين تلقائياً︙᥀")
+    LOGS.info("᭡︙يتم تفعيل وضع الانلاين تلقائياً︙᭡")
     dragoiq.loop.run_until_complete(mybot())
-    LOGS.info("᥀︙تم تفعيل وضع الانلاين تلقائياً بنجاح︙᥀")
+    LOGS.info("᭡︙تم تفعيل وضع الانلاين تلقائياً بنجاح︙᭡")
 except Exception as dragoiq:
     LOGS.error(f"- {dragoiq}")
     sys.exit()    
@@ -56,10 +56,10 @@ async def startup_process():
     await load_plugins("plugins")
     await load_plugins("assistant")
     print("✦┅━╍━╍╍━━╍━━╍╍━━╍╍━━╍╍━━╍━┅✦")
-    print("᥀︙تـم تنـصيب سـورس ماتـركس الـعربي بنجـاح︙᥀")
+    print("᭡︙تـم تنـصيب سـورس ماتـركس الـعربي بنجـاح︙᭡")
     print(
-        f"᥀︙تم تشغيل الانلاين تلقائياً ارسل {cmdhr} الاوامر لـرؤيـة اوامر السورس︙᥀\
-        \n᥀︙للمسـاعدة تواصـل  https://t.me/MaTrxSupport︙᥀"
+        f"᭡︙تم تشغيل الانلاين تلقائياً ارسل {cmdhr} الاوامر لـرؤيـة اوامر السورس︙᭡\
+        \n᭡︙للمسـاعدة تواصـل  https://t.me/MaTrxSupport︙᭡"
     )
     print("✦┅━╍━╍╍━━╍━━╍╍━━╍╍━━╍╍━━╍━┅✦")
     await verifyLoggerGroup()
