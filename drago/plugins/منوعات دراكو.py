@@ -4,7 +4,7 @@ from asyncio.exceptions import TimeoutError
 
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from telethon.tl.types import InputMessagesFilterVoice, InputMessagesFilterPhotos, InputMessagesFilterVideo , InputMessagesFilterAnimation
+from telethon.tl.types import InputMessagesFilterVoice, InputMessagesFilterPhotos, InputMessagesFilterVideo , InputMessagesFilterAnimation , InputMessagesFilterSticker
 
 from drago import dragoiq
 from ..helpers.utils import reply_id
@@ -195,3 +195,24 @@ async def _(event):
         await dragoevent.delete()
     except Exception:
         await dragoevent.edit("No Found")
+
+@dragoiq.ar_cmd(pattern="ملصق$")
+async def _(event):
+    dragoevent = await edit_or_reply(event, "انـتظر قلـيلاً︙᭡")
+    try:
+        matrixapph = [
+            drago
+            async for drago in event.client.iter_messages(
+                "@mmllsgc", filter=InputMessagesFilterSticker
+            )
+        ]
+        aing = await event.client.get_me()
+        await event.client.send_file(
+            event.chat_id,
+            file=random.choice(matrixapph),
+            caption=f"᭡︙تم اختيار هذا الملصق لك .",
+        )
+        await dragoevent.delete()
+    except Exception:
+        await dragoevent.edit("No Found")
+        
