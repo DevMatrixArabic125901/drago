@@ -4,7 +4,7 @@ from asyncio.exceptions import TimeoutError
 
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from telethon.tl.types import InputMessagesFilterVoice, InputMessagesFilterPhotos, InputMessagesFilterVideo , InputMessagesFilterAnimation , InputMessagesFilterSticker
+from telethon.tl.types import InputMessagesFilterVoice, InputMessagesFilterPhotos, InputMessagesFilterVideo , InputMessagesFilterSticker
 
 from drago import dragoiq
 from ..helpers.utils import reply_id
@@ -183,7 +183,7 @@ async def _(event):
         matrixaph = [
             drago
             async for drago in event.client.iter_messages(
-                "@mthrkar", filter=InputMessagesFilterAnimation
+                "@mthrkar", filter=InputMessagesFilterVideo
             )
         ]
         aing = await event.client.get_me()
