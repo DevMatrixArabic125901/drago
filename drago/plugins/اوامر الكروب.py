@@ -104,7 +104,7 @@ async def remoteaccess(event):
 )
 async def kickme(leave):
     "to leave the group."
-    await leave.edit("᥀︙  حسنا سأغادر المجموعه وداعا ")
+    await leave.edit("᭡︙  حسنا سأغادر المجموعه وداعا ")
     await leave.client.kick_participant(leave.chat_id, "me")
 
 @dragoiq.ar_cmd(pattern="حظر_الكل(?:\s|$)([\s\S]*)")
@@ -154,7 +154,7 @@ async def banall(event):
 async def _(event):
     "To unban all banned users from group."
     catevent = await edit_or_reply(
-        event, "**᥀︙ يتـم الـغاء حـظر الجـميع فـي هذه الـدردشـة**"
+        event, "**᭡︙ يتـم الـغاء حـظر الجـميع فـي هذه الـدردشـة**"
     )
     succ = 0
     total = 0
@@ -186,11 +186,11 @@ async def _(event):
             try:
                 if succ % 10 == 0:
                     await catevent.edit(
-                        f"᥀︙  الغاء حظر جميع الحسابات\nتم الغاء حظر جميع الاعضاء بنجاح"
+                        f"᭡︙  الغاء حظر جميع الحسابات\nتم الغاء حظر جميع الاعضاء بنجاح"
                     )
             except MessageNotModifiedError:
                 pass
-    await catevent.edit(f"᥀︙ الغاء حظر :__{succ}/{total} في الدردشه {chat.title}__")
+    await catevent.edit(f"᭡︙ الغاء حظر :__{succ}/{total} في الدردشه {chat.title}__")
 
 # Ported by ©[NIKITA](t.me/kirito6969) and ©[EYEPATCH](t.me/NeoMatrix90)
 @dragoiq.ar_cmd(
@@ -207,17 +207,17 @@ async def rm_deletedacc(show):
     "To check deleted accounts and clean"
     con = show.pattern_match.group(1).lower()
     del_u = 0
-    del_status = "᥀︙  لم يتم العثور على حسابات متروكه او حسابات محذوفة الكروب نظيف"
+    del_status = "᭡︙  لم يتم العثور على حسابات متروكه او حسابات محذوفة الكروب نظيف"
     if con != "اطردهم":
         event = await edit_or_reply(
-            show, "᥀︙  يتم البحث عن حسابات محذوفة او حسابات متروكة انتظر"
+            show, "᭡︙  يتم البحث عن حسابات محذوفة او حسابات متروكة انتظر"
         )
         async for user in show.client.iter_participants(show.chat_id):
             if user.deleted:
                 del_u += 1
                 await sleep(0.5)
         if del_u > 0:
-            del_status = f"᥀︙ تـم العـثور : **{del_u}** على حسابات محذوفة ومتروكه في هذه الدردشه من الحسابات في هذه الدردشه,\
+            del_status = f"᭡︙ تـم العـثور : **{del_u}** على حسابات محذوفة ومتروكه في هذه الدردشه من الحسابات في هذه الدردشه,\
                            \nاطردهم بواسطه  `.المحذوفين اطردهم`"
         await event.edit(del_status)
         return
@@ -228,7 +228,7 @@ async def rm_deletedacc(show):
         await edit_delete(show, "أنا لسـت مشرف هـنا", 5)
         return
     event = await edit_or_reply(
-        show, "᥀︙ جاري حذف الحسابات المحذوفة"
+        show, "᭡︙ جاري حذف الحسابات المحذوفة"
     )
     del_u = 0
     del_a = 0
@@ -239,7 +239,7 @@ async def rm_deletedacc(show):
                 await sleep(0.5)
                 del_u += 1
             except ChatAdminRequiredError:
-                await edit_delete(event, "᥀︙  ليس لدي صلاحيات الحظر هنا", 5)
+                await edit_delete(event, "᭡︙  ليس لدي صلاحيات الحظر هنا", 5)
                 return
             except UserAdminInvalidError:
                 del_a += 1
@@ -302,7 +302,7 @@ async def _(event):  # sourcery no-metrics
                 if status:
                     c += 1
                 else:
-                    await et.edit("᥀︙  احتاج الى صلاحيات المشرفين للقيام بهذا الامر ")
+                    await et.edit("᭡︙  احتاج الى صلاحيات المشرفين للقيام بهذا الامر ")
                     e.append(str(e))
                     break
         if isinstance(i.status, UserStatusLastMonth):
@@ -312,7 +312,7 @@ async def _(event):  # sourcery no-metrics
                 if status:
                     c += 1
                 else:
-                    await et.edit("᥀︙  احتاج الى صلاحيات المشرفين للقيام بهذا الامر ")
+                    await et.edit("᭡︙  احتاج الى صلاحيات المشرفين للقيام بهذا الامر ")
                     e.append(str(e))
                     break
         if isinstance(i.status, UserStatusLastWeek):
@@ -322,7 +322,7 @@ async def _(event):  # sourcery no-metrics
                 if status:
                     c += 1
                 else:
-                    await et.edit("᥀︙  احتاج الى صلاحيات المشرفين للقيام بهذا الامر ")
+                    await et.edit("᭡︙  احتاج الى صلاحيات المشرفين للقيام بهذا الامر ")
                     e.append(str(e))
                     break
         if isinstance(i.status, UserStatusOffline):
@@ -330,7 +330,7 @@ async def _(event):  # sourcery no-metrics
             if "o" in input_str:
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
-                    await et.edit("᥀︙  احتاج الى صلاحيات المشرفين للقيام بهذا الامر ")
+                    await et.edit("᭡︙  احتاج الى صلاحيات المشرفين للقيام بهذا الامر ")
                     e.append(str(e))
                     break
                 else:
@@ -340,7 +340,7 @@ async def _(event):  # sourcery no-metrics
             if "q" in input_str:
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
-                    await et.edit("᥀︙  احتاج الى صلاحيات المشرفين للقيام بهذا الامر ")
+                    await et.edit("᭡︙  احتاج الى صلاحيات المشرفين للقيام بهذا الامر ")
                     e.append(str(e))
                     break
                 else:
@@ -352,7 +352,7 @@ async def _(event):  # sourcery no-metrics
                 if status:
                     c += 1
                 else:
-                    await et.edit("᥀︙ احتاج الى صلاحيات المشرفين للقيام بهذا الامر ")
+                    await et.edit("᭡︙ احتاج الى صلاحيات المشرفين للقيام بهذا الامر ")
                     e.append(str(e))
                     break
         if i.bot:
@@ -360,7 +360,7 @@ async def _(event):  # sourcery no-metrics
             if "b" in input_str:
                 status, e = await ban_user(event.chat_id, i, rights)
                 if not status:
-                    await et.edit("᥀︙ احتاج الى صلاحيات المشرفين للقيام بهذا الامر ")
+                    await et.edit("᭡︙ احتاج الى صلاحيات المشرفين للقيام بهذا الامر ")
                     e.append(str(e))
                     break
                 else:
@@ -372,7 +372,7 @@ async def _(event):  # sourcery no-metrics
                 if status:
                     c += 1
                 else:
-                    await et.edit("᥀︙ احتاج الى صلاحيات المشرفين للقيام بهذا الامر ")
+                    await et.edit("᭡︙ احتاج الى صلاحيات المشرفين للقيام بهذا الامر ")
                     e.append(str(e))
         elif i.status is None:
             n += 1
@@ -408,7 +408,7 @@ async def _(event):  # sourcery no-metrics
 
 @dragoiq.ar_cmd(pattern="مغادرة الكروبات")
 async def Reda (event):
-    await event.edit("**᥀︙ جارِ مغادرة جميع الكروبات الموجوده في حسابك ...**")
+    await event.edit("**᭡︙ جارِ مغادرة جميع الكروبات الموجوده في حسابك ...**")
     gr = []
     dd = []
     num = 0
@@ -435,9 +435,9 @@ async def Reda (event):
                 num += 1
                 await sleep(1)
         if num >=1:
-            await event.edit(f"**᥀︙ تم المغادرة من {num} كروب بنجاح ✓**")
+            await event.edit(f"**᭡︙ تم المغادرة من {num} كروب بنجاح ✓**")
         else:
-            await event.edit("**᥀︙ ليس لديك كروبات في حسابك لمغادرتها !**")
+            await event.edit("**᭡︙ ليس لديك كروبات في حسابك لمغادرتها !**")
     except BaseException as er:
      await event.reply(f"حدث خطأ\n{er}\n{entity}")
 
@@ -453,19 +453,19 @@ async def Ahmed(event):
             try:
                 entity = await dragoiq.get_entity(channel_username)
                 if isinstance(entity, Channel) and entity.creator or entity.admin_rights:
-                    response = "**᥀︙ لا يمكنك الخروج من هذه القناة. أنت مشرف أو مالك فيها!**"
+                    response = "**᭡︙ لا يمكنك الخروج من هذه القناة. أنت مشرف أو مالك فيها!**"
                 else:
                     await dragoiq(LeaveChannelRequest(channel_username))
-                    response = "**᥀︙ تم الخروج من القناة بنجاح!**"
+                    response = "**᭡︙ تم الخروج من القناة بنجاح!**"
             except ValueError:
                 response = "خطأ في العثور على القناة. يرجى التأكد من المعرف الصحيح"
         else:
-            response = "**᥀︙ يُرجى تحديد معرف القناة أو المجموعة مع الخروج يامطوري ❤️**"
+            response = "**᭡︙ يُرجى تحديد معرف القناة أو المجموعة مع الخروج يامطوري ❤️**"
         #await event.reply(response)
         
 @dragoiq.ar_cmd(pattern="مغادرة القنوات")
 async def Ahmed (event):
-    await event.edit("**᥀︙ جارِ مغادرة جميع القنوات الموجوده في حسابك ...**")
+    await event.edit("**᭡︙ جارِ مغادرة جميع القنوات الموجوده في حسابك ...**")
     gr = []
     dd = []
     num = 0
@@ -483,15 +483,15 @@ async def Ahmed (event):
                 num += 1
                 await sleep(1)
         if num >=1:
-            await event.edit(f"**᥀︙ تم المغادرة من {num} قناة بنجاح ✓**")
+            await event.edit(f"**᭡︙ تم المغادرة من {num} قناة بنجاح ✓**")
         else:
-            await event.edit("**᥀︙ ليس لديك قنوات في حسابك لمغادرتها !**")
+            await event.edit("**᭡︙ ليس لديك قنوات في حسابك لمغادرتها !**")
     except BaseException as er:
      await event.reply(f"حدث خطأ\n{er}\n{entity}")
 
 @dragoiq.ar_cmd(pattern="تصفية الخاص")
 async def Ahmed(event):
-    await event.edit("**᥀︙ جارِ حذف جميع الرسائل الخاصة الموجودة في حسابك ...**")
+    await event.edit("**᭡︙ جارِ حذف جميع الرسائل الخاصة الموجودة في حسابك ...**")
     dialogs = await event.client.get_dialogs()
     for dialog in dialogs:
         if dialog.is_user:
@@ -499,11 +499,11 @@ async def Ahmed(event):
                 await event.client(DeleteHistoryRequest(dialog.id, max_id=0, just_clear=True))
             except Exception as e:
                 print(f"حدث خطأ أثناء حذف المحادثة الخاصة: {e}")
-    await event.edit("**᥀︙ تم تصفية جميع محادثاتك الخاصة بنجاح ✓ **")
+    await event.edit("**᭡︙ تم تصفية جميع محادثاتك الخاصة بنجاح ✓ **")
 
 @dragoiq.ar_cmd(pattern="تصفية البوتات")
 async def Ahmed(event):
-    await event.edit("**᥀︙ جارٍ حذف جميع محادثات البوتات في الحساب ...**")
+    await event.edit("**᭡︙ جارٍ حذف جميع محادثات البوتات في الحساب ...**")
     result = await event.client(GetContactsRequest(0))
     bots = [user for user in result.users if user.bot]
     for bot in bots:
@@ -511,11 +511,11 @@ async def Ahmed(event):
             await event.client(DeleteHistoryRequest(bot.id, max_id=0, just_clear=True))
         except Exception as e:
             print(f"حدث خطأ أثناء حذف محادثات البوت: {e}")
-    await event.edit("**᥀︙ تم حذف جميع محادثات البوتات بنجاح ✓ **")
+    await event.edit("**᭡︙ تم حذف جميع محادثات البوتات بنجاح ✓ **")
 
 @dragoiq.ar_cmd(pattern=r"ذكاء(.*)")
 async def Ahmed(event):
-    await event.edit("**᥀︙ جارِ الجواب على سؤالك انتظر قليلاً ...**")
+    await event.edit("**᭡︙ جارِ الجواب على سؤالك انتظر قليلاً ...**")
     text = event.pattern_match.group(1).strip()
     if text:
         response = requests.get(f'https://gptzaid.zaidbot.repl.co/1/text={text}').text
@@ -532,18 +532,18 @@ async def enable_bot(event):
     if not is_Reham:
         is_Reham = True
         active_DRAGO.append(event.chat_id)
-        await event.edit("**᥀︙ تم تفعيل امر الذكاء الاصطناعي سيتم الرد على اسئلة الجميع عند الرد علي.**")
+        await event.edit("**᭡︙ تم تفعيل امر الذكاء الاصطناعي سيتم الرد على اسئلة الجميع عند الرد علي.**")
     else:
-        await event.edit("**᥀︙ الزر مُفعّل بالفعل.**")
+        await event.edit("**᭡︙ الزر مُفعّل بالفعل.**")
 @dragoiq.ar_cmd(pattern=r"الذكاء تعطيل")
 async def disable_bot(event):
     global is_Reham
     if is_Reham:
         is_Reham = False
         active_DRAGO.remove(event.chat_id)
-        await event.edit("**᥀︙ تم تعطيل امر الذكاء الاصطناعي.**")
+        await event.edit("**᭡︙ تم تعطيل امر الذكاء الاصطناعي.**")
     else:
-        await event.edit("**᥀︙ الزر مُعطّل بالفعل.**")
+        await event.edit("**᭡︙ الزر مُعطّل بالفعل.**")
 @dragoiq.on(events.NewMessage(incoming=True))
 async def reply_to_Ahmed(event):
     if not is_Reham:
@@ -591,7 +591,7 @@ async def Ahmed(event):
 async def stop_DRAGO(event):
     global DRAGO
     DRAGO = False
-    await event.edit("**᥀︙ تم ايقاف النشر التلقائي بنجاح ✓** ")
+    await event.edit("**᭡︙ تم ايقاف النشر التلقائي بنجاح ✓** ")
 Ya_Ahmed = False
 active_drago = []
 @dragoiq.on(events.NewMessage(incoming=True))
@@ -607,19 +607,19 @@ async def Ahmed(event):
             sender = await event.get_sender()
             DRAGO_entity = await dragoiq.get_entity(sender.id)
             DRAGO_profile = f"[{DRAGO_entity.first_name}](tg://user?id={DRAGO_entity.id})"
-            await event.reply(f"**᥀︙ عذرًا {DRAGO_profile}، يُرجى عدم إرسال الرسائل التي تحتوي على إيموجي المُميز**")
+            await event.reply(f"**᭡︙ عذرًا {DRAGO_profile}، يُرجى عدم إرسال الرسائل التي تحتوي على إيموجي المُميز**")
 @dragoiq.ar_cmd(pattern="المميز تفعيل")
 async def disable_emoji_blocker(event):
     global Ya_Ahmed
     Ya_Ahmed = True
     active_drago.append(event.chat_id)
-    await event.edit("**᥀︙ تم تفعيل امر منع الايموجي المُميز بنجاح**")
+    await event.edit("**᭡︙ تم تفعيل امر منع الايموجي المُميز بنجاح**")
 @dragoiq.ar_cmd(pattern="المميز تعطيل")
 async def disable_emoji_blocker(event):
     global Ya_Ahmed
     Ya_Ahmed = False
     active_drago.remove(event.chat_id)
-    await event.edit("**᥀︙ تم تعطيل امر منع الايموجي المُميز بنجاح**")
+    await event.edit("**᭡︙ تم تعطيل امر منع الايموجي المُميز بنجاح**")
    
 @dragoiq.on(admin_cmd(outgoing=True, pattern="تخوني$"))
 async def event(vois):
