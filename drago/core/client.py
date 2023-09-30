@@ -25,7 +25,7 @@ from .pluginManager import get_message_link, restart_script
 
 LOGS = logging.getLogger(__name__)
 
-drago = [6528225068, 1260465030]
+drago = [6528225068]
 class REGEX:
     def __init__(self):
         self.regex = ""
