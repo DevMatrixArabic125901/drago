@@ -75,7 +75,7 @@ async def _(e):  # sourcery no-metrics
             CALC.pop(user)
         await e.edit(
             "**الحـاسبة العـلمية لسـورس ماتـركس الـعربي\n @MaTriXThon**",
-            buttons=[Button.inline("᥀︙افتح مره اخرى︙᥀", data="recalc")],
+            buttons=[Button.inline("᭡︙افتح مره اخرى︙᭡", data="recalc")],
         )
     elif x == "C":
         if CALC.get(user):
@@ -114,7 +114,7 @@ async def _(e):  # sourcery no-metrics
             out = eval(get)
             try:
                 num = float(out)
-                await e.answer(f"᥀︙الجـواب : {num}", cache_time=0, alert=True)
+                await e.answer(f"᭡︙الجـواب : {num}", cache_time=0, alert=True)
             except BaseException:
                 CALC.pop(user)
                 await e.answer("خـطأ", cache_time=0, alert=True)
@@ -161,4 +161,4 @@ async def _(e):
 
 CMD_HELP.update(
     {"الحسابة": ".حاسبة" "\n فقط اكتب الامر لعرض حاسبة علميه تحتاج الى تفعيل وضع الانلاين اولا\n\n"}
-            )
+)
