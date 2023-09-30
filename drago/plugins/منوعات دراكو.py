@@ -183,7 +183,7 @@ async def _(event):
         matrixaph = [
             drago
             async for drago in event.client.iter_messages(
-                "@mthrkar", filter=InputMessagesFilterVideo
+                "@mthrkar", filter=InputMessagesFilterAnimation
             )
         ]
         aing = await event.client.get_me()
