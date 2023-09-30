@@ -10,7 +10,7 @@ from ..core import check_owner
 from ..Config import Config
 
 MATRIX_IC = "https://telegra.ph/file/7393bd7f67494976a5b10.jpg"
-ROE = "**᥀︙ هـذه هي قائمة سـورس ماتـركس الـعربي︙᥀**" 
+ROE = "**᭡︙ هـذه هي قائمة سـورس ماتـركس الـعربي︙᭡**" 
 
 if Config.TG_BOT_USERNAME is not None and tgbot is not None:
 
@@ -22,35 +22,35 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
         await bot.get_me()
         if query.startswith("اوامري") and event.query.user_id == bot.uid:
             buttons = [
-                            [Button.inline("᥀︙ اوامر الادمن ︙᥀", data="dragoiq0")],
+                            [Button.inline("᭡︙ اوامر الادمن ︙᭡", data="dragoiq0")],
                 [
-                    Button.inline("᥀︙ اوامر البوت ︙᥀", data="rozbot"),
-                    Button.inline("᥀︙ الحساب ︙᥀", data="Jmrz"),
-                    Button.inline("᥀︙ المجموعات ︙᥀", data="gro"),
+                    Button.inline("᭡︙ اوامر البوت ︙᭡", data="rozbot"),
+                    Button.inline("᭡︙ الحساب ︙᭡", data="Jmrz"),
+                    Button.inline("᭡︙ المجموعات ︙᭡", data="gro"),
                 ],
                 [
-                    Button.inline("᥀︙ الصيغ و الجهات ︙᥀", data="sejrz"),
-                    Button.inline("᥀︙ الحماية و  تلكراف ︙᥀", data="grrz"),
+                    Button.inline("᭡︙ الصيغ و الجهات ︙᭡", data="sejrz"),
+                    Button.inline("᭡︙ الحماية و  تلكراف ︙᭡", data="grrz"),
                 ],
                 [
-                    Button.inline("᥀︙ اوامر التسلية ︙᥀", data="tslrzj"),
-                    Button.inline("᥀︙ الترحيبات و الردود ︙᥀", data="r7brz"),
+                    Button.inline("᭡︙ اوامر التسلية ︙᭡", data="tslrzj"),
+                    Button.inline("᭡︙ الترحيبات و الردود ︙᭡", data="r7brz"),
                 ],
                 [
-                    Button.inline("᥀︙ اومر المساعدة ︙᥀", data="krrznd"),
-                    Button.inline("᥀︙ الملصقات و صور ︙᥀", data="jrzst"),
+                    Button.inline("᭡︙ اومر المساعدة ︙᭡", data="krrznd"),
+                    Button.inline("᭡︙ الملصقات و صور ︙᭡", data="jrzst"),
                 ],
                 [
-                    Button.inline("᥀︙ التكرار و التنظيف ︙᥀", data="krrznd"),
-                    Button.inline("᥀︙ الترفيه ︙᥀", data="rfhrz"),
+                    Button.inline("᭡︙ التكرار و التنظيف ︙᭡", data="krrznd"),
+                    Button.inline("᭡︙ الترفيه ︙᭡", data="rfhrz"),
                 ],
                 [
-                    Button.inline("᥀︙ التكرار و التنظيف ︙᥀", data="iiers"),
-                    Button.inline("᥀︙ الملصقات و صور ︙᥀", data="jrzst"),
+                    Button.inline("᭡︙ التكرار و التنظيف ︙᭡", data="iiers"),
+                    Button.inline("᭡︙ الملصقات و صور ︙᭡", data="jrzst"),
                 ],
                 [
-                    Button.inline("᥀︙ الأكستـرا ︙᥀", data="iiers"),
-                    Button.inline("᥀︙ الانتحال و التقليد ︙᥀", data="uscuxrz"),
+                    Button.inline("᭡︙ الأكستـرا ︙᭡", data="iiers"),
+                    Button.inline("᭡︙ الانتحال و التقليد ︙᭡", data="uscuxrz"),
                 ],
             ]
             if MATRIX_IC and MATRIX_IC.endswith((".jpg", ".png", "gif", "mp4")):
