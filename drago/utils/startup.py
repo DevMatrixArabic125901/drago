@@ -66,8 +66,8 @@ async def setup_bot():
             if option.ip_address == dragoiq.session.server_address:
                 if dragoiq.session.dc_id != option.id:
                     LOGS.warning(
-                        f"᥀︙معرف ثابت في الجلسة من {dragoiq.session.dc_id}"
-                        f"᥀︙لـ  {option.id}"
+                        f"᭡︙معرف ثابت في الجلسة من {dragoiq.session.dc_id}"
+                        f"᭡︙لـ  {option.id}"
                     )
                 dragoiq.session.set_dc(option.id, option.ip_address, option.port)
                 dragoiq.session.save()
@@ -99,8 +99,8 @@ async def startupmessage():
             Config.CATUBLOGO = await dragoiq.tgbot.send_file(
                 BOTLOG_CHATID,
                 "https://telegra.ph/file/7393bd7f67494976a5b10.jpg",
-                caption="**‏᥀︙تم تنصـيب سـورس ماتـركس الـعربي بنـجاح︰᥀**",
-                buttons=[(Button.url("᥀︰ماتـركس الـعربي︰᥀", "https://t.me/MaTriXThon"),)],
+                caption="**‏᭡︙تم تنصـيب سـورس ماتـركس الـعربي بنـجاح︰᭡**",
+                buttons=[(Button.url("᭡︰ماتـركس الـعربي︰᭡", "https://t.me/MaTriXThon"),)],
                 
             )
     except Exception as e:
@@ -117,7 +117,7 @@ async def startupmessage():
         if msg_details:
             await dragoiq.check_testcases()
             message = await dragoiq.get_messages(msg_details[0], ids=msg_details[1])
-            text = message.text + "\n\n**᥀︰تم تشغيل البوت الأن أرسل `.فحص`︰᥀**"
+            text = message.text + "\n\n**᭡︰تم تشغيل البوت الأن أرسل `.فحص`︰᭡**"
             await dragoiq.edit_message(msg_details[0], msg_details[1], text)
             if gvarstatus("restartupdate") is not None:
                 await dragoiq.send_message(
@@ -135,11 +135,11 @@ async def startupmessage():
 async def mybot():
     try:
         starkbot = await dragoiq.tgbot.get_me()
-        MATRIX = "᥀︰ماتـركس الـعربي︰᥀"
+        MATRIX = "᭡︰ماتـركس الـعربي︰᭡"
         bot_name = starkbot.first_name
         botname = f"@{starkbot.username}"
         if bot_name.endswith("Assistant"):
-            print("᥀︰تم تشغيل بوت المساعد على سورس ماتركس العربي︰᥀")
+            print("᭡︰تم تشغيل بوت المساعد على سورس ماتركس العربي︰᭡")
         if starkbot.bot_inline_placeholder:
             print("MATRIX")
         else:
@@ -162,13 +162,13 @@ async def mybot():
                 await asyncio.sleep(1)
                 await dragoiq.send_message("@BotFather", botname)
                 await asyncio.sleep(1)
-                await dragoiq.send_message("@BotFather", f"᥀︙بـوت ماتـركس الـعربي︙᥀")
+                await dragoiq.send_message("@BotFather", f"᭡︙بـوت ماتـركس الـعربي︙᭡")
                 await asyncio.sleep(3)
                 await bot.send_message("@BotFather", "/setabouttext")
                 await asyncio.sleep(1)
                 await bot.send_message("@BotFather", botname)
                 await asyncio.sleep(1)
-                await bot.send_message("@BotFather", f"᥀︙اهلاّ بك في بوت المساعد لسورس ماتركس @MaTriXThon ︙᥀")
+                await bot.send_message("@BotFather", f"᭡︙اهلاّ بك في بوت المساعد لسورس ماتركس @MaTriXThon ︙᭡")
                 await asyncio.sleep(3)
             except Exception as e:
                 print(e)
@@ -299,21 +299,21 @@ async def verifyLoggerGroup():
             if not isinstance(entity, types.User) and not entity.creator:
                 if entity.default_banned_rights.send_messages:
                     LOGS.info(
-                        "᥀︙الفار الأذونات مفقودة لإرسال رسائل لـ PRIVATE_GROUP_BOT_API_ID المحدد."
+                        "᭡︙الفار الأذونات مفقودة لإرسال رسائل لـ PRIVATE_GROUP_BOT_API_ID المحدد."
                     )
                 if entity.default_banned_rights.invite_users:
                     LOGS.info(
-                        "᥀︙الفار الأذونات مفقودة لإرسال رسائل لـ PRIVATE_GROUP_BOT_API_ID المحدد."
+                        "᭡︙الفار الأذونات مفقودة لإرسال رسائل لـ PRIVATE_GROUP_BOT_API_ID المحدد."
                     )
         except ValueError:
-            LOGS.error("᥀︙تـأكد من فـار المجـموعة  PRIVATE_GROUP_BOT_API_ID.")
+            LOGS.error("᭡︙تـأكد من فـار المجـموعة  PRIVATE_GROUP_BOT_API_ID.")
         except TypeError:
             LOGS.error(
-                "᥀︙لا يمكـن العثور على فار المجموعه PRIVATE_GROUP_BOT_API_ID. تأكد من صحتها."
+                "᭡︙لا يمكـن العثور على فار المجموعه PRIVATE_GROUP_BOT_API_ID. تأكد من صحتها."
             )
         except Exception as e:
             LOGS.error(
-                "᥀︙حدث استثناء عند محاولة التحقق من PRIVATE_GROUP_BOT_API_ID.\n"
+                "᭡︙حدث استثناء عند محاولة التحقق من PRIVATE_GROUP_BOT_API_ID.\n"
                 + str(e)
             )
     else:
@@ -323,7 +323,7 @@ async def verifyLoggerGroup():
             "مجموعة الاشعارات", dragoiq, Config.TG_BOT_USERNAME, descript, photobt
         )
         addgvar("PRIVATE_GROUP_BOT_API_ID", groupid)
-        print("᥀︙تم إنشاء مجموعة المسـاعدة بنجاح وإضافتها إلى المتغيرات.")
+        print("᭡︙تم إنشاء مجموعة المسـاعدة بنجاح وإضافتها إلى المتغيرات.")
         flag = True
     if PM_LOGGER_GROUP_ID != -100:
         try:
@@ -331,22 +331,22 @@ async def verifyLoggerGroup():
             if not isinstance(entity, types.User) and not entity.creator:
                 if entity.default_banned_rights.send_messages:
                     LOGS.info(
-                        "᥀︙الأذونات مفقودة لإرسال رسائل لـ PM_LOGGER_GROUP_ID المحدد."
+                        "᭡︙الأذونات مفقودة لإرسال رسائل لـ PM_LOGGER_GROUP_ID المحدد."
                     )
                 if entity.default_banned_rights.invite_users:
                     LOGS.info(
-                        "᥀︙الأذونات مفقودة للمستخدمين الإضافيين لـ PM_LOGGER_GROUP_ID المحدد."
+                        "᭡︙الأذونات مفقودة للمستخدمين الإضافيين لـ PM_LOGGER_GROUP_ID المحدد."
                     )
         except ValueError:
-            LOGS.error("᥀︙لا يمكن العثور على فار  PM_LOGGER_GROUP_ID. تأكد من صحتها.")
+            LOGS.error("᭡︙لا يمكن العثور على فار  PM_LOGGER_GROUP_ID. تأكد من صحتها.")
         except TypeError:
-            LOGS.error("᥀︙PM_LOGGER_GROUP_ID غير مدعوم. تأكد من صحتها.")
+            LOGS.error("᭡︙PM_LOGGER_GROUP_ID غير مدعوم. تأكد من صحتها.")
         except Exception as e:
             LOGS.error(
                 "⌯︙حدث استثناء عند محاولة التحقق من PM_LOGGER_GROUP_ID.\n" + str(e)
             )
     else:
-        descript = "᥀︙ وظيفه الكروب يحفظ رسائل الخاص اذا ما تريد الامر احذف الكروب نهائي \n  - @MaTriXThon"
+        descript = "᭡︙ وظيفه الكروب يحفظ رسائل الخاص اذا ما تريد الامر احذف الكروب نهائي \n  - @MaTriXThon"
         photobt = await dragoiq.upload_file(file="Dragoiq/razan/resources/start/MATRIX.JPG")
         _, groupid = await create_supergroup(
             "مجموعة التخزين", dragoiq, Config.TG_BOT_USERNAME, descript, photobt
