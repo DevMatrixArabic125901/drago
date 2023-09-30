@@ -26,7 +26,7 @@ def load_module(shortname, plugin_path=None):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
-        LOGS.info("᥀︙تم بنجاح تحميل ملف " + shortname)
+        LOGS.info("᭡︙تم بنجاح تحميل ملف " + shortname)
     else:
         if plugin_path is None:
             path = Path(f"drago/plugins/{shortname}.py")
@@ -58,7 +58,7 @@ def load_module(shortname, plugin_path=None):
         spec.loader.exec_module(mod)
         # for imports
         sys.modules["drago.plugins." + shortname] = mod
-        LOGS.info("᥀︙تم بنجاح تحميل ملف" + shortname)
+        LOGS.info("᭡︙تم بنجاح تحميل ملف" + shortname)
 
 
 def remove_plugin(shortname):
@@ -116,8 +116,8 @@ def start_assistant(shortname):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
-        print("᥀︙يتم تشغيل البوت المساعد︙᥀")
-        print("᥀︙بنجاح تم استدعاء " + shortname)
+        print("᭡︙يتم تشغيل البوت المساعد︙᭡")
+        print("᭡︙بنجاح تم استدعاء " + shortname)
     else:
         import importlib
         import sys
@@ -130,4 +130,4 @@ def start_assistant(shortname):
         mod.tgbot = bot.tgbot
         spec.loader.exec_module(mod)
         sys.modules["drago.plugins.assistant" + shortname] = mod
-        print("᥀︙بنجاح يتم تحميل " + shortname)
+        print("᭡︙بنجاح يتم تحميل " + shortname)
