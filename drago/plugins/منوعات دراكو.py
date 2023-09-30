@@ -215,4 +215,23 @@ async def _(event):
         await dragoevent.delete()
     except Exception:
         await dragoevent.edit("No Found")
-        
+
+@dragoiq.ar_cmd(pattern="صورة$")
+async def _(event):
+    dragoevent = await edit_or_reply(event, "انـتظر قلـيلاً︙᭡")
+    try:
+        matrixapiph = [
+            drago
+            async for drago in event.client.iter_messages(
+                "@LKKKKV", filter=InputMessagesFilterPhotos
+            )
+        ]
+        aing = await event.client.get_me()
+        await event.client.send_file(
+            event.chat_id,
+            file=random.choice(matrixapiph),
+            caption=f"᭡︙تم اختيار هذا الصورة لك .",
+        )
+        await dragoevent.delete()
+    except Exception:
+        await dragoevent.edit("No Found")
