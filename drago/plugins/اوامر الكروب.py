@@ -160,7 +160,7 @@ async def _(event):
                 pass
     await catevent.edit(f"᭡︙ الغاء حظر :__{succ}/{total} في الدردشه {chat.title}__")
 
-# Ported by ©[NIKITA](t.me/kirito6969) and ©[EYEPATCH](t.me/NeoMatrix90)
+#  by ©[aHmEd](t.me/X_EXTRA) and ©[MaTrixarabic](t.me/Matrixthon)
 @dragoiq.ar_cmd(
     pattern="المحذوفين ?([\s\S]*)",
     command=("المحذوفين", plugin_category),
