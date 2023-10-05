@@ -1,5 +1,5 @@
 ![IMG_٢٠٢٣١٠٠٤_١٧٠٧١٤](https://github.com/qithoniq/drago/assets/119659334/aba986bb-92ec-48f7-8e96-5b88bf00808b)
-# Extended MIT License with Additional Clauses
+# Conditions MIT License with Additional Clauses
 
 #We do not allow anyone to take any file from the source or command
 
@@ -20,7 +20,7 @@
 
 - - - - - -
 
-# ترخيص MIT الممتد مع بنود إضافية
+# شروط MIT الممتد مع بنود إضافية
 
 #We لا نسمح لأي شخص بأخذ أي ملف من المصدر أو الأمر
 
