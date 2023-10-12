@@ -57,6 +57,7 @@ async def _(event):
 	if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
   await event.edit(
   " قاެئمة اެۅٛاެمࢪ اެݪاެࢪساެݪ :\n ✦┅━╍━╍╍━━╍━━╍━┅✦\n ᭡︙ اެختࢪ اެحدى هذه اެݪقۅٛاެئم\n\n- ( `.امر صورة الذاتية` )\n- ( `.اوامر التحذير@dragoiq.ar_cmd(
+
 @dragoiq.ar_cmd(  
     pattern="م4$",
     command=("م4", plugin_category),
