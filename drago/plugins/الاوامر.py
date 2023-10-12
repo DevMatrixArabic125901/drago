@@ -48,93 +48,7 @@ async def _(event):
   await event.edit(
   "**قأئمة أۅٛأمࢪ أݪـتࢪحيبٰ ۅٛأݪـࢪدۅٛد :\n ✦┅━╍━╍╍━━╍━━╍━┅✦\n ᭡︙ أختࢪ أحدىٰ هذه أݪقۅٛأئم\n\n- ( `.اوامر الترحيب` )\n- ( `.اوامر الردود` )\n✦┅━╍━╍╍━━╍━━╍━┅✦\n᭡︙مأتࢪڪـس أݪعـࢪبٰي : @MaTriXThon**"
 )
-@dragoiq.ar_cmd(
-    pattern="م4$",
-    command=("م4", plugin_category),
-)
-async def _(event):
-	if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
-		await event.edit(
-		"** قائمة اوامر حـماية الخاص والتلكراف **:\n ✦┅━╍━╍╍━━╍━━╍━┅✦\n ᭡︙ اختر احدى هذه القوائم\n\n- ( `.اوامر الحماية` )\n- ( `.اوامر التلكراف` ) \n✦┅━╍━╍╍━━╍━━╍━┅✦\n᭡︙ماتركـس العـربي : @MaTriXThon"
-)
-@dragoiq.ar_cmd(
-    pattern="م5$",
-    command=("م5", plugin_category),
-)
-async def _(event):
-	if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
-		await event.edit(
-		"** قائمة اوامر الـمنشن والانتحال **:\n ✦┅━╍━╍╍━━╍━━╍━┅✦\n ᭡︙ اختر احدى هذه القوائم\n\n- ( `.اوامر الانتحال` )\n- ( `.اوامر التقليد` )\n- ( `.اوامر المنشن` ) \n✦┅━╍━╍╍━━╍━━╍━┅✦\n᭡︙ماتركـس العـربي : @MaTriXThon"
-)
 
-@dragoiq.ar_cmd(
-    pattern="م6$",
-    command=("م6", plugin_category),
-)
-async def _(event):
-	if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
-		await event.edit(
-		"** قائمة اوامر الترجمه **:\n ✦┅━╍━╍╍━━╍━━╍━┅✦\n ᭡︙ اختر احدى هذه القوائم\n\n- ( `.اوامر النطق` )\n- ( `.اوامر الترجمة` ) \n✦┅━╍━╍╍━━╍━━╍━┅✦\n᭡︙ماتركـس العـربي : @MaTriXThon"
-)
-
-@dragoiq.ar_cmd(
-    pattern="م7$",
-    command=("م7", plugin_category),
-)
-async def _(event):
-	if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
-		await event.edit(
-		"** قائمة اوامر القفل والمنع **:\n✦┅━╍━╍╍━━╍━━╍━┅✦\n ᭡︙ اختر احدى هذه القوائم\n\n- ( `.اوامر القفل` )\n- ( `.اوامر الفتح` )\n- ( `.اوامر المنع` ) \n✦┅━╍━╍╍━━╍━━╍━┅✦\n᭡︙ماتركـس العـربي : @MaTriXThon"
-)
-
-@dragoiq.ar_cmd(
-    pattern="م8$",
-    command=("م8", plugin_category),
-)
-async def _(event):
-	if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
-		await event.edit(
-		"** قائمة اوامر التكرار والتنظيف **:\n✦┅━╍━╍╍━━╍━━╍━┅✦\n ᭡︙ اختر احدى هذه القوائم\n\n- ( `.اوامر التكرار` )\n- ( `.اوامر السبام` )\n- ( `.اوامر التنظيف` ) \n- ( `.اوامر المسح` ) \n✦┅━╍━╍╍━━╍━━╍━┅✦\n᭡︙ماتركـس العـربي : @MaTriXThon"
-)
-
-@dragoiq.ar_cmd(
-    pattern="م9$",
-    command=("م9", plugin_category),
-)
-async def _(event):
-	if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
-		await event.edit(
-		"** قائمة التخصيص والفارات **:\n ✦┅━╍━╍╍━━╍━━╍━┅✦\n ᭡︙ اختر احدى هذه القوائم\n\n- ( `.اوامر التخصيص` )\n لتغير الصور والكلايش كل من الحماية والفحص والبنك\n- ( `.اوامر الفارات` )\n - لتغير الاسم وزخرفة الوقت والصورة الوقتية والمنطقة الزمنية ورمز الاسم والبايو الوقتي وغيرها\n★•┉ ┉ ┉ ┉ ┉ ┉  ┉ ┉ ┉ ┉•★\n᭡︙ماتركـس العـربي : @MaTriXThon"
-)
-
-@dragoiq.ar_cmd(
-    pattern="م10$",
-    command=("م10", plugin_category),
-)
-async def _(event):
-	if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
-		await event.edit(
-		"** قائمة اوامر الوقتي والتشغيل **:\n ✦┅━╍━╍╍━━╍━━╍━┅✦\n ᭡︙ اختر احدى هذه القوائم\n\n- ( `.اوامر الاسم` )\n- ( `.اوامر البايو` )\n- ( `.اوامر التشغيل` ) \n- ( `.اوامر الاطفاء` ) \n✦┅━╍━╍╍━━╍━━╍━┅✦\n᭡︙ماتركـس العـربي : @MaTriXThon"
-)	
-
-@dragoiq.ar_cmd(
-    pattern="م11$",
-    command=("م11", plugin_category),
-)
-async def _(event):
-	if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
-		await event.edit(
-		"** قائمة اوامر الكـشف و الروابط **:\n ✦┅━╍━╍╍━━╍━━╍━┅✦\n ᭡︙ اختر احدى هذه القوائم\n\n- ( `.اوامر الكشف` )\n- ( `.اوامر الروابط` ) \n\n ★•┉ ┉ ┉ ┉ ┉ ┉  ┉ ┉ ┉ ┉•★\n᭡︙ماتركـس العـربي : @MaTriXThon"
-)
-@dragoiq.ar_cmd(
-    pattern="م12$",
-    command=("م12", plugin_category),
-)
-async def _(event):
-	if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
-		await event.edit(
-		"** قائمة اوامر المساعدة  **:\n ✦┅━╍━╍╍━━╍━━╍━┅✦\n ᭡︙ اختر احدى هذه القوائم\n\n- ( `.اوامر الوقت والتاريخ` )\n- ( `.اوامر كورونا` )\n- ( `.اوامر الصلاة` ) \n- ( `.اوامر مساعدة` )\n- ( `.اوامر الاذاعه` ) \n✦┅━╍━╍╍━━╍━━╍━┅✦\n᭡︙ماتركـس العـربي : @MaTriXThon"
-)
 @dragoiq.ar_cmd(
     pattern="م13$",
     command=("م13", plugin_category),
@@ -142,8 +56,96 @@ async def _(event):
 async def _(event):
 	if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
   await event.edit(
-  " قاެئمة اެۅٛاެمࢪ اެݪاެࢪساެݪ :\n ✦┅━╍━╍╍━━╍━━╍━┅✦\n ᭡︙ اެختࢪ اެحدى هذه اެݪقۅٛاެئم\n\n- ( `.امر صورة الذاتية` )\n- ( `.اوامر التحذيرات` )\n- ( `.اوامر اللستة` )\n- ( `.اوامر الملكية` ) \n- ( `.اوامر السليب` ) \n- ( `.اوامر الاذكار` )\n✦┅━╍━╍╍━━╍━━╍━┅✦\n᭡︙ماެتࢪكـس اެݪعـࢪبي : @MaTriXThon"
+  " قاެئمة اެۅٛاެمࢪ اެݪاެࢪساެݪ :\n ✦┅━╍━╍╍━━╍━━╍━┅✦\n ᭡︙ اެختࢪ اެحدى هذه اެݪقۅٛاެئم\n\n- ( `.امر صورة الذاتية` )\n- ( `.اوامر التحذير@dragoiq.ar_cmd(
+@dragoiq.ar_cmd(  
+    pattern="م4$",
+    command=("م4", plugin_category),
 )
+async def _(event):
+ if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
+  await event.edit(
+  " قأئمة أۅٛأمࢪ حـمأية أݪخأص ۅٛأݪتݪڪࢪأف :\n ✦┅━╍━╍╍━━╍━━╍━┅✦\n ᭡︙ أختࢪ أحدىٰ هذه أݪقۅٛأئم\n\n- ( `.اوامر الحماية` )\n- ( `.اوامر التلكراف` ) \n✦┅━╍━╍╍━━╍━━╍━┅✦\n᭡︙مأتࢪڪـس أݪعـࢪبٰي : @MaTriXThon"
+)
+@dragoiq.ar_cmd(
+    pattern="م5$",
+    command=("م5", plugin_category),
+)
+async def _(event):
+ if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
+  await event.edit(
+  " قأئمة أۅٛأمࢪ أݪـمڼشڼ ۅٛأݪأڼتحأݪ :\n ✦┅━╍━╍╍━━╍━━╍━┅✦\n ᭡︙ أختࢪ أحدىٰ هذه أݪقۅٛأئم\n\n- ( `.اوامر الانتحال` )\n- ( `.اوامر التقليد` )\n- ( `.اوامر المنشن` ) \n✦┅━╍━╍╍━━╍━━╍━┅✦\n᭡︙مأتࢪڪـس أݪعـࢪبٰي : @MaTriXThon"
+)
+
+@dragoiq.ar_cmd(
+    pattern="م6$",
+    command=("م6", plugin_category),
+)
+async def _(event):
+ if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
+  await event.edit(
+  " قأئمة أۅٛأمࢪ أݪتࢪجمه :\n ✦┅━╍━╍╍━━╍━━╍━┅✦\n ᭡︙ أختࢪ أحدىٰ هذه أݪقۅٛأئم\n\n- ( `.اوامر النطق` )\n- ( `.اوامر الترجمة` ) \n✦┅━╍━╍╍━━╍━━╍━┅✦\n᭡︙مأتࢪڪـس أݪعـࢪبٰي : @MaTriXThon"
+)
+
+@dragoiq.ar_cmd(
+    pattern="م7$",
+    command=("م7", plugin_category),
+)
+async def _(event):
+ if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
+  await event.edit(
+  " قأئمة أۅٛأمࢪ أݪقفݪ ۅٛأݪمڼع :\n✦┅━╍━╍╍━━╍━━╍━┅✦\n ᭡︙ أختࢪ أحدىٰ هذه أݪقۅٛأئم\n\n- ( .أۅٛأمࢪ أݪقفݪ )\n- ( `.اوامر الفتح` )\n- ( `.اوامر المنع` ) \n✦┅━╍━╍╍━━╍━━╍━┅✦\n᭡︙مأتࢪڪـس أݪعـࢪبٰي : @MaTriXThon"
+)
+
+@dragoiq.ar_cmd(
+    pattern="م8$",
+    command=("م8", plugin_category),
+)
+async def _(event):
+ if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
+  await event.edit(
+  " قأئمة أۅٛأمࢪ أݪتڪࢪأࢪ ۅٛأݪتڼظيف :\n✦┅━╍━╍╍━━╍━━╍━┅✦\n ᭡︙ أختࢪ أحدىٰ هذه أݪقۅٛأئم\n\n- ( .اوامر التكرار )\n- ( `.اوامر السبام` )\n- ( `.اوامر التنظيف` ) \n- ( `.اوامر المسح` ) \n✦┅━╍━╍╍━━╍━━╍━┅✦\n᭡︙مأتࢪڪـس أݪعـࢪبٰي : @MaTriXThon"
+)
+
+@dragoiq.ar_cmd(
+    pattern="م9$",
+    command=("م9", plugin_category),
+)
+async def _(event):
+ if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
+  await event.edit(
+  " قأئمة أݪتخصيص ۅٛأݪفأࢪأت :\n ✦┅━╍━╍╍━━╍━━╍━┅✦\n ᭡︙ أختࢪ أحدىٰ هذه أݪقۅٛأئم\n\n- ( .أۅٛأمࢪ أݪتخصيص )\n ݪتغيࢪ أݪصۅٛࢪ ۅٛأݪڪݪأيش ڪݪ مڼ أݪحمأية ۅٛأݪفحص ۅٛأݪبٰڼڪ\n- ( `.اوامر الفارات` )\n - ݪتغيࢪ أݪأسم ۅٛࢪ࣪خࢪفة أݪۅٛقت ۅٛأݪصۅٛࢪة أݪۅٛقتية ۅٛأݪمڼطقة أݪࢪ࣪مڼية ۅٛࢪمࢪ࣪ أݪأسم ۅٛأݪبٰأيۅٛ أݪۅٛقتي ۅٛغيࢪهأ\n★•┉ ┉ ┉ ┉ ┉ ┉  ┉ ┉ ┉ ┉•★\n᭡︙مأتࢪڪـس أݪعـࢪبٰي : @MaTriXThon"
+)
+
+@dragoiq.ar_cmd(
+    pattern="م10$",
+    command=("م10", plugin_category),
+)
+async def _(event):
+ if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
+  await event.edit(
+  " قأئمة أۅٛأمࢪ أݪۅٛقتي ۅٛأݪتشغيݪ :\n ✦┅━╍━╍╍━━╍━━╍━┅✦\n ᭡︙ أختࢪ أحدىٰ هذه أݪقۅٛأئم\n\n- ( `.اوامر الاسم` )\n- ( .اوامر البايو )\n- ( `.اوامر التشغيل` ) \n- ( `.اوامر الاطفاء` ) \n✦┅━╍━╍╍━━╍━━╍━┅✦\n᭡︙مأتࢪڪـس أݪعـࢪبٰي : @MaTriXThon"
+) 
+
+@dragoiq.ar_cmd(
+    pattern="م11$",
+    command=("م11", plugin_category),
+)
+async def _(event):
+ if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
+  await event.edit(
+  " قأئمة أۅٛأمࢪ أݪڪـشف ۅٛ أݪࢪۅٛأبٰط :\n ✦┅━╍━╍╍━━╍━━╍━┅✦\n ᭡︙ أختࢪ أحدىٰ هذه أݪقۅٛأئم\n\n- ( .اوامر الكشف )\n- ( .اوامر الروابط ) \n\n ★•┉ ┉ ┉ ┉ ┉ ┉  ┉ ┉ ┉ ┉•★\n᭡︙مأتࢪڪـس أݪعـࢪبٰي : @MaTriXThon"
+)
+
+@dragoiq.ar_cmd(
+    pattern="م12$",
+    command=("م12", plugin_category),
+)
+async def _(event):
+ if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
+  await event.edit(
+  " قأئمة أۅٛأمࢪ أݪمسأعدة  :\n ✦┅━╍━╍╍━━╍━━╍━┅✦\n ᭡︙ أختࢪ أحدىٰ هذه أݪقۅٛأئم\n\n- ( .اوامر الوقت والتاريخ )\n- (`.اوامر الكورونا` )\n- ( `.اوامر الصلاة` ) \n- ( `.اوامر المساعدة` )\n- ( `.اوامر الاذاعه` ) \n✦┅━╍━╍╍━━╍━━╍━┅✦\n᭡︙مأتࢪڪـس أݪعـࢪبٰي : @MaTriXThon"ات` )\n- ( `.اوامر اللستة` )\n- ( `.اوامر الملكية` ) \n- ( `.اوامر السليب` ) \n- ( `.اوامر الاذكار` )\n✦┅━╍━╍╍━━╍━━╍━┅✦\n᭡︙ماެتࢪكـس اެݪعـࢪبي : @MaTriXThon"
+)
+
 @dragoiq.ar_cmd(
     pattern="م14$",
     command=("م14", plugin_category),
