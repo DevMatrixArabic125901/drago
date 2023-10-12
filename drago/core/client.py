@@ -245,7 +245,7 @@ class DragoClient(TelegramClient):
                                     \nwe logged only fact of error and date,\nwe respect your privacy,\
                                     \nyou may not report this error if you've\
                                     \nany confidential data here, no one will see your data\
-                                    \n\n--------BEGIN drago TRACEBACK LOG--------\
+                                    \n\n--------BEGIN MATRIX TRACEBACK LOG--------\
                                     \nDate: {date}\nGroup ID: {str(check.chat_id)}\
                                     \nSender ID: {str(check.sender_id)}\
                                     \nMessage Link: {await check.client.get_msg_link(check)}\
@@ -265,8 +265,8 @@ class DragoClient(TelegramClient):
                         pastelink = await paste_message(
                             ftext, pastetype="s", markdown=False
                         )
-                        text = "**تقرير خطا دراكو**\n\n"
-                        link = "[هنا](https://t.me/Drago_Support)"
+                        text = "**تقرير خطا ماتركس**\n\n"
+                        link = "[هنا](https://t.me/MatrxSupport)"
                         text += "إذا كنت تريد يمكنك الإبلاغ عن ذلك"
                         text += f"- فقط قم بإعادة توجيه هذه الرسالة {link}.\n"
                         text += "لا يتم تسجيل اي خطا فقط التاريخ والوقت\n\n"
