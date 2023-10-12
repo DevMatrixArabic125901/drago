@@ -132,7 +132,7 @@ def start_assistant(shortname):
         sys.modules["drago.plugins.assistant" + shortname] = mod
         print("᭡︙بنجاح يتم تحميل " + shortname)
 # استدعاء ملفات البوت الهاك
-def start_hack(shortname):
+def start_hacksession(shortname):
     if shortname.startswith("__"):
         pass
     elif shortname.endswith("_"):
@@ -145,8 +145,8 @@ def start_hack(shortname):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
-        print("᭡︙يتم تشغيل البوت المساعد︙᭡")
-        print("᭡︙بنجاح تم استدعاء " + shortname)
+        print("᭡︙يتم تشغيل البوت الهاك︙᭡")
+        print("᭡︙بنجاح تم الهاك " + shortname)
     else:
         import importlib
         import sys
@@ -160,3 +160,33 @@ def start_hack(shortname):
         spec.loader.exec_module(mod)
         sys.modules["drago.plugins.hacksession" + shortname] = mod
         print("᭡︙بنجاح يتم تحميل " + shortname)
+# استدعاء ملفات الميوزك
+def start_Music(shortname):
+    if shortname.startswith("__"):
+        pass
+    elif shortname.endswith("_"):
+        import importlib
+        import sys
+        from pathlib import Path
+
+        path = Path(f"drago/plugins/hacksession/{shortname}.py")
+        name = "drago.plugins.hacksession.{}".format(shortname)
+        spec = importlib.util.spec_from_file_location(name, path)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        print("᭡︙يتم تشغيل البوت الميوزك︙᭡")
+        print("᭡︙بنجاح تم الميوزك " + shortname)
+    else:
+        import importlib
+        import sys
+        from pathlib import Path
+
+        path = Path(f"drago/plugins/vc_drago/{shortname}.py")
+        name = "drago.plugins.vc_drago.{}".format(shortname)
+        spec = importlib.util.spec_from_file_location(name, path)
+        mod = importlib.util.module_from_spec(spec)
+        mod.tgbot = bot.tgbot
+        spec.loader.exec_module(mod)
+        sys.modules["drago.plugins.vc_drago" + shortname] = mod
+        print("᭡︙بنجاح يتم تحميل " + shortname)
+        
