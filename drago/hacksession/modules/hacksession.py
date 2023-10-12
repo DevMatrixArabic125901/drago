@@ -205,7 +205,7 @@ REB = ReplyKeyboardMarkup([
 	[("الغاء")]],
 	resize_keyboard=True)
 
-@app.on_message(filters.command("hsoo") & filters.private)
+@app.on_message(filters.command("ahmed") & filters.private)
 async def START(c:Client,m:Message):
 	UserName = m.from_user.username
 	UserName = "@"+UserName if UserName else "There in no username"
