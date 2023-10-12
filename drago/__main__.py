@@ -50,7 +50,7 @@ Matrixcheck = MatrixCheck()
 async def startup_process():
     check = await ipchange()
     if check is not None:
-        Catcheck.sucess = False
+        MatrixCheck.sucess = False
         return
     await verifyLoggerGroup()
     await load_plugins("plugins")
@@ -70,14 +70,14 @@ async def startup_process():
     if PM_LOGGER_GROUP_ID != -100:
         await add_bot_to_logger_group(PM_LOGGER_GROUP_ID)
     await startupmessage()
-    Catcheck.sucess = True
+    MatrixCheck.sucess = True
     return
 
 dragoiq.loop.run_until_complete(startup_process())
 
 if len(sys.argv) not in (1, 3, 4):
     dragoiq.disconnect()
-elif not Catcheck.sucess:
+elif not MatrixCheck.sucess:
     if HEROKU_APP is not None:
         HEROKU_APP.restart()
 else:
