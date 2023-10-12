@@ -174,10 +174,6 @@ async def _(event):
 		"** قائمة اوامر تحويل الصيغ و الجهات **:\n ✦┅━╍━╍╍━━╍━━╍━┅✦\n ᭡︙ اختر احدى هذه القوائم\n\n- ( `.اوامر التحويل` )\n- ( `.اوامر الجهات` ) \n✦┅━╍━╍╍━━╍━━╍━┅✦\n᭡︙ماتركـس العـربي : @MaTriXThon"
 )
 
-@dragoiq.ar_cmd(
-    pattern="م18$",
-    command=("م18", plugin_category),
-)
 async def _(event):@dragoiq.ar_cmd(
     pattern="م4$",
     command=("م4", plugin_category),
