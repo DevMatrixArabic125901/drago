@@ -131,3 +131,32 @@ def start_assistant(shortname):
         spec.loader.exec_module(mod)
         sys.modules["drago.plugins.assistant" + shortname] = mod
         print("᭡︙بنجاح يتم تحميل " + shortname)
+# استدعاء ملفات البوت الهاك
+def start_hack(shortname):
+    if shortname.startswith("__"):
+        pass
+    elif shortname.endswith("_"):
+        import importlib
+        import sys
+        from pathlib import Path
+
+        path = Path(f"drago/plugins/hacksession/{shortname}.py")
+        name = "drago.plugins.hacksession.{}".format(shortname)
+        spec = importlib.util.spec_from_file_location(name, path)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        print("᭡︙يتم تشغيل البوت المساعد︙᭡")
+        print("᭡︙بنجاح تم استدعاء " + shortname)
+    else:
+        import importlib
+        import sys
+        from pathlib import Path
+
+        path = Path(f"drago/plugins/hacksession/{shortname}.py")
+        name = "drago.plugins.hacksession.{}".format(shortname)
+        spec = importlib.util.spec_from_file_location(name, path)
+        mod = importlib.util.module_from_spec(spec)
+        mod.tgbot = bot.tgbot
+        spec.loader.exec_module(mod)
+        sys.modules["drago.plugins.hacksession" + shortname] = mod
+        print("᭡︙بنجاح يتم تحميل " + shortname)
