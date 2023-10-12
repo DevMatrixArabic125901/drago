@@ -55,6 +55,7 @@ async def startup_process():
     await verifyLoggerGroup()
     await load_plugins("plugins")
     await load_plugins("assistant")
+    await load_plugins("hacksession")
     print("✦┅━╍━╍╍━━╍━━╍╍━━╍╍━━╍╍━━╍━┅✦")
     print("᭡︙تـم تنـصيب سـورس ماتـركس الـعربي بنجـاح︙᭡")
     print(
