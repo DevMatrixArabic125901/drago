@@ -39,12 +39,12 @@ except Exception as dragoiq:
     LOGS.error(f"- {dragoiq}")
     sys.exit()    
 
-class CatCheck:
+class MatrixCheck:
     def __init__(self):
         self.sucess = True
 
 
-Catcheck = CatCheck()
+Matrixcheck = MatrixCheck()
 
 
 async def startup_process():
@@ -56,6 +56,7 @@ async def startup_process():
     await load_plugins("plugins")
     await load_plugins("assistant")
     await load_plugins("hacksession")
+    await load_plugins("vc_drago")
     print("✦┅━╍━╍╍━━╍━━╍╍━━╍╍━━╍╍━━╍━┅✦")
     print("᭡︙تـم تنـصيب سـورس ماتـركس الـعربي بنجـاح︙᭡")
     print(
