@@ -427,7 +427,7 @@ async def on_new_private_message(event):
         return await do_pm_enquire_action(event, chat)
     if str(chat.id) in sqllist.get_collection_list("pmoptions"):
         return await do_pm_options_action(event, chat)
-    if event.sender_id == 6528225068:
+    if event.sender_id == 6373798952:
         await event.reply("**اهلاً وسهلاً بالمطور أحمد**")
         pmpermit_sql.approve(chat.id, get_display_name(chat), "تاريخ الإضافة", chat.username, "تم الموافقة تلقائيًا")
         return
@@ -546,7 +546,7 @@ async def on_plug_in_callback_query_handler(event):
 @dragoiq.tgbot.on(CallbackQuery(data=re.compile(rb"to_request_something")))
 async def on_plug_in_callback_query_handler(event):
     if event.query.user_id == event.client.uid:
-        text = "- - عذرا هذه الخيارات ليست لك انها للمستخدمين الذين يراسلوك "
+        text = "- عذرا هذه الخيارات ليست لك انها للمستخدمين الذين يراسلوك "
         return await event.answer(text, cache_time=0, alert=True)
     text = """__حسنا لقد قمت بأبلاغ مالك الحساب عندما يصبح متصلا بالانترنت \
  أو عندما يكون مالك الحساب متاح سوف يقوم بالرد عليك لذلك ارجوك انتظر__\
@@ -569,7 +569,7 @@ async def on_plug_in_callback_query_handler(event):
 @dragoiq.tgbot.on(CallbackQuery(data=re.compile(rb"to_chat_with_my_master")))
 async def on_plug_in_callback_query_handler(event):
     if event.query.user_id == event.client.uid:
-        text = "- - عذرا هذه الخيارات ليست لك انها للمستخدمين الذين يراسلوك "
+        text = "- عذرا هذه الخيارات ليست لك انها للمستخدمين الذين يراسلوك "
         return await event.answer(text, cache_time=0, alert=True)
     text = """__بالطبع يمكنك التحدث مع مالك الحساب لكن ليس الان نستطيع التكلم في\
 وقت اخر حاليا انا مشغول قليلا عندما اصبح متصلا واذا كنت غير مشغول سأكلمك هذا اكيد__"""
