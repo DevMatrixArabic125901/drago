@@ -75,8 +75,38 @@ async def permalink(mention):
     my_mention = f"[{me.first_name}](tg://user?id={me.id})"
     await edit_or_reply(mention, f"**᭡︙ المستخدم** [{drago}](tg://user?id={user.id}) \n**᭡︙  تـم رفعـه بكلـبك 🤍 بواسطة :** {my_mention}**")
     
-    
+@dragoiq.on(admin_cmd(pattern="رفع حبيبتي(?:\s|$)([\s\S]*)"))
+async def permalink(mention):
+    """Generates a link to the user's PM with a custom text."""
+    user, custom = await get_user_from_event(mention)
+    if not user:
+        return
+    if user.id == 6373798952:
+        return await edit_or_reply(mention, f"**᭡︙ لكك هذا المطور أحمد ︙᭡**")
+    if custom:
+        return await edit_or_reply(mention, f"[{custom}](tg://user?id={user.id})")
+    drago = user.first_name.replace("\u2060", "") if user.first_name else user.username
+    me = await mention.client.get_me()
+    my_first = me.first_name
+    my_mention = f"[{me.first_name}](tg://user?id={me.id})"
+    await edit_or_reply(mention, f"**᭡︙ المستخدم** [{drago}](tg://user?id={user.id}) \n**᭡︙  تـم رفـعـها حبيبتك 🤍 بواسطة :** {my_mention}**")    
 
+@dragoiq.on(admin_cmd(pattern="رفع مرتي(?:\s|$)([\s\S]*)"))
+async def permalink(mention):
+    """Generates a link to the user's PM with a custom text."""
+    user, custom = await get_user_from_event(mention)
+    if not user:
+        return
+    if user.id == 6373798952:
+        return await edit_or_reply(mention, f"**᭡︙ لكك هذا المطور أحمد ︙᭡**")
+    if custom:
+        return await edit_or_reply(mention, f"[{custom}](tg://user?id={user.id})")
+    drago = user.first_name.replace("\u2060", "") if user.first_name else user.username
+    me = await mention.client.get_me()
+    my_first = me.first_name
+    my_mention = f"[{me.first_name}](tg://user?id={me.id})"
+    await edit_or_reply(mention, f"**᭡︙ المستخدم** [{drago}](tg://user?id={user.id}) \n**᭡︙  تـم رفـعـها مرتـك 🤍 بواسطة :** {my_mention}**")    
+    
 @dragoiq.on(admin_cmd(pattern="رفع مطي(?:\s|$)([\s\S]*)"))
 async def permalink(mention):
     """Generates a link to the user's PM with a custom text."""
