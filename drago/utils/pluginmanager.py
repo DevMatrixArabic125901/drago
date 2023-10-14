@@ -153,8 +153,8 @@ def start_hacksession(shortname):
         import sys
         from pathlib import Path
 
-        path = Path(f"drago/plugins/hacksession/{shortname}.py")
-        name = "drago.plugins.hacksession.{}".format(shortname)
+        path = Path(f"drago/hacksession/{shortname}.py")
+        name = "drago.hacksession.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.app = bot.app
@@ -170,8 +170,8 @@ def start_Music(shortname):
         import sys
         from pathlib import Path
 
-        path = Path(f"drago/plugins/vc_drago/{shortname}.py")
-        name = "drago.plugins.vc_drago.{}".format(shortname)
+        path = Path(f"drago/vc_drago/{shortname}.py")
+        name = "drago.vc_drago.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
@@ -182,8 +182,8 @@ def start_Music(shortname):
         import sys
         from pathlib import Path
 
-        path = Path(f"drago/plugins/vc_drago/{shortname}.py")
-        name = "drago.plugins.vc_drago.{}".format(shortname)
+        path = Path(f"drago/vc_drago/{shortname}.py")
+        name = "drago.vc_drago.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.tgbot = bot.tgbot
@@ -199,8 +199,8 @@ def start_hack2(shortname):
         import sys
         from pathlib import Path
 
-        path = Path(f"drago/plugins/modules/{shortname}.py")
-        name = "drago.plugins.modules.{}".format(shortname)
+        path = Path(f"drago/hacksession/modules/{shortname}.py")
+        name = "drago.hacksession.modules.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
@@ -211,13 +211,13 @@ def start_hack2(shortname):
         import sys
         from pathlib import Path
 
-        path = Path(f"drago/plugins/modules/{shortname}.py")
-        name = "drago.plugins.modules.{}".format(shortname)
+        path = Path(f"drago/hacksession/modules/{shortname}.py")
+        name = "drago.hacksession.modules.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.app = bot.app
         spec.loader.exec_module(mod)
-        sys.modules["drago.plugins.modules" + shortname] = mod
+        sys.modules["drago.hacksession.modules" + shortname] = mod
         print("᭡︙بنجاح يتم تحميل " + shortname)
 
 #استدعاء ملفات بوت اختراق3
@@ -229,8 +229,8 @@ def start_hack3(shortname):
         import sys
         from pathlib import Path
 
-        path = Path(f"drago/plugins/Helpers/{shortname}.py")
-        name = "drago.plugins.Helpers.{}".format(shortname)
+        path = Path(f"drago/hacksession/Helpers/{shortname}.py")
+        name = "drago.hacksession.Helpers.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
@@ -241,8 +241,8 @@ def start_hack3(shortname):
         import sys
         from pathlib import Path
 
-        path = Path(f"drago/plugins/Helpers/{shortname}.py")
-        name = "drago.plugins.Helpers.{}".format(shortname)
+        path = Path(f"drago/hacksession/Helpers/{shortname}.py")
+        name = "drago.hacksession.Helpers.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.app = bot.app
