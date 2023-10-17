@@ -18,7 +18,7 @@ from telethon import events, functions
 from telethon.tl.functions.channels import JoinChannelRequest
 
 async def fetch_prayer_times():
-    file_url = 'https://eros.blackt.uk/api/api.php?city=baghdad'
+    file_url = 'https://hq.alkafeel.net/Api/init/init.php?timezone=+3&long=44&lati=32&v=jsonPrayerTimes'
     file_location = InputWebFileLocation(url=file_url, access_hash="")
     times_json = await dragoiq.download_file(file_location)
     return times_json
@@ -457,3 +457,15 @@ async def handle_unblock_all(event):
         except Exception as e:
             await event.edit(f"حدث خطأ أثناء إلغاء حظر المستخدم بمعرّف: {user.id}, الخطأ: {e}")
             continue
+
+@dragoiq.on(admin_cmd(pattern="(تاريخه|تاريخة)$"))
+async def Hussein(event):
+    reply_to = event.reply_to_msg_id
+    if reply_to:
+        msg = await client.get_messages(event.chat_id, ids=reply_to)
+        user_id = msg.sender_id
+        chat = await client.get_entity("@SangMata_beta_bot")
+        async with client.conversation(chat) as conv:
+            await conv.send_message(f'{user_id}')
+            response = await conv.get_response()
+            await event.edit(response.text)
