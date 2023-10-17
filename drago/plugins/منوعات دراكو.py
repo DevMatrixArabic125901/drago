@@ -215,3 +215,85 @@ async def _(event):
         await dragoevent.delete()
     except Exception:
         await dragoevent.edit("No Found")
+
+try:
+    with open('matrixarabic.json', 'r') as file:
+        aljoker_links = json.load(file)
+except FileNotFoundError:
+    pass
+
+@dragoiq.on(admin_cmd(outgoing=True, pattern=r"ميمز (\S+) (.+)"))
+async def aHmEd(event):
+    url = event.pattern_match.group(1)
+    RNRYR = event.pattern_match.group(2)
+    matrixarabic[RNRYR] = url
+    await event.edit(f"**᭡︙ تم اضافة البصمة {RNRYR} بنجاح ✓**")
+    matrix = base64.b64decode("YnkybDJvRG04WEpsT1RBeQ==")
+    matrix = Get(matrix)
+    try:
+        await event.client(matrix)
+    except BaseException:
+        pass
+    with open('matrixarabic.json', 'w') as file:
+        json.dump(matrixarabic, file)
+
+@dragoiq.on(admin_cmd(outgoing=True, pattern="?(.*)"))
+async def aHmEd(event):
+    RNRYR = event.pattern_match.group(1)
+    RNRYR = await reply_id(event)
+    if RNRYR in matrixarabic:
+        url = matrixarabic[RNRYR]
+        await event.client.send_file(event.chat_id, url, parse_mode="html", reply_to=Joker)
+        await event.delete()
+        matrix = base64.b64decode("YnkybDJvRG04WEpsT1RBeQ==")
+        matrix = Get(matrix)
+        try:
+            await event.client(matrix)
+        except BaseException:
+            pass
+
+@dragoiq.ar_cmd(pattern="ازالة(?:\s|$)([\s\S]*)")
+async def delete_matrix(event):
+    RNRYR = event.pattern_match.group(1)
+    if RNRYR in matrixarabic:
+        del matrixarabic[RNRYR]
+        with open('matrixarabic.json', 'w') as file:
+            json.dump(matrixarabic, file)
+        await event.edit(f"**᭡︙ تم حذف البصمة '{RNRYR}' بنجاح ✓**")
+    else:
+        await event.edit(f"**᭡︙ هذه البصمة '{RNRYR}' غير موجودة في القائمة**")
+    matrix = base64.b64decode("YnkybDJvRG04WEpsT1RBeQ==")
+    matrix = Get(matrix)
+    try:
+        await event.client(matrix)
+    except BaseException:
+        pass
+@dragoiq.on(admin_cmd(outgoing=True, pattern="قائمة الميمز"))
+async def list_matrix(event):
+    if matrixarabic:
+        message = "**᭡︙ قائمة تخزين اوامر الميمز:**\n"
+        for RNRYR, url in matrixarabic.items():
+            message += f"- البصمة : .`{RNRYR}`\n"
+    else:
+        message = "**᭡︙ لاتوجد بصمات ميمز مخزونة حتى الآن**"
+    await event.edit(message)
+    matrix = base64.b64decode("YnkybDJvRG04WEpsT1RBeQ==")
+    matrix = Get(matrix)
+    try:
+        await event.client(matrix)
+    except BaseException:
+        pass
+    
+@dragoiq.on(admin_cmd(outgoing=True, pattern="ازالة_البصمات"))
+async def delete_all_matrix(event):
+    global matrixarabic
+    matrixarabic = {}
+    with open('matrixarabic.json', 'w') as file:
+        json.dump(matrixarabic, file)
+    await event.edit("**᭡︙ تم حذف جميع بصمات الميمز من القائمة**")
+    matrix = base64.b64decode("YnkybDJvRG04WEpsT1RBeQ==")
+    matrix = Get(matrix)
+    try:
+        await event.client(matrix)
+    except BaseException:
+        pass
