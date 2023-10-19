@@ -12,6 +12,7 @@ while flag:
         from .progress import *
         from .qhelper import process
         from .tools import *
+        from .memeifyhelpers import *
         from .utils import _cattools, _catutils, _format
 
         break
