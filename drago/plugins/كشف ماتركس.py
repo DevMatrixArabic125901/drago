@@ -143,24 +143,18 @@ async def fetch_info(replied_user, event):
     return photo, caption
 
 
-@dragoiq.ar_cmd(
-    pattern="ايدي(?: |$)(.*)",
-    command=("ايدي", plugin_category),
-    info={
-        "header": "لـ عـرض معلومـات الشخـص",
-        "الاستـخـدام": " {tr}ايدي بالـرد او {tr}ايدي + معـرف/ايـدي الشخص",
-    },
-)
+@dragoiq.ar_cmd(pattern="ايدي(?: |$)(.*)")
 async def who(event):
-    "Gets info of an user"
-    zed = await edit_or_reply(event, "⇆")
+    roz = await edit_or_reply(event, "**⌔∮ جار التعرف على المستخدم انتظر قليلا**")
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     replied_user = await get_user_from_event(event)
     try:
         photo, caption = await fetch_info(replied_user, event)
-    except (AttributeError, TypeError):
-        return await edit_or_reply(zed, "**- لـم استطـع العثــور ع الشخــص ؟!**")
+    except AttributeError:
+        return await edit_or_reply(
+            roz, "**⌔∮ لم يتم العثور على معلومات لهذا المستخدم **"
+        )
     message_id_to_reply = event.message.reply_to_msg_id
     if not message_id_to_reply:
         message_id_to_reply = None
@@ -176,19 +170,12 @@ async def who(event):
         )
         if not photo.startswith("http"):
             os.remove(photo)
-        await zed.delete()
+        await roz.delete()
     except TypeError:
-        await zed.edit(caption, parse_mode="html")
+        await roz.edit(caption, parse_mode="html")
 
 
-@dragoiq.ar_cmd(
-    pattern="ا(?: |$)(.*)",
-    command=("ا", plugin_category),
-    info={
-        "header": "امـر مختصـر لـ عـرض معلومـات الشخـص",
-        "الاستـخـدام": " {tr}ا بالـرد او {tr}ا + معـرف/ايـدي الشخص",
-    },
-)
+@dragoiq.ar_cmd(pattern="ا(?: |$)(.*)",
 async def who(event):
     "Gets info of an user"
     zed = await edit_or_reply(event, "⇆")
