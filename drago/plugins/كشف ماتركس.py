@@ -28,7 +28,7 @@ LOGS = logging.getLogger(__name__)
 mat = (6373798952)
 matrixr_dev = (1260465030)
 matrix_dev = (6373798952, 1260465030)
- cee = gvarstatus("A_lll") or "zvhhhclc"
+MATRI = gvarstatus("Ahmed2") or "zvhhhclc"
 
 async def get_user_from_event(event):
     if event.reply_to_msg_id:
@@ -219,7 +219,7 @@ async def who(event):
         await zed.edit(caption, parse_mode="html")
 
 
-@dragoiq.ar_cmd(pattern=f"{ZIDA}(?: |$)(.*)")
+@dragoiq.ar_cmd(pattern=f"{MATRI}(?: |$)(.*)")
 async def hwo(event):
     zed = await edit_or_reply(event, "⇆")
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
