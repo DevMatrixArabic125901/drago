@@ -1,16 +1,34 @@
+import contextlib
+import html
+import shutil
 import os
+import base64
 
-from telethon.tl.functions.photos import GetUserPhotosRequest
-from telethon.tl.functions.users import GetFullUserRequest
+from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from telethon.tl.types import MessageEntityMentionName
 
+from requests import get
+from telethon.tl.functions.photos import GetUserPhotosRequest
+from telethon.tl.functions.users import GetFullUserRequest
+
 from drago import dragoiq
-from drago.Config import Config
 from drago.core.logger import logging
-from drago.core.managers import edit_or_reply
 
+from ..Config import Config
+from ..core.managers import edit_or_reply, edit_delete
+from ..helpers import reply_id
+from ..helpers.utils import _format
+from ..sql_helper.globals import addgvar, delgvar, gvarstatus
+from ..sql_helper.echo_sql import addecho, get_all_echos, get_echos, is_echo, remove_all_echos, remove_echo, remove_echos
+from . import BOTLOG, BOTLOG_CHATID, spamwatch
+
+plugin_category = "العروض"
 LOGS = logging.getLogger(__name__)
-
+#Code by T.me/RNRYR
+mat = (6373798952)
+matrixr_dev = (1260465030)
+matrix_dev = (6373798952, 1260465030)
+ cee = gvarstatus("A_lll") or "zvhhhclc"
 
 async def get_user_from_event(event):
     if event.reply_to_msg_id:
@@ -46,21 +64,21 @@ async def fetch_info(replied_user, event):
     replied_user_profile_photos = await event.client(
         GetUserPhotosRequest(user_id=replied_user.id, offset=42, max_id=0, limit=80)
     )
-    replied_user_profile_photos_count = "⌔∮ هذا المستخدم لم يضع اي صورة"
-    try:
+    replied_user_profile_photos_count = "لا يـوجـد بروفـايـل"
+    dc_id = "Can't get dc id"
+    with contextlib.suppress(AttributeError):
         replied_user_profile_photos_count = replied_user_profile_photos.count
-        replied_user.photo.dc_id
-    except AttributeError:
-        pass
+        dc_id = replied_user.photo.dc_id
     user_id = replied_user.id
     first_name = replied_user.first_name
     full_name = FullUser.private_forward_name
     common_chat = FullUser.common_chats_count
     username = replied_user.username
     user_bio = FullUser.about
-    replied_user.bot
-    replied_user.restricted
-    replied_user.verified
+    is_bot = replied_user.bot
+    restricted = replied_user.restricted
+    verified = replied_user.verified
+    matr = (await event.client.get_entity(user_id)).premium
     photo = await event.client.download_profile_photo(
         user_id,
         Config.TMP_DOWNLOAD_DIRECTORY + str(user_id) + ".jpg",
@@ -69,46 +87,80 @@ async def fetch_info(replied_user, event):
     first_name = (
         first_name.replace("\u2060", "")
         if first_name
-        else ("هذا المستخدم ليس لديه اسم اول")
+        else ("هذا المستخدم ليس له اسم أول")
     )
     full_name = full_name or first_name
-    username = "@{}".format(username) if username else ("⌔∮ هذا المستخدم ليس لديه معرف")
-    user_bio = "⌔∮ هذا المستخدم ليس لديه اي نبذة" if not user_bio else user_bio
-    rozrtba = (
-        "مطـور السـورس"
-        if user_id == 6373798952 or user_id == 1260465030
-        else ("العضـو")
-    )
-    rozrtba = (
-        "مـالك الـحساب"
-        if user_id == (await event.client.get_me()).id
-        and user_id != 6373798952
-        and user_id != 1260465030
-        else rozrtba
-    )
-    caption = " \n"
-    caption += f"<b>- الاسـم ⇜ </b> {full_name}\n"
-    caption += f"<b>- المـعـرف ⇜ </b> {username}\n"
-    caption += f"<b>- الايـدي  ⇜</b> <code>{user_id}</code>\n"
-    caption += f"<b>- الـمجموعات المشتـركة ⇜</b> {common_chat}\n"
-    caption += f"<b>- عـدد الصـورة ⇜</b> {replied_user_profile_photos_count}\n"
-    caption += f"<b>- الرتبـة ⇜</b>{rozrtba}\n"
-    caption += f"<b>-️ الـنبـذه ⇜</b> <code>{user_bio}</code>\n"
+    username = "@{}".format(username) if username else ("لا يـوجـد")
+    user_bio = "لا يـوجـد" if not user_bio else user_bio
+
+    zmsg = await bot.get_messages(event.chat_id, 0, from_user=user_id) #Code by T.me/RNRYR
+    drag = zmsg.total
+    if drag < 100: #Code by T.me/RNRYR
+        drage = "غير متفاعل 🥢"
+    elif drag > 200 and drag < 500:
+        drage = "ضعيف 🥢"
+    elif drag > 500 and drag < 700:
+        drage = "شد حيلك 🥢"
+    elif drag > 700 and drag < 1000:
+        drage = "ماشي الحال 🥢"
+    elif drag > 1000 and drag < 2000:
+        drage = "ملك التفاعل 🥢"
+    elif drag > 2000 and drag < 3000:
+        drage = "امبراطور التفاعل 🥢"
+    elif drag > 3000 and drag < 4000:
+        drage = "زعيم تفاعل 🥢"
+    else:
+        drage = "خاتم التفاعل 🥢"
+################# Dev matr #################
+    if user_id in mat: #Code by T.me/RNRYR
+        rotbat = "مطـور السـورس" 
+    elif user_id in matrixr_dev:
+        rotbat = "مـطـور الـثانـوي" 
+    elif user_id == (await event.client.get_me()).id and user_id not in matrix_dev:
+        rotbat = "مـالك الحساب 𓀫" 
+    else:
+        rotbat = "العضـو"
+################# Dev matr #################
+    MATRIX_TEXT = gvarstatus("CUSTOM_ALIVE_TEXT") or "معلـومات حـسابك من بـوت ماتـركس 🥢"  #Code by T.me/RNRYR
+    AHMED = gvarstatus("CUSTOM_ALIVE_EMOJI") or "✦ " #Code by T.me/RNRYR
+    AHME = gvarstatus("CUSTOM_ALIVE_FONT") or "✦┅━╍━╍╍━━╍━━╍━┅✦" #Code by T.me/RNRYR
+    caption = f"<b> {MATRIX_TEXT} </b>\n"
+    caption += f"ٴ<b>{AHME}</b>\n"
+    caption += f"<b>{AHMED}الاسـم    ⇠ </b> "
+    caption += f'<a href="tg://user?id={user_id}">{full_name}</a>'
+    caption += f"\n<b>{AHMED}المعـرف  ⇠  {username}</b>"
+    caption += f"\n<b>{AHMED}الايـدي   ⇠ </b> <code>{user_id}</code>\n"
+    caption += f"<b>{AHMED}الرتبـــه   ⇠ {rotbat} </b>\n" #Code by T.me/RNRYR
+    if matr == True or user_id in mat: #Code by T.me/RNRYR
+        caption += f"<b>{AHMED}الحسـاب ⇠  بـريميـوم</b>\n"
+    caption += f"<b>{AHMED}الصـور    ⇠</b>  {replied_user_profile_photos_count}\n"
+    caption += f"<b>{AHMED}الرسائل   ⇠</b>  {drag} \n" #Code by T.me/RNRYR
+    caption += f"<b>{AHMED}التفاعل   ⇠</b>  {drage}\n" #Code by T.me/RNRYR
+    if user_id != (await event.client.get_me()).id: #Code by T.me/RNRYR
+        caption += f"<b>{AHMED}الـمجموعات المشتـركة ⇠  {common_chat}</b>\n"
+    caption += f"<b>{AHMED}البايـو     ⇠  {user_bio}</b>\n"
+    caption += f"ٴ<b>{AHME}</b>"
     return photo, caption
 
 
-@dragoiq.ar_cmd(pattern="ايدي(?: |$)(.*)")
+@dragoiq.ar_cmd(
+    pattern="ايدي(?: |$)(.*)",
+    command=("ايدي", plugin_category),
+    info={
+        "header": "لـ عـرض معلومـات الشخـص",
+        "الاستـخـدام": " {tr}ايدي بالـرد او {tr}ايدي + معـرف/ايـدي الشخص",
+    },
+)
 async def who(event):
-    roz = await edit_or_reply(event, "**⌔∮ جار التعرف على المستخدم انتظر قليلا**")
+    "Gets info of an user"
+    zed = await edit_or_reply(event, "⇆")
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     replied_user = await get_user_from_event(event)
     try:
         photo, caption = await fetch_info(replied_user, event)
-    except AttributeError:
-        return await edit_or_reply(
-            roz, "**⌔∮ لم يتم العثور على معلومات لهذا المستخدم **"
-        )
+    except (AttributeError, TypeError):
+        return await edit_or_reply(zed, "**- لـم استطـع العثــور ع الشخــص ؟!**")
     message_id_to_reply = event.message.reply_to_msg_id
     if not message_id_to_reply:
         message_id_to_reply = None
@@ -124,22 +176,29 @@ async def who(event):
         )
         if not photo.startswith("http"):
             os.remove(photo)
-        await roz.delete()
+        await zed.delete()
     except TypeError:
-        await roz.edit(caption, parse_mode="html")
+        await zed.edit(caption, parse_mode="html")
 
-@dragoiq.ar_cmd(pattern="ا(?: |$)(.*)")
+
+@dragoiq.ar_cmd(
+    pattern="ا(?: |$)(.*)",
+    command=("ا", plugin_category),
+    info={
+        "header": "امـر مختصـر لـ عـرض معلومـات الشخـص",
+        "الاستـخـدام": " {tr}ا بالـرد او {tr}ا + معـرف/ايـدي الشخص",
+    },
+)
 async def who(event):
-    roz = await edit_or_reply(event, "**⌔∮ جار التعرف على المستخدم انتظر قليلا**")
+    "Gets info of an user"
+    zed = await edit_or_reply(event, "⇆")
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     replied_user = await get_user_from_event(event)
     try:
         photo, caption = await fetch_info(replied_user, event)
-    except AttributeError:
-        return await edit_or_reply(
-            roz, "**⌔∮ لم يتم العثور على معلومات لهذا المستخدم **"
-        )
+    except (AttributeError, TypeError):
+        return await edit_or_reply(zed, "**- لـم استطـع العثــور ع الشخــص ؟!**")
     message_id_to_reply = event.message.reply_to_msg_id
     if not message_id_to_reply:
         message_id_to_reply = None
@@ -155,17 +214,100 @@ async def who(event):
         )
         if not photo.startswith("http"):
             os.remove(photo)
-        await roz.delete()
+        await zed.delete()
     except TypeError:
-        await roz.edit(caption, parse_mode="html")
-        
+        await zed.edit(caption, parse_mode="html")
 
-@dragoiq.ar_cmd(pattern="رابط الحساب(?:\s|$)([\s\S]*)")
-async def permalink(mention):
-    user, custom = await get_user_from_event(mention)
-    if not user:
-        return
-    if custom:
-        return await edit_or_reply(mention, f"[{custom}](tg://user?id={user.id})")
-    tag = user.first_name.replace("\u2060", "") if user.first_name else user.username
-    await edit_or_reply(mention, f"[{tag}](tg://user?id={user.id})  ")
+
+@dragoiq.ar_cmd(pattern=f"{ZIDA}(?: |$)(.*)")
+async def hwo(event):
+    zed = await edit_or_reply(event, "⇆")
+    if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
+        os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
+    replied_user = await get_user_from_event(event)
+    try:
+        photo, caption = await fetch_info(replied_user, event)
+    except (AttributeError, TypeError):
+        return await edit_or_reply(zed, "**- لـم استطـع العثــور ع الشخــص ؟!**")
+    message_id_to_reply = event.message.reply_to_msg_id
+    if not message_id_to_reply:
+        message_id_to_reply = None
+    try:
+        await event.client.send_file(
+            event.chat_id,
+            photo,
+            caption=caption,
+            link_preview=False,
+            force_document=False,
+            reply_to=message_id_to_reply,
+            parse_mode="html",
+        )
+        if not photo.startswith("http"):
+            os.remove(photo)
+        await zed.delete()
+    except TypeError:
+        await zed.edit(caption, parse_mode="html")
+
+
+@dragoiq.ar_cmd(
+    pattern="صورته(?:\s|$)([\s\S]*)",
+    command=("صورته", plugin_category),
+    info={
+        "header": "لـ جـلب بـروفـايـلات الشخـص",
+        "الاستـخـدام": [
+            "{tr}صورته + عدد",
+            "{tr}صورته الكل",
+            "{tr}صورته",
+        ],
+    },
+)
+async def potocmd(event):
+    "To get user or group profile pic"
+    uid = "".join(event.raw_text.split(maxsplit=1)[1:])
+    user = await event.get_reply_message()
+    chat = event.input_chat
+    if user and user.sender:
+        photos = await event.client.get_profile_photos(user.sender)
+        u = True
+    else:
+        photos = await event.client.get_profile_photos(chat)
+        u = False
+    if uid.strip() == "":
+        uid = 1
+        if int(uid) > (len(photos)):
+            return await edit_delete(
+                event, "**- لا يـوجـد هنـاك صـور لهـذا الشخـص ؟! **"
+            )
+        send_photos = await event.client.download_media(photos[uid - 1])
+        await event.client.send_file(event.chat_id, send_photos)
+    elif uid.strip() == "الكل":
+        if len(photos) > 0:
+            await event.client.send_file(event.chat_id, photos)
+        else:
+            try:
+                if u:
+                    photo = await event.client.download_profile_photo(user.sender)
+                else:
+                    photo = await event.client.download_profile_photo(event.input_chat)
+                await event.client.send_file(event.chat_id, photo)
+            except Exception:
+                return await edit_delete(event, "**- لا يـوجـد هنـاك صـور لهـذا الشخـص ؟! **")
+    else:
+        try:
+            uid = int(uid)
+            if uid <= 0:
+                await edit_or_reply(
+                    event, "**- رقـم خـاطـئ . . .**"
+                )
+                return
+        except BaseException:
+            await edit_or_reply(event, "**- رقـم خـاطـئ . . .**")
+            return
+        if int(uid) > (len(photos)):
+            return await edit_delete(
+                event, "**- لا يـوجـد هنـاك صـور لهـذا الشخـص ؟! **"
+            )
+
+        send_photos = await event.client.download_media(photos[uid - 1])
+        await event.client.send_file(event.chat_id, send_photos)
+    await event.delete()
