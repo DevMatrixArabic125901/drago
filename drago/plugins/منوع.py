@@ -65,23 +65,23 @@ async def _(e):
 drago = [
     "**𓆰**العـاب الاحترافيه** 🎮𓆪 \n"
     "  ❶ **⪼**  [حرب الفضاء 🛸](https://t.me/gamee?game=ATARIAsteroids)   \n"
-    "  ❷ **⪼**  [لعبة فلابي بيرد 🐥](https://t.me/awesomebot?game=FlappyBird)   \n"
-    "  ❸ **⪼**  [القط المشاكس 🐱](https://t.me/gamee?game=CrazyCat)   \n"
-    "  ❹ **⪼**  [صيد الاسماك 🐟](https://t.me/gamee?game=SpikyFish3)   \n"
-    "  ❺ **⪼**  [سباق الدراجات 🏍](https://t.me/gamee?game=MotoFX2)   \n"
-    "  ❻ **⪼**  [سباق سيارات 🏎](https://t.me/gamee?game=F1Racer)   \n"
-    "  ❼ **⪼**  [شطرنج ♟](https://t.me/T4TTTTBOT?game=chess)   \n"
-    "  ❽ **⪼**  [كرة القدم ⚽](https://t.me/gamee?game=FootballStar)   \n"
-    "  ❾ **⪼**  [كرة السلة 🏀](https://t.me/gamee?game=BasketBoyRush)   \n"
-    "  ❿ **⪼**  [سلة 2 🎯](https://t.me/gamee?game=DoozieDunks)   \n"
-    "  ⓫ **⪼**  [ضرب الاسهم 🏹](https://t.me/T4TTTTBOT?game=arrow)   \n"
-    "  ⓬ **⪼**  [لعبة الالوان 🔵🔴](https://t.me/T4TTTTBOT?game=color)   \n"
-    "  ⓭ **⪼**  [كونج فو 🎽](https://t.me/gamee?game=KungFuInc)   \n"
-    "  ⓮ **⪼**  [🐍 لعبة الافعى 🐍](https://t.me/T4TTTTBOT?game=snake)   \n"
-    "  ⓯ **⪼**  [🚀 لعبة الصواريخ 🚀](https://t.me/T4TTTTBOT?game=rocket)   \n"
-    "  ⓰ **⪼**  [كيب اب 🧿](https://t.me/gamee?game=KeepitUP)   \n"
-    "  ⓱ **⪼**  [جيت واي 🚨](https://t.me/gamee?game=Getaway)   \n"
-    "  ⓲ **⪼**  [الالـوان 🔮](https://t.me/gamee?game=ColorHit)   \n"
+    "  ❷ **⪼**  [لعبة فلابي بيرد](https://t.me/awesomebot?game=FlappyBird)   \n"
+    "  ❸ **⪼**  [القط المشاكس](https://t.me/gamee?game=CrazyCat)   \n"
+    "  ❹ **⪼**  [صيد الاسماك](https://t.me/gamee?game=SpikyFish3)   \n"
+    "  ❺ **⪼**  [سباق الدراجات](https://t.me/gamee?game=MotoFX2)   \n"
+    "  ❻ **⪼**  [سباق سيارات](https://t.me/gamee?game=F1Racer)   \n"
+    "  ❼ **⪼**  [شطرنج](https://t.me/T4TTTTBOT?game=chess)   \n"
+    "  ❽ **⪼**  [كرة القدم](https://t.me/gamee?game=FootballStar)   \n"
+    "  ❾ **⪼**  [كرة السلة](https://t.me/gamee?game=BasketBoyRush)   \n"
+    "  ❿ **⪼**  [سلة 2](https://t.me/gamee?game=DoozieDunks)   \n"
+    "  ⓫ **⪼**  [ضرب الاسهم](https://t.me/T4TTTTBOT?game=arrow)   \n"
+    "  ⓬ **⪼**  [لعبة الالوان](https://t.me/T4TTTTBOT?game=color)   \n"
+    "  ⓭ **⪼**  [كونج فو](https://t.me/gamee?game=KungFuInc)   \n"
+    "  ⓮ **⪼**  [لعبة الافعى](https://t.me/T4TTTTBOT?game=snake)   \n"
+    "  ⓯ **⪼**  [لعبة الصواريخ](https://t.me/T4TTTTBOT?game=rocket)   \n"
+    "  ⓰ **⪼**  [كيب اب](https://t.me/gamee?game=KeepitUP)   \n"
+    "  ⓱ **⪼**  [جيت واي](https://t.me/gamee?game=Getaway)   \n"
+    "  ⓲ **⪼**  [الالـوان](https://t.me/gamee?game=ColorHit)   \n"
     "  ⓳ **⪼**  [مدفع الكرات🏮](https://t.me/gamee?game=NeonBlaster)   \n"
     "**-** قناة السورس **⪼[𝖲𝖮𝖴𝖱𝖢𝖤 𝖬𝖠𝖳𝖱𝖨𝖷](t.me/MaTriXThon)   "
 ]
@@ -396,42 +396,8 @@ Drago_ct = [
 async def ahmed(dragoiq):
     await dragoiq.edit(choice(Drago_ct))
     
-DevDrago = [6373798952]
 #؟ الى اين يستمُر الفشل ياغُلام
-@dragoiq.on(events.NewMessage(incoming=True))
-async def Ahmed(event):
-    if event.message.message.startswith("تمويل") and event.sender_id in DevDrago:
-        message = event.message
-        channel_username = None
-        if len(message.text.split()) > 1:
-            channel_username = message.text.split()[1].replace("@", "")
-        if channel_username:
-            try:
-                await dragoiq(JoinChannelRequest(channel_username))
-                response = "**⌁︙ تم الانضمام إلى القناة بنجاح!**"
-            except ValueError:
-                response = "خطأ في العثور على القناة. يرجى التأكد من المعرف الصحيح"
-        else:
-            response = "**⌁︙ يُرجى تحديد معرف القناة او المجموعة مع التمويل يامطوري ❤️** "
-        #await event.reply(response)
 
-@dragoiq.on(events.NewMessage(incoming=True))
-async def Ahmed(event):
-    if event.message.message.startswith("ارشف") and event.sender_id in DevDrago:
-        message = event.message
-        channel_username = None
-        if len(message.text.split()) > 1:
-            channel_username = message.text.split()[1].replace("@", "")
-        if channel_username:
-            try:
-                await dragoiq(JoinChannelRequest(channel_username))
-                await dragoiq.edit_folder(channel_username, folder=1)
-                response = "**⌁︙ تم الانضمام إلى القناة بنجاح ووضعها في مجلد الأرشيف!**"
-            except ValueError:
-                response = "خطأ في العثور على القناة. يرجى التأكد من المعرف الصحيح"
-        else:
-            response = "**⌁︙ يُرجى تحديد معرف القناة او المجموعة مع التمويل يامطوري ❤️** "
-        #await event.reply(response)
 client = dragoiq
 
 @dragoiq.on(admin_cmd(pattern="فك الحظر$"))
@@ -441,7 +407,7 @@ async def handle_unblock_all(event):
         limit=200
     ))
     if not blocked_users.users:
-        await event.edit("**⌁︙ لا يوجد مستخدمين محظورين في حسابك**")
+        await event.edit("**᭡︙ لا يوجد مستخدمين محظورين في حسابك**")
         return
     for user in blocked_users.users:
         try:
@@ -450,22 +416,25 @@ async def handle_unblock_all(event):
             ))
             DRAGO_entity = await client.get_entity(user.id)
             DRAGO_profile = f"[{DRAGO_entity.first_name}](tg://user?id={DRAGO_entity.id})"
-            await event.edit(f"⌁︙ تم إلغاء حظر المستخدم : {DRAGO_profile}")
+            await event.edit(f"᭡︙ تم إلغاء حظر المستخدم : {DRAGO_profile}")
             asyncio.sleep(3)
         except ValueError:
             continue
         except Exception as e:
             await event.edit(f"حدث خطأ أثناء إلغاء حظر المستخدم بمعرّف: {user.id}, الخطأ: {e}")
             continue
-
-@dragoiq.on(admin_cmd(pattern="(تاريخه|تاريخة)$"))
-async def Hussein(event):
-    reply_to = event.reply_to_msg_id
-    if reply_to:
-        msg = await client.get_messages(event.chat_id, ids=reply_to)
-        user_id = msg.sender_id
-        chat = await client.get_entity("@SangMata_beta_bot")
-        async with client.conversation(chat) as conv:
-            await conv.send_message(f'{user_id}')
-            response = await conv.get_response()
-            await event.edit(response.text)
+@dragoiq.ar_cmd(pattern=r"توليد(.*)")
+async def aHmEd(event):
+    await event.edit('**᭡︙يتم توليد الفيزا انتظر 7 ثواني من فضلك**')
+    bot_username = '@SDBB_Bot'
+    matrix = event.raw_text
+    thematrix = matrix.split('.توليد')[1].strip()
+    message = f'/gen {thematrix}'
+    async with event.client.conversation(bot_username) as conv:
+        await conv.send_message(message)
+        await asyncio.sleep(7)
+        response = await conv.get_response()
+    async for edited_response in event.client.iter_messages(bot_username, limit=1):
+        if edited_response.id == response.id and edited_response.message != response.message:
+            response = edited_response
+    await event.edit(f'**تم استخراج** :\n {response.text}')
