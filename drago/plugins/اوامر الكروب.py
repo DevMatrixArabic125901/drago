@@ -199,8 +199,7 @@ async def rm_deletedacc(show):
         show, "᭡︙ جاري حذف الحسابات المحذوفة"
     )
     del_u = 0
-    del_a = 0
-    async for user in show.client.iter_participants(show.chat_id):
+    del_a = 0    async for user in show.client.iter_participants(show.chat_id):
         if user.deleted:
             try:
                 await show.client.kick_participant(show.chat_id, user.id)
@@ -224,59 +223,6 @@ async def rm_deletedacc(show):
             \n{del_status}\
             \nالـدردشة: {show.chat.title}(`{show.chat_id}`)",
         )
-
-@dragoiq.ar_cmd(
-    pattern="المشرفين(?:\s|$)([\s\S]*)",
-    command=("المالك", plugin_category),
-    info={
-        "header": "To get list of admins.",
-        "description": "Will show you the list of admins and if you use this in group then will tag them.",
-        "usage": [
-            "{tr}admins <username/userid>",
-            "{tr}admins <in group where you need>",
-        ],
-        "examples": "{tr}المشرفين + معرف او رابط المجموعه",
-    },
-)
-async def _(event):
-    "To get list of admins."
-    mentions = "**᭡︙المشرفين والمالك في هذه المجموعة** \n"
-    reply_message = await reply_id(event)
-    input_str = event.pattern_match.group(1)
-    to_write_chat = await event.get_input_chat()
-    chat = None
-    if input_str:
-        mentions = f"**᭡︙المشرفين في {input_str}** \n"
-        try:
-            chat = await event.client.get_entity(input_str)
-        except Exception as e:
-            return await edit_delete(event, str(e))
-    else:
-        chat = to_write_chat
-        if not event.is_group:
-            return await edit_or_reply(event, "هل أنت متأكد من أن هذه مجموعة؟")
-    try:
-        async for x in event.client.iter_participants(
-            chat, filter=ChannelParticipantsAdmins
-        ):
-            if not x.deleted and isinstance(x.participant, ChannelParticipantCreator):
-                mentions += "\n᭡︙المالك [{}](tg://user?id={}) `{}`".format(
-                    x.first_name, x.id, x.id
-                )
-        mentions += "\n"
-        async for x in event.client.iter_participants(
-            chat, filter=ChannelParticipantsAdmins
-        ):
-            if x.deleted:
-                mentions += "\n `{}`".format(x.id)
-            elif isinstance(x.participant, ChannelParticipantAdmin):
-                mentions += "\n ⪼ [{}](tg://user?id={}) `{}`".format(
-                    x.first_name, x.id, x.id
-                )
-    except Exception as e:
-        mentions += f" {str(e)}" + "\n"
-    await event.client.send_message(event.chat_id, mentions, reply_to=reply_message)
-    await event.delete()
     
 @dragoiq.ar_cmd(
     pattern="احصائيات الاعضاء ?([\s\S]*)",
