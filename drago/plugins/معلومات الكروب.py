@@ -31,26 +31,26 @@ plugin_category = "utils"
 
 @dragoiq.ar_cmd(
     pattern="المشرفين(?: |$)(.*)",
-    command=("المشرفين", plugin_category),
+    command=("المالك", plugin_category),
     info={
-        "header": "لإظهـار قائمـة المشرفيـن  ✪",
-        "description": "⌁︙سيظهـر لك قائمـة المشرفيـن، وإذا ڪنت تستخـدم هـذا الأمـر في مجموعـة عندهـا سيتـم عمـل تـاك لهـم",
+        "header": "᭡︙لإظهـار قائمـة المشرفيـن",
+        "description": "᭡︙سيظهـر لك قائمـة المشرفيـن، وإذا ڪنت تستخـدم هـذا الأمـر في مجموعـة عندهـا سيتـم عمـل تـاك لهـم",
         "usage": [
-            "{tr}المشرفيـن +إسم المستخـدم/معرّف المستخـدم> ✪",
-            "{tr}المشرفيـن + في المجموعـة التي تريدهـا> ✪",
+            "᭡︙{tr}المشرفيـن +إسم المستخـدم/معرّف المستخـدم>",
+            "᭡︙{tr}المشرفيـن + في المجموعـة التي تريدهـا>",
         ],
         "examples": "{tr}المشرفين @dragoiq",
     },
 )
 async def _(event):
-    "لإظهـار قائمـة المشرفيـن  ✪"
-    mentions = "**⌁︙ مشرفيـن هـذه المجموعـة  ✪**: \n"
+    "᭡︙لإظهـار قائمـة المشرفيـن"
+    mentions = "**᭡︙مشرفيـن هـذه المجموعـة**: \n"
     reply_message = await reply_id(event)
     input_str = event.pattern_match.group(1)
     to_write_chat = await event.get_input_chat()
     chat = None
     if input_str:
-        mentions = f"**⌁︙مشرفيـن فـي → :** {input_str} **مـن المجموعـات ⌂ :** \n"
+        mentions = f"**᭡︙مشرفيـن فـي → :** {input_str} **مـن المجموعـات** \n"
         try:
             chat = await event.client.get_entity(input_str)
         except Exception as e:
@@ -58,7 +58,7 @@ async def _(event):
     else:
         chat = to_write_chat
         if not event.is_group:
-            return await edit_or_reply(event, "**⌁︙ هـذه ليسـت مجموعـة ✕**")
+            return await edit_or_reply(event, "**᭡︙هـذه ليسـت مجموعة**")
     try:
         async for x in event.client.iter_participants(
             chat, filter=ChannelParticipantsAdmins
@@ -98,13 +98,13 @@ async def _(event):
     },
 )
 async def _(event):
-    "⌁︙ لإظهـار قائمـة البوتـات 🝰"
-    mentions = "**⌁︙ البـوتات في هذه الـمجموعة 🝰 : ** \n"
+    "᭡︙لإظهـار قائمـة البوتـات 🝰"
+    mentions = "**᭡︙البـوتات في هذه الـمجموعة 🝰 : ** \n"
     input_str = event.pattern_match.group(1)
     if not input_str:
         chat = await event.get_input_chat()
     else:
-        mentions = "**⌁︙ البوتـات في {} من المجموعات 🝰 : ** \n".format(input_str)
+        mentions = "**᭡︙البوتـات في {} من المجموعات 🝰 : ** \n".format(input_str)
         try:
             chat = await event.client.get_entity(input_str)
         except Exception as e:
@@ -130,9 +130,9 @@ async def _(event):
     pattern="الاعضاء(?: |$)(.*)",
     command=("الاعضاء", plugin_category),
     info={
-        "header": "⌁︙لإظهـار قائمـة الأعضـاء 𖤍",
-        "description": "⌁︙سيظهـر لك قائمـة الأعضـاء 𖤍",
-        "note": "⌁︙هناك حـدّ في هـذا، لايمڪنك الحصـول على أڪثر من 10 آلاف عضـو ꉩ",
+        "header": "᭡︙لإظهـار قائمـة الأعضـاء 𖤍",
+        "description": "᭡︙سيظهـر لك قائمـة الأعضـاء 𖤍",
+        "note": "᭡︙هناك حـدّ في هـذا، لايمڪنك الحصـول على أڪثر من 10 آلاف عضـو ꉩ",
         "usage": [
             "{tr}الأعضاء + إسم المستخـدم/معرّف المستخـدم",
             "{tr}الأعضاء + في المجموعـة التي تريدهـا",
@@ -140,25 +140,25 @@ async def _(event):
     },
 )
 async def get_users(show):
-    "⌁︙ لإظهـار قائمـة الأعضـاء 𖤍"
+    "᭡︙لإظهـار قائمـة الأعضـاء 𖤍"
     mentions = "**مستخدمين هذه المجموعة**: \n"
     await reply_id(show)
     input_str = show.pattern_match.group(1)
     if input_str:
-        mentions = "**⌁︙ الأعضاء في {} من المجموعات 𖤍  :** \n".format(input_str)
+        mentions = "**᭡︙الأعضاء في {} من المجموعات 𖤍  :** \n".format(input_str)
         try:
             chat = await show.client.get_entity(input_str)
         except Exception as e:
             return await edit_delete(show, f"`{str(e)}`", 10)
     else:
         if not show.is_group:
-            return await edit_or_reply(show, "**⌁︙ هـذه ليسـت مجموعـة ✕**")
-    catevent = await edit_or_reply(show, "**⌁︙ جـاري سحـب قائمـة معرّفـات الأعضـاء 🝛**")
+            return await edit_or_reply(show, "**᭡︙هـذه ليسـت مجموعـة ✕**")
+    catevent = await edit_or_reply(show, "**᭡︙جـاري سحـب قائمـة معرّفـات الأعضـاء 🝛**")
     try:
         if show.pattern_match.group(1):
             async for user in show.client.iter_participants(chat.id):
                 if user.deleted:
-                    mentions += f"\n**⌁︙ الحسـابات المحذوفـة ⌦** `{user.id}`"
+                    mentions += f"\n**᭡︙الحسـابات المحذوفـة** `{user.id}`"
                 else:
                     mentions += (
                         f"\n[{user.first_name}](tg://user?id={user.id}) `{user.id}`"
@@ -166,7 +166,7 @@ async def get_users(show):
         else:
             async for user in show.client.iter_participants(show.chat_id):
                 if user.deleted:
-                    mentions += f"\n**⌁︙ الحسـابات المحذوفـة ⌦** `{user.id}`"
+                    mentions += f"\n**᭡︙الحسـابات المحذوفـة** `{user.id}`"
                 else:
                     mentions += (
                         f"\n[{user.first_name}](tg://user?id={user.id}) `{user.id}`"
@@ -190,10 +190,10 @@ async def get_users(show):
     },
 )
 async def info(event):
-    "⌁︙ للحصـول على معلومـات المجموعـة 🝢"
+    "᭡︙للحصـول على معلومـات المجموعـة"
     if not event.is_group:
         return await edit_delete(event, "**لا يمكن استعمال الأمر سوى في المجموعات**")
-    catevent = await edit_or_reply(event, "**⌁︙يتـمّ جلـب معلومـات الدردشـة، إنتظـر ⅏**")
+    catevent = await edit_or_reply(event, "**᭡︙يتـمّ جلـب معلومـات الدردشـة، إنتظـر ⅏**")
     chat = await get_chatinfo(event, catevent)
     caption = await fetch_info(chat, event)
     try:
@@ -201,9 +201,9 @@ async def info(event):
     except Exception as e:
         if BOTLOG:
             await event.client.send_message(
-                BOTLOG_CHATID, f"**⌁︙ هنـاك خطـأ في معلومـات الدردشـة ✕ : **\n`{str(e)}`"
+                BOTLOG_CHATID, f"**᭡︙هنـاك خطـأ في معلومـات الدردشـة ✕ : **\n`{str(e)}`"
             )
-        await catevent.edit("**⌁︙ حـدث خـطأ مـا، يرجـى التحقق من الأمـر ⎌**")
+        await catevent.edit("**᭡︙حـدث خـطأ مـا، يرجـى التحقق من الأمـر ⎌**")
 
 
 async def get_chatinfo(event, catevent):
