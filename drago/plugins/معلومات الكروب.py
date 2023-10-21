@@ -394,10 +394,10 @@ async def fetch_info(chat, event):  # sourcery no-metrics
     if former_title is not None:  # Meant is the very first title
         caption += f"᭡︙ الإسم السابـق  : {former_title}\n"
     if username is not None:
-        caption += f"᭡︙ نـوع المجموعـة ⌂ : مجموعـة عامّـة  \n"
+        caption += f"᭡︙ نـوع المجموعـة : مجموعـة عامّـة  \n"
         caption += f"᭡︙ الرابـط  : \n {username}\n"
     else:
-        caption += f"᭡︙ نـوع المجموعـة ⌂ : مجموعـة عامّـة  \n"
+        caption += f"᭡︙ نـوع المجموعـة : مجموعـة عامّـة  \n"
     if creator_username is not None:
         caption += f"᭡︙ المالـك  :  {creator_username}\n"
     elif creator_valid:
@@ -408,7 +408,7 @@ async def fetch_info(chat, event):  # sourcery no-metrics
         caption += f"᭡︙ تاريـخ الإنشـاء  : \n <code>{created.date().strftime('%b %d, %Y')} - {created.time()}</code>\n"
     else:
         caption += f"᭡︙ الإنتـاج  :   <code>{chat_obj_info.date.date().strftime('%b %d, %Y')} - {chat_obj_info.date.time()}</code> {warn_emoji}\n"
-    caption += f"᭡︙آ يـدي قاعـدة البيانـات : {dc_id}\n"
+    caption += f"᭡︙ايـدي قاعـدة البيانـات : <code>{dc_id}</code>\n"
     if exp_count is not None:
         chat_level = int((1 + sqrt(1 + 7 * exp_count / 14)) / 2)
         caption += f"᭡︙ الأعضـاء : <code>{chat_level}</code>\n"
