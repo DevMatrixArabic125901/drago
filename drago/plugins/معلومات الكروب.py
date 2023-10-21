@@ -387,7 +387,7 @@ async def fetch_info(chat, event):  # sourcery no-metrics
         for _ in bots_list:
             bots += 1  
 
-    caption = "<b>᭡︙ معلومـات الدردشـة  🝢 :</b>\n"
+    caption = "<b>᭡︙ معلومـات الدردشـة :</b>\n"
     caption += f"᭡︙الآيـدي  : <code>{chat_obj_info.id}</code>\n"
     if chat_title is not None:
         caption += f"᭡︙ إسـم المجموعـة  :{chat_title}\n"
