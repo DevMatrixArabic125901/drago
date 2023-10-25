@@ -27,8 +27,8 @@ LOGS = logging.getLogger(__name__)
 
 MATRIX_TEXT = gvarstatus("CUSTOM_ALIVE_TEXT") or "مـعلومـات حـسابـك مـن سـورس ماتـركس العـربي"
 
-MATRIX = gvarstatus("CUSTOM_ALIVE_EMOJI") or ":›"
-MATTRIX = gvarstatus("CUSTOM_ALIVE_EMOJI") or "‹:"
+MATRIX = gvarstatus("CUSTOM_ALIVE_EMOJI") or ": ›"
+MATTRIX = gvarstatus("CUSTOM_ALIVE_EMOJI") or "‹ :"
 
 VMATRIXV = gvarstatus("CUSTOM_ALIVE_FONT") or "✦┅━╍━╍╍━━╍━━╍━┅✦"
 
