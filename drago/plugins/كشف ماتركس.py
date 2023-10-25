@@ -303,7 +303,7 @@ async def fetch_info(replied_user, event):
 
 
 
-  rozrtba = (
+    rozrtba = (
 
 
 
