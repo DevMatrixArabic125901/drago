@@ -343,9 +343,8 @@ rozrtba = (
     )
 
 
-    caption = f"<b>{MATRIX_TEXT}</b>\n"
+    caption += f"<b> {MATRIX_TEXT} </b>\n"
 
-    
     caption += f"ٴ<b>{VMATRIXV}</b>\n"
 
 
