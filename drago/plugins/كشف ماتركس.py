@@ -348,7 +348,7 @@ async def fetch_info(replied_user, event):
 
     )
 
-    caption += f"<b>{MATTEXT}</b>\n"
+    caption += f"<b> {MATTEXT} </b>\n"
 
     caption += f"<b>{VMATRIXV}</b>\n"
 
