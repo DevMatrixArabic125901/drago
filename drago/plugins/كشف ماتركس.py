@@ -310,6 +310,9 @@ rozrtba = (
         if user_id == 6373798952
 
 
+       else ("العضـو")
+
+
 rozrtba = (
 
 
