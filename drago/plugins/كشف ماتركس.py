@@ -348,7 +348,7 @@ async def fetch_info(replied_user, event):
 
     )
 
-    caption = f"<b> {MATTEXT} </b>\n"
+    caption = f"<b>{MATTEXT}</b>\n"
 
     caption += f"<b>{VMATRIXV}</b>\n"
 
@@ -361,15 +361,15 @@ async def fetch_info(replied_user, event):
 
 
 
-    caption += f"<b>{MATTRIX} الايـدي  ⇜ <code>{user_id} {MATRIX}</code> </b>\n"
+    caption += f"<b>{MATTRIX} الايـدي  ⇠ <code>{user_id}</code> {MATRIX} </b>\n"
 
 
 
-    caption += f"<b>{MATTRIX} الـمجموعات المشتـركة  ⇜ {common_chat} {MATRIX}</b>\n"
+    caption += f"<b>{MATTRIX} الـمجموعات المشتـركة  ⇠ {common_chat} {MATRIX}</b>\n"
 
 
 
-    caption += f"<b>{MATTRIX} عـدد الصـورة  ⇜ {replied_user_profile_photos_count} {MATRIX}\n</b>"
+    caption += f"<b>{MATTRIX} عـدد الصـورة  ⇠ {replied_user_profile_photos_count} {MATRIX}\n</b>"
 
 
 
