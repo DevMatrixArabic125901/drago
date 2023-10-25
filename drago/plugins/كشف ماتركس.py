@@ -27,17 +27,10 @@ LOGS = logging.getLogger(__name__)
 
 MATRIX_TEXT = gvarstatus("CUSTOM_ALIVE_TEXT") or "مـعلومـات حـسابـك مـن سـورس ماتـركس العـربي"
 
-MATRIX = gvarstatus("CUSTOM_ALIVE_EMOJI") or "🥢"
+MATRIX = gvarstatus("CUSTOM_ALIVE_EMOJI") or ":›"
+MATTRIX = gvarstatus("CUSTOM_ALIVE_EMOJI") or "‹:"
 
 VMATRIXV = gvarstatus("CUSTOM_ALIVE_FONT") or "✦┅━╍━╍╍━━╍━━╍━┅✦"
-
-matrixdev = (6373798952)
-
-matrixdev2 = (1260465030)
-
-matrixdevall = (6373798952, 1260465030)
-
-AHMED = gvarstatus("MT_MAT") or "MATR"
 
 async def get_user_from_event(event):
 
@@ -305,13 +298,53 @@ async def fetch_info(replied_user, event):
         imatrixi = "نار وشرار"
     else:
         imatrixi = "خاتم التفاعل"
+   
+    rozrtba = (
 
-    if user_id in matrixdev:
-      rotbat = "مطـور السورس"
-    elif user_id in matrixdev2:
-      rotbat = "الـمطور الثـانوي"
-    elif user_id == (await event.client.get_me()).id in matrixdevall:
-        rotbat = "مـالك الحساب 𓀫" 
+
+
+        "مطـور السـورس"
+
+
+
+        if user_id == 6373798952 or user_id == 1260465030
+
+
+
+        else ("العضـو")
+
+
+
+    )
+
+
+
+    rozrtba = (
+
+
+
+        "مـالك الـحساب"
+
+
+
+        if user_id == (await event.client.get_me()).id
+
+
+
+        and user_id != 6373798952
+
+
+
+        and user_id != 1260465030
+
+
+
+        else rozrtba
+
+
+
+    )
+
     else:
         rotbat = "العضـو"
 
@@ -320,37 +353,34 @@ async def fetch_info(replied_user, event):
     caption += f"ٴ<b>{VMATRIXV}</b>\n"
 
 
-    caption += f"<b>{MATRIX} الاسـم ⇜ </b> {full_name}\n"
+    caption += f"<b>{MATRIX} الاسـم ⇜ </b> {full_name} {MATTRIX}\n"
 
 
 
-    caption += f"<b>{MATRIX} المـعـرف ⇜ </b> {username}\n"
+    caption += f"<b>{MATRIX} المـعـرف ⇜ </b> {username} {MATTRIX}\n"
 
 
 
-    caption += f"<b>{MATRIX} الايـدي  ⇜</b> <code>{user_id}</code>\n"
+    caption += f"<b>{MATRIX} الايـدي  ⇜</b> <code>{user_id} {MATTRIX}</code>\n"
 
 
 
-    caption += f"<b>{MATRIX} الـمجموعات المشتـركة ⇜</b> {common_chat}\n"
+    caption += f"<b>{MATRIX} الـمجموعات المشتـركة ⇜</b> {common_chat} {MATTRIX}\n"
 
 
 
-    caption += f"<b>{MATRIX} عـدد الصـورة ⇜</b> {replied_user_profile_photos_count}\n"
+    caption += f"<b>{MATRIX} عـدد الصـورة ⇜</b> {replied_user_profile_photos_count} {MATTRIX}\n"
 
 
-    if vvmatrixvv == True or user_id in matrixdev:
-        caption += f"<b>{MATRIX}الحسـاب ⇠  بريمـيوم</b>\n"
 
-
-    caption += f"<b>{MATRIX} الرتبـة ⇠</b>{rotbat}\n"
+    caption += f"<b>{MATRIX} الرتبـة ⇠</b>{rozrtba} {MATTRIX}\n"
 
     
-    caption += f"<b>{MATRIX}التفاعل ⇠</b>{imatrixi}\n"
+    caption += f"<b>{MATRIX}التفاعل ⇠</b>{imatrixi} {MATTRIX}\n"
 
 
 
-    caption += f"<b>{MATRIX}️الـنبـذه ⇠</b>{user_bio}\n"
+    caption += f"<b>{MATRIX}️الـنبـذه ⇠</b>{user_bio} {MATTRIX}\n"
 
     
     caption += f"ٴ<b>{VMATRIXV}</b>\n"
@@ -614,125 +644,6 @@ async def who(event):
 
 
         
-
-@dragoiq.ar_cmd(pattern="{AHMED}(?: |$)(.*)")
-
-
-
-async def who(event):
-
-
-
-    roz = await edit_or_reply(event, "**⌔∮ جار التعرف على المستخدم انتظر قليلا**")
-
-
-
-    if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
-
-
-
-        os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
-
-
-
-    replied_user = await get_user_from_event(event)
-
-
-
-    try:
-
-
-
-        photo, caption = await fetch_info(replied_user, event)
-
-
-
-    except AttributeError:
-
-
-
-        return await edit_or_reply(
-
-
-
-            roz, "**⌔∮ لم يتم العثور على معلومات لهذا المستخدم **"
-
-
-
-        )
-
-
-
-    message_id_to_reply = event.message.reply_to_msg_id
-
-
-
-    if not message_id_to_reply:
-
-
-
-        message_id_to_reply = None
-
-
-
-    try:
-
-
-
-        await event.client.send_file(
-
-
-
-            event.chat_id,
-
-
-
-            photo,
-
-
-
-            caption=caption,
-
-
-
-            link_preview=False,
-
-
-
-            force_document=False,
-
-
-
-            reply_to=message_id_to_reply,
-
-
-
-            parse_mode="html",
-
-
-
-        )
-
-
-
-        if not photo.startswith("http"):
-
-
-
-            os.remove(photo)
-
-
-
-        await roz.delete()
-
-
-
-    except TypeError:
-
-
-
-        await roz.edit(caption, parse_mode="html")
-
 
 
 
