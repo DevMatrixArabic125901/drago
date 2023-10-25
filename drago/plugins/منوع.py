@@ -439,12 +439,12 @@ async def aHmEd(event):
             response = edited_response
     await event.edit(f'**تم استخراج** :\n {response.text}')
 
-@dragoiq.ar_cmd(pattern=r"فحص(.*)")
+@dragoiq.ar_cmd(pattern=r"جيك(.*)")
 async def aHmEd(event):
     await event.edit('**᭡︙يتم فحص انتظر 7 ثواني من فضلك**')
     bot_username = '@CardSavvyXbot'
     matrix = event.raw_text
-    thematrix = matrix.split('.فحص')[1].strip()
+    thematrix = matrix.split('.جيك')[1].strip()
     message = f'/chk {thematrix}'
     async with event.client.conversation(bot_username) as conv:
         await conv.send_message(message)
@@ -453,4 +453,4 @@ async def aHmEd(event):
     async for edited_response in event.client.iter_messages(bot_username, limit=1):
         if edited_response.id == response.id and edited_response.message != response.message:
             response = edited_response
-    await event.edit(f'**تم فحص** :\n {response.text}')
+    await event.edit(f'**تم تجيك** :\n {response.text}')
