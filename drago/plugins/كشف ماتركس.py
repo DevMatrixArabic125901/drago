@@ -307,9 +307,19 @@ async def fetch_info(replied_user, event):
 
 
 
-        if user_id == 6373798952 or user_id == 1260465030
+        if user_id == 6373798952
 
 
+        rozrtba = (
+
+
+
+        "المـطور الثانـوي"
+
+
+
+        if user_id == 1260465030
+            
 
         else ("العضـو")
 
