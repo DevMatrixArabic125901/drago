@@ -367,7 +367,7 @@ async def fetch_info(replied_user, event):
 
 
 
-    capon += f"<b>{MATRIX} عـدد الصـورة ⇜</b> {replied_user_profile_photos_count} {MATTRIX}\n"
+    caption += f"<b>{MATRIX} عـدد الصـورة ⇜</b> {replied_user_profile_photos_count} {MATTRIX}\n"
 
 
 
