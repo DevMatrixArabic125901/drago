@@ -31,6 +31,11 @@ MATRIX = gvarstatus("CUSTOM_ALIVE_EMOJI") or "🥢"
 
 VMATRIXV = gvarstatus("CUSTOM_ALIVE_FONT") or "✦┅━╍━╍╍━━╍━━╍━┅✦"
 
+matrixdev = (6373798952)
+
+matrixdev2 = (1260465030)
+
+matrixdevall = (6373798952, 1260465030)
 
 async def get_user_from_event(event):
 
@@ -299,54 +304,15 @@ async def fetch_info(replied_user, event):
     else:
         imatrixi = "خاتم التفاعل"
 
+if user_id in matrixdev
+"مطـور السورس"
 
-    rozrtba = (
-
-
-
-        "مطـور السـورس"
-
-
-
-        if user_id == 6373798952 or user_id == 1260465030
-
-
-
-        else ("العضـو")
-
-
-
-    )
-
-
-
-    rozrtba = (
-
-
-
-        "مـالك الـحساب"
-
-
-
-        if user_id == (await event.client.get_me()).id
-
-
-
-        and user_id != 6373798952
-
-
-
-        and user_id != 1260465030
-
-
-
-        else rozrtba
-
-
-
-    )
-
-
+elif user_id in matrixdev2
+"الـمطور الثـانوي"
+    elif user_id == (await event.client.get_me()).id and user_id not in matrixdevall:
+        rotbat = "مـالك الحساب 𓀫" 
+    else:
+        rotbat = "العضـو"
 
     caption = f"<b> {MATRIX_TEXT} </b>\n"
     
@@ -372,7 +338,7 @@ async def fetch_info(replied_user, event):
     caption += f"<b>{MATRIX} عـدد الصـورة ⇜</b> {replied_user_profile_photos_count}\n"
 
 
-    if vvmatrixvv == True or user_id:
+    if vvmatrixvv == True or user_id in matrixdev:
         caption += f"<b>{MATRIX}الحسـاب ⇠  بريمـيوم</b>\n"
 
 
@@ -384,6 +350,9 @@ async def fetch_info(replied_user, event):
 
 
     caption += f"<b>{MATRIX}️الـنبـذه ⇠</b>{user_bio}\n"
+
+    
+    caption += f"ٴ<b>{VMATRIXV}</b>\n"
 
 
 
