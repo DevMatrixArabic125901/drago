@@ -1,18 +1,9 @@
 import os
 
 
-
-
-
-
-
 from telethon.tl.functions.photos import GetUserPhotosRequest
 
-
-
 from telethon.tl.functions.users import GetFullUserRequest
-
-
 
 from telethon.tl.types import MessageEntityMentionName
 
@@ -20,34 +11,18 @@ from telethon.tl.types import MessageEntityMentionName
 
 
 
-
-
 from drago import dragoiq
-
-
 
 from drago.Config import Config
 
-
-
 from drago.core.logger import logging
-
-
 
 from drago.core.managers import edit_or_reply
 
 from ..sql_helper.globals import gvarstatus
 
 
-
-
-
-
-
 LOGS = logging.getLogger(__name__)
-
-
-
 
 
 MATRIX_TEXT = gvarstatus("CUSTOM_ALIVE_TEXT") or "مـعلومـات حـسابـك مـن سـورس ماتـركس العـربي"
@@ -398,17 +373,17 @@ async def fetch_info(replied_user, event):
 
 
     if vvmatrixvv == True or user_id in matrix: 
-        caption += f"<b>{MATRIX}الحسـاب ⇠  بـريميـوم</b>\n"
+        caption += f"<b>{MATRIX}الحسـاب ⇠  بريمـيوم</b>\n"
 
 
-    caption += f"<b>{MATRIX} الرتبـة ⇜</b>{rozrtba}\n"
+    caption += f"<b>{MATRIX} الرتبـة ⇠</b>{rozrtba}\n"
 
     
-    caption += f"<b>{MATRIX}الرسائل ⇜</b>{iimatrixii}\n"
+    caption += f"<b>{MATRIX}التفاعل ⇠</b>{imatrixi}\n"
 
 
 
-    caption += f"<b>{MATRIX}️ الـنبـذه ⇜</b> <code>{user_bio}</code>\n"
+    caption += f"<b>{MATRIX}️الـنبـذه ⇠</b>{user_bio}\n"
 
 
 
