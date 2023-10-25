@@ -339,10 +339,6 @@ rozrtba = (
 
 
 
-    )
-
-
-    caption += f"<b>مـعلومـات حـسابـك مـن سـورس ماتـركس العـربي</b>\n"
 
 
     caption += f"<b>{VMATRIXV}</b>\n"
