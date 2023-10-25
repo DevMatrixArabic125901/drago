@@ -299,7 +299,7 @@ async def fetch_info(replied_user, event):
     else:
         imatrixi = "خاتم التفاعل"
    
-    rozrtba = (
+rozrtba = (
 
 
 
@@ -310,7 +310,7 @@ async def fetch_info(replied_user, event):
         if user_id == 6373798952
 
 
-    rozrtba = (
+rozrtba = (
 
 
 
