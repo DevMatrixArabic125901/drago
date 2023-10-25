@@ -316,7 +316,7 @@ rozrtba = (
 
 
 
-    rozrtba = (
+rozrtba = (
 
 
 
