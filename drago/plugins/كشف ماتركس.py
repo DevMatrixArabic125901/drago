@@ -298,7 +298,7 @@ async def fetch_info(replied_user, event):
     else:
         imatrixi = "خاتم التفاعل"
    
-   rozrtba = (
+    rozrtba = (
 
 
 
