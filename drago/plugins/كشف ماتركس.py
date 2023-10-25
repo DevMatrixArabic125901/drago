@@ -403,7 +403,7 @@ async def fetch_info(replied_user, event):
     caption += f"<b>{MATRIX} الرتبـة ⇜</b>{rozrtba}\n"
 
     
-  caption += f"<b>الرسائل ⇜</b>{iimatrixii}\n"
+    caption += f"<b>{MATRIX}الرسائل ⇜</b>{iimatrixii}\n"
 
 
 
