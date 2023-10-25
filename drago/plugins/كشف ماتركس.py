@@ -309,8 +309,10 @@ rozrtba = (
 
         if user_id == 6373798952
 
+        else ("العضـو")
 
-       else ("العضـو")
+
+    )
 
 
 rozrtba = (
