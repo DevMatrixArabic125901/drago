@@ -305,13 +305,13 @@ async def fetch_info(replied_user, event):
         imatrixi = "خاتم التفاعل"
 
     if user_id in matrixdev:
-      rotbat != "مطـور السورس"
+      rotbat = "مطـور السورس"
     elif user_id in matrixdev2:
-      rotbat != "الـمطور الثـانوي"
-    elif user_id == (await event.client.get_me()).id and user_id not in matrixdevall:
-        rotbat != "مـالك الحساب 𓀫" 
+      rotbat = "الـمطور الثـانوي"
+    elif user_id == (await event.client.get_me()).id in matrixdevall:
+        rotbat = "مـالك الحساب 𓀫" 
     else:
-        rotbat != "العضـو"
+        rotbat = "العضـو"
 
     caption = f"<b> {MATRIX_TEXT} </b>\n"
     
