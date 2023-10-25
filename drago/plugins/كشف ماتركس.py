@@ -25,7 +25,6 @@ from ..sql_helper.globals import gvarstatus
 LOGS = logging.getLogger(__name__)
 
 
-MATRIX_TEXT = gvarstatus("CUSTOM_ALIVE_TEXT") or "مـعلومـات حـسابـك مـن سـورس ماتـركس العـربي"
 
 MATRIX = gvarstatus("CUSTOM_ALIVE_EMOJI") or ": ›"
 MATTRIX = gvarstatus("CUSTOM_ALIVE_EMOJI") or "‹ :"
@@ -343,9 +342,10 @@ rozrtba = (
     )
 
 
-    caption += f"<b> {MATRIX_TEXT} </b>\n"
+    caption += f"<b>مـعلومـات حـسابـك مـن سـورس ماتـركس العـربي</b>\n"
 
-    caption += f"ٴ<b>{VMATRIXV}</b>\n"
+
+    caption += f"<b>{VMATRIXV}</b>\n"
 
 
     caption += f"<b>{MATTRIX} الاسـم  ⇠ {full_name} {MATRIX}</b>\n"
@@ -378,7 +378,7 @@ rozrtba = (
     caption += f"<b>{MATTRIX} ️الـنبـذه  ⇠ {user_bio} {MATRIX}</b>\n"
 
     
-    caption += f"ٴ<b>{VMATRIXV}</b>\n"
+    caption += f"<b>{VMATRIXV}</b>\n"
 
 
 
