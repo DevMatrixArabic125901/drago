@@ -345,8 +345,6 @@ async def fetch_info(replied_user, event):
 
     )
 
-    else:
-        rotbat = "العضـو"
 
     caption = f"<b> {MATRIX_TEXT} </b>\n"
     
@@ -369,7 +367,7 @@ async def fetch_info(replied_user, event):
 
 
 
-    caption += f"<b>{MATRIX} عـدد الصـورة ⇜</b> {replied_user_profile_photos_count} {MATTRIX}\n"
+    capon += f"<b>{MATRIX} عـدد الصـورة ⇜</b> {replied_user_profile_photos_count} {MATTRIX}\n"
 
 
 
