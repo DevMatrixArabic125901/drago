@@ -27,7 +27,7 @@ LOGS = logging.getLogger(__name__)
 
 MATRIX_TEXT = gvarstatus("CUSTOM_ALIVE_TEXT") or "مـعلومـات حـسابـك مـن سـورس ماتـركس العـربي"
 
-MATRIX = gvarstatus("CUSTOM_ALIVE_EMOJI") or "🥢 "
+MATRIX = gvarstatus("CUSTOM_ALIVE_EMOJI") or "🥢"
 
 VMATRIXV = gvarstatus("CUSTOM_ALIVE_FONT") or "✦┅━╍━╍╍━━╍━━╍━┅✦"
 
@@ -372,7 +372,7 @@ async def fetch_info(replied_user, event):
     caption += f"<b>{MATRIX} عـدد الصـورة ⇜</b> {replied_user_profile_photos_count}\n"
 
 
-    if vvmatrixvv == True or user_id in matrix: 
+    if vvmatrixvv == True or user_id:
         caption += f"<b>{MATRIX}الحسـاب ⇠  بريمـيوم</b>\n"
 
 
