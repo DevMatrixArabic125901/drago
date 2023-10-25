@@ -36,6 +36,8 @@ from drago.core.logger import logging
 
 from drago.core.managers import edit_or_reply
 
+from ..sql_helper.globals import gvarstatus
+
 
 
 
@@ -49,7 +51,6 @@ LOGS = logging.getLogger(__name__)
 
 
 MATRIX_TEXT = gvarstatus("CUSTOM_ALIVE_TEXT") or "مـعلومـات حـسابـك مـن سـورس ماتـركس العـربي"
-
 
 MATRIX = gvarstatus("CUSTOM_ALIVE_EMOJI") or "🥢 "
 
