@@ -26,6 +26,7 @@ LOGS = logging.getLogger(__name__)
 
 
 
+MATTEXT = gvarstatus("CUSTOM_ALIVE_TEXT") or "مـعلومـات حـسابـك مـن سـورس ماتـركس العـربي"
 MATRIX = gvarstatus("CUSTOM_ALIVE_EMOJI") or ": ›"
 MATTRIX = gvarstatus("CUSTOM_ALIVE_EMOJI") or "‹ :"
 
@@ -298,7 +299,11 @@ async def fetch_info(replied_user, event):
     else:
         imatrixi = "خاتم التفاعل"
    
-    rozrtba = (
+
+
+
+
+  rozrtba = (
 
 
 
@@ -308,7 +313,10 @@ async def fetch_info(replied_user, event):
 
         if user_id == 6373798952
 
+
+
         else ("العضـو")
+
 
 
     )
@@ -331,7 +339,6 @@ async def fetch_info(replied_user, event):
 
 
 
-        and user_id != 1260465030
 
 
 
@@ -339,7 +346,9 @@ async def fetch_info(replied_user, event):
 
 
 
+    )
 
+    caption += f"<b>{MATTEXT}<b>\n"
 
     caption += f"<b>{VMATRIXV}</b>\n"
 
