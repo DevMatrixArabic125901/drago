@@ -341,7 +341,7 @@ async def fetch_info(replied_user, event):
         caption += f"<b>{MATRIX}الحسـاب ⇠  بريمـيوم</b>\n"
 
 
-    caption += f"<b>{MATRIX} الرتبـة ⇠</b>{rozrtba}\n"
+    caption += f"<b>{MATRIX} الرتبـة ⇠</b>{rotbat}\n"
 
     
     caption += f"<b>{MATRIX}التفاعل ⇠</b>{imatrixi}\n"
