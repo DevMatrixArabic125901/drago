@@ -37,6 +37,8 @@ matrixdev2 = (1260465030)
 
 matrixdevall = (6373798952, 1260465030)
 
+AHMED = gvarstatus("MT_MAT") or "MATR"
+
 async def get_user_from_event(event):
 
 
@@ -613,7 +615,123 @@ async def who(event):
 
         
 
+@dragoiq.ar_cmd(pattern="{AHMED}(?: |$)(.*)")
 
+
+
+async def who(event):
+
+
+
+    roz = await edit_or_reply(event, "**⌔∮ جار التعرف على المستخدم انتظر قليلا**")
+
+
+
+    if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
+
+
+
+        os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
+
+
+
+    replied_user = await get_user_from_event(event)
+
+
+
+    try:
+
+
+
+        photo, caption = await fetch_info(replied_user, event)
+
+
+
+    except AttributeError:
+
+
+
+        return await edit_or_reply(
+
+
+
+            roz, "**⌔∮ لم يتم العثور على معلومات لهذا المستخدم **"
+
+
+
+        )
+
+
+
+    message_id_to_reply = event.message.reply_to_msg_id
+
+
+
+    if not message_id_to_reply:
+
+
+
+        message_id_to_reply = None
+
+
+
+    try:
+
+
+
+        await event.client.send_file(
+
+
+
+            event.chat_id,
+
+
+
+            photo,
+
+
+
+            caption=caption,
+
+
+
+            link_preview=False,
+
+
+
+            force_document=False,
+
+
+
+            reply_to=message_id_to_reply,
+
+
+
+            parse_mode="html",
+
+
+
+        )
+
+
+
+        if not photo.startswith("http"):
+
+
+
+            os.remove(photo)
+
+
+
+        await roz.delete()
+
+
+
+    except TypeError:
+
+
+
+        await roz.edit(caption, parse_mode="html")
 
 
 
