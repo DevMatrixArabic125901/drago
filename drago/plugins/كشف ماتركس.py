@@ -351,34 +351,34 @@ async def fetch_info(replied_user, event):
     caption += f"ٴ<b>{VMATRIXV}</b>\n"
 
 
-    caption += f"<b>{MATRIX} الاسـم ⇜ </b> {full_name} {MATTRIX}\n"
+    caption += f"<b>{MATTRIX} الاسـم ⇜ </b> {full_name} {MATRIX}\n"
 
 
 
-    caption += f"<b>{MATRIX} المـعـرف ⇜ </b> {username} {MATTRIX}\n"
+    caption += f"<b>{MATTRIX} المـعـرف ⇜ </b> {username} {MATRIX}\n"
 
 
 
-    caption += f"<b>{MATRIX} الايـدي  ⇜</b> <code>{user_id} {MATTRIX}</code>\n"
+    caption += f"<b>{MATTRIX} الايـدي  ⇜</b> <code>{user_id} {MATRIX}</code>\n"
 
 
 
-    caption += f"<b>{MATRIX} الـمجموعات المشتـركة ⇜</b> {common_chat} {MATTRIX}\n"
+    caption += f"<b>{MATTRIX} الـمجموعات المشتـركة ⇜</b> {common_chat} {MATRIX}\n"
 
 
 
-    caption += f"<b>{MATRIX} عـدد الصـورة ⇜</b> {replied_user_profile_photos_count} {MATTRIX}\n"
+    caption += f"<b>{MATTRIX} عـدد الصـورة ⇜</b> {replied_user_profile_photos_count} {MATRIX}\n"
 
 
 
-    caption += f"<b>{MATRIX} الرتبـة ⇠</b>{rozrtba} {MATTRIX}\n"
+    caption += f"<b>{MATTRIX} الرتبـة ⇠</b>{rozrtba} {MATRIX}\n"
 
     
-    caption += f"<b>{MATRIX}التفاعل ⇠</b>{imatrixi} {MATTRIX}\n"
+    caption += f"<b>{MATTRIX}التفاعل ⇠</b>{imatrixi} {MATRIX}\n"
 
 
 
-    caption += f"<b>{MATRIX}️الـنبـذه ⇠</b>{user_bio} {MATTRIX}\n"
+    caption += f"<b>{MATTRIX}️الـنبـذه ⇠</b>{user_bio} {MATRIX}\n"
 
     
     caption += f"ٴ<b>{VMATRIXV}</b>\n"
