@@ -13,6 +13,12 @@ import emoji as catemoji
 from bs4 import BeautifulSoup as bs
 from PIL import Image
 from telethon import events
+from ..utils import is_admin
+from googletrans import Translator
+from telethon.sync import functions
+from telethon import events
+from ..sql_helper.globals import addgvar, delgvar, gvarstatus
+from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.stickers import SuggestShortNameRequest
 from telethon.tl import functions, types
