@@ -344,7 +344,7 @@ async def remove_iq(event):
         await event.client.send_file(event.chat_id,file,force_document=True,reply_to=message_id)
     await catevent.delete()
 
-@matrix.ar_cmd(pattern="فتح الزخرفة الانجليزية")
+@dragoiq.ar_cmd(pattern="فتح الزخرفة الانجليزية")
 async def zakrafaon(event):
     if not gvarstatus("enzakrafa"):
         addgvar("enzakrafa", "on")
@@ -394,7 +394,7 @@ async def zakrafarun(event):
             .replace("y", "𝗒")
             .replace("z", "ᴢ")        )
         await event.edit(uppercase_text)
-@matrix.ar_cmd(pattern="انشاء ?(.*)")
+@dragoiq.ar_cmd(pattern="انشاء ?(.*)")
 async def inshai(event):
     msg = event.text.split()
     username = msg[1]
