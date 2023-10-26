@@ -244,21 +244,6 @@ async def dragoiq(tgbot):
     TG_BOT_USERNAME = Config.TG_BOT_USERNAME
     await tgbot.reply(f"بوت ماتركس العربي الخاص بك : {TG_BOT_USERNAME}")
 
-@matrix.on(admin_cmd(pattern="تقويم ([\s\S]*)"))    
-async def _matrix(dragoiq):
-    input_str = matrix.pattern_match.group(1)
-    input_sgra = input_str.split(" ")
-    if len(input_sgra) != 2:
-        return await edit_delete(matrix, "تصحيح قم بكتابه الأمر : `.تقويم السنه الشهر ", 5` )
-
-    matrix = input_sgra[0]
-    mm = input_sgra[1]
-    try:
-        output_result = calendar.month(int(matrix.strip()), int(mm.strip()))
-        await edit_or_reply(dragoiq, f"{output_result}")
-    except Exception as e:
-        await edit_delete(dragoiq, f"                                              خطأ :\n{str(e)}                       ", 5)
-
 @dragoiq.on(admin_cmd(pattern="ضفدع(?:\s|$)([\s\S]*)"))    
 async def honk(event):
     "Make honk say anything."
