@@ -1,14 +1,49 @@
-from drago import dragoiq
 import pkg_resources
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.utils import reply_id, parse_pre, yaml_format, install_pip, get_user_from_event, _format
-from ..Config import Config
+import re
+import asyncio
+import calendar
 import json
-import requests
 import os
+from telethon import events
+from asyncio.exceptions import TimeoutError
+from telethon.errors.rpcerrorlist import YouBlockedUserError
+from telethon.tl.functions.messages import ExportChatInviteRequest
+from matrix import matrix
+from ..core.managers import edit_delete, edit_or_reply
+from ..helpers import get_user_from_event, sanga_seperator
+from bs4 import BeautifulSoup
+from ..helpers.utils import _format
+from datetime import datetime
+from urllib.parse import quote
+import barcode
+import qrcode
+import requests
+from barcode.writer import ImageWriter
+from bs4 import BeautifulSoup
+from PIL import Image, ImageColor
+from telethon.errors.rpcerrorlist import YouBlockedUserError
+from drago import dragoiq
+from ..Config import Config
+from ..core.logger import logging
+from ..core.managers import edit_delete, edit_or_reply
+from dragoiq.utils import admin_cmd
+from ..helpers import AioHttp
+from ..helpers.utils import _catutils, _format, reply_id
+
+LOGS = logging.getLogger(__name__)
+IQMOG = re.compile(
+    "[" 
+    "\U0001F1E0-\U0001F1FF"      "\U0001F300-\U0001F5FF"      "\U0001F600-\U0001F64F"   "\U0001F680-\U0001F6FF"  
+    "\U0001F700-\U0001F77F"      "\U0001F780-\U0001F7FF"      "\U0001F800-\U0001F8FF"     "\U0001F900-\U0001F9FF"      "\U0001FA00-\U0001FA6F"  
+    "\U0001FA70-\U0001FAFF"      "\U00002702-\U000027B0"      
+    "]+")
+
+def iqtfy(inputString: str) -> str:
+    return re.sub(IQMOG, "", inputString)
 
 plugin_category = "tools"
-
 
 @dragoiq.ar_cmd(pattern="المكاتب")
 async def ahmed(event):
@@ -145,3 +180,25 @@ async def _(event):
             await dragoiq.delete()
     except TimeoutError:
         return await matrix.edit("**خـطأ**") 
+
+@dragoiq.on(admin_cmd(pattern="بوتي$"))
+async def dragoiq(tgbot):
+    TG_BOT_USERNAME = Config.TG_BOT_USERNAME
+    await tgbot.reply(f"بوت ماتركس العربي الخاص بك : {TG_BOT_USERNAME}")
+
+@matrix.on(admin_cmd(pattern="تقويم ([\s\S]*)"))    
+async def _matrix(dragoiq):
+    input_str = matrix.pattern_match.group(1)
+    input_sgra = input_str.split(" ")
+    if len(input_sgra) != 2:
+        return await edit_delete(matrix, "تصحيح قم بكتابه الأمر : `.تقويم السنه الشهر ", 5` )
+
+    matrix = input_sgra[0]
+    mm = input_sgra[1]
+    try:
+        output_result = calendar.month(int(matrix.strip()), int(mm.strip()))
+        await edit_or_reply(dragoiq, f"
+{output_result}
+")
+    except Exception as e:
+        await edit_delete(dragoiq, f"                                              خطأ :\n{str(e)}                       ", 5)
