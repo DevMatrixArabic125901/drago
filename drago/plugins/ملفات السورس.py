@@ -10,7 +10,7 @@ from telethon import events
 from asyncio.exceptions import TimeoutError
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.messages import ExportChatInviteRequest
-from matrix import matrix
+from drago import dragoiq
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers import get_user_from_event, sanga_seperator
 from bs4 import BeautifulSoup
