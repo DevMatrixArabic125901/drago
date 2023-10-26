@@ -360,3 +360,72 @@ async def remove_iq(event):
         file = remove_bg_image
         await event.client.send_file(event.chat_id,file,force_document=True,reply_to=message_id)
     await catevent.delete()
+
+@matrix.ar_cmd(pattern="فتح الزخرفة الانجليزية")
+async def zakrafaon(event):
+    if not gvarstatus("enzakrafa"):
+        addgvar("enzakrafa", "on")
+        await edit_delete(event, "**تم بنجاح فتح الزخرفة الانجليزية**")
+        return
+    if gvarstatus("enzakrafa"):
+        await edit_delete(event, "**الزخرفة الانجليزية مفعلة اصلا**")
+        return
+@dragoiq.ar_cmd(pattern="اغلاق الزخرفة الانجليزية")
+async def zakrafaoff(event):
+    if not gvarstatus("enzakrafa"):
+        await edit_delete(event, "*الزخرفة الانجليزية غير مفعلة اصلا**")
+        return
+    if gvarstatus("enzakrafa"):
+        delgvar("enzakrafa")
+        await edit_delete(event, "**تم بنجاح اغلاق الزخرفة الانجليزية**")
+        return
+@dragoiq.on(events.NewMessage(outgoing=True))
+async def zakrafarun(event):
+    if gvarstatus("enzakrafa"):
+        text = event.message.message
+        uppercase_text = (
+            text.replace("a", "𝖺")
+            .replace("b", "𝖻")
+            .replace("c", "𝖼")
+            .replace("d", "𝖽")
+            .replace("e", "𝖾")
+            .replace("f", "𝖿")
+            .replace("g", "𝗀")
+            .replace("h", "𝗁")
+            .replace("i", "𝗂")
+            .replace("j", "𝗃")
+            .replace("k", "𝗄")
+            .replace("l", "𝗅")
+            .replace("m", "𝗆")
+            .replace("n", "𝗇")
+            .replace("o", "𝗈")
+            .replace("p", "𝗉")
+            .replace("q", "𝗊")
+            .replace("r", "𝗋")
+            .replace("s", "𝗌")
+            .replace("t", "𝗍")
+            .replace("u", "𝗎")
+            .replace("v", "𝗏")
+            .replace("w", "𝗐")
+            .replace("x", "x")
+            .replace("y", "𝗒")
+            .replace("z", "ᴢ")        )
+        await event.edit(uppercase_text)
+@matrix.ar_cmd(pattern="انشاء ?(.*)")
+async def inshai(event):
+    msg = event.text.split()
+    username = msg[1]
+    chat = "@creationdatebot"
+    response = await matrix.send_message("creationdatebot", f"/id {username}")
+    async with event.client.conversation(chat) as conv:
+        try:
+            await event.client.send_message(chat, "/id {reply_message}")
+        except YouBlockedUserError:
+            await event.reply(                f"يجب عليك الغاء حظر هذا البوت @creationdatebot اولا واعادة استخدام الامر"            )
+            return
+        response = conv.wait_event(            events.NewMessage(incoming=True, from_users=747653812)        )
+        response = await response
+        if response.text.startswith("Looks"):
+            await event.edit("لقد حدث خطأ ما")
+        else:
+            await event.edit(                f"**تاريخ انشاء المستخدم هو: **`{response.text.replace('**','')}`"            )            
