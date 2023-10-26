@@ -1,5 +1,3 @@
-# WRITED BY - @lsbax_dev - @lsbax_dev
-
 import io
 import os
 import random
@@ -65,7 +63,7 @@ async def waifu(animu):
         ],
         "examples": "{tr}stcr hello",
     },
-) # WRITED BY - @lsbax_dev - @lsbax_dev
+) 
 async def sticklet(event):
     " ⌔︙النص الخاص بك كملصق"
     R = random.randint(0, 256)
@@ -114,7 +112,7 @@ async def sticklet(event):
     except BaseException:
         pass
 
-# WRITED BY - @lsbax_dev - @lsbax_dev
+
 @dragoiq.ar_cmd(
     pattern="هونك(?:\s|$)([\s\S]*)",
     command=("هونك", plugin_category),
@@ -175,7 +173,7 @@ async def twt(event):
         "usage": "{tr}doge <text/reply to msg>",
         "examples": "{tr}doge Gib money",
     },
-) # WRITED BY - @lsbax_dev - @lsbax_dev
+)
 async def doge(event):
     " ⌔︙اصنع ستيكر كلب رائع."
     text = event.pattern_match.group(1)
@@ -191,7 +189,7 @@ async def doge(event):
     text = deEmojify(text)
     await event.delete()
     await hide_inlinebot(event.client, bot_name, text, event.chat_id, reply_to_id)
-# WRITED BY - @lsbax_dev - @lsbax_dev
+
 
 @dragoiq.ar_cmd(
     pattern="غلاكس(|ر)(?:\s|$)([\s\S]*)",
@@ -210,7 +208,7 @@ async def doge(event):
             "{tr}glaxr Die you",
         ],
     },
-) # WRITED BY - @lsbax_dev - @lsbax_dev
+)
 async def glax(event):
     " ⌔︙اجعل غلاكس التنين ينفخ نصك."
     cmd = event.pattern_match.group(1).lower()
@@ -224,17 +222,17 @@ async def glax(event):
         else:
             return await edit_delete(
                 event, " ⌁︙ ماذا يفترض بـ گلاكـس ان يقول اعطه نصا**"
-            ) # WRITED BY - @lsbax_dev - @lsbax_dev
+            )
     text = deEmojify(text)
     await event.delete()
     await hide_inlinebot(
         event.client, bot_name, text, event.chat_id, reply_to_id, c_lick=c_lick
     )
-@dragoiq.ar_cmd(pattern="قلوب دراكو( (.*)|$)")
+@dragoiq.ar_cmd(pattern="قلوب ماتركس( (.*)|$)")
 async def _(event):
     animation_interval = 0.5
     animation_ttl = range(192)
-    event = await edit_or_reply(event, "**DraGo....**")
+    event = await edit_or_reply(event, "**انتظر ....**")
     animation_chars = [
    f"🖤🤍🖤🤍🖤🤍🖤🤍🖤🤍🖤\n🤍🖤🤍🖤🤍🖤🤍🖤🤍🖤🤍\n🖤🤍🖤🖤🤍🖤\n🤍🖤🤍🖤🤍🖤🤍🖤🤍🖤🤍\n🖤🤍🖤🤍🖤🤍🖤🤍🖤🤍🖤\n",
    f"🤍🖤🤍🖤🤍🖤🤍🖤🤍🖤🤍\n🖤🤍🖤🤍🖤🤍🖤🤍🖤🤍🖤\n🤍🖤🤍🤍🖤🤍\n🖤🤍🖤🤍🖤🤍🖤🤍🖤🤍🖤\n🤍🖤🤍🖤🤍🖤🤍🖤🤍🖤🤍\n",
@@ -432,4 +430,3 @@ async def _(event):
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 192])
-    # WRITED BY - @lsbax_dev - @lsbax_dev
