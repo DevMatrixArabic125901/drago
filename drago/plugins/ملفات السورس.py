@@ -255,9 +255,7 @@ async def _matrix(dragoiq):
     mm = input_sgra[1]
     try:
         output_result = calendar.month(int(matrix.strip()), int(mm.strip()))
-        await edit_or_reply(dragoiq, f"
-{output_result}
-")
+        await edit_or_reply(dragoiq, f"{output_result}")
     except Exception as e:
         await edit_delete(dragoiq, f"                                              خطأ :\n{str(e)}                       ", 5)
 
