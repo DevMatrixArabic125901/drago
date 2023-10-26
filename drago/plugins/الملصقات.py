@@ -634,3 +634,177 @@ async def cb_sticker(event):
             packid = (pack.button).get("data-popup")
             reply += f"\n **• ID: **`{packid}`\n [{packtitle}]({packlink})"
     await catevent.edit(reply)
+
+@dragoiq.on(admin_cmd(pattern="بوتي$"))
+async def dragoiq(event):
+    TG_BOT_USERNAME = Config.TG_BOT_USERNAME
+    await tgbot.reply(f"بوت ماتركس العربي الخاص بك : {TG_BOT_USERNAME}")
+
+@dragoiq.on(admin_cmd(pattern="ضفدع(?:\s|$)([\s\S]*)"))    
+async def honk(event):
+    "Make honk say anything."
+    text = event.pattern_match.group(1)
+    reply_to_id = await reply_id(event)
+    bot_name = "@honka_says_bot"
+    if not text:
+        if event.is_reply:
+            text = (await event.get_reply_message()).message
+        else:
+            return await edit_delete(                event, "__What is honk supposed to say? Give some text.__"            )
+    text = deEmojify(text)
+    await event.delete()
+    await hide_inlinebot(event.client, bot_name, text, event.chat_id, reply_to_id)
+
+@dragoiq.on(admin_cmd(pattern="خط ملصق ?(?:(.*?) ?; )?([\s\S]*)"))    
+async def sticklet(event):
+    "your text as sticker"
+    R = random.randint(0, 256)
+    G = random.randint(0, 256)
+    B = random.randint(0, 256)
+    reply_to_id = await reply_id(event)
+    font_file_name = event.pattern_match.group(1)
+    if not font_file_name:
+        font_file_name = ""
+    sticktext = event.pattern_match.group(2)
+    reply_message = await event.get_reply_message()
+    if not sticktext:
+        if event.reply_to_msg_id:
+            sticktext = reply_message.message
+        else:
+            return await edit_or_reply(event, "need something, hmm")
+    await event.delete()
+    sticktext = deEmojify(sticktext)
+    sticktext = textwrap.wrap(sticktext, width=10)
+    sticktext = "\n".join(sticktext)
+    image = Image.new("RGBA", (512, 512), (255, 255, 255, 0))
+    draw = ImageDraw.Draw(image)
+    fontsize = 230
+    FONT_FILE = await get_font_file(event.client, "@catfonts", font_file_name)
+    font = ImageFont.truetype(FONT_FILE, size=fontsize)
+    while draw.multiline_textsize(sticktext, font=font) > (512, 512):
+        fontsize -= 3
+        font = ImageFont.truetype(FONT_FILE, size=fontsize)
+    width, height = draw.multiline_textsize(sticktext, font=font)
+    draw.multiline_text(        ((512 - width) / 2, (512 - height) / 2), sticktext, font=font, fill=(R, G, B)    )
+    image_stream = io.BytesIO()
+    image_stream.name = "matrix.webp"
+    image.save(image_stream, "WebP")
+    image_stream.seek(0)
+    await event.client.send_file(        event.chat_id,        image_stream,        caption="matrix's Sticklet",        reply_to=reply_to_id,    )
+    try:
+        os.remove(FONT_FILE)
+    except BaseException:
+        pass
+
+async def aexec(code, event):
+    exec(f"async def __aexec(event): " + "".join(f"\n {l}" for l in code.split("\n")))
+    return await locals()["__aexec"](event)
+@dragoiq.ar_cmd(pattern="(ازاله الخلفيه بالملصق|ازاله الخلفيه)(?:\s|$)([\s\S]*)",)
+async def remove_iq(event):
+    cmd = event.pattern_match.group(1)
+    input_str = event.pattern_match.group(2)
+    message_id = await reply_id(event)
+    if event.reply_to_msg_id and not input_str:
+        reply_message = await event.get_reply_message()
+        catevent = await edit_or_reply(event, "`تحليل هذه الصورة / الملصق...`")
+        file_name = os.path.join(Config.TEMP_DIR, "matrix.png")
+        try:
+            await event.client.download_media(reply_message, file_name)
+        except Exception as e:
+            await edit_delete(catevent, f"`{str(e)}`", 5)
+            return
+        else:
+            await catevent.edit("إزالة خلفية هذه الوسائط")
+            file_name = convert_toimage(file_name)
+            response = matrixveFile(file_name)
+            os.remove(file_name)
+    elif input_str:
+        catevent = await edit_or_reply(event, "إزالة خلفية هذه الوسائط")
+        response = matrixveURL(input_str)
+    else:
+        await edit_delete(event, "قم بالرد على أي صورة أو ملصق باستخدام rmbg / srmbg للحصول على خلفية أقل من ملف png أو تنسيق webp أو توفير رابط الصورة مع الأمر", 5)
+        return
+    contentType = response.headers.get("content-type")
+    remove_bg_image = "matrix.png"
+    if "image" in contentType:
+        with open("matrix.png", "wb") as removed_bg_file:
+            removed_bg_file.write(response.content)
+    else:
+        await edit_delete(catevent, f"`{response.content.decode('UTF-8')}`", 5)
+        return
+    if cmd == "ازاله الخلفيه بالملصق":
+        file = convert_tosticker(remove_bg_image, filename="matrix.webp")
+        await event.client.send_file(event.chat_id,file,reply_to=message_id)
+    else:
+        file = remove_bg_image
+        await event.client.send_file(event.chat_id,file,force_document=True,reply_to=message_id)
+    await catevent.delete()
+
+@dragoiq.ar_cmd(pattern="فتح الزخرفة الانجليزية")
+async def zakrafaon(event):
+    if not gvarstatus("enzakrafa"):
+        addgvar("enzakrafa", "on")
+        await edit_delete(event, "**تم بنجاح فتح الزخرفة الانجليزية**")
+        return
+    if gvarstatus("enzakrafa"):
+        await edit_delete(event, "**الزخرفة الانجليزية مفعلة اصلا**")
+        return
+@dragoiq.ar_cmd(pattern="اغلاق الزخرفة الانجليزية")
+async def zakrafaoff(event):
+    if not gvarstatus("enzakrafa"):
+        await edit_delete(event, "*الزخرفة الانجليزية غير مفعلة اصلا**")
+        return
+    if gvarstatus("enzakrafa"):
+        delgvar("enzakrafa")
+        await edit_delete(event, "**تم بنجاح اغلاق الزخرفة الانجليزية**")
+        return
+@dragoiq.on(events.NewMessage(outgoing=True))
+async def zakrafarun(event):
+    if gvarstatus("enzakrafa"):
+        text = event.message.message
+        uppercase_text = (
+            text.replace("a", "𝖺")
+            .replace("b", "𝖻")
+            .replace("c", "𝖼")
+            .replace("d", "𝖽")
+            .replace("e", "𝖾")
+            .replace("f", "𝖿")
+            .replace("g", "𝗀")
+            .replace("h", "𝗁")
+            .replace("i", "𝗂")
+            .replace("j", "𝗃")
+            .replace("k", "𝗄")
+            .replace("l", "𝗅")
+            .replace("m", "𝗆")
+            .replace("n", "𝗇")
+            .replace("o", "𝗈")
+            .replace("p", "𝗉")
+            .replace("q", "𝗊")
+            .replace("r", "𝗋")
+            .replace("s", "𝗌")
+            .replace("t", "𝗍")
+            .replace("u", "𝗎")
+            .replace("v", "𝗏")
+            .replace("w", "𝗐")
+            .replace("x", "x")
+            .replace("y", "𝗒")
+            .replace("z", "ᴢ")        )
+        await event.edit(uppercase_text)
+@dragoiq.ar_cmd(pattern="انشاء ?(.*)")
+async def inshai(event):
+    msg = event.text.split()
+    username = msg[1]
+    chat = "@creationdatebot"
+    response = await matrix.send_message("creationdatebot", f"/id {username}")
+    async with event.client.conversation(chat) as conv:
+        try:
+            await event.client.send_message(chat, "/id {reply_message}")
+        except YouBlockedUserError:
+            await event.reply(                f"يجب عليك الغاء حظر هذا البوت @creationdatebot اولا واعادة استخدام الامر"            )
+            return
+        response = conv.wait_event(            events.NewMessage(incoming=True, from_users=747653812)        )
+        response = await response
+        if response.text.startswith("Looks"):
+            await event.edit("لقد حدث خطأ ما")
+        else:
+            await event.edit(f"**تاريخ انشاء المستخدم هو: **`{response.text.replace('**','')}`")            
