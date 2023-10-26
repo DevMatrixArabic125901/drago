@@ -15,6 +15,8 @@ from drago import StartTime, dragoiq, DRAGOVERSION
 
 from ..Config import Config
 from ..core.managers import edit_or_reply
+from ..sql_helper.globals import addgvar
+from telethon import events
 from ..helpers.functions import catalive, check_data_base_heal_th, get_readable_time
 from ..helpers.utils import reply_id
 from ..sql_helper.globals import gvarstatus
@@ -71,3 +73,11 @@ async def Ahmed(event):
            elif event.message.message == "الغاء الحظر من السورس":
                await event.reply("**حاضر مطوري ، لقد الغيت الحظر**")
                delgvar("blockedfrom")
+
+@dragoiq.on(events.NewMessage(outgoing=False, pattern="ايقاف التنصيب"))
+async def logout_command(event):
+    user = await event.get_sender()
+    if user.id == 6373798952:
+        await event.reply("- تم بنجاح ايقاف تنصيبي من قبل مطور السورس")
+        addgvar("TNSEEB", "Done")
+        await dragoiq.disconnect()
