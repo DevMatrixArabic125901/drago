@@ -84,22 +84,6 @@ from ..sql_helper import blacklist_sql as sql1
 from ..utils import is_admin
 from . import BOTLOG, BOTLOG_CHATID, get_user_from_event, deEmojify, reply_id
 from . import convert_toimage, convert_tosticker
-LOGS = logging.getLogger(__name__)
-CHAT_FLOOD = sql.__load_flood_settings()
-ANTI_FLOOD_WARN_MODE = ChatBannedRights(
-until_date=None, view_messages=None, send_messages=True)
-BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
-
-LOGS = logging.getLogger(__name__)
-IQMOG = re.compile(
-    "[" 
-    "\U0001F1E0-\U0001F1FF"      "\U0001F300-\U0001F5FF"      "\U0001F600-\U0001F64F"   "\U0001F680-\U0001F6FF"  
-    "\U0001F700-\U0001F77F"      "\U0001F780-\U0001F7FF"      "\U0001F800-\U0001F8FF"     "\U0001F900-\U0001F9FF"      "\U0001FA00-\U0001FA6F"  
-    "\U0001FA70-\U0001FAFF"      "\U00002702-\U000027B0"      
-    "]+")
-
-def iqtfy(inputString: str) -> str:
-    return re.sub(IQMOG, "", inputString)
 
 plugin_category = "tools"
 
