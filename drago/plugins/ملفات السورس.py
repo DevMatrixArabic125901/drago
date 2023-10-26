@@ -104,3 +104,44 @@ async def _(event):
     await _catutils.runcmd(cmd)
     OUTPUT = f"**اعـادة تهيئــة البـوت:**\n\n**تـم حذف جميـع المجـلدات والملفـات بنجـاح ✓**"
     event = await edit_or_reply(event, OUTPUT)
+
+@dragoiq.on(admin_cmd(pattern="بي دي اف ?(.*)"))
+async def _(event):
+    if not dragoiq.reply_to_msg_id:
+        return await dragoiq.edit("**الرجاء الرد على أي نص**")
+    reply_message = await matrix.get_reply_message()
+    chat = "@office2pdf_bot"
+    await matrix.edit("**`جاري تحويل إلى PDF ...`**")
+    try:
+        async with bot.conversation(chat) as conv:
+            try:
+                msg_start = await conv.send_message("/start")
+                response = await conv.get_response()
+                msg = await conv.send_message(reply_message)
+                convert = await conv.send_message("/ready2conv")
+                cnfrm = await conv.get_response()
+                editfilename = await conv.send_message("نعم")
+                enterfilename = await conv.get_response()
+                filename = await conv.send_message("dragoiq")
+                started = await conv.get_response()
+                pdf = await conv.get_response()
+                await bot.send_read_acknowledge(conv.chat_id)
+            except YouBlockedUserError:
+                await dragoiq.edit("**قم بفك الحظر من البوت : @office2pdf_bot**")
+                return
+            await dragoiq.client.send_message(event.chat_id, pdf)
+            await dragoiq.client.delete_messages(                conv.chat_id,                [
+                    msg_start.id,
+                    response.id,
+                    msg.id,
+                    started.id,
+                    filename.id,
+                    editfilename.id,
+                    enterfilename.id,
+                    cnfrm.id,
+                    pdf.id,
+                    convert.id,
+                ],)
+            await dragoiq.delete()
+    except TimeoutError:
+        return await matrix.edit("**خـطأ**") 
