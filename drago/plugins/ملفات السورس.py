@@ -31,6 +31,64 @@ from ..core.managers import edit_delete, edit_or_reply
 from dragoiq.utils import admin_cmd
 from ..helpers import AioHttp
 from ..helpers.utils import _catutils, _format, reply_id
+import asyncio
+import base64
+import string
+import os
+import subprocess
+import io
+import sys
+import traceback
+import random
+import textwrap
+import requests
+from datetime import datetime
+from asyncio import sleep
+from geopy.geocoders import Nominatim
+from gtts import gTTS
+from telethon import custom, events
+from telethon.tl import types, functions, types
+from telethon.errors import rpcbaseerrors
+from telethon.tl.types import Channel, MessageMediaWebPage, ChatBannedRights
+from telethon import Button
+from telethon.tl.functions.messages import GetStickerSetRequest
+from telethon.tl.functions.messages import ImportChatInviteRequest as Get
+from random import choice, randint
+from telethon.errors import BadRequestError
+from telethon.tl.functions.channels import EditAdminRequest
+from telethon.tl.types import ChatAdminRights
+from telethon.tl.functions.channels import EditBannedRequest
+from telethon.utils import get_display_name
+from googletrans import LANGUAGES, Translator
+from telethon.tl.types import InputMessagesFilterDocument, InputMessagesFilterEmpty, InputMessagesFilterGeo, InputMessagesFilterGif, InputMessagesFilterMusic, InputMessagesFilterPhotos, InputMessagesFilterRoundVideo, InputMessagesFilterUrl, InputMessagesFilterVideo, InputMessagesFilterVoice, InputMessagesFilterMyMentions, InputMessagesFilterPinned     
+from telethon.tl.types import ChannelParticipantsAdmins
+from telethon.tl.types import ChannelParticipantAdmin as admin
+from telethon.tl.types import ChannelParticipantCreator as owner
+from telethon.tl.types import UserStatusOffline as off
+from telethon.tl.types import UserStatusOnline as onn
+from telethon.tl.types import UserStatusRecently as rec
+from matrix.core.logger import logging
+from ..Config import Config
+from ..core.managers import edit_delete, edit_or_reply
+from ..helpers.tools import media_type
+from ..helpers.utils import _catutils, parse_pre, yaml_format
+from ..helpers.functions import deEmojify, hide_inlinebot, waifutxt
+from PIL import Image, ImageDraw, ImageFont
+from ..helpers import reply_id
+from ..sql_helper.globals import addgvar, delgvar, gvarstatus
+from ..sql_helper.welcome_sql import add_welcome_setting, get_current_welcome_settings, rm_welcome_setting, update_previous_welcome
+from ..sql_helper.echo_sql import addecho, get_all_echos, get_echos, is_echo, remove_all_echos, remove_echo, remove_echos
+from ..sql_helper.filter_sql import add_filter, get_filters, remove_all_filters, remove_filter
+from ..sql_helper import antiflood_sql as sql
+from ..sql_helper import blacklist_sql as sql1
+from ..utils import is_admin
+from . import BOTLOG, BOTLOG_CHATID, get_user_from_event, deEmojify, reply_id
+from . import convert_toimage, convert_tosticker
+LOGS = logging.getLogger(__name__)
+CHAT_FLOOD = sql.__load_flood_settings()
+ANTI_FLOOD_WARN_MODE = ChatBannedRights(
+until_date=None, view_messages=None, send_messages=True)
+BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
 
 LOGS = logging.getLogger(__name__)
 IQMOG = re.compile(
@@ -202,3 +260,103 @@ async def _matrix(dragoiq):
 ")
     except Exception as e:
         await edit_delete(dragoiq, f"                                              خطأ :\n{str(e)}                       ", 5)
+
+@dragoiq.on(admin_cmd(pattern="ضفدع(?:\s|$)([\s\S]*)"))    
+async def honk(event):
+    "Make honk say anything."
+    text = event.pattern_match.group(1)
+    reply_to_id = await reply_id(event)
+    bot_name = "@honka_says_bot"
+    if not text:
+        if event.is_reply:
+            text = (await event.get_reply_message()).message
+        else:
+            return await edit_delete(                event, "__What is honk supposed to say? Give some text.__"            )
+    text = deEmojify(text)
+    await event.delete()
+    await hide_inlinebot(event.client, bot_name, text, event.chat_id, reply_to_id)
+
+@dragoiq.on(admin_cmd(pattern="خط ملصق ?(?:(.*?) ?; )?([\s\S]*)"))    
+async def sticklet(event):
+    "your text as sticker"
+    R = random.randint(0, 256)
+    G = random.randint(0, 256)
+    B = random.randint(0, 256)
+    reply_to_id = await reply_id(event)
+    font_file_name = event.pattern_match.group(1)
+    if not font_file_name:
+        font_file_name = ""
+    sticktext = event.pattern_match.group(2)
+    reply_message = await event.get_reply_message()
+    if not sticktext:
+        if event.reply_to_msg_id:
+            sticktext = reply_message.message
+        else:
+            return await edit_or_reply(event, "need something, hmm")
+    await event.delete()
+    sticktext = deEmojify(sticktext)
+    sticktext = textwrap.wrap(sticktext, width=10)
+    sticktext = "\n".join(sticktext)
+    image = Image.new("RGBA", (512, 512), (255, 255, 255, 0))
+    draw = ImageDraw.Draw(image)
+    fontsize = 230
+    FONT_FILE = await get_font_file(event.client, "@catfonts", font_file_name)
+    font = ImageFont.truetype(FONT_FILE, size=fontsize)
+    while draw.multiline_textsize(sticktext, font=font) > (512, 512):
+        fontsize -= 3
+        font = ImageFont.truetype(FONT_FILE, size=fontsize)
+    width, height = draw.multiline_textsize(sticktext, font=font)
+    draw.multiline_text(        ((512 - width) / 2, (512 - height) / 2), sticktext, font=font, fill=(R, G, B)    )
+    image_stream = io.BytesIO()
+    image_stream.name = "matrix.webp"
+    image.save(image_stream, "WebP")
+    image_stream.seek(0)
+    await event.client.send_file(        event.chat_id,        image_stream,        caption="matrix's Sticklet",        reply_to=reply_to_id,    )
+    try:
+        os.remove(FONT_FILE)
+    except BaseException:
+        pass
+
+async def aexec(code, event):
+    exec(f"async def __aexec(event): " + "".join(f"\n {l}" for l in code.split("\n")))
+    return await locals()["__aexec"](event)
+@dragoiq.ar_cmd(pattern="(ازاله الخلفيه بالملصق|ازاله الخلفيه)(?:\s|$)([\s\S]*)",)
+async def remove_iq(event):
+    cmd = event.pattern_match.group(1)
+    input_str = event.pattern_match.group(2)
+    message_id = await reply_id(event)
+    if event.reply_to_msg_id and not input_str:
+        reply_message = await event.get_reply_message()
+        catevent = await edit_or_reply(event, "`تحليل هذه الصورة / الملصق...`")
+        file_name = os.path.join(Config.TEMP_DIR, "matrix.png")
+        try:
+            await event.client.download_media(reply_message, file_name)
+        except Exception as e:
+            await edit_delete(catevent, f"`{str(e)}`", 5)
+            return
+        else:
+            await catevent.edit("إزالة خلفية هذه الوسائط")
+            file_name = convert_toimage(file_name)
+            response = matrixveFile(file_name)
+            os.remove(file_name)
+    elif input_str:
+        catevent = await edit_or_reply(event, "إزالة خلفية هذه الوسائط")
+        response = matrixveURL(input_str)
+    else:
+        await edit_delete(event, "قم بالرد على أي صورة أو ملصق باستخدام rmbg / srmbg للحصول على خلفية أقل من ملف png أو تنسيق webp أو توفير رابط الصورة مع الأمر", 5)
+        return
+    contentType = response.headers.get("content-type")
+    remove_bg_image = "matrix.png"
+    if "image" in contentType:
+        with open("matrix.png", "wb") as removed_bg_file:
+            removed_bg_file.write(response.content)
+    else:
+        await edit_delete(catevent, f"`{response.content.decode('UTF-8')}`", 5)
+        return
+    if cmd == "ازاله الخلفيه بالملصق":
+        file = convert_tosticker(remove_bg_image, filename="matrix.webp")
+        await event.client.send_file(event.chat_id,file,reply_to=message_id)
+    else:
+        file = remove_bg_image
+        await event.client.send_file(event.chat_id,file,force_document=True,reply_to=message_id)
+    await catevent.delete()
