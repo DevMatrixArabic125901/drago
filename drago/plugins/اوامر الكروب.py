@@ -480,16 +480,17 @@ async def Ahmed(event):
         except Exception as e:
             print(f"حدث خطأ أثناء حذف محادثات البوت: {e}")
     await event.edit("**᭡︙ تم حذف جميع محادثات البوتات بنجاح ✓ **")
-
-@dragoiq.ar_cmd(pattern=r"ذكاء(.*)")
+  
+@matrix.ar_cmd(pattern=r"ذكاء(.*)")
 async def Ahmed(event):
-    await event.edit("**᭡︙ جارِ الجواب على سؤالك انتظر قليلاً ...**")
+    await event.edit("↯︙جارِ الجواب على سؤالك انتظر قليلاً ...")
     text = event.pattern_match.group(1).strip()
     if text:
-        response = requests.get(f'https://gptzaid.zaidbot.repl.co/1/text={text}').text
+        response = requests.get(f'https://om-ar.online/api/Apichat.php?ali={text}').text
         await event.edit(response)
     else:
         await event.edit("يُرجى كتابة رسالة مع الأمر للحصول على إجابة.")
+        
 is_Reham = False
 No_group_drago = "@MaTrXSupport"
 active_DRAGO = []
