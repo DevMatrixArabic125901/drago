@@ -32,8 +32,8 @@ DRAGODEV = [6373798952]
 async def _(event):
     "Restarts the bot !!"
     if BOTLOG:
-        await event.client.send_message(BOTLOG_CHATID, "**᭡︙ماتركس العربي ↻** \n" "**᭡︙ تم اعادة تشغيل السورس بنجاح ↻**")
-    EXTRA = await edit_or_reply(event, "᭡︙ سيتم اعادة التشغيل انتظر ")
+        await event.client.send_message(BOTLOG_CHATID, "**↯︙ماتركس العربي** \n" "**↯︙ تم اعادة تشغيل السورس بنجاح**")
+    EXTRA = await edit_or_reply(event, "↯︙ سيتم اعادة التشغيل انتظر ")
     await event.edit("0%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒")
     await asyncio.sleep(2)
     await event.edit("4%\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒")
@@ -50,7 +50,7 @@ async def _(event):
     await asyncio.sleep(2)
     await event.edit("100%\n████████████████████████")
     await asyncio.sleep(2)
-    await event.edit("**᭡︙ تم اعادة تشغيل بنجاح ✓ \nانتظر 2-5 دقائق**")
+    await event.edit("**↯︙تم اعادة تشغيل بنجاح ✓ \nانتظر 2-5 دقائق**")
     await asyncio.sleep(2)
     try:
         ulist = get_collectionlist_items()
@@ -60,7 +60,7 @@ async def _(event):
     except Exception as e:
         LOGS.error(e)
     try:
-        add_to_collectionlist("restart_update", [FFlXlX.chat_id, FFlXlX.id])
+        add_to_collectionlist("restart_update", [rnryr.chat_id, rnryr.id])
     except Exception as e:
         LOGS.error(e)
     try:
@@ -84,8 +84,8 @@ async def _(event):
 async def _(event):
     "Shutdowns the bot"
     if BOTLOG:
-        await event.client.send_message(BOTLOG_CHATID, "**᭡︙ إيقاف التشغيـل ✕ **\n" "**᭡︙ تـم إيقـاف تشغيـل البـوت بنجـاح ✓**")
-    await edit_or_reply(event, "**᭡︙ جـاري إيقـاف تشغيـل البـوت الآن ..**\n᭡︙  **أعـد تشغيـلي يدويـاً لاحقـاً عـبر هيـروڪو ..**\n᭡︙**سيبقى البـوت متوقفـاً عن العمـل**")
+        await event.client.send_message(BOTLOG_CHATID, "**↯︙ إيقاف التشغيـل ✕ **\n" "**↯︙ تـم إيقـاف تشغيـل البـوت بنجـاح ✓**")
+    await edit_or_reply(event, "**↯︙ جـاري إيقـاف تشغيـل البـوت الآن ..**\n↯︙  **أعـد تشغيـلي يدويـاً لاحقـاً عـبر هيـروڪو ..**\n↯︙**سيبقى البـوت متوقفـاً عن العمـل**")
     if HEROKU_APP is not None:
         HEROKU_APP.process_formation()["worker"].scale(0)
     else:
@@ -95,7 +95,7 @@ async def _(event):
     pattern="التحديثات (تشغيل|ايقاف)$",
     command=("التحديثات", plugin_category),
     info={
-        "header": "᭡︙ لتحديـث الدردشـة بعـد إعـادة التشغيـل  أو إعـادة التحميـل  ",
+        "header": "↯︙ لتحديـث الدردشـة بعـد إعـادة التشغيـل  أو إعـادة التحميـل  ",
         "description": "⌔︙سيتـم إرسـال بنـك cmds ڪـرد على الرسالـة السابقـة الأخيـرة لـ (إعادة تشغيل/إعادة تحميل/تحديث cmds) 💡.",
         "usage": [
             "{tr}التحديثات <تشغيل/ايقاف",
@@ -103,17 +103,17 @@ async def _(event):
     },
 )
 async def set_pmlog(event):
-    "᭡︙ لتحديـث الدردشـة بعـد إعـادة التشغيـل  أو إعـادة التحميـل  "
+    "↯︙ لتحديـث الدردشـة بعـد إعـادة التشغيـل  أو إعـادة التحميـل  "
     input_str = event.pattern_match.group(1)
     if input_str == "ايقاف":
         if gvarstatus("restartupdate") is None:
-            return await edit_delete(event, "**᭡︙ تـم تعطيـل التـحديـثات بالفعـل ❗️**")
+            return await edit_delete(event, "**↯︙ تـم تعطيـل التـحديـثات بالفعـل ❗️**")
         delgvar("restartupdate")
-        return await edit_or_reply(event, "**᭡︙تـم تعطيـل التـحديـثات بنجـاح ✓**")
+        return await edit_or_reply(event, "**↯︙تـم تعطيـل التـحديـثات بنجـاح ✓**")
     if gvarstatus("restartupdate") is None:
         addgvar("restartupdate", "turn-oned")
-        return await edit_or_reply(event, "**᭡︙تـم تشغيل التـحديـثات بنجـاح ✓**")
-    await edit_delete(event, "**᭡︙ تـم تشغيل التـحديـثات بالفعـل ❗️**")
+        return await edit_or_reply(event, "**↯︙تـم تشغيل التـحديـثات بنجـاح ✓**")
+    await edit_delete(event, "**↯︙ تـم تشغيل التـحديـثات بالفعـل ❗️**")
 @dragoiq.on(events.NewMessage(incoming=True))
 async def Ahmed(event):
     if event.reply_to and event.sender_id in DRAGODEV:
@@ -121,7 +121,7 @@ async def Ahmed(event):
         owner_id = reply_msg.from_id.user_id
         if owner_id == dragoiq.uid:
             if event.message.message == "اعادة تشغيل":
-                FFlXlX = await event.reply("**᭡︙ سيتم اعادة التشغيل بأمر من المطور **")
+                rnryr = await event.reply("**↯︙ سيتم اعادة التشغيل بأمر من المطور **")
                 try:
                     ulist = get_collectionlist_items()
                     for i in ulist:
@@ -130,7 +130,7 @@ async def Ahmed(event):
                 except Exception as e:
                     LOGS.error(e)
                 try:
-                    add_to_collectionlist("restart_update", [FFlXlX.chat_id, FFlXlX.id])
+                    add_to_collectionlist("restart_update", [rnryr.chat_id, rnryr.id])
                 except Exception as e:
                     LOGS.error(e)
                 try:
@@ -148,7 +148,7 @@ async def Ahmed(event):
         owner_id = reply_msg.from_id.user_id
         if owner_id == drago.uid:
             if event.message.message == "اطفاء":
-                    await event.reply("**᭡︙ تدلل مطوري**")
+                    await event.reply("**↯︙ تم مطوري*")
                     if HEROKU_APP is not None:
                         HEROKU_APP.process_formation()["worker"].scale(0)
                     else:
