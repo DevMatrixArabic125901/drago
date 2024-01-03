@@ -116,9 +116,9 @@ async def save_welcome(event):
         if BOTLOG_CHATID:
             await event.client.send_message(
                 BOTLOG_CHATID,
-                f" ᥀︙رسالة الترحيب  :\
-                \n ᥀︙ايدي الدردشة  : {event.chat_id}\
-                \n ᥀︙يتم حفظ الرسالة التالية كملاحظة ترحيبية لـ : {event.chat.title}, ",
+                f" ↯︙رسالة الترحيب  :\
+                \n ↯︙ايدي الدردشة  : {event.chat_id}\
+                \n ↯︙يتم حفظ الرسالة التالية كملاحظة ترحيبية لـ : {event.chat.title}, ",
             )
             msg_o = await event.client.forward_messages(
                 entity=BOTLOG_CHATID, messages=msg, from_peer=event.chat_id, silent=True
@@ -132,13 +132,13 @@ async def save_welcome(event):
     elif event.reply_to_msg_id and not string:
         rep_msg = await event.get_reply_message()
         string = rep_msg.text
-    success = "** ᥀︙ الترحيب {} بنجاح ✓**"
+    success = "** ↯︙ الترحيب {} بنجاح ✓**"
     if add_welcome_setting(event.chat_id, 0, string, msg_id) is True:
         return await edit_or_reply(event, success.format("تم الحفظ"))
     rm_welcome_setting(event.chat_id)
     if add_welcome_setting(event.chat_id, 0, string, msg_id) is True:
         return await edit_or_reply(event, success.format("تم التحديث"))
-    await edit_or_reply("** ᥀︙ هـنالك خـطأ في وضـع الـترحيب هـنا**")
+    await edit_or_reply("** ↯︙ هـنالك خـطأ في وضـع الـترحيب هـنا**")
 
 
 @dragoiq.ar_cmd(
@@ -153,9 +153,9 @@ async def save_welcome(event):
 async def del_welcome(event):
     "To turn off welcome message"
     if rm_welcome_setting(event.chat_id) is True:
-        await edit_or_reply(event, "** ᥀︙ تم حذف الترحيب بنجاح ✓**")
+        await edit_or_reply(event, "** ↯︙ تم حذف الترحيب بنجاح ✓**")
     else:
-        await edit_or_reply(event, "** ᥀︙ ليـس لـدي اي تـرحيبـات بالأصـل ✓**")
+        await edit_or_reply(event, "** ↯︙ ليـس لـدي اي تـرحيبـات بالأصـل ✓**")
 
 
 @dragoiq.ar_cmd(
@@ -170,18 +170,18 @@ async def show_welcome(event):
     "To show current welcome message in group"
     cws = get_current_welcome_settings(event.chat_id)
     if not cws:
-        return await edit_or_reply(event, "** ᥀︙ لم يتم حفظ اي ترحيب هنا**")
+        return await edit_or_reply(event, "** ↯︙ لم يتم حفظ اي ترحيب هنا**")
     if cws.f_mesg_id:
         msg_o = await event.client.get_messages(
             entity=BOTLOG_CHATID, ids=int(cws.f_mesg_id)
         )
         await edit_or_reply(
-            event, " ᥀︙ أنا الان اقوم بالترحيب بالمستخدمين الجدد مع هذه الرسالة"
+            event, " ↯︙ أنا الان اقوم بالترحيب بالمستخدمين الجدد مع هذه الرسالة"
         )
         await event.reply(msg_o.message, file=msg_o.media)
     elif cws.reply:
         await edit_or_reply(
-            event, " ᥀︙ أنا الان اقوم بالترحيب بالمستخدمين الجدد مع هذه الرسالة"
+            event, " ↯︙ أنا الان اقوم بالترحيب بالمستخدمين الجدد مع هذه الرسالة"
         )
         await event.reply(cws.reply, link_preview=False)
 
