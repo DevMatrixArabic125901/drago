@@ -136,13 +136,13 @@ async def add_new_filter(new_handler):
         else:
             await edit_or_reply(
                 new_handler,
-                "᥀︙يتطلب حفظ الوسائط كرد  تعيين PRIVATE_GROUP_BOT_API_ID\n قـم بعمل مجموعه وقم باخذ ايدي المجموعه عبر اي بوت بعدها ارسل\n .set var PRIVATE_GROUP_BOT_API_ID + ايدي المجموعة ",
+                "↯︙يتطلب حفظ الوسائط كرد  تعيين PRIVATE_GROUP_BOT_API_ID\n قـم بعمل مجموعه وقم باخذ ايدي المجموعه عبر اي بوت بعدها ارسل\n .set var PRIVATE_GROUP_BOT_API_ID + ايدي المجموعة ",
             )
             return
     elif new_handler.reply_to_msg_id and not string:
         rep_msg = await new_handler.get_reply_message()
         string = rep_msg.text
-    success = "**᥀︙الـرد {} تـم اضـافتة بنـجـاح ✓**"
+    success = "**↯︙الـرد {} تـم اضـافتة بنـجـاح ✓**"
     if add_filter(str(new_handler.chat_id), keyword, string, msg_id) is True:
         return await edit_or_reply(new_handler, success.format(keyword, "added"))
     remove_filter(str(new_handler.chat_id), keyword)
@@ -162,11 +162,11 @@ async def add_new_filter(new_handler):
 )
 async def on_snip_list(event):
     "To list all filters in that chat."
-    OUT_STR = "**᥀︙لا توجد ردود مضافة في هذه الدردشه**"
+    OUT_STR = "**↯︙لا توجد ردود مضافة في هذه الدردشه**"
     filters = get_filters(event.chat_id)
     for filt in filters:
-        if OUT_STR == "**᥀︙لا توجد ردود مضافة في هذه الدردشة**":
-            OUT_STR = "**᥀︙الردود التي تم اضافتها في هذه الدردشة**\n"
+        if OUT_STR == "**↯︙لا توجد ردود مضافة في هذه الدردشة**":
+            OUT_STR = "**↯︙الردود التي تم اضافتها في هذه الدردشة**\n"
         OUT_STR += "⌯︙{}\n".format(filt.keyword)
     await edit_or_reply(
         event,
@@ -188,9 +188,9 @@ async def remove_a_filter(r_handler):
     "Stops the specified keyword."
     filt = r_handler.pattern_match.group(1)
     if not remove_filter(r_handler.chat_id, filt):
-        await r_handler.edit("**᥀︙الـرد {} غير موجود **".format(filt))
+        await r_handler.edit("**↯︙الـرد {} غير موجود **".format(filt))
     else:
-        await r_handler.edit("**᥀︙الـرد {} تـم حـذفة بنـجـاح ✓**".format(filt))
+        await r_handler.edit("**↯︙الـرد {} تـم حـذفة بنـجـاح ✓**".format(filt))
 
 
 @dragoiq.ar_cmd(
@@ -206,6 +206,6 @@ async def on_all_snip_delete(event):
     filters = get_filters(event.chat_id)
     if filters:
         remove_all_filters(event.chat_id)
-        await edit_or_reply(event, f"**᥀︙تم حذف الردود في الدردشة الحالية بنجاح ✓**")
+        await edit_or_reply(event, f"**↯︙تم حذف الردود في الدردشة الحالية بنجاح ✓**")
     else:
-        await edit_or_reply(event, f"**᥀︙لا توجد ردود في هذه المجموعة**")
+        await edit_or_reply(event, f"**↯︙لا توجد ردود في هذه المجموعة**")
