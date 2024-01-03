@@ -489,19 +489,19 @@ async def you_dm_other(event):
 @dragoiq.tgbot.on(CallbackQuery(data=re.compile(rb"show_pmpermit_options")))
 async def on_plug_in_callback_query_handler(event):
     if event.query.user_id == event.client.uid:
-        text = "᭡︙عذرا هذه الخيارات ليست لك انها للمستخدمين الذين يراسلوك ︙᭡"
+        text = "↯︙عذرا هذه الخيارات ليست لك انها للمستخدمين الذين يراسلوك ︙↯"
         return await event.answer(text, cache_time=0, alert=True)
     text = f"""حسنا الان بإمكانك اختيار احد الخيارات في الاسفل للتواصل مع , {mention}.
 - اختر بهدوء خيار واحد فقط لنعرف سبب قدومك هنا 🤍
 
 - هذه الخيارات في الاسفل اختر واحد فقط ⬇️"""
     buttons = [
-        (Button.inline(text="᭡︙لاستفسار عن شي ما︙᭡", data="to_enquire_something"),),
-        (Button.inline(text="᭡︙لطلب شي ما︙᭡", data="to_request_something"),),
-        (Button.inline(text="᭡︙للدردشه مع مالك الحساب︙᭡", data="to_chat_with_my_master"),),
+        (Button.inline(text="↯︙لاستفسار عن شي ما︙↯", data="to_enquire_something"),),
+        (Button.inline(text="↯︙لطلب شي ما︙↯", data="to_request_something"),),
+        (Button.inline(text="↯︙للدردشه مع مالك الحساب︙↯", data="to_chat_with_my_master"),),
         (
             Button.inline(
-                text="᭡︙لاقوم بازعاج مالك الحساب︙᭡",
+                text="↯︙لاقوم بازعاج مالك الحساب︙↯",
                 data="to_spam_my_master_inbox",
             ),
         ),
@@ -522,7 +522,7 @@ async def on_plug_in_callback_query_handler(event):
 @dragoiq.tgbot.on(CallbackQuery(data=re.compile(rb"to_enquire_something")))
 async def on_plug_in_callback_query_handler(event):
     if event.query.user_id == event.client.uid:
-        text = "᭡︙عذرا هذه الخيارات ليست لك انها للمستخدمين الذين يراسلوك︙᭡"
+        text = "↯︙عذرا هذه الخيارات ليست لك انها للمستخدمين الذين يراسلوك︙↯"
         return await event.answer(text, cache_time=0, alert=True)
     text = """- حسنا تم ارسال طلبك بنجاح لا تقم بأختيار خيار ثاني \
 مالك الحساب مشغول الان  عندما يصبح مالك الحساب متصلا سوف يقول بالرد عليك \
@@ -551,7 +551,7 @@ async def on_plug_in_callback_query_handler(event):
     text = """__حسنا لقد قمت بأبلاغ مالك الحساب عندما يصبح متصلا بالانترنت \
  أو عندما يكون مالك الحساب متاح سوف يقوم بالرد عليك لذلك ارجوك انتظر__\
 
-**᭡︙لكن في الوقت الحالي لا تكرر ارسال الرسائل حتر لا اضطر لحظرك ︙᭡**"""
+**↯︙لكن في الوقت الحالي لا تكرر ارسال الرسائل حتر لا اضطر لحظرك ︙↯**"""
     sqllist.add_to_list("pmrequest", event.query.user_id)
     try:
         PM_WARNS = sql.get_collection("pmwarns").json
@@ -628,14 +628,14 @@ async def pmpermit_on(event):
     if input_str == "تشغيل":
         if gvarstatus("pmpermit") is None:
             addgvar("pmpermit", "true")
-            await edit_delete(event, "᭡︙تم تفعيل امر الحماية لحسابك بنجاح︙᭡")
+            await edit_delete(event, "↯︙تم تفعيل امر الحماية لحسابك بنجاح︙↯")
         else:
-            await edit_delete(event, "᭡︙امر الحمايه بالفعل مُمكن لحسابك︙᭡")
+            await edit_delete(event, "↯︙امر الحمايه بالفعل مُمكن لحسابك︙↯")
     elif gvarstatus("pmpermit") is not None:
         delgvar("pmpermit")
-        await edit_delete(event, "᭡︙تم تعطيل امر الحماية لحسابك بنجاح︙᭡")
+        await edit_delete(event, "↯︙تم تعطيل امر الحماية لحسابك بنجاح︙↯")
     else:
-        await edit_delete(event, "᭡︙امر الحمايه بالفعل مُعطل لحسابك︙᭡")
+        await edit_delete(event, "↯︙امر الحمايه بالفعل مُعطل لحسابك︙↯")
 
 
 @dragoiq.ar_cmd(pattern="الحماية (تشغيل|تعطيل)$")  
@@ -649,12 +649,12 @@ async def pmpermit_on(event):
                 "-  تم تعطيل امر الحماية لحسابك بنجاح ✅",
             )
         else:
-            await edit_delete(event, "᭡︙امر الحمايه بالفعل مُعطل لحسابك︙᭡")
+            await edit_delete(event, "↯︙امر الحمايه بالفعل مُعطل لحسابك︙↯")
     elif gvarstatus("pmmenu") is not None:
         delgvar("pmmenu")
-        await edit_delete(event, "᭡︙تم تفعيل امر الحماية لحسابك بنجاح︙᭡")
+        await edit_delete(event, "↯︙تم تفعيل امر الحماية لحسابك بنجاح︙↯")
     else:
-        await edit_delete(event, "᭡︙امر الحمايه بالفعل مُمكن لحسابك︙᭡")
+        await edit_delete(event, "↯︙امر الحمايه بالفعل مُمكن لحسابك︙↯")
 
 
 @dragoiq.ar_cmd(pattern="(س|سماح)(?:\s|$)([\s\S]*)")
@@ -662,7 +662,7 @@ async def approve_p_m(event):
     if gvarstatus("pmpermit") is None:
         return await edit_delete(
             event,
-            f"᭡︙ يجب تفعيل امر الحماية اولا بأرسال `{cmdhd}الحماية تشغيل` ليشتغل هذا الأمر ︙᭡",
+            f"↯︙ يجب تفعيل امر الحماية اولا بأرسال `{cmdhd}الحماية تشغيل` ليشتغل هذا الأمر ︙↯",
         )
     if event.is_private:
         user = await event.get_chat()
