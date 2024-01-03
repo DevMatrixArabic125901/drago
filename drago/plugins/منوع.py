@@ -63,27 +63,27 @@ async def _(e):
 # =========================================
 
 drago = [
-    "**𓆰**العـاب الاحترافيه** 🎮𓆪 \n"
-    "  ❶ **⪼**  [حرب الفضاء 🛸](https://t.me/gamee?game=ATARIAsteroids)   \n"
-    "  ❷ **⪼**  [لعبة فلابي بيرد](https://t.me/awesomebot?game=FlappyBird)   \n"
-    "  ❸ **⪼**  [القط المشاكس](https://t.me/gamee?game=CrazyCat)   \n"
-    "  ❹ **⪼**  [صيد الاسماك](https://t.me/gamee?game=SpikyFish3)   \n"
-    "  ❺ **⪼**  [سباق الدراجات](https://t.me/gamee?game=MotoFX2)   \n"
-    "  ❻ **⪼**  [سباق سيارات](https://t.me/gamee?game=F1Racer)   \n"
-    "  ❼ **⪼**  [شطرنج](https://t.me/T4TTTTBOT?game=chess)   \n"
-    "  ❽ **⪼**  [كرة القدم](https://t.me/gamee?game=FootballStar)   \n"
-    "  ❾ **⪼**  [كرة السلة](https://t.me/gamee?game=BasketBoyRush)   \n"
-    "  ❿ **⪼**  [سلة 2](https://t.me/gamee?game=DoozieDunks)   \n"
-    "  ⓫ **⪼**  [ضرب الاسهم](https://t.me/T4TTTTBOT?game=arrow)   \n"
-    "  ⓬ **⪼**  [لعبة الالوان](https://t.me/T4TTTTBOT?game=color)   \n"
-    "  ⓭ **⪼**  [كونج فو](https://t.me/gamee?game=KungFuInc)   \n"
-    "  ⓮ **⪼**  [لعبة الافعى](https://t.me/T4TTTTBOT?game=snake)   \n"
-    "  ⓯ **⪼**  [لعبة الصواريخ](https://t.me/T4TTTTBOT?game=rocket)   \n"
-    "  ⓰ **⪼**  [كيب اب](https://t.me/gamee?game=KeepitUP)   \n"
-    "  ⓱ **⪼**  [جيت واي](https://t.me/gamee?game=Getaway)   \n"
-    "  ⓲ **⪼**  [الالـوان](https://t.me/gamee?game=ColorHit)   \n"
-    "  ⓳ **⪼**  [مدفع الكرات🏮](https://t.me/gamee?game=NeonBlaster)   \n"
-    "**-** قناة السورس **⪼[𝖲𝖮𝖴𝖱𝖢𝖤 𝖬𝖠𝖳𝖱𝖨𝖷](t.me/MaTriXThon)   "
+    "**𓆰**العـاب الاحترافيه**\n"
+    "  ↯︙[⦗ حرب الفضاء ⦘ ⦘](https://t.me/gamee?game=ATARIAsteroids)   \n"
+    "  ↯︙[⦗ لعبة فلابي بيرد ⦘](https://t.me/awesomebot?game=FlappyBird)   \n"
+    "  ↯︙[⦗ القط المشاكس ⦘](https://t.me/gamee?game=CrazyCat)   \n"
+    "  ↯︙[⦗ صيد الاسماك ⦘](https://t.me/gamee?game=SpikyFish3)   \n"
+    "  ↯︙[⦗ سباق الدراجات ⦘](https://t.me/gamee?game=MotoFX2)   \n"
+    "  ↯︙[⦗ سباق سيارات ⦘](https://t.me/gamee?game=F1Racer)   \n"
+    "  ↯︙[⦗ شطرنج ⦘](https://t.me/T4TTTTBOT?game=chess)   \n"
+    "  ↯︙[⦗ كرة القدم ⦘](https://t.me/gamee?game=FootballStar)   \n"
+    "  ↯︙[⦗ كرة السلة ⦘](https://t.me/gamee?game=BasketBoyRush)   \n"
+    "  ↯︙[⦗ سلة 2 ⦘](https://t.me/gamee?game=DoozieDunks)   \n"
+    "  ↯︙[⦗ ضرب الاسهم ⦘](https://t.me/T4TTTTBOT?game=arrow)   \n"
+    "  ↯︙[⦗ لعبة الالوان ⦘](https://t.me/T4TTTTBOT?game=color)   \n"
+    "  ↯︙[⦗ كونج فو ⦘](https://t.me/gamee?game=KungFuInc)   \n"
+    "  ↯︙[⦗ لعبة الافعى ⦘](https://t.me/T4TTTTBOT?game=snake)   \n"
+    "  ↯︙[⦗ لعبة الصواريخ ⦘](https://t.me/T4TTTTBOT?game=rocket)   \n"
+    "  ↯︙[⦗ كيب اب ⦘](https://t.me/gamee?game=KeepitUP)   \n"
+    "  ↯︙[⦗ جيت واي ⦘](https://t.me/gamee?game=Getaway)   \n"
+    "  ↯︙[⦗ الالـوان ⦘](https://t.me/gamee?game=ColorHit)   \n"
+    "  ↯︙[⦗ مدفع الكرات ⦘](https://t.me/gamee?game=NeonBlaster)   \n"
+    "**↯︙** قناة السورس ** ↫ [⦗ 𝖲𝖮𝖴𝖱𝖢𝖤 𝖬𝖠𝖳𝖱𝖨𝖷 ⦘](t.me/MaTriXThon)   ٠"
 ]
 
 @dragoiq.on(admin_cmd(pattern="بلي$"))
@@ -407,7 +407,7 @@ async def handle_unblock_all(event):
         limit=200
     ))
     if not blocked_users.users:
-        await event.edit("**᭡︙ لا يوجد مستخدمين محظورين في حسابك**")
+        await event.edit("**↯︙ لا يوجد مستخدمين محظورين في حسابك**")
         return
     for user in blocked_users.users:
         try:
@@ -416,7 +416,7 @@ async def handle_unblock_all(event):
             ))
             DRAGO_entity = await client.get_entity(user.id)
             DRAGO_profile = f"[{DRAGO_entity.first_name}](tg://user?id={DRAGO_entity.id})"
-            await event.edit(f"᭡︙ تم إلغاء حظر المستخدم : {DRAGO_profile}")
+            await event.edit(f"↯︙ تم إلغاء حظر المستخدم : {DRAGO_profile}")
             asyncio.sleep(3)
         except ValueError:
             continue
@@ -425,7 +425,7 @@ async def handle_unblock_all(event):
             continue
 @dragoiq.ar_cmd(pattern=r"توليد(.*)")
 async def aHmEd(event):
-    await event.edit('**᭡︙يتم توليد الفيزا انتظر 7 ثواني من فضلك**')
+    await event.edit('**↯︙يتم توليد الفيزا انتظر 7 ثواني من فضلك**')
     bot_username = '@SDBB_Bot'
     matrix = event.raw_text
     thematrix = matrix.split('.توليد')[1].strip()
@@ -441,7 +441,7 @@ async def aHmEd(event):
 
 @dragoiq.ar_cmd(pattern=r"جيك(.*)")
 async def aHmEd(event):
-    await event.edit('**᭡︙يتم فحص انتظر 7 ثواني من فضلك**')
+    await event.edit('**↯︙يتم فحص انتظر 7 ثواني من فضلك**')
     bot_username = '@CardSavvyXbot'
     matrix = event.raw_text
     thematrix = matrix.split('.جيك')[1].strip()
