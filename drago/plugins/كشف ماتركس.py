@@ -30,7 +30,7 @@ MATTEXT = gvarstatus("CUSTOM_ALIVE_TEXT") or "مـعلومـات حـسابـك 
 MATRIX = gvarstatus("CUSTOM_ALIVE_EMOJI") or ": ›"
 MATTRIX = gvarstatus("CUSTOM_ALIVE_EMOJI") or "‹ :"
 
-VMATRIXV = gvarstatus("CUSTOM_ALIVE_FONT") or "✦┅━╍━╍╍━━╍━━╍━┅✦"
+VMATRIXV = gvarstatus("CUSTOM_ALIVE_FONT") or "– – – – – – – – – – – – – – –"
 
 async def get_user_from_event(event):
 
