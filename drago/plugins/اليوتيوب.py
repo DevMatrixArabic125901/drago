@@ -86,7 +86,7 @@ async def ytdl_down(event, opts, url):
     except PostProcessingError:
         await event.edit("**كان هناك خطأ أثناء المعالجة**")
     except UnavailableVideoError:
-        await event.edit("**⌔∮عـذراً .. الوسائط غير متوفـره بالتنسيق المطلـوب**")
+        await event.edit("** ↯︙عـذراً .. الوسائط غير متوفـره بالتنسيق المطلـوب**")
     except XAttrMetadataError as XAME:
         await event.edit(f"`{XAME.code}: {XAME.msg}\n{XAME.reason}`")
     except ExtractorError:
@@ -170,7 +170,7 @@ async def download_audio(event):
     urls = extractor.find_urls(msg)
     if not urls:
         return await edit_or_reply(event, "**- قـم بادخــال رابـط مع الامـر او بالــرد ع رابـط ليتـم التحميـل**")
-    dragoiqevent = await edit_or_reply(event, "**᥀︙جـارِ التحميل انتظر قليلاً**")
+    dragoiqevent = await edit_or_reply(event, "**↯︙جـارِ التحميل انتظر قليلاً**")
     reply_to_id = await reply_id(event)
     for url in urls:
         try:
@@ -258,7 +258,7 @@ async def download_video(event):
     urls = extractor.find_urls(msg)
     if not urls:
         return await edit_or_reply(event, "**- قـم بادخــال رابـط مع الامـر او بالــرد ع رابـط ليتـم التحميـل**")
-    dragoiqevent = await edit_or_reply(event, "**᥀︙جـارِ التحميل انتظر قليلا**")
+    dragoiqevent = await edit_or_reply(event, "**↯︙جـارِ التحميل انتظر قليلا**")
     reply_to_id = await reply_id(event)
     for url in urls:
         ytdl_data = await ytdl_down(dragoiqevent, video_opts, url)
@@ -299,7 +299,7 @@ async def download_video(event):
                 event.chat_id,
                 file=media,
                 reply_to=reply_to_id,
-                caption=f'**᥀︙المقطــع :** `{ytdl_data["title"]}`',
+                caption=f'**↯︙المقطــع :** `{ytdl_data["title"]}`',
                 thumb=catthumb,
             )
             os.remove(f)
@@ -323,7 +323,7 @@ async def Ahmed_pin(event):
             event, "**- احتـاج الـى رابــط من فيـس بـوك .. للتحميــل ؟!**", 10
         )
     chat = "@bajardefacebookbot"
-    dra = await edit_or_reply(event, "**᥀︙جـارِ التحميل من فيـسبـوك انتظر قليلا**")
+    dra = await edit_or_reply(event, "**↯︙جـارِ التحميل من فيـسبـوك انتظر قليلا**")
     async with borg.conversation(chat) as conv:
         try:
             await conv.send_message("/start")
@@ -338,7 +338,7 @@ async def Ahmed_pin(event):
             await borg.send_file(
                 event.chat_id,
                 dragoiq,
-                caption=f"<b>᥀︙تم التحميـل من فيـس بـوك بنجاح</b>",
+                caption=f"<b>↯︙تم التحميـل من فيـس بـوك بنجاح</b>",
                 parse_mode="html",
             )
         except YouBlockedUserError:
@@ -355,7 +355,7 @@ async def Ahmed_pin(event):
             await borg.send_file(
                 event.chat_id,
                 dragoiq,
-                caption=f"<b>᥀︙تم التحميـل من فيـس بـوك بنجاح</b>",
+                caption=f"<b>↯︙تم التحميـل من فيـس بـوك بنجاح</b>",
                 parse_mode="html",
             )
 
@@ -380,7 +380,7 @@ async def download_video(event):
     urls = extractor.find_urls(msg)
     if not urls:
         return await edit_or_reply(event, "**- قـم بادخــال رابـط مع الامـر او بالــرد ع رابـط ليتـم التحميـل**")
-    dragoiqevent = await edit_or_reply(event, "**᥀︙جـارِ التحميل انتظر قليلا**")
+    dragoiqevent = await edit_or_reply(event, "**↯︙جـارِ التحميل انتظر قليلا**")
     reply_to_id = await reply_id(event)
     for url in urls:
         ytdl_data = await ytdl_down(dragoiqevent, video_opts, url)
@@ -421,7 +421,7 @@ async def download_video(event):
                 event.chat_id,
                 file=media,
                 reply_to=reply_to_id,
-                caption=f'**᥀︙المقطــع :** `{ytdl_data["title"]}`',
+                caption=f'**↯︙المقطــع :** `{ytdl_data["title"]}`',
                 thumb=catthumb,
             )
             os.remove(f)
@@ -452,7 +452,7 @@ async def download_video(event):
     urls = extractor.find_urls(msg)
     if not urls:
         return await edit_or_reply(event, "**- قـم بادخــال رابـط مع الامـر او بالــرد ع رابـط ليتـم التحميـل**")
-    dragoiqevent = await edit_or_reply(event, "**᥀︙جـارِ التحميل انتظر قليلا**")
+    dragoiqevent = await edit_or_reply(event, "**↯︙جـارِ التحميل انتظر قليلا**")
     reply_to_id = await reply_id(event)
     for url in urls:
         ytdl_data = await ytdl_down(dragoiqevent, video_opts, url)
@@ -467,7 +467,7 @@ async def download_video(event):
             if not os.path.exists(catthumb):
                 catthumb = None
             await dragoiqevent.edit(
-                f"**╮ ❐ جـارِ التحضيـر للـرفع انتظـر ...𓅫╰**:\
+                f"** جـارِ التحضيـر للـرفع انتظـر *:\
                 \n**{ytdl_data['title']}**"
             )
             ul = io.open(f, "rb")
@@ -493,7 +493,7 @@ async def download_video(event):
                 event.chat_id,
                 file=media,
                 reply_to=reply_to_id,
-                caption=f'**᥀︙المقطــع :** `{ytdl_data["title"]}`',
+                caption=f'**↯︙المقطــع :** `{ytdl_data["title"]}`',
                 thumb=catthumb,
             )
             os.remove(f)
@@ -521,7 +521,7 @@ async def download_audio(event):
     urls = extractor.find_urls(msg)
     if not urls:
         return await edit_or_reply(event, "**- قـم بادخــال رابـط مع الامـر او بالــرد ع رابـط ليتـم التحميـل**")
-    dragoiqevent = await edit_or_reply(event, "**᥀︙جـارِ التحميل انتظر قليلا**")
+    dragoiqevent = await edit_or_reply(event, "**↯︙جـارِ التحميل انتظر قليلا**")
     reply_to_id = await reply_id(event)
     for url in urls:
         try:
@@ -602,7 +602,7 @@ async def Ahmed_gif(event):
             event, "**- احتـاج الـى رابــط من الانستـا .. للتحميــل ؟!**", 10
         )
     chat = "@FullSavebot"
-    dra = await edit_or_reply(event, "**᥀︙جـارِ التحميل من الانستـا انتظر قليلا**")
+    dra = await edit_or_reply(event, "**↯︙جـارِ التحميل من الانستـا انتظر قليلا**")
     async with borg.conversation(chat) as conv:
         try:
             await conv.send_message("/start")
@@ -615,7 +615,7 @@ async def Ahmed_gif(event):
             await borg.send_file(
                 event.chat_id,
                 dragoiq,
-                caption=f"<b>᥀︙تم التحميـل من انستجـرام بنجاح</b>",
+                caption=f"<b>↯︙تم التحميـل من انستجـرام بنجاح</b>",
                 parse_mode="html",
             )
         except YouBlockedUserError:
@@ -630,7 +630,7 @@ async def Ahmed_gif(event):
             await borg.send_file(
                 event.chat_id,
                 dragoiq,
-                caption=f"<b>᥀︙تم التحميـل من انستجـرام بنجاح</b>",
+                caption=f"<b>↯︙تم التحميـل من انستجـرام بنجاح</b>",
                 parse_mode="html",
             )
 
@@ -648,7 +648,7 @@ async def Ahmed_mat(event):
             event, "**- احتـاج الـى رابــط من لايكـي .. للتحميــل ؟!**", 10
         )
     chat = "@savetok_bot"
-    dra = await edit_or_reply(event, "**᥀︙جـارِ التحميل من لايكـي انتظر قليلا**")
+    dra = await edit_or_reply(event, "**↯︙جـارِ التحميل من لايكـي انتظر قليلا**")
     async with borg.conversation(chat) as conv:
         try:
             await conv.send_message("/start")
@@ -661,7 +661,7 @@ async def Ahmed_mat(event):
             await borg.send_file(
                 event.chat_id,
                 dragoiq,
-                caption=f"<b>᥀︙تم التحميـل من لايكـي بنجاح</b>",
+                caption=f"<b>↯︙تم التحميـل من لايكـي بنجاح</b>",
                 parse_mode="html",
             )
         except YouBlockedUserError:
@@ -676,7 +676,7 @@ async def Ahmed_mat(event):
             await borg.send_file(
                 event.chat_id,
                 dragoiq,
-                caption=f"<b>᥀︙تم التحميـل من لايكـي بنجاح</b>",
+                caption=f"<b>↯︙تم التحميـل من لايكـي بنجاح</b>",
                 parse_mode="html",
             )
 
@@ -695,7 +695,7 @@ async def Ahmed_pin(event):
             event, "**- احتـاج الـى رابــط من بنتـرسـت .. للتحميــل ؟!**", 10
         )
     chat = "@GoPinterestBot"
-    dra = await edit_or_reply(event, "**᥀︙جـارِ التحميل من بنتـرسـت انتظر قليلا**")
+    dra = await edit_or_reply(event, "**↯︙جـارِ التحميل من بنتـرسـت انتظر قليلا**")
     async with borg.conversation(chat) as conv:
         try:
             await conv.send_message("/start")
@@ -708,7 +708,7 @@ async def Ahmed_pin(event):
             await borg.send_file(
                 event.chat_id,
                 dragoiq,
-                caption=f"<b>᥀︙تم التحميـل من بنتـرسـت بنجاح</b>",
+                caption=f"<b>↯︙تم التحميـل من بنتـرسـت بنجاح</b>",
                 parse_mode="html",
             )
         except YouBlockedUserError:
@@ -723,7 +723,7 @@ async def Ahmed_pin(event):
             await borg.send_file(
                 event.chat_id,
                 dragoiq,
-                caption=f"<b>᥀︙تم التحميـل من بنتـرسـت  بنجاح</b>",
+                caption=f"<b>↯︙تم التحميـل من بنتـرسـت  بنجاح</b>",
                 parse_mode="html",
             )
 
@@ -761,5 +761,5 @@ async def yt_search(event):
         full_response = await ytsearch(query, limit=lim)
     except Exception as e:
         return await edit_delete(video_q, str(e), time=10, parse_mode=_format.parse_pre)
-    reply_text = f"**᥀︙اليك عزيزي قائمة بروابط الكلمة اللتي بحثت عنها:**\n`{query}`\n\n**᥀︙النتائج:**\n{full_response}"
+    reply_text = f"**↯︙اليك عزيزي قائمة بروابط الكلمة اللتي بحثت عنها:**\n`{query}`\n\n**↯︙النتائج:**\n{full_response}"
     await edit_or_reply(video_q, reply_text)
